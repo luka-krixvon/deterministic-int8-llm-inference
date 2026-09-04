@@ -1,0 +1,162 @@
++ PIN=vllm/vllm-openai@sha256:0a51ea5b4ae2dc5d81890e5173f54203d2a3ae0cfffe51b8fd2afd4391bfd967
++ V --entrypoint python3 vllm/vllm-openai@sha256:0a51ea5b4ae2dc5d81890e5173f54203d2a3ae0cfffe51b8fd2afd4391bfd967 /w/w3_perlayer.py --stage verdict --checkpoint /models/qwen3-1.7b-int8-w8a8 --capture-dir /w/perlayer_capture --p1 /w/p1_predictions_qwen3-1.7b.json --out /w/w3_perlayer_verdict_17b_v3.json
++ docker run --rm --gpus device=0 --shm-size=2g -v /home/ubuntu/integer_alibi:/w -w /w -v /home/ubuntu/integer_alibi/models:/models:ro -e IMAGE_DIGEST=vllm/vllm-openai@sha256:0a51ea5b4ae2dc5d81890e5173f54203d2a3ae0cfffe51b8fd2afd4391bfd967 --entrypoint python3 vllm/vllm-openai@sha256:0a51ea5b4ae2dc5d81890e5173f54203d2a3ae0cfffe51b8fd2afd4391bfd967 /w/w3_perlayer.py --stage verdict --checkpoint /models/qwen3-1.7b-int8-w8a8 --capture-dir /w/perlayer_capture --p1 /w/p1_predictions_qwen3-1.7b.json --out /w/w3_perlayer_verdict_17b_v3.json
+P1a: 196/196 identical under pow2 (0 violations of BITWISE-SAFE)
+P1b: 8/196 identical under real scales, 0 layers exceed the 2-ulp bound
+VERDICT_OK
++ V --entrypoint python3 vllm/vllm-openai@sha256:0a51ea5b4ae2dc5d81890e5173f54203d2a3ae0cfffe51b8fd2afd4391bfd967 /w/w3_perlayer.py --stage verdict --checkpoint /models/qwen3-8b-int8-w8a8 --capture-dir /w/perlayer_capture_8b --p1 /w/p1_predictions_qwen3-8b.json --out /w/w3_perlayer_verdict_8b_v3.json
++ docker run --rm --gpus device=0 --shm-size=2g -v /home/ubuntu/integer_alibi:/w -w /w -v /home/ubuntu/integer_alibi/models:/models:ro -e IMAGE_DIGEST=vllm/vllm-openai@sha256:0a51ea5b4ae2dc5d81890e5173f54203d2a3ae0cfffe51b8fd2afd4391bfd967 --entrypoint python3 vllm/vllm-openai@sha256:0a51ea5b4ae2dc5d81890e5173f54203d2a3ae0cfffe51b8fd2afd4391bfd967 /w/w3_perlayer.py --stage verdict --checkpoint /models/qwen3-8b-int8-w8a8 --capture-dir /w/perlayer_capture_8b --p1 /w/p1_predictions_qwen3-8b.json --out /w/w3_perlayer_verdict_8b_v3.json
+P1a: 252/252 identical under pow2 (0 violations of BITWISE-SAFE)
+P1b: 10/252 identical under real scales, 0 layers exceed the 2-ulp bound
+VERDICT_OK
++ V --entrypoint bash vllm/vllm-openai@sha256:0a51ea5b4ae2dc5d81890e5173f54203d2a3ae0cfffe51b8fd2afd4391bfd967 -c 'pip -q install scipy 2>&1|tail -1; python3 /w/w3_p2_fp8_v2.py --seeds 20 --out /w/w3_p2_raw_20seeds.json'
++ docker run --rm --gpus device=0 --shm-size=2g -v /home/ubuntu/integer_alibi:/w -w /w -v /home/ubuntu/integer_alibi/models:/models:ro -e IMAGE_DIGEST=vllm/vllm-openai@sha256:0a51ea5b4ae2dc5d81890e5173f54203d2a3ae0cfffe51b8fd2afd4391bfd967 --entrypoint bash vllm/vllm-openai@sha256:0a51ea5b4ae2dc5d81890e5173f54203d2a3ae0cfffe51b8fd2afd4391bfd967 -c 'pip -q install scipy 2>&1|tail -1; python3 /w/w3_p2_fp8_v2.py --seeds 20 --out /w/w3_p2_raw_20seeds.json'
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+seed 20260813 K 512 done
+seed 20260813 K 1024 done
+seed 20260813 K 2048 done
+seed 20260813 K 4096 done
+seed 20260813 K 8192 done
+seed 20260813 K 16384 done
+seed 20260813 K 32768 done
+seed 20260814 K 512 done
+seed 20260814 K 1024 done
+seed 20260814 K 2048 done
+seed 20260814 K 4096 done
+seed 20260814 K 8192 done
+seed 20260814 K 16384 done
+seed 20260814 K 32768 done
+seed 20260815 K 512 done
+seed 20260815 K 1024 done
+seed 20260815 K 2048 done
+seed 20260815 K 4096 done
+seed 20260815 K 8192 done
+seed 20260815 K 16384 done
+seed 20260815 K 32768 done
+seed 20260816 K 512 done
+seed 20260816 K 1024 done
+seed 20260816 K 2048 done
+seed 20260816 K 4096 done
+seed 20260816 K 8192 done
+seed 20260816 K 16384 done
+seed 20260816 K 32768 done
+seed 20260817 K 512 done
+seed 20260817 K 1024 done
+seed 20260817 K 2048 done
+seed 20260817 K 4096 done
+seed 20260817 K 8192 done
+seed 20260817 K 16384 done
+seed 20260817 K 32768 done
+seed 20260818 K 512 done
+seed 20260818 K 1024 done
+seed 20260818 K 2048 done
+seed 20260818 K 4096 done
+seed 20260818 K 8192 done
+seed 20260818 K 16384 done
+seed 20260818 K 32768 done
+seed 20260819 K 512 done
+seed 20260819 K 1024 done
+seed 20260819 K 2048 done
+seed 20260819 K 4096 done
+seed 20260819 K 8192 done
+seed 20260819 K 16384 done
+seed 20260819 K 32768 done
+seed 20260820 K 512 done
+seed 20260820 K 1024 done
+seed 20260820 K 2048 done
+seed 20260820 K 4096 done
+seed 20260820 K 8192 done
+seed 20260820 K 16384 done
+seed 20260820 K 32768 done
+seed 20260821 K 512 done
+seed 20260821 K 1024 done
+seed 20260821 K 2048 done
+seed 20260821 K 4096 done
+seed 20260821 K 8192 done
+seed 20260821 K 16384 done
+seed 20260821 K 32768 done
+seed 20260822 K 512 done
+seed 20260822 K 1024 done
+seed 20260822 K 2048 done
+seed 20260822 K 4096 done
+seed 20260822 K 8192 done
+seed 20260822 K 16384 done
+seed 20260822 K 32768 done
+seed 20260823 K 512 done
+seed 20260823 K 1024 done
+seed 20260823 K 2048 done
+seed 20260823 K 4096 done
+seed 20260823 K 8192 done
+seed 20260823 K 16384 done
+seed 20260823 K 32768 done
+seed 20260824 K 512 done
+seed 20260824 K 1024 done
+seed 20260824 K 2048 done
+seed 20260824 K 4096 done
+seed 20260824 K 8192 done
+seed 20260824 K 16384 done
+seed 20260824 K 32768 done
+seed 20260825 K 512 done
+seed 20260825 K 1024 done
+seed 20260825 K 2048 done
+seed 20260825 K 4096 done
+seed 20260825 K 8192 done
+seed 20260825 K 16384 done
+seed 20260825 K 32768 done
+seed 20260826 K 512 done
+seed 20260826 K 1024 done
+seed 20260826 K 2048 done
+seed 20260826 K 4096 done
+seed 20260826 K 8192 done
+seed 20260826 K 16384 done
+seed 20260826 K 32768 done
+seed 20260827 K 512 done
+seed 20260827 K 1024 done
+seed 20260827 K 2048 done
+seed 20260827 K 4096 done
+seed 20260827 K 8192 done
+seed 20260827 K 16384 done
+seed 20260827 K 32768 done
+seed 20260828 K 512 done
+seed 20260828 K 1024 done
+seed 20260828 K 2048 done
+seed 20260828 K 4096 done
+seed 20260828 K 8192 done
+seed 20260828 K 16384 done
+seed 20260828 K 32768 done
+seed 20260829 K 512 done
+seed 20260829 K 1024 done
+seed 20260829 K 2048 done
+seed 20260829 K 4096 done
+seed 20260829 K 8192 done
+seed 20260829 K 16384 done
+seed 20260829 K 32768 done
+seed 20260830 K 512 done
+seed 20260830 K 1024 done
+seed 20260830 K 2048 done
+seed 20260830 K 4096 done
+seed 20260830 K 8192 done
+seed 20260830 K 16384 done
+seed 20260830 K 32768 done
+seed 20260831 K 512 done
+seed 20260831 K 1024 done
+seed 20260831 K 2048 done
+seed 20260831 K 4096 done
+seed 20260831 K 8192 done
+seed 20260831 K 16384 done
+seed 20260831 K 32768 done
+seed 20260832 K 512 done
+seed 20260832 K 1024 done
+seed 20260832 K 2048 done
+seed 20260832 K 4096 done
+seed 20260832 K 8192 done
+seed 20260832 K 16384 done
+seed 20260832 K 32768 done
+alpha=0.452 CI90=[0.452,0.453] sqrt_compatible=False
+W3_P2V2_OK
++ ./.venv/bin/python3 w3_p2_refit_v3.py w3_p2_raw_20seeds.json w3_p2_fits_v3_20seeds.json
+gensat: alpha=0.518 sse=1.08e-03 | pow: alpha=0.422 sse=1.33e-02 | sat_sqrt sse=3.88e-03 | sqrt sse=8.31e-02
+jackknife alpha range [0.518,0.519] | LOKO range [0.516,0.529] | K-range low/high 0.535/0.508
+REFIT_V3_OK
++ echo V3_RERUN_DONE
+V3_RERUN_DONE

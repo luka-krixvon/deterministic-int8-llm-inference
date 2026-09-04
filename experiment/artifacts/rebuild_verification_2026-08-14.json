@@ -1,0 +1,52 @@
+{
+  "checkpoints_matching": "5/5",
+  "claim": "Every quantized checkpoint deleted on 2026-08-14 was rebuilt from the recorded provenance and is byte-identical to the original.",
+  "metadata_files_compared": 30,
+  "metadata_files_differing": 0,
+  "method": "Parent models downloaded at the revisions recorded in hf_cache_revisions_2026-08-14.json, then the cache's refs/main was written back to those commits so that the recipes' unpinned snapshot_download(MODEL) resolves to the pinned revision, reproducing the cache state captured before deletion. Recipes run unmodified from harness/ (quant_qwen.py, quant_qwen8b.py, make_probe_pow2.py) in the .venv holding llmcompressor 0.13.0 / compressed-tensors 0.18.0 / torch 2.13.0+cu130. Digests recomputed with the same scope as tf_v6.py checkpoint_digest().",
+  "notes": [
+    "All five match, and all 30 metadata files are byte-identical, so the deletion recorded earlier today lost nothing that the repository could not regenerate exactly. This tests the reproducibility claim rather than asserting it.",
+    "qwen3-1.7b-int8-w8a8-pow2 rebuilt to c147608401cd8f02, which is also the probe SHA recorded in pre-registration amendments A-2 and A-3, so that record is verified too.",
+    "All three quantization stages logged 'Inferred DataFreePipeline for QuantizationModifier' (FP8 at 15:29:05, 1.7B INT8 at 15:30:10, 8B INT8 at 15:31:17). The open_platypus dataset is resolved and loaded -- the 'No split was specified' warning fires -- but the pipeline is data-free, so the 512 requested calibration samples never enter weight quantization. This is direct execution evidence that the unrecorded calibration-dataset revision is inert for this recipe, where previously it was an inference from the quantization config.",
+    "The v1 paper's Limitations statement about the calibration-dataset revision is NOT revised on this basis. v1 is frozen and uploaded, and an over-conservative disclosure harms nobody. The finding is available to the TMLR round, where it can be stated with this evidence attached.",
+    "Bit-identical rebuild does not follow from the recipe alone: it also required the parent revision, the generator version, and the cache state. A rebuild that skipped the refs/main step would have resolved whatever main pointed at on the day and produced a different checkpoint while overwriting the manifest that records the pin."
+  ],
+  "result": {
+    "qwen3-1.7b-fp8-dynamic": {
+      "match": true,
+      "metadata_differing": [],
+      "metadata_files": 6,
+      "original": "69d137b187ef43fc046b7f1844b4ff9db785f7c0d7b88b77465ad96786ffbb11",
+      "rebuilt": "69d137b187ef43fc046b7f1844b4ff9db785f7c0d7b88b77465ad96786ffbb11"
+    },
+    "qwen3-1.7b-int8-w8a8": {
+      "match": true,
+      "metadata_differing": [],
+      "metadata_files": 6,
+      "original": "bc6258648cc6c380e4e487a0b6539a3f5c6183a84cdfd07f23c78b7d91d1183e",
+      "rebuilt": "bc6258648cc6c380e4e487a0b6539a3f5c6183a84cdfd07f23c78b7d91d1183e"
+    },
+    "qwen3-1.7b-int8-w8a8-pow2": {
+      "match": true,
+      "metadata_differing": [],
+      "metadata_files": 6,
+      "original": "c147608401cd8f020ee5151e4d6214870d8e617956cf14843f859ebf8ba34f72",
+      "rebuilt": "c147608401cd8f020ee5151e4d6214870d8e617956cf14843f859ebf8ba34f72"
+    },
+    "qwen3-8b-int8-w8a8": {
+      "match": true,
+      "metadata_differing": [],
+      "metadata_files": 6,
+      "original": "bac6e1a08b245759bb70638a0c07f00709e61f6761ed1fe28069202b4cad2959",
+      "rebuilt": "bac6e1a08b245759bb70638a0c07f00709e61f6761ed1fe28069202b4cad2959"
+    },
+    "qwen3-8b-int8-w8a8-pow2": {
+      "match": true,
+      "metadata_differing": [],
+      "metadata_files": 6,
+      "original": "c6ae749cb3e9144a44b7d53087d356e453f2cb1fb0acb14baa8f8bfbd12f1247",
+      "rebuilt": "c6ae749cb3e9144a44b7d53087d356e453f2cb1fb0acb14baa8f8bfbd12f1247"
+    }
+  },
+  "verified": "2026-08-14"
+}

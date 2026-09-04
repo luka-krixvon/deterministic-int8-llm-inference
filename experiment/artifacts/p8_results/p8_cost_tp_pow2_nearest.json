@@ -1,0 +1,91 @@
+{
+  "caveat": "Measured on a shared machine. Median and IQR are reported and the full per-repeat series is in the per-arm files; a reader who suspects interference can look at the spread.",
+  "commitment": "A-10 requires this reported whatever it says. A negative relative change means the pow2 arm is slower.",
+  "identity": {
+    "base": {
+      "checkpoint_digest": "bc6258648cc6c380e4e487a0b6539a3f5c6183a84cdfd07f23c78b7d91d1183e",
+      "image_digest": "vllm/vllm-openai@sha256:0a51ea5b4ae2dc5d81890e5173f54203d2a3ae0cfffe51b8fd2afd4391bfd967",
+      "kernel_class": null,
+      "parent_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+      "prompt_manifest": "synthetic fixed-ISL prompt, see prompt_of()",
+      "quant_config_sha256": "ece0f206b315314a7057aa5ecbd33407dce21cd314d1ce223bcb313e054bf303",
+      "runtime": "vllm 0.27.1",
+      "tokenizer_sha256": "be75606093db2094d7cd20f3c2f385c212750648bd6ea4fb2bf507a6a4c55506",
+      "treatment": "pow2 probe vs base INT8 checkpoint"
+    },
+    "pow2": {
+      "checkpoint_digest": "d6a3722b094b398b6e2603be746132d53a6f939d49a38c29f0241a9069876502",
+      "image_digest": "vllm/vllm-openai@sha256:0a51ea5b4ae2dc5d81890e5173f54203d2a3ae0cfffe51b8fd2afd4391bfd967",
+      "kernel_class": null,
+      "parent_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+      "prompt_manifest": "synthetic fixed-ISL prompt, see prompt_of()",
+      "quant_config_sha256": "ece0f206b315314a7057aa5ecbd33407dce21cd314d1ce223bcb313e054bf303",
+      "runtime": "vllm 0.27.1",
+      "tokenizer_sha256": "be75606093db2094d7cd20f3c2f385c212750648bd6ea4fb2bf507a6a4c55506",
+      "treatment": "pow2 probe vs base INT8 checkpoint"
+    }
+  },
+  "rows": [
+    {
+      "batch": 1,
+      "decode_relative_change": -0.016204412548130907,
+      "decode_tps_base": 45.81966050344729,
+      "decode_tps_pow2": 45.07717982183413,
+      "isl": 128,
+      "prefill_relative_change": -0.09557857383924058,
+      "prefill_tps_base": 5392.354700681918,
+      "prefill_tps_pow2": 4876.961128755415
+    },
+    {
+      "batch": 1,
+      "decode_relative_change": 0.0007175001349419809,
+      "decode_tps_base": 44.76156496603355,
+      "decode_tps_pow2": 44.7936813949369,
+      "isl": 2048,
+      "prefill_relative_change": -0.019610104555763338,
+      "prefill_tps_base": 80084.04094086682,
+      "prefill_tps_pow2": 78513.58452476839
+    },
+    {
+      "batch": 4,
+      "decode_relative_change": 0.0030556856776281856,
+      "decode_tps_base": 179.0539057676633,
+      "decode_tps_pow2": 179.60103822304094,
+      "isl": 128,
+      "prefill_relative_change": 0.00334801929777418,
+      "prefill_tps_base": 20167.89207909142,
+      "prefill_tps_pow2": 20235.414570967645
+    },
+    {
+      "batch": 4,
+      "decode_relative_change": 0.004729867710639185,
+      "decode_tps_base": 178.96212577012287,
+      "decode_tps_pow2": 179.80859295023032,
+      "isl": 2048,
+      "prefill_relative_change": 0.013598690677564414,
+      "prefill_tps_base": 251025.27543109606,
+      "prefill_tps_pow2": 254438.89050393394
+    },
+    {
+      "batch": 16,
+      "decode_relative_change": 0.009031151822893303,
+      "decode_tps_base": 706.6476132116445,
+      "decode_tps_pow2": 713.029455091844,
+      "isl": 128,
+      "prefill_relative_change": 0.014052693358790178,
+      "prefill_tps_base": 67073.68961394268,
+      "prefill_tps_pow2": 68016.25560653009
+    },
+    {
+      "batch": 16,
+      "decode_relative_change": 0.005421974558072299,
+      "decode_tps_base": 710.0080622152683,
+      "decode_tps_pow2": 713.8577078646257,
+      "isl": 512,
+      "prefill_relative_change": -0.02139785938269428,
+      "prefill_tps_base": 227133.3074615498,
+      "prefill_tps_pow2": 222273.14088736128
+    }
+  ],
+  "schema": "p6-throughput-compare-v1"
+}

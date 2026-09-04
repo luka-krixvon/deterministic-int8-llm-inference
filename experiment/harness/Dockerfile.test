@@ -1,0 +1,13 @@
+# Digest-pinned clean test environment v2 (Codex review #5 P1-1).
+# - base image pinned by digest
+# - FULL dependency closure pinned (requirements-closure.lock, --no-deps)
+# - minimal fixtures included so artifact-dependent tests do not skip
+# Build/run records saved separately (command, stdout, exit code, image id).
+FROM python:3.12-slim@sha256:229a2c5bfa27522db7815ea81f9bed70af17ccb9de9fc7ad142b1877b5830d36
+COPY requirements-closure.lock /tmp/
+RUN pip install --no-cache-dir --no-deps --index-url https://pypi.org/simple \
+    -r /tmp/requirements-closure.lock
+WORKDIR /t
+COPY *.py /t/
+COPY fixtures/ /t/
+CMD ["bash", "-c", "python tests_metrics_v3.py; e3=$?; python tests_metrics_v4.py; e4=$?; python tests_metrics_v5.py; e5=$?; python tests_metrics_v6.py; e6=$?; echo SUITE_EXITS v3=$e3 v4=$e4 v5=$e5 v6=$e6; exit $((e3|e4|e5|e6))"]

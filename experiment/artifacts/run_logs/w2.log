@@ -1,0 +1,6 @@
+[32;20m[2026-08-12 19:22:56,150] LMCache INFO:[0m torch_dev=<module 'torch.cuda' from '/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py'>, torch_device_type=cuda [3m(_device_detect.py:143:lmcache.v1.platform._device_detect)[0m
+[33;20m[2026-08-12 19:22:56,153] LMCache WARNING:[0m lmcache.c_ops compiled extension not found; CudaDeviceOps stays on the torch baseline for all ops. [3m(device_ops.py:34:lmcache.v1.platform.cuda.device_ops)[0m
+INFO 08-12 19:22:56 [nixl_utils.py:32] Setting UCX_RCACHE_MAX_UNRELEASED to '1024' to avoid a rare memory leak in UCX when using NIXL.
+INFO 08-12 19:22:56 [nixl_utils.py:72] NIXL is available
+W2_OK
+W2_DONE

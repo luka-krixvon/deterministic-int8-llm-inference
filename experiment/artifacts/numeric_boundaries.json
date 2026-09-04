@@ -1,0 +1,298 @@
+{
+  "env": {
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "cuda": "13.0",
+    "torch": "2.13.0+cu130",
+    "driver": "580.173.02",
+    "image_digest": "vllm/vllm-openai@sha256:0a51ea5b4ae2dc5d81890e5173f54203d2a3ae0cfffe51b8fd2afd4391bfd967"
+  },
+  "tests": {
+    "T1_int32_fp32_boundary": [
+      {
+        "int": 16777215,
+        "fp32_roundtrip_exact": true
+      },
+      {
+        "int": -16777215,
+        "fp32_roundtrip_exact": true
+      },
+      {
+        "int": 16777216,
+        "fp32_roundtrip_exact": true
+      },
+      {
+        "int": -16777216,
+        "fp32_roundtrip_exact": true
+      },
+      {
+        "int": 16777217,
+        "fp32_roundtrip_exact": false
+      },
+      {
+        "int": -16777217,
+        "fp32_roundtrip_exact": false
+      },
+      {
+        "int": 16777218,
+        "fp32_roundtrip_exact": true
+      },
+      {
+        "int": -16777218,
+        "fp32_roundtrip_exact": true
+      }
+    ],
+    "T2_int8_accumulator": [
+      {
+        "K": 2048,
+        "act_min": -127,
+        "kind": "random",
+        "gpu_int_mm_exact": true,
+        "fp64_emul_exact": true,
+        "max_abs_acc": 1018755,
+        "int32_bound_ok": true
+      },
+      {
+        "K": 2048,
+        "act_min": -128,
+        "kind": "random",
+        "gpu_int_mm_exact": true,
+        "fp64_emul_exact": true,
+        "max_abs_acc": 1007627,
+        "int32_bound_ok": true
+      },
+      {
+        "K": 12288,
+        "act_min": -127,
+        "kind": "random",
+        "gpu_int_mm_exact": true,
+        "fp64_emul_exact": true,
+        "max_abs_acc": 2341223,
+        "int32_bound_ok": true
+      },
+      {
+        "K": 12288,
+        "act_min": -128,
+        "kind": "random",
+        "gpu_int_mm_exact": true,
+        "fp64_emul_exact": true,
+        "max_abs_acc": 2223674,
+        "int32_bound_ok": true
+      },
+      {
+        "K": 32768,
+        "act_min": -127,
+        "kind": "random",
+        "gpu_int_mm_exact": true,
+        "fp64_emul_exact": true,
+        "max_abs_acc": 3842506,
+        "int32_bound_ok": true
+      },
+      {
+        "K": 32768,
+        "act_min": -128,
+        "kind": "random",
+        "gpu_int_mm_exact": true,
+        "fp64_emul_exact": true,
+        "max_abs_acc": 3469065,
+        "int32_bound_ok": true
+      },
+      {
+        "K": 2048,
+        "kind": "extreme A=-128 B=127",
+        "gpu_int_mm_exact": true,
+        "max_abs_acc": 33292288,
+        "worst_case_bound_used": 33292288,
+        "acc_equals_bound": true,
+        "int32_bound_ok": true
+      },
+      {
+        "K": 2048,
+        "kind": "extreme A=-128 B=-127",
+        "gpu_int_mm_exact": true,
+        "max_abs_acc": 33292288,
+        "worst_case_bound_used": 33292288,
+        "acc_equals_bound": true,
+        "int32_bound_ok": true
+      },
+      {
+        "K": 2048,
+        "kind": "extreme A=127 B=127",
+        "gpu_int_mm_exact": true,
+        "max_abs_acc": 33032192,
+        "worst_case_bound_used": 33032192,
+        "acc_equals_bound": true,
+        "int32_bound_ok": true
+      },
+      {
+        "K": 32768,
+        "kind": "extreme A=-128 B=127",
+        "gpu_int_mm_exact": true,
+        "max_abs_acc": 532676608,
+        "worst_case_bound_used": 532676608,
+        "acc_equals_bound": true,
+        "int32_bound_ok": true
+      },
+      {
+        "K": 32768,
+        "kind": "extreme A=-128 B=-127",
+        "gpu_int_mm_exact": true,
+        "max_abs_acc": 532676608,
+        "worst_case_bound_used": 532676608,
+        "acc_equals_bound": true,
+        "int32_bound_ok": true
+      },
+      {
+        "K": 32768,
+        "kind": "extreme A=127 B=127",
+        "gpu_int_mm_exact": true,
+        "max_abs_acc": 528515072,
+        "worst_case_bound_used": 528515072,
+        "acc_equals_bound": true,
+        "int32_bound_ok": true
+      }
+    ],
+    "T3_pow2_commutation": [
+      {
+        "regime": "normal",
+        "k": -9,
+        "commutes_bitwise": true,
+        "all_finite": true
+      },
+      {
+        "regime": "normal",
+        "k": -1,
+        "commutes_bitwise": true,
+        "all_finite": true
+      },
+      {
+        "regime": "normal",
+        "k": 1,
+        "commutes_bitwise": true,
+        "all_finite": true
+      },
+      {
+        "regime": "normal",
+        "k": 8,
+        "commutes_bitwise": true,
+        "all_finite": true
+      },
+      {
+        "regime": "large",
+        "k": -9,
+        "commutes_bitwise": true,
+        "all_finite": true
+      },
+      {
+        "regime": "large",
+        "k": -1,
+        "commutes_bitwise": true,
+        "all_finite": true
+      },
+      {
+        "regime": "large",
+        "k": 1,
+        "commutes_bitwise": true,
+        "all_finite": false
+      },
+      {
+        "regime": "large",
+        "k": 8,
+        "commutes_bitwise": true,
+        "all_finite": false
+      },
+      {
+        "regime": "tiny_normal",
+        "k": -9,
+        "commutes_bitwise": true,
+        "all_finite": true
+      },
+      {
+        "regime": "tiny_normal",
+        "k": -1,
+        "commutes_bitwise": true,
+        "all_finite": true
+      },
+      {
+        "regime": "tiny_normal",
+        "k": 1,
+        "commutes_bitwise": true,
+        "all_finite": true
+      },
+      {
+        "regime": "tiny_normal",
+        "k": 8,
+        "commutes_bitwise": true,
+        "all_finite": true
+      },
+      {
+        "regime": "subnormal",
+        "k": -9,
+        "commutes_bitwise": true,
+        "all_finite": true
+      },
+      {
+        "regime": "subnormal",
+        "k": -1,
+        "commutes_bitwise": false,
+        "all_finite": true
+      },
+      {
+        "regime": "subnormal",
+        "k": 1,
+        "commutes_bitwise": false,
+        "all_finite": true
+      },
+      {
+        "regime": "subnormal",
+        "k": 8,
+        "commutes_bitwise": false,
+        "all_finite": true
+      },
+      {
+        "regime": "zeros",
+        "k": -9,
+        "commutes_bitwise": true,
+        "all_finite": true
+      },
+      {
+        "regime": "zeros",
+        "k": -1,
+        "commutes_bitwise": true,
+        "all_finite": true
+      },
+      {
+        "regime": "zeros",
+        "k": 1,
+        "commutes_bitwise": true,
+        "all_finite": true
+      },
+      {
+        "regime": "zeros",
+        "k": 8,
+        "commutes_bitwise": true,
+        "all_finite": true
+      }
+    ],
+    "T3b_bf16_midpoints": [
+      {
+        "k": -3,
+        "n_points": 9,
+        "bitwise_equal": true
+      },
+      {
+        "k": 5,
+        "n_points": 9,
+        "bitwise_equal": true
+      }
+    ],
+    "T4_real_scale_ordering": {
+      "n": 200000,
+      "n_events": 0,
+      "frac_differ": 0.0,
+      "binomial_95_upper_bound_if_zero": 1.5e-05,
+      "max_ulp_distance": 0,
+      "cases_gt1ulp": 0,
+      "saved_cases": []
+    }
+  }
+}

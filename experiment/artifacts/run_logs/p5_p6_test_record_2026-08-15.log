@@ -1,0 +1,210 @@
+===== tests_p5_checks.py =====
+PASS c1 identical operands -> silent
+PASS c1 signed zero in scale -> fires
+PASS c1 different operands -> fires
+PASS c2 K=132104 admissible
+PASS c2 K=132105 overflows
+PASS c2 unrestricted K=131071 ok
+PASS c2 unrestricted K=131072 overflows
+PASS c2 reports max_K
+PASS c3 exactly 2^24 -> silent
+PASS c3 2^24+1 -> fires
+PASS c3 negative magnitude counted
+PASS c4 no accumulator -> inapplicable
+PASS c4 equal accs, matching ref -> silent
+PASS c4 arms differ -> fires
+PASS c4 arms agree but ref differs -> fires
+PASS c5 pow2 scales + identical -> silent
+PASS c5 pow2 scales + differing -> fires
+PASS c5 non-pow2 scales -> inapplicable
+PASS c5 +0 vs -0 -> fires (bitwise)
+PASS c6 1 ulp -> silent, reported as 1
+PASS c6 2 ulp -> fires
+PASS c6 +0 vs -0 -> 0 ulp numerically but bitwise unequal (matches metrics_v3)
+PASS c6 mapping identical to metrics_v3 formula
+PASS c6 -1 to +1 spans 32512 steps
+PASS c6 all non-finite -> inapplicable
+PASS c6 threshold travels in verdict
+PASS c7 small margins flip -> auc 1.0
+PASS c7 reversed -> auc 0.0
+PASS c7 all ties -> auc 0.5
+PASS c7 no flips -> auc None, still applicable
+PASS c7 rate over tolerance -> fires
+PASS c7 empty -> inapplicable
+PASS suite counts 7 checks
+PASS suite marks missing inputs inapplicable
+PASS suite n_applicable < 7 when inputs missing
+PASS suite all applicable when fed
+PASS suite clean case fires nothing
+37 passed, 0 failed
+===== tests_p5_inject.py =====
+PASS ref accumulator matches int64 matmul
+PASS ref K is inside the bound (no wrap in the clean case)
+PASS ref output finite
+PASS F8 output bit-identical to reference
+PASS F8 accumulator identical
+PASS F8 operands untouched
+PASS F1_scale_in_bf16 leaves operands untouched
+PASS F1_scale_in_bf16 records observability
+PASS F1_scale_in_bf16 accumulator untouched
+PASS F2_double_rounding leaves operands untouched
+PASS F2_double_rounding records observability
+PASS F2_double_rounding accumulator untouched
+PASS F3_scale_order leaves operands untouched
+PASS F3_scale_order records observability
+PASS F3_scale_order accumulator untouched
+PASS F4_truncate_output leaves operands untouched
+PASS F4_truncate_output records observability
+PASS F4_truncate_output accumulator untouched
+PASS F5_fused_order leaves operands untouched
+PASS F5_fused_order records observability
+PASS F5_fused_order accumulator untouched
+PASS F1_scale_in_bf16 one_element mask size 1
+PASS F1_scale_in_bf16 one_percent mask ~1%
+PASS F1_scale_in_bf16 all_elements mask = numel
+PASS F1_scale_in_bf16 differing count non-decreasing with coverage
+PASS F2_double_rounding one_element mask size 1
+PASS F2_double_rounding one_percent mask ~1%
+PASS F2_double_rounding all_elements mask = numel
+PASS F2_double_rounding differing count non-decreasing with coverage
+PASS F3_scale_order one_element mask size 1
+PASS F3_scale_order one_percent mask ~1%
+PASS F3_scale_order all_elements mask = numel
+PASS F3_scale_order differing count non-decreasing with coverage
+NOTE F3_scale_order is not observable at bf16 output precision in this regime (A-10.3): no check can be credited or blamed for it here
+PASS F4_truncate_output one_element mask size 1
+PASS F4_truncate_output one_percent mask ~1%
+PASS F4_truncate_output all_elements mask = numel
+PASS F4_truncate_output differing count non-decreasing with coverage
+PASS F5_fused_order one_element mask size 1
+PASS F5_fused_order one_percent mask ~1%
+PASS F5_fused_order all_elements mask = numel
+PASS F5_fused_order differing count non-decreasing with coverage
+NOTE F5_fused_order is not observable at bf16 output precision in this regime (A-10.3): no check can be credited or blamed for it here
+PASS F6 exact acc exceeds 2^31
+PASS F6 reported acc is the wrapped value
+PASS F6 operands are the overflow-inducing ones
+PASS F7 max|acc| above 2^24
+PASS F7 max|acc| below 2^31 (no wrap)
+PASS F7 no wrap occurred
+PASS F9 one_element makes operands differ
+PASS F9 one_percent makes operands differ
+PASS F9 all_elements makes operands differ
+PASS same seed -> identical injection
+PASS different seed -> different mask
+PASS catalogue has nine faults
+PASS unknown fault rejected
+PASS binary fault rejects severity
+PASS binary faults run once only
+PASS F3 reassociation stays below bf16 resolution here (documented, not a bug)
+PASS observability survey covers every fault/severity
+PASS survey marks F3 unobservable
+PASS survey marks F1 observable
+60 passed, 0 failed
+===== tests_p5_accumulator.py =====
+PASS fp64 term bound is far above any real K
+PASS fp64 path bit-identical to int64 at M=16
+PASS result dtype is int64 at M=16
+PASS fp64 path bit-identical to int64 at M=64
+PASS result dtype is int64 at M=64
+PASS fp64 path bit-identical to int64 at M=128
+PASS result dtype is int64 at M=128
+PASS all -128 worst case still bit-identical
+PASS worst case magnitude is what we expect (16384*K)
+9 passed, 0 failed
+===== tests_p5_runner.py =====
+PASS checkpoint index finds weight and scale
+PASS observation shapes are (M,K) and (N,K)
+PASS weight scale is transposed to (1,N)
+PASS meta records that weight_scale was already bf16
+PASS meta records the source dtypes
+PASS pow2 regime makes every scale a power of two
+PASS real regime scales are not all powers of two
+PASS null fault: arms are bit-identical
+PASS null fault: K is the layer's K
+PASS precondition: the two arms are identical by construction
+PASS precondition: arms hold the fault's own operands
+PASS precondition: acc_ref is the exact value, not the wrapped one
+PASS operand fault: arm B's activations differ from arm A's
+PASS operand fault: acc_ref describes arm A, the unmodified side
+PASS epilogue fault: arm A is the reference on the original operands
+PASS epilogue fault: operands are shared between arms
+PASS predicted fire that fires is a hit
+PASS predicted fire that stays silent is a false negative
+PASS predicted silence that fires is a false positive
+PASS predicted silence that stays silent is correct silence
+PASS a not-applicable prediction classifies as not_applicable
+PASS an inapplicable verdict is not counted as a false negative
+PASS unobservable fault excludes the two output-comparison checks
+PASS unobservable fault does not exclude the precondition checks
+PASS detection rate is hits over predicted-fire cells only
+PASS false negative rate complements it
+PASS excluded cells are in neither detection denominator
+PASS excluded cells are counted separately
+PASS false positive rate is over silence-predicted cells
+PASS per-fault rows counted
+PASS denominator note travels with the numbers
+PASS M_TILE uses the whole capture
+PASS F5 is sub-tiled
+PASS both scale regimes are run
+PASS v1 tolerances are unchanged
+PASS matrix covers exactly the nine faults
+PASS every per-severity fault has a cell for each of its severities
+PASS 77 cells
+PASS corrections are flagged for scrutiny
+39 passed, 0 failed
+===== tests_p6.py =====
+PASS median is an observed value
+PASS median is the middle, not the mean
+PASS min and max reported
+PASS full series retained for inspection
+PASS IQR present when n>=4
+PASS IQR absent when n<4
+PASS outlier does not move the median
+PASS outlier does move the mean (why we report median)
+PASS grid has six points
+PASS grid covers batch 1,4,16
+PASS grid covers short and long ISL
+PASS repeats odd so median is observed
+PASS warmup nonzero
+PASS osl > 1 so decode is measurable
+PASS relative change is negative when pow2 is slower
+PASS relative change magnitude correct (10% slower prefill)
+PASS decode change reported separately
+PASS comparison keeps both identity blocks
+PASS commitment text travels with the result
+PASS grid mismatch refused
+PASS absent decode data -> None, not fabricated
+PASS identical arms -> zero delta and CI containing zero
+PASS ppl uses token-weighted mean nll
+23 passed, 0 failed
+===== tests_p6_windows.py =====
+PASS derivation reproduces calib_prompts.json exactly
+PASS 64 study windows
+PASS study spans are contiguous non-overlapping 320-token
+PASS 256 eval windows derived
+PASS eval starts right after the study set
+PASS no eval span intersects a study span
+PASS eval texts and study texts are disjoint sets
+PASS guard passes on the real eval set
+PASS guard records the calib file hash
+PASS guard fires on span overlap
+PASS guard fires on derivation drift
+PASS content hash is 64 hex
+PASS content hash is stable across calls
+PASS content hash changes if a text changes
+PASS content hash changes if a span changes
+PASS content hash changes if window order changes
+PASS built file carries schema, hash, verdict
+PASS built file records the derivation environment
+PASS load_verified accepts an untouched file
+PASS verification is over the windows, not the metadata
+PASS load_verified refuses: a text edited
+PASS load_verified refuses: a span edited
+PASS load_verified refuses: windows reordered
+PASS load_verified refuses a wrong schema
+PASS load_verified refuses a failing verdict
+PASS stage A defers datasets and transformers to inside functions
+PASS stage B defers vllm to inside window_nll
+PASS stage B does import p6_windows at module level (needs load_verified)
+28 passed, 0 failed

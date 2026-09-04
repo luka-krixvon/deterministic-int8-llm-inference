@@ -1,0 +1,39 @@
+{
+  "base": {
+    "checkpoint_digest": "bc6258648cc6c380e4e487a0b6539a3f5c6183a84cdfd07f23c78b7d91d1183e",
+    "model": "/models/qwen3-1.7b-int8-w8a8",
+    "n_tokens": 86365,
+    "nll_sum": 271558.7857449134,
+    "ppl": 23.203781022242758
+  },
+  "bootstrap": {
+    "ci90_high": 0.1647086886088509,
+    "ci90_low": -0.013964174034750698,
+    "cluster": "window",
+    "median": 0.0752270101870458,
+    "n_boot": 10000,
+    "paired": true,
+    "seed": 20260814
+  },
+  "commitment": "Pre-registration A-10 forbids withholding this result or restating the pow2 intervention as diagnostic-only to avoid publishing a cost. Whatever the delta is, it is reported.",
+  "delta_ppl_pow2_minus_base": 0.07453820916051512,
+  "n_windows": 256,
+  "nll_accumulated_in": "float64",
+  "pow2": {
+    "checkpoint_digest": "d6a3722b094b398b6e2603be746132d53a6f939d49a38c29f0241a9069876502",
+    "model": "/models/qwen3-1.7b-int8-pow2_nearest",
+    "n_tokens": 86365,
+    "nll_sum": 271835.77400134027,
+    "ppl": 23.278319231403273
+  },
+  "relative_delta": 0.0032123303132823066,
+  "schema": "p6-accuracy-compare-v2",
+  "windows_content_sha256": "db8ffa33e242a6b2feb0df21b8e4d281814aafaa81b353fab6c1db2177cfbe54",
+  "windows_disjointness": {
+    "calib_prompts_sha256": "2e965138f8d8942d61cb52df3f2f1e7630a8302fa22d446ebe75d26c142ef143",
+    "study_rederived_matches_committed": true,
+    "study_windows": 64,
+    "text_collisions": 0,
+    "token_span_overlaps": 0
+  }
+}

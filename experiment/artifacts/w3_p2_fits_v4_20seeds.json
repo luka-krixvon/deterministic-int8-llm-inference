@@ -1,0 +1,235 @@
+{
+  "input": "w3_p2_raw_20seeds.json",
+  "objective": "unweighted linear SSE on per-(K,seed) fractions; identical for all models; p=0 kept",
+  "fits": {
+    "M_sqrt": {
+      "c": 0.003141305420944702,
+      "sse": 0.08311182909000021
+    },
+    "M_sat_sqrt": {
+      "c": 0.004107065428834398,
+      "sse": 0.0038793894792410397
+    },
+    "M_pow": {
+      "c": 0.006685317075545203,
+      "alpha": 0.42223610631009534,
+      "sse": 0.013293176573547914,
+      "alpha_bounds": [
+        0.0,
+        1.5
+      ],
+      "status": "ok",
+      "diagnostics": [
+        {
+          "c0": 0.001,
+          "a0": 0.3,
+          "success": true,
+          "nit": 47,
+          "fun": 0.01329317677839616,
+          "alpha_raw": 0.42222830071518,
+          "in_bounds": true
+        },
+        {
+          "c0": 0.001,
+          "a0": 0.5,
+          "success": true,
+          "nit": 45,
+          "fun": 0.013293176573547914,
+          "alpha_raw": 0.42223610631009534,
+          "in_bounds": true
+        },
+        {
+          "c0": 0.001,
+          "a0": 0.7,
+          "success": true,
+          "nit": 56,
+          "fun": 0.013293176735485013,
+          "alpha_raw": 0.42223331930270624,
+          "in_bounds": true
+        },
+        {
+          "c0": 0.01,
+          "a0": 0.3,
+          "success": true,
+          "nit": 47,
+          "fun": 0.013293176577943233,
+          "alpha_raw": 0.42223446574142753,
+          "in_bounds": true
+        },
+        {
+          "c0": 0.01,
+          "a0": 0.5,
+          "success": true,
+          "nit": 40,
+          "fun": 0.013293176694517206,
+          "alpha_raw": 0.4222364714167518,
+          "in_bounds": true
+        },
+        {
+          "c0": 0.01,
+          "a0": 0.7,
+          "success": true,
+          "nit": 50,
+          "fun": 0.013293176770690498,
+          "alpha_raw": 0.42223209761065095,
+          "in_bounds": true
+        }
+      ]
+    },
+    "M_gensat": {
+      "c": 0.0034572223427977006,
+      "alpha": 0.5183937167293793,
+      "sse": 0.0010835260344353602,
+      "alpha_bounds": [
+        0.0,
+        1.5
+      ],
+      "status": "ok",
+      "diagnostics": [
+        {
+          "c0": 0.001,
+          "a0": 0.3,
+          "success": true,
+          "nit": 51,
+          "fun": 0.0010835260357381126,
+          "alpha_raw": 0.5183873842626328,
+          "in_bounds": true
+        },
+        {
+          "c0": 0.001,
+          "a0": 0.5,
+          "success": true,
+          "nit": 39,
+          "fun": 0.0010835261091615834,
+          "alpha_raw": 0.5183912174699689,
+          "in_bounds": true
+        },
+        {
+          "c0": 0.001,
+          "a0": 0.7,
+          "success": true,
+          "nit": 46,
+          "fun": 0.0010835262200017681,
+          "alpha_raw": 0.5183897243937451,
+          "in_bounds": true
+        },
+        {
+          "c0": 0.01,
+          "a0": 0.3,
+          "success": true,
+          "nit": 45,
+          "fun": 0.0010835260344353602,
+          "alpha_raw": 0.5183937167293793,
+          "in_bounds": true
+        },
+        {
+          "c0": 0.01,
+          "a0": 0.5,
+          "success": true,
+          "nit": 45,
+          "fun": 0.0010835260720582632,
+          "alpha_raw": 0.5183896365727344,
+          "in_bounds": true
+        },
+        {
+          "c0": 0.01,
+          "a0": 0.7,
+          "success": true,
+          "nit": 42,
+          "fun": 0.0010835260976502265,
+          "alpha_raw": 0.5183877745648813,
+          "in_bounds": true
+        }
+      ]
+    }
+  },
+  "heldout_predictive_sse": {
+    "M_sqrt": {
+      "loso_sse": 0.0831130257280561,
+      "loko_sse": 0.19779869361124197
+    },
+    "M_sat_sqrt": {
+      "loso_sse": 0.0038804081151590343,
+      "loko_sse": 0.004846545943140915
+    },
+    "M_pow": {
+      "loso_sse": 0.0132948381619915,
+      "loko_sse": 0.059894013301135474
+    },
+    "M_gensat": {
+      "loso_sse": 0.001085228980424619,
+      "loko_sse": 0.0040264934713846925
+    }
+  },
+  "model_comparison_wording": "M_gensat attains the lowest SSE among the four pre-listed candidates (in-sample and held-out as reported); alpha~0.5 is COMPATIBLE with sqrt-shaped saturation; no functional family is excluded and no causal mechanism is identified by this fit alone",
+  "gensat_alpha_jackknife": {
+    "values": [
+      0.5184565365637838,
+      0.5183762905055911,
+      0.5184486756676955,
+      0.5185055148217563,
+      0.518306741352937,
+      0.5184198202649921,
+      0.5183581175510557,
+      0.5184313331513062,
+      0.518375921622245,
+      0.5184247566074396,
+      0.5183465388320052,
+      0.5183909970823526,
+      0.5183742374430081,
+      0.5183773419142559,
+      0.518343575729602,
+      0.5184106241519033,
+      0.5184161885098952,
+      0.5183803028037004,
+      0.5183456330810318,
+      0.518336850730672
+    ],
+    "min": 0.518306741352937,
+    "max": 0.5185055148217563
+  },
+  "gensat_leave_one_K_out": [
+    {
+      "left_out_K": 512,
+      "alpha": 0.5169430462807336
+    },
+    {
+      "left_out_K": 1024,
+      "alpha": 0.5163232453459354
+    },
+    {
+      "left_out_K": 2048,
+      "alpha": 0.5168835461855186
+    },
+    {
+      "left_out_K": 4096,
+      "alpha": 0.5189961716615253
+    },
+    {
+      "left_out_K": 8192,
+      "alpha": 0.5194026122568275
+    },
+    {
+      "left_out_K": 16384,
+      "alpha": 0.517232474032592
+    },
+    {
+      "left_out_K": 32768,
+      "alpha": 0.5288237647368975
+    }
+  ],
+  "gensat_K_range_sensitivity": {
+    "disjoint": true,
+    "middle_K_excluded": 4096,
+    "low_half_alpha": 0.5284134438854213,
+    "high_half_alpha": 0.4992122181055138
+  },
+  "gensat_alpha_seed_bootstrap_ci90_EXPLORATORY": [
+    0.5180712179143836,
+    0.5187018818213947
+  ],
+  "labels": {
+    "ci_status": "exploratory conditional interval: 5 seeds, fixed K grid/shape/kernel pair/input distribution; does NOT cover model misspecification or design choices",
+    "verdict_wording": "descriptive, model-conditional; no binary sqrt-compatibility criterion is applied"
+  }
+}

@@ -1,0 +1,10 @@
++ echo 'command: python3 /w/w5_first_divergence.py --model /models/qwen3-1.7b-int8-w8a8-pow2 --arm CUTLASS --prompt-idx 0 --out /w/fd_CUTLASS_0.json'
+command: python3 /w/w5_first_divergence.py --model /models/qwen3-1.7b-int8-w8a8-pow2 --arm CUTLASS --prompt-idx 0 --out /w/fd_CUTLASS_0.json
++ echo 'git_sha: 3dbd6bf'
+git_sha: 3dbd6bf
++ echo 'image: vllm/vllm-openai@sha256:0a51ea5b4ae2dc5d81890e5173f54203d2a3ae0cfffe51b8fd2afd4391bfd967'
+image: vllm/vllm-openai@sha256:0a51ea5b4ae2dc5d81890e5173f54203d2a3ae0cfffe51b8fd2afd4391bfd967
++ docker run --rm --gpus '"device=0"' --shm-size=2g -v /home/ubuntu/integer_alibi:/w -w /w -v /home/ubuntu/integer_alibi/models:/models:ro --entrypoint python3 vllm/vllm-openai@sha256:0a51ea5b4ae2dc5d81890e5173f54203d2a3ae0cfffe51b8fd2afd4391bfd967 /w/w5_first_divergence.py --model /models/qwen3-1.7b-int8-w8a8-pow2 --arm CUTLASS --prompt-idx 0 --out /w/fd_CUTLASS_0.json
+python3: can't open file '/w/w5_first_divergence.py': [Errno 2] No such file or directory
++ echo EXIT_e2=2
+EXIT_e2=2

@@ -1,0 +1,56 @@
+cff-version: 1.2.0
+message: "If you use this code or the measurement artifacts, please cite the paper."
+title: "The Integer Alibi: Localizing Cross-Kernel Divergence in INT8-Quantized LLM Inference"
+abstract: >-
+  Two GPU kernels implementing the same scaled INT8 GEMM interface are usually
+  treated as interchangeable. Holding the checkpoint, prompts, hardware,
+  inference engine, decoding and quantization configuration fixed and swapping
+  only the INT8 linear kernel, each arm is individually deterministic yet the
+  arms agree on no greedy sequence. Because the INT32 dot product is exact and
+  order-independent under a verified no-overflow bound, the accumulator is
+  excluded as a source, which localizes the divergence to scale application and
+  output rounding; a power-of-two scale probe restores bitwise agreement per
+  layer and end to end.
+authors:
+  - family-names: Chen
+    given-names: Teng-Ruei
+    orcid: "https://orcid.org/0000-0001-8995-334X"
+    affiliation: Krixvon
+    email: luka@krixvon.com
+type: article
+license: MIT
+date-released: "2026-08-14"
+identifiers:
+  - type: other
+    value: "arXiv:2608.13756"
+  - type: doi
+    value: "10.48550/arXiv.2608.13756"
+url: "https://arxiv.org/abs/2608.13756"
+keywords:
+  - quantized inference
+  - numerical reproducibility
+  - GPU kernels
+  - INT8
+  - conformance testing
+  - large language model serving
+references:
+  - type: article
+    title: "Spec Sheets Are Not Kernels: An ISA- and Source-Level Audit of INT8 Availability on NVIDIA Blackwell Ultra"
+    authors:
+      - family-names: Chen
+        given-names: Teng-Ruei
+    year: 2026
+    identifiers:
+      - type: other
+        value: "arXiv:2608.11693"
+  - type: article
+    title: "Deterministic LLM Inference Across GPU Kernels: Power-of-Two INT8 Quantization Scales and the Limits of Tolerance-Based Conformance"
+    authors:
+      - family-names: Chen
+        given-names: Teng-Ruei
+    year: 2026
+    identifiers:
+      - type: other
+        value: "arXiv:2609.00363"
+      - type: doi
+        value: "10.48550/arXiv.2609.00363"

@@ -1,0 +1,15 @@
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Applying quantization config:   0%|          | 0/196 [00:00<?, ?it/s]Applying quantization config: 100%|██████████| 196/196 [00:00<00:00, 10931.82it/s]
+Compressing model:   0%|          | 0/196 [00:00<?, ?it/s]Compressing model:  35%|███▌      | 69/196 [00:00<00:00, 687.69it/s]Compressing model:  73%|███████▎  | 143/196 [00:00<00:00, 713.97it/s]Compressing model: 100%|██████████| 196/196 [00:00<00:00, 720.65it/s]
+Loading weights:   0%|          | 0/506 [00:00<?, ?it/s]Loading weights:  28%|██▊       | 142/506 [00:00<00:00, 1414.61it/s]Loading weights:  71%|███████   | 359/506 [00:00<00:00, 1855.80it/s]Loading weights: 100%|██████████| 506/506 [00:00<00:00, 1889.42it/s]
+int8 linear layers: 196
+Decompressing model:   0%|          | 0/196 [00:00<?, ?it/s]Decompressing model: 100%|██████████| 196/196 [00:00<00:00, 3342.54it/s]
+  8/64 prompts
+  16/64 prompts
+  24/64 prompts
+  32/64 prompts
+  40/64 prompts
+  48/64 prompts
+  56/64 prompts
+  64/64 prompts
+[p1] 196/196 layers predicted BITWISE-SAFE -> p1_predictions_qwen3-1.7b.json

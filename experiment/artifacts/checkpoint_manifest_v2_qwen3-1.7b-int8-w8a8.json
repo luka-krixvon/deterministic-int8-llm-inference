@@ -1,0 +1,59 @@
+{
+  "checkpoint": "qwen3-1.7b-int8-w8a8",
+  "checkpoint_digest": "bc6258648cc6c380e4e487a0b6539a3f5c6183a84cdfd07f23c78b7d91d1183e",
+  "parent_model": "Qwen/Qwen3-1.7B",
+  "parent_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+  "quantization_config": {
+    "config_groups": {
+      "group_0": {
+        "format": "int-quantized",
+        "input_activations": {
+          "actorder": null,
+          "block_structure": null,
+          "dynamic": true,
+          "group_size": null,
+          "num_bits": 8,
+          "observer": null,
+          "observer_kwargs": {},
+          "scale_dtype": null,
+          "strategy": "token",
+          "symmetric": true,
+          "type": "int",
+          "zp_dtype": null
+        },
+        "output_activations": null,
+        "targets": [
+          "Linear"
+        ],
+        "weights": {
+          "actorder": null,
+          "block_structure": null,
+          "dynamic": false,
+          "group_size": null,
+          "num_bits": 8,
+          "observer": "memoryless_minmax",
+          "observer_kwargs": {},
+          "scale_dtype": null,
+          "strategy": "channel",
+          "symmetric": true,
+          "type": "int",
+          "zp_dtype": null
+        }
+      }
+    },
+    "format": "int-quantized",
+    "global_compression_ratio": null,
+    "ignore": [
+      "lm_head"
+    ],
+    "kv_cache_scheme": null,
+    "quant_method": "compressed-tensors",
+    "quantization_status": "compressed",
+    "sparsity_config": {},
+    "transform_config": {},
+    "version": "0.18.0"
+  },
+  "calibration_dataset": "open_platypus (llmcompressor builtin; revision unrecorded at quantization time \u2014 honest gap)",
+  "generator": "llmcompressor 0.13.0",
+  "tokenizer_files_sha256": "f0cd259fbe8a00a7ad6aa7e769c0d67457a33cc812fc7f38eeba1b51a0fe2fdb"
+}

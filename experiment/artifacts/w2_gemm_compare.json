@@ -1,0 +1,111 @@
+{
+  "discovery": {
+    "scaled_int8_quant": true,
+    "cutlass_scaled_mm": true,
+    "triton_mm": "vllm.model_executor.layers.quantization.compressed_tensors.triton_scaled_mm"
+  },
+  "quant_compare": [
+    {
+      "M": 1,
+      "K": 2048,
+      "quant_self_consistent": true
+    },
+    {
+      "M": 16,
+      "K": 2048,
+      "quant_self_consistent": true
+    },
+    {
+      "M": 256,
+      "K": 2048,
+      "quant_self_consistent": true
+    },
+    {
+      "M": 16,
+      "K": 6144,
+      "quant_self_consistent": true
+    }
+  ],
+  "gemm_compare": [
+    {
+      "M": 1,
+      "K": 2048,
+      "N": 2048,
+      "scales": "real",
+      "bitwise_identical": true,
+      "max_abs_diff": 0.0,
+      "max_rel_diff": 0.0,
+      "frac_elems_differ": 0.0
+    },
+    {
+      "M": 1,
+      "K": 2048,
+      "N": 2048,
+      "scales": "pow2",
+      "bitwise_identical": true,
+      "max_abs_diff": 0.0,
+      "max_rel_diff": 0.0,
+      "frac_elems_differ": 0.0
+    },
+    {
+      "M": 16,
+      "K": 2048,
+      "N": 6144,
+      "scales": "real",
+      "bitwise_identical": true,
+      "max_abs_diff": 0.0,
+      "max_rel_diff": 0.0,
+      "frac_elems_differ": 0.0
+    },
+    {
+      "M": 16,
+      "K": 2048,
+      "N": 6144,
+      "scales": "pow2",
+      "bitwise_identical": true,
+      "max_abs_diff": 0.0,
+      "max_rel_diff": 0.0,
+      "frac_elems_differ": 0.0
+    },
+    {
+      "M": 256,
+      "K": 2048,
+      "N": 2048,
+      "scales": "real",
+      "bitwise_identical": false,
+      "max_abs_diff": 0.25,
+      "max_rel_diff": 0.007194244768470526,
+      "frac_elems_differ": 7.62939453125e-06
+    },
+    {
+      "M": 256,
+      "K": 2048,
+      "N": 2048,
+      "scales": "pow2",
+      "bitwise_identical": true,
+      "max_abs_diff": 0.0,
+      "max_rel_diff": 0.0,
+      "frac_elems_differ": 0.0
+    },
+    {
+      "M": 64,
+      "K": 6144,
+      "N": 2048,
+      "scales": "real",
+      "bitwise_identical": true,
+      "max_abs_diff": 0.0,
+      "max_rel_diff": 0.0,
+      "frac_elems_differ": 0.0
+    },
+    {
+      "M": 64,
+      "K": 6144,
+      "N": 2048,
+      "scales": "pow2",
+      "bitwise_identical": true,
+      "max_abs_diff": 0.0,
+      "max_rel_diff": 0.0,
+      "frac_elems_differ": 0.0
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+PASS divisor agrees with calculate_qparams
+PASS int8 range is [-128, 127]
+PASS [model.layers.0.mlp.down_proj] minmax scale matches base exactly
+PASS [model.layers.0.mlp.down_proj] minmax int8 matches base exactly
+PASS [model.layers.0.mlp.down_proj] fp32 division does NOT reproduce base (bf16 division is essential)
+PASS [model.layers.0.mlp.down_proj] base clips some elements (127.5 divisor sends round(127.5) to 128)
+PASS [model.layers.10.self_attn.o_proj] minmax scale matches base exactly
+PASS [model.layers.10.self_attn.o_proj] minmax int8 matches base exactly
+PASS [model.layers.10.self_attn.o_proj] fp32 division does NOT reproduce base (bf16 division is essential)
+PASS [model.layers.10.self_attn.o_proj] base clips some elements (127.5 divisor sends round(127.5) to 128)
+PASS pow2_ceil scale is never smaller than minmax
+PASS pow2_ceil scales are exact powers of two
+PASS pow2_ceil clips no more than base (11 vs 323)
+PASS pow2_nearest scales are exact powers of two
+PASS pow2_nearest is sometimes SMALLER than minmax, so the clipping hypothesis is testable
+PASS pow2_nearest clips more than pow2_ceil (3483 vs 11)
+PASS pow2_search scales are exact powers of two
+PASS pow2_search picks the minimum-error offset per channel
+PASS pow2_search never exceeds ceil's error
+PASS minmax: int8 range [-128,127] gives product bound 16256
+PASS pow2_nearest: int8 range [-128,127] gives product bound 16256
+PASS pow2_ceil: int8 range [-128,127] gives product bound 16256
+PASS pow2_search: int8 range [-128,127] gives product bound 16256
+23 passed, 0 failed

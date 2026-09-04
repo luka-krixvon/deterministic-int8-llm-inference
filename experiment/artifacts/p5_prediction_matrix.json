@@ -1,0 +1,591 @@
+{
+  "cell_counts": {
+    "corrected_post_data": 3,
+    "not_applicable": 11,
+    "predicted_miss": 6,
+    "should_fire": 14,
+    "should_not_fire": 52,
+    "total": 77
+  },
+  "checks": [
+    "shared_operands",
+    "int32_no_overflow",
+    "lossless_fp32_entry",
+    "exact_accumulator",
+    "pow2_scale_identity",
+    "real_scale_tolerance",
+    "token_level_risk"
+  ],
+  "faults": {
+    "F1_scale_in_bf16": {
+      "cells": {
+        "exact_accumulator": {
+          "corrected_post_data": false,
+          "predicted_miss": false,
+          "prediction": "should_not_fire",
+          "reason": "the fault is entirely after the accumulator"
+        },
+        "int32_no_overflow": {
+          "corrected_post_data": false,
+          "predicted_miss": false,
+          "prediction": "should_not_fire",
+          "reason": "K unchanged and inside the bound"
+        },
+        "lossless_fp32_entry": {
+          "corrected_post_data": false,
+          "predicted_miss": false,
+          "prediction": "should_not_fire",
+          "reason": "accumulator untouched"
+        },
+        "pow2_scale_identity": {
+          "corrected_post_data": false,
+          "predicted_miss": false,
+          "prediction": "should_not_fire",
+          "reason": "no-op under pow2 scales, so outputs stay bit-identical"
+        },
+        "real_scale_tolerance": {
+          "corrected_post_data": false,
+          "predicted_miss": true,
+          "prediction": "should_not_fire",
+          "reason": "PREDICTED MISS. Rounding a scale to bf16 moves it by at most 2^-9 relative, about half an output spacing, so differences should land at 1 ulp and sit inside a tolerance of 1. If measurement confirms this, check 6 has a false negative for reduced scale precision at its stated tolerance, which is a finding about the tolerance and not about the implementation."
+        },
+        "shared_operands": {
+          "corrected_post_data": false,
+          "predicted_miss": false,
+          "prediction": "should_not_fire",
+          "reason": "operands untouched; asserted by the injector self-tests"
+        },
+        "token_level_risk": {
+          "corrected_post_data": false,
+          "predicted_miss": false,
+          "prediction": "not_applicable",
+          "reason": "token-level; P5 is layer-level and supplies no margins"
+        }
+      },
+      "cells_by_severity": null,
+      "kind": "epilogue",
+      "note": "Under power-of-two scales this fault is a no-op: a power of two is exactly representable in bfloat16, so casting the scale changes nothing. Its observability is therefore regime-dependent, and the pow2 column below says silent for that reason rather than because the check is weak.",
+      "observable_pow2_scales": false,
+      "observable_real_scales": true,
+      "pairing": "Arm A is the reference on the original operands; arm B is the injected epilogue on those same operands."
+    },
+    "F2_double_rounding": {
+      "cells": {
+        "exact_accumulator": {
+          "corrected_post_data": false,
+          "predicted_miss": false,
+          "prediction": "should_not_fire",
+          "reason": "fault is after the accumulator"
+        },
+        "int32_no_overflow": {
+          "corrected_post_data": false,
+          "predicted_miss": false,
+          "prediction": "should_not_fire",
+          "reason": "K unchanged"
+        },
+        "lossless_fp32_entry": {
+          "corrected_post_data": false,
+          "predicted_miss": false,
+          "prediction": "should_not_fire",
+          "reason": "accumulator untouched"
+        },
+        "pow2_scale_identity": {
+          "corrected_post_data": false,
+          "predicted_miss": false,
+          "prediction": "should_not_fire",
+          "reason": "no-op under pow2 scales"
+        },
+        "real_scale_tolerance": {
+          "corrected_post_data": false,
+          "predicted_miss": true,
+          "prediction": "should_not_fire",
+          "reason": "PREDICTED MISS at all_elements. An extra bf16 rounding costs at most half a spacing at that step, so the compounded error should stay at 1 ulp. Predicting a miss here is the point: if it does exceed 1 ulp, the tolerance is tighter than this reasoning."
+        },
+        "shared_operands": {
+          "corrected_post_data": false,
+          "predicted_miss": false,
+          "prediction": "should_not_fire",
+          "reason": "operands untouched"
+        },
+        "token_level_risk": {
+          "corrected_post_data": false,
+          "predicted_miss": false,
+          "prediction": "not_applicable",
+          "reason": "token-level"
+        }
+      },
+      "cells_by_severity": null,
+      "kind": "epilogue",
+      "note": "Under pow2 scales the intermediate is a power of two times an exact integer, representable in bf16 when the accumulator is, so the extra rounding is a no-op.",
+      "observable_pow2_scales": false,
+      "observable_real_scales": true,
+      "pairing": "Arm A is the reference on the original operands; arm B is the injected epilogue on those same operands."
+    },
+    "F3_scale_order": {
+      "cells": {
+        "exact_accumulator": {
+          "corrected_post_data": false,
+          "predicted_miss": false,
+          "prediction": "should_not_fire",
+          "reason": "fault is after the accumulator"
+        },
+        "int32_no_overflow": {
+          "corrected_post_data": false,
+          "predicted_miss": false,
+          "prediction": "should_not_fire",
+          "reason": "K unchanged"
+        },
+        "lossless_fp32_entry": {
+          "corrected_post_data": false,
+          "predicted_miss": false,
+          "prediction": "should_not_fire",
+          "reason": "accumulator untouched"
+        },
+        "pow2_scale_identity": {
+          "corrected_post_data": false,
+          "predicted_miss": false,
+          "prediction": "should_not_fire",
+          "reason": "under pow2 scales both associations are exact"
+        },
+        "real_scale_tolerance": {
+          "corrected_post_data": false,
+          "predicted_miss": false,
+          "prediction": "should_not_fire",
+          "reason": "fault produces no differing output element; excluded from the denominator, not credited as a detection"
+        },
+        "shared_operands": {
+          "corrected_post_data": false,
+          "predicted_miss": false,
+          "prediction": "should_not_fire",
+          "reason": "operands untouched"
+        },
+        "token_level_risk": {
+          "corrected_post_data": false,
+          "predicted_miss": false,
+          "prediction": "not_applicable",
+          "reason": "token-level"
+        }
+      },
+      "cells_by_severity": null,
+      "kind": "epilogue",
+      "note": "Measured unobservable in all three probed regimes: fp32 reassociation perturbs by about 2^-23 while bf16 rounds at 2^-8, roughly fifteen binades below resolution. Zero differing elements is arithmetic, not a broken injector. Every cell below is therefore silent BY CONSTRUCTION and must be excluded from detection-rate denominators; crediting check 6 with a pass here would be counting an unobservable fault as a detected one.",
+      "observable_pow2_scales": false,
+      "observable_real_scales": false,
+      "pairing": "Arm A is the reference on the original operands; arm B is the injected epilogue on those same operands."
+    },
+    "F4_truncate_output": {
+      "cells": {
+        "exact_accumulator": {
+          "corrected_post_data": false,
+          "predicted_miss": false,
+          "prediction": "should_not_fire",
+          "reason": "fault is after the accumulator"
+        },
+        "int32_no_overflow": {
+          "corrected_post_data": false,
+          "predicted_miss": false,
+          "prediction": "should_not_fire",
+          "reason": "K unchanged"
+        },
+        "lossless_fp32_entry": {
+          "corrected_post_data": false,
+          "predicted_miss": false,
+          "prediction": "should_not_fire",
+          "reason": "accumulator untouched"
+        },
+        "pow2_scale_identity": {
+          "corrected_post_data": true,
+          "predicted_miss": false,
+          "prediction": "should_fire",
+          "reason": "CORRECTED POST-DATA (A-10.6). Originally predicted silent, on the reasoning that a power-of-two scale makes the product exactly representable so truncation and round-to-nearest agree. That confused exact in fp32 with exact in bf16: the accumulator needs seventeen mantissa bits and bf16 carries eight, so the cast still rounds and the two modes still differ. A two-layer smoke run fired this cell. The correction favours the study, so it is flagged: power-of-two scales immunise the epilogue against intermediate precision and rounding order -- F1 and F2 are no-ops here, which is Equation (2) working -- but not against a wrong rounding mode, and check 5 detects that."
+        },
+        "real_scale_tolerance": {
+          "corrected_post_data": false,
+          "predicted_miss": true,
+          "prediction": "should_not_fire",
+          "reason": "PREDICTED MISS. Truncation instead of round-to-nearest costs at most one spacing, so differences should be exactly 1 ulp and inside the tolerance. Of the three predicted misses this is the most consequential: a wrong rounding mode is a real defect that a tolerance of one spacing cannot see."
+        },
+        "shared_operands": {
+          "corrected_post_data": false,
+          "predicted_miss": false,
+          "prediction": "should_not_fire",
+          "reason": "operands untouched"
+        },
+        "token_level_risk": {
+          "corrected_post_data": false,
+          "predicted_miss": false,
+          "prediction": "not_applicable",
+          "reason": "token-level"
+        }
+      },
+      "cells_by_severity": null,
+      "kind": "epilogue",
+      "note": "Observable in BOTH regimes, contrary to the original note, which claimed the pow2 product is exactly representable and the fault a no-op there. It is exact in fp32 but not in bf16, so the output cast still rounds. See A-10.6.",
+      "observable_pow2_scales": true,
+      "observable_real_scales": true,
+      "pairing": "Arm A is the reference on the original operands; arm B is the injected epilogue on those same operands."
+    },
+    "F5_fused_order": {
+      "cells": {
+        "exact_accumulator": {
+          "corrected_post_data": false,
+          "predicted_miss": false,
+          "prediction": "should_not_fire",
+          "reason": "the injected arm reports the same integer accumulator; the fusion changes when the scale is applied, not the integer sum"
+        },
+        "int32_no_overflow": {
+          "corrected_post_data": false,
+          "predicted_miss": false,
+          "prediction": "should_not_fire",
+          "reason": "K unchanged"
+        },
+        "lossless_fp32_entry": {
+          "corrected_post_data": false,
+          "predicted_miss": false,
+          "prediction": "should_not_fire",
+          "reason": "accumulator untouched"
+        },
+        "pow2_scale_identity": {
+          "corrected_post_data": false,
+          "predicted_miss": false,
+          "prediction": "should_not_fire",
+          "reason": "under pow2 scales the folded multiply is exact"
+        },
+        "real_scale_tolerance": {
+          "corrected_post_data": false,
+          "predicted_miss": true,
+          "prediction": "should_not_fire",
+          "reason": "PREDICTED MISS where observable at all: a float reduction of scaled products differs from an integer reduction by well under an output spacing at these magnitudes"
+        },
+        "shared_operands": {
+          "corrected_post_data": false,
+          "predicted_miss": false,
+          "prediction": "should_not_fire",
+          "reason": "operands untouched"
+        },
+        "token_level_risk": {
+          "corrected_post_data": false,
+          "predicted_miss": false,
+          "prediction": "not_applicable",
+          "reason": "token-level"
+        }
+      },
+      "cells_by_severity": null,
+      "kind": "epilogue",
+      "note": "Marginal: 0, 2 and 0 differing elements across the three probed regimes. Whether any cell is testable depends on the regime actually run, so observability is recorded per run and cells with zero differing elements are excluded from denominators exactly as for F3.",
+      "observable_pow2_scales": false,
+      "observable_real_scales": null,
+      "pairing": "Arm A is the reference on the original operands; arm B is the injected epilogue on those same operands."
+    },
+    "F6_int32_overflow": {
+      "cells": {
+        "exact_accumulator": {
+          "corrected_post_data": false,
+          "predicted_miss": false,
+          "prediction": "should_fire",
+          "reason": "the arms report the wrapped INT32 value while acc_ref is the int64 exact value, so this check catches the wrap independently of check 2"
+        },
+        "int32_no_overflow": {
+          "corrected_post_data": false,
+          "predicted_miss": false,
+          "prediction": "should_fire",
+          "reason": "this is the check's purpose: 16129*K exceeds 2^31 at the constructed K, so it must report the layer as unlicensed"
+        },
+        "lossless_fp32_entry": {
+          "corrected_post_data": false,
+          "predicted_miss": false,
+          "prediction": "should_fire",
+          "reason": "the exact accumulator is far above 2^24, so lossless fp32 entry fails as well; two checks firing on one fault is expected and is not double counting"
+        },
+        "pow2_scale_identity": {
+          "corrected_post_data": false,
+          "predicted_miss": true,
+          "prediction": "should_not_fire",
+          "reason": "A equals B, so outputs are bit-identical even though the accumulator is wrong; PREDICTED MISS in the sense that a bitwise output check cannot see a shared wrap"
+        },
+        "real_scale_tolerance": {
+          "corrected_post_data": false,
+          "predicted_miss": false,
+          "prediction": "should_not_fire",
+          "reason": "same reason: identical arms, zero ulp distance, while the computed values are wrong. This is the clearest demonstration that output agreement is not correctness"
+        },
+        "shared_operands": {
+          "corrected_post_data": false,
+          "predicted_miss": false,
+          "prediction": "should_not_fire",
+          "reason": "both arms hold the same overflow-inducing operands"
+        },
+        "token_level_risk": {
+          "corrected_post_data": false,
+          "predicted_miss": false,
+          "prediction": "not_applicable",
+          "reason": "token-level"
+        }
+      },
+      "cells_by_severity": null,
+      "kind": "precondition",
+      "note": "K is raised until 16129*K exceeds 2^31, so the accumulator wraps. Both arms are correct implementations on those operands, so A equals B; what must fire is the precondition machinery, not an A/B comparison.",
+      "observable_pow2_scales": true,
+      "observable_real_scales": true,
+      "pairing": "Both arms are the correct implementation on the precondition-violating operands, so A and B agree by construction. These faults do not create an A/B difference; they create a situation checks 2 and 3 must report. acc_ref is always the int64 exact accumulator, so a wrapped arm differs from it."
+    },
+    "F7_above_2p24": {
+      "cells": {
+        "exact_accumulator": {
+          "corrected_post_data": false,
+          "predicted_miss": false,
+          "prediction": "should_not_fire",
+          "reason": "no wrap, so the arms match the exact reference"
+        },
+        "int32_no_overflow": {
+          "corrected_post_data": false,
+          "predicted_miss": false,
+          "prediction": "should_not_fire",
+          "reason": "K is chosen to stay inside the INT32 bound, so this check must NOT fire; a fire here would mean the two precondition checks are not separable"
+        },
+        "lossless_fp32_entry": {
+          "corrected_post_data": false,
+          "predicted_miss": false,
+          "prediction": "should_fire",
+          "reason": "max|acc| exceeds 2^24, which is exactly what it tests"
+        },
+        "pow2_scale_identity": {
+          "corrected_post_data": false,
+          "predicted_miss": false,
+          "prediction": "should_not_fire",
+          "reason": "A equals B"
+        },
+        "real_scale_tolerance": {
+          "corrected_post_data": false,
+          "predicted_miss": false,
+          "prediction": "should_not_fire",
+          "reason": "A equals B"
+        },
+        "shared_operands": {
+          "corrected_post_data": false,
+          "predicted_miss": false,
+          "prediction": "should_not_fire",
+          "reason": "both arms hold the same operands"
+        },
+        "token_level_risk": {
+          "corrected_post_data": false,
+          "predicted_miss": false,
+          "prediction": "not_applicable",
+          "reason": "token-level"
+        }
+      },
+      "cells_by_severity": null,
+      "kind": "precondition",
+      "note": "K raised so max|acc| exceeds 2^24 while staying below 2^31: no wrap, but the universal lossless-fp32-entry guarantee is gone.",
+      "observable_pow2_scales": true,
+      "observable_real_scales": true,
+      "pairing": "Both arms are the correct implementation on the precondition-violating operands, so A and B agree by construction. These faults do not create an A/B difference; they create a situation checks 2 and 3 must report. acc_ref is always the int64 exact accumulator, so a wrapped arm differs from it."
+    },
+    "F8_null": {
+      "cells": {
+        "exact_accumulator": {
+          "corrected_post_data": false,
+          "predicted_miss": false,
+          "prediction": "should_not_fire",
+          "reason": "semantics-preserving rewrite; a fire is a false positive"
+        },
+        "int32_no_overflow": {
+          "corrected_post_data": false,
+          "predicted_miss": false,
+          "prediction": "should_not_fire",
+          "reason": "semantics-preserving rewrite; a fire is a false positive"
+        },
+        "lossless_fp32_entry": {
+          "corrected_post_data": false,
+          "predicted_miss": false,
+          "prediction": "should_not_fire",
+          "reason": "semantics-preserving rewrite; a fire is a false positive"
+        },
+        "pow2_scale_identity": {
+          "corrected_post_data": false,
+          "predicted_miss": false,
+          "prediction": "should_not_fire",
+          "reason": "semantics-preserving rewrite; a fire is a false positive"
+        },
+        "real_scale_tolerance": {
+          "corrected_post_data": false,
+          "predicted_miss": false,
+          "prediction": "should_not_fire",
+          "reason": "semantics-preserving rewrite; a fire is a false positive"
+        },
+        "shared_operands": {
+          "corrected_post_data": false,
+          "predicted_miss": false,
+          "prediction": "should_not_fire",
+          "reason": "semantics-preserving rewrite; a fire is a false positive"
+        },
+        "token_level_risk": {
+          "corrected_post_data": false,
+          "predicted_miss": false,
+          "prediction": "not_applicable",
+          "reason": "token-level"
+        }
+      },
+      "cells_by_severity": null,
+      "kind": "null",
+      "note": "The false-positive control. Injector self-tests already assert the output is bit-identical to the reference, so every cell must be silent. Any fire is a false positive and is reported as such.",
+      "observable_pow2_scales": false,
+      "observable_real_scales": false,
+      "pairing": "Arm A is the reference; arm B is a semantics-preserving rewrite of it. Any check that fires is reporting a difference that does not exist."
+    },
+    "F9_operand_mismatch": {
+      "cells": null,
+      "cells_by_severity": {
+        "all_elements": {
+          "exact_accumulator": {
+            "corrected_post_data": false,
+            "predicted_miss": false,
+            "prediction": "should_fire",
+            "reason": "wholly different activations give a wholly different accumulator; again a consequence, not self-evidence"
+          },
+          "int32_no_overflow": {
+            "corrected_post_data": false,
+            "predicted_miss": false,
+            "prediction": "should_not_fire",
+            "reason": "K unchanged"
+          },
+          "lossless_fp32_entry": {
+            "corrected_post_data": false,
+            "predicted_miss": false,
+            "prediction": "should_not_fire",
+            "reason": "magnitudes stay in the same range"
+          },
+          "pow2_scale_identity": {
+            "corrected_post_data": false,
+            "predicted_miss": false,
+            "prediction": "should_fire",
+            "reason": "outputs differ far beyond bitwise equality"
+          },
+          "real_scale_tolerance": {
+            "corrected_post_data": false,
+            "predicted_miss": false,
+            "prediction": "should_fire",
+            "reason": "differences are orders of magnitude past one spacing, so this is the one rung where check 6 has real power against an operand fault"
+          },
+          "shared_operands": {
+            "corrected_post_data": false,
+            "predicted_miss": false,
+            "prediction": "should_fire",
+            "reason": "activations requantised from a different seed"
+          },
+          "token_level_risk": {
+            "corrected_post_data": false,
+            "predicted_miss": false,
+            "prediction": "not_applicable",
+            "reason": "token-level; P5 is layer-level"
+          }
+        },
+        "one_element": {
+          "exact_accumulator": {
+            "corrected_post_data": false,
+            "predicted_miss": false,
+            "prediction": "should_fire",
+            "reason": "an int8 element changed, so that row's accumulator changes across all N columns; fires as a consequence of the operand difference, NOT as evidence of its own sensitivity"
+          },
+          "int32_no_overflow": {
+            "corrected_post_data": false,
+            "predicted_miss": false,
+            "prediction": "should_not_fire",
+            "reason": "K unchanged"
+          },
+          "lossless_fp32_entry": {
+            "corrected_post_data": false,
+            "predicted_miss": false,
+            "prediction": "should_not_fire",
+            "reason": "magnitudes stay inside 2^24"
+          },
+          "pow2_scale_identity": {
+            "corrected_post_data": false,
+            "predicted_miss": false,
+            "prediction": "should_fire",
+            "reason": "bitwise, so any single differing output element fires. The per-element change is about a quarter of a spacing, so most elements will round the same way; across 512xN elements at least one is expected to differ. Observability is recorded per row in case that expectation fails."
+          },
+          "real_scale_tolerance": {
+            "corrected_post_data": true,
+            "predicted_miss": false,
+            "prediction": "should_fire",
+            "reason": "CORRECTED POST-DATA (A-10.7). Originally predicted silent on a quarter-spacing argument that looked only at the absolute change. Shifting one int8 activation element moves every accumulator entry in that row by up to |w| = 127, and entries driven near zero by cancellation see that as an enormous relative change: measured 366 to 384 ulp. Check 6 detects operand differences far better than the matrix originally allowed."
+          },
+          "shared_operands": {
+            "corrected_post_data": false,
+            "predicted_miss": false,
+            "prediction": "should_fire",
+            "reason": "one int8 activation element shifted by one step; the check's purpose is to see exactly this"
+          },
+          "token_level_risk": {
+            "corrected_post_data": false,
+            "predicted_miss": false,
+            "prediction": "not_applicable",
+            "reason": "token-level; P5 is layer-level"
+          }
+        },
+        "one_percent": {
+          "exact_accumulator": {
+            "corrected_post_data": true,
+            "predicted_miss": false,
+            "prediction": "should_not_fire",
+            "reason": "CORRECTED POST-DATA (A-10.6). Originally predicted fire, on the reasoning that different operands give different accumulators. At this rung the difference is in a scale and the int8 tensors are untouched, so the accumulator is identical and silence is correct. The original prediction was right for the other two rungs, which is why the cell had to be split."
+          },
+          "int32_no_overflow": {
+            "corrected_post_data": false,
+            "predicted_miss": false,
+            "prediction": "should_not_fire",
+            "reason": "K unchanged"
+          },
+          "lossless_fp32_entry": {
+            "corrected_post_data": false,
+            "predicted_miss": false,
+            "prediction": "should_not_fire",
+            "reason": "magnitudes unchanged"
+          },
+          "pow2_scale_identity": {
+            "corrected_post_data": false,
+            "predicted_miss": false,
+            "prediction": "should_not_fire",
+            "reason": "in the pow2 regime a one-ulp fp32 move almost certainly rounds to the same power of two, leaving the epilogue input unchanged"
+          },
+          "real_scale_tolerance": {
+            "corrected_post_data": false,
+            "predicted_miss": true,
+            "prediction": "should_not_fire",
+            "reason": "PREDICTED MISS, and measured as such in the smoke run at exactly 1 ulp: an instance of the detection floor, not a defect in the check"
+          },
+          "shared_operands": {
+            "corrected_post_data": false,
+            "predicted_miss": false,
+            "prediction": "should_fire",
+            "reason": "one weight scale moved by one float32 ulp; the check compares scales as well as int8 tensors"
+          },
+          "token_level_risk": {
+            "corrected_post_data": false,
+            "predicted_miss": false,
+            "prediction": "not_applicable",
+            "reason": "token-level; P5 is layer-level"
+          }
+        }
+      },
+      "kind": "operand",
+      "note": "Added by A-10.2 because none of the original eight faults made the arms' operands differ, leaving check 1's detection rate untestable. Split per severity by A-10.6: the three rungs change different things, so one prediction cannot cover them. Under any rung, the other checks' verdicts say nothing about their own sensitivity -- once operands differ their premise is gone.",
+      "observable_pow2_scales": true,
+      "observable_real_scales": true,
+      "pairing": "Arm A is the reference on the original operands; arm B is the reference on the modified operands. This is the only fault where the arms legitimately hold different operands."
+    }
+  },
+  "governance": "Pre-registration A-10 fixes the catalogue and the requirement that every cell carry a written prediction; A-10.2 adds F9; A-10.3 replaces the magnitude ladder with a coverage ladder and requires that a fault with zero differing output elements be reported as unobservable rather than as a check insensitivity; A-10.4 discloses what the matrix predicts; A-10.6 is a POST-DATA correction of two cells after a two-layer smoke run, and splits F9 per severity. Cells carrying corrected_post_data are the ones a reader should scrutinise: both the original reasoning and the correction are stated in the reason field, and the P5 report must give detection rates under the original and the corrected matrix.",
+  "pairing_rules": {
+    "epilogue": "Arm A is the reference on the original operands; arm B is the injected epilogue on those same operands.",
+    "null": "Arm A is the reference; arm B is a semantics-preserving rewrite of it. Any check that fires is reporting a difference that does not exist.",
+    "operand": "Arm A is the reference on the original operands; arm B is the reference on the modified operands. This is the only fault where the arms legitimately hold different operands.",
+    "precondition": "Both arms are the correct implementation on the precondition-violating operands, so A and B agree by construction. These faults do not create an A/B difference; they create a situation checks 2 and 3 must report. acc_ref is always the int64 exact accumulator, so a wrapped arm differs from it."
+  },
+  "predicted_misses": "Cells marked PREDICTED MISS expect a real defect to pass a check. They are pre-registered deliberately: F1, F2, F4 and F5 against check 6, and F6 against checks 5 and 6. If measurement contradicts them, the reasoning stated in the cell is what was wrong.",
+  "reading_rule": "A predicted should_fire that stays silent is a false negative. A predicted should_not_fire that fires is a false positive. A cell whose fault produced zero differing output elements in the run is excluded from both denominators and reported separately.",
+  "scope": "P5 measures the sensitivity of checks 1 to 6. Check 7 is token-level and tolerance-based; a layer-level injection supplies no margins or flips, so it is marked not_applicable in all nine rows and its sensitivity is NOT measured by P5. That gap is stated here rather than hidden behind a count of seven.",
+  "status": "PRE-REGISTERED. Written and hash-pinned before any P5 measurement.",
+  "written": "2026-08-14"
+}

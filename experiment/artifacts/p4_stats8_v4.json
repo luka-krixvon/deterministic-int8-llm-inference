@@ -1,0 +1,280 @@
+{
+  "schema": "p4-stats-v4",
+  "join_diagnostics": {
+    "n_common_keys": 512,
+    "n_pairs_used": 512,
+    "n_skipped_missing_margin": 0,
+    "duplicate_keys_invalidated_a": 0,
+    "duplicate_keys_invalidated_b": 0,
+    "only_in_a": 0,
+    "only_in_b": 0,
+    "n_prompts_a": 8,
+    "n_prompts_b": 8,
+    "identity_verified": false,
+    "identity_note": "LEGACY records: index-based identity only; prompt identity NOT verified"
+  },
+  "n_prompts": 8,
+  "n_positions": 512,
+  "n_flips": 49,
+  "flip_rate": 0.095703125,
+  "roc_auc": 0.8724159210120334,
+  "roc_auc_cluster_ci90": [
+    0.8355351170568561,
+    0.9041387959866221
+  ],
+  "cluster_ci_note": "prompt-cluster bootstrap; interpretation depends on cluster count (8 prompts); the 16-prompt reporting threshold is an analysis-freedom choice recorded in A-7",
+  "naive_positionwise_flip_se_CONTRAST_ONLY": 0.013001204636586983,
+  "lopo_auc_influence_diagnostic": [
+    {
+      "left_out_prompt": 0,
+      "auc": 0.8658338741077223
+    },
+    {
+      "left_out_prompt": 1,
+      "auc": 0.8658609128271685
+    },
+    {
+      "left_out_prompt": 2,
+      "auc": 0.8693294181099059
+    },
+    {
+      "left_out_prompt": 3,
+      "auc": 0.8837496411139822
+    },
+    {
+      "left_out_prompt": 4,
+      "auc": 0.8847306286330676
+    },
+    {
+      "left_out_prompt": 5,
+      "auc": 0.8686999783690245
+    },
+    {
+      "left_out_prompt": 6,
+      "auc": 0.8794723222322233
+    },
+    {
+      "left_out_prompt": 7,
+      "auc": 0.8588524811218986
+    }
+  ],
+  "average_precision_grouped_ties": 0.3797759035998358,
+  "brier_heldout": 0.06937632425867292,
+  "brier_constant_prevalence_baseline": 0.08812007992308137,
+  "calibration_bins": {
+    "status": "ok",
+    "meta": [
+      {
+        "bin": 0,
+        "cal_n": 26,
+        "lo": 0.0,
+        "hi": 0.24999994039535522,
+        "median_margin": 0.125
+      },
+      {
+        "bin": 1,
+        "cal_n": 29,
+        "lo": 0.25,
+        "hi": 0.5,
+        "median_margin": 0.25
+      },
+      {
+        "bin": 2,
+        "cal_n": 22,
+        "lo": 0.5000000596046448,
+        "hi": 0.7500000596046448,
+        "median_margin": 0.75
+      },
+      {
+        "bin": 3,
+        "cal_n": 26,
+        "lo": 0.7500001192092896,
+        "hi": 1.1250000596046448,
+        "median_margin": 0.9999999403953552
+      },
+      {
+        "bin": 4,
+        "cal_n": 26,
+        "lo": 1.2499998807907104,
+        "hi": 1.8750000894069672,
+        "median_margin": 1.4999999403953552
+      },
+      {
+        "bin": 5,
+        "cal_n": 25,
+        "lo": 1.9999999552965164,
+        "hi": 2.7499999031424522,
+        "median_margin": 2.3749999403953552
+      },
+      {
+        "bin": 6,
+        "cal_n": 26,
+        "lo": 2.8749998956918716,
+        "hi": 3.7499999441206455,
+        "median_margin": 3.3749999552965164
+      },
+      {
+        "bin": 7,
+        "cal_n": 25,
+        "lo": 3.7499999720603228,
+        "hi": 5.750000139931217,
+        "median_margin": 4.500000234693289
+      },
+      {
+        "bin": 8,
+        "cal_n": 26,
+        "lo": 5.875000013504177,
+        "hi": 8.625000177009497,
+        "median_margin": 6.749999857507646
+      },
+      {
+        "bin": 9,
+        "cal_n": 25,
+        "lo": 8.625000326341251,
+        "hi": 21.625,
+        "median_margin": 11.250000000116415
+      }
+    ]
+  },
+  "calibration_fallback_count": 0,
+  "calibration_curve_heldout": [
+    {
+      "bin": 0,
+      "pred": 0.39285714285714285,
+      "obs": 0.5263157894736842,
+      "eval_n": 19,
+      "eval_flips": 10,
+      "cal_n": 26
+    },
+    {
+      "bin": 1,
+      "pred": 0.22580645161290322,
+      "obs": 0.28125,
+      "eval_n": 32,
+      "eval_flips": 9,
+      "cal_n": 29
+    },
+    {
+      "bin": 2,
+      "pred": 0.16666666666666666,
+      "obs": 0.11538461538461539,
+      "eval_n": 26,
+      "eval_flips": 3,
+      "cal_n": 22
+    },
+    {
+      "bin": 3,
+      "pred": 0.10714285714285714,
+      "obs": 0.047619047619047616,
+      "eval_n": 21,
+      "eval_flips": 1,
+      "cal_n": 26
+    },
+    {
+      "bin": 4,
+      "pred": 0.10714285714285714,
+      "obs": 0.02564102564102564,
+      "eval_n": 39,
+      "eval_flips": 1,
+      "cal_n": 26
+    },
+    {
+      "bin": 5,
+      "pred": 0.037037037037037035,
+      "obs": 0.03125,
+      "eval_n": 32,
+      "eval_flips": 1,
+      "cal_n": 25
+    },
+    {
+      "bin": 6,
+      "pred": 0.07142857142857142,
+      "obs": 0.0,
+      "eval_n": 13,
+      "eval_flips": 0,
+      "cal_n": 26
+    },
+    {
+      "bin": 7,
+      "pred": 0.037037037037037035,
+      "obs": 0.0,
+      "eval_n": 24,
+      "eval_flips": 0,
+      "cal_n": 25
+    },
+    {
+      "bin": 8,
+      "pred": 0.03571428571428571,
+      "obs": 0.0,
+      "eval_n": 22,
+      "eval_flips": 0,
+      "cal_n": 26
+    },
+    {
+      "bin": 9,
+      "pred": 0.037037037037037035,
+      "obs": 0.0,
+      "eval_n": 28,
+      "eval_flips": 0,
+      "cal_n": 25
+    }
+  ],
+  "isotonic_sensitivity": {
+    "method": "decreasing PAVA on calibration bins (A-8 prespec)",
+    "brier_heldout": 0.06933085088439868,
+    "bin_fits": [
+      {
+        "bin": 0,
+        "raw": 0.39285714285714285,
+        "iso": 0.39285714285714285
+      },
+      {
+        "bin": 1,
+        "raw": 0.22580645161290322,
+        "iso": 0.22580645161290322
+      },
+      {
+        "bin": 2,
+        "raw": 0.16666666666666666,
+        "iso": 0.16666666666666666
+      },
+      {
+        "bin": 3,
+        "raw": 0.10714285714285714,
+        "iso": 0.10714285714285714
+      },
+      {
+        "bin": 4,
+        "raw": 0.10714285714285714,
+        "iso": 0.10714285714285714
+      },
+      {
+        "bin": 5,
+        "raw": 0.037037037037037035,
+        "iso": 0.054569976138603586
+      },
+      {
+        "bin": 6,
+        "raw": 0.07142857142857142,
+        "iso": 0.054569976138603586
+      },
+      {
+        "bin": 7,
+        "raw": 0.037037037037037035,
+        "iso": 0.037037037037037035
+      },
+      {
+        "bin": 8,
+        "raw": 0.03571428571428571,
+        "iso": 0.03636269322543832
+      },
+      {
+        "bin": 9,
+        "raw": 0.037037037037037035,
+        "iso": 0.03636269322543832
+      }
+    ],
+    "role": "sensitivity only; binned-Beta remains the main method"
+  },
+  "smoothing": "Beta(1,1); occupied merged bins >= 20 cal positions (asserted)"
+}

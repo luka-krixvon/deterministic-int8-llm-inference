@@ -1,0 +1,2532 @@
+{
+  "checkpoint": "models/qwen3-8b-int8-w8a8",
+  "prompts_sha256_16": "07f90433b3e355dc",
+  "n_prompts": 32,
+  "threshold": 16777216,
+  "n_layers": 252,
+  "n_bitwise_safe": 252,
+  "n_eligible_to_diverge": 0,
+  "caveat": "BITWISE-SAFE is an observed-activation claim: an input off the calibration distribution could exceed the threshold. Layers with bound_also_safe=true are safe unconditionally. The pre-registered prediction applies to the pinned evaluation prompts.",
+  "layers": [
+    {
+      "layer": "model.layers.0.self_attn.q_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 1170935.0,
+      "observed_headroom_bits": 3.8407704383383168,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.0.self_attn.k_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 958756.0,
+      "observed_headroom_bits": 4.1291958243758735,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.0.self_attn.v_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 1008185.0,
+      "observed_headroom_bits": 4.056671035792977,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.0.self_attn.o_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 390769.0,
+      "observed_headroom_bits": 5.424043503804989,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.0.mlp.gate_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 1634501.0,
+      "observed_headroom_bits": 3.359581170918705,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.0.mlp.up_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 1550386.0,
+      "observed_headroom_bits": 3.435803982301013,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.0.mlp.down_proj",
+      "K": 12288,
+      "worst_case_bound": 198193152.0,
+      "observed_max_abs_acc": 432689.0,
+      "observed_headroom_bits": 5.277029081131488,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.1.self_attn.q_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 181456.0,
+      "observed_headroom_bits": 6.530739763994594,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.1.self_attn.k_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 170792.0,
+      "observed_headroom_bits": 6.618119125725568,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.1.self_attn.v_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 160159.0,
+      "observed_headroom_bits": 6.710854654140935,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.1.self_attn.o_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 404108.0,
+      "observed_headroom_bits": 5.375618613175486,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.1.mlp.gate_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 102059.0,
+      "observed_headroom_bits": 7.360956114551228,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.1.mlp.up_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 55210.0,
+      "observed_headroom_bits": 8.247358019320698,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.1.mlp.down_proj",
+      "K": 12288,
+      "worst_case_bound": 198193152.0,
+      "observed_max_abs_acc": 164610.0,
+      "observed_headroom_bits": 6.671307543921609,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.2.self_attn.q_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 359803.0,
+      "observed_headroom_bits": 5.543152309882411,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.2.self_attn.k_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 332792.0,
+      "observed_headroom_bits": 5.655738772670271,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.2.self_attn.v_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 340882.0,
+      "observed_headroom_bits": 5.621087104426036,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.2.self_attn.o_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 376292.0,
+      "observed_headroom_bits": 5.478506907650919,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.2.mlp.gate_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 84429.0,
+      "observed_headroom_bits": 7.634548993911491,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.2.mlp.up_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 77138.0,
+      "observed_headroom_bits": 7.764845879558895,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.2.mlp.down_proj",
+      "K": 12288,
+      "worst_case_bound": 198193152.0,
+      "observed_max_abs_acc": 204298.0,
+      "observed_headroom_bits": 6.359684444860648,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.3.self_attn.q_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 394378.0,
+      "observed_headroom_bits": 5.410780450967435,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.3.self_attn.k_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 341105.0,
+      "observed_headroom_bits": 5.620143623082303,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.3.self_attn.v_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 327764.0,
+      "observed_headroom_bits": 5.677702121014841,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.3.self_attn.o_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 349552.0,
+      "observed_headroom_bits": 5.584852436023185,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.3.mlp.gate_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 89974.0,
+      "observed_headroom_bits": 7.542779457788551,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.3.mlp.up_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 58650.0,
+      "observed_headroom_bits": 8.160156512196767,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.3.mlp.down_proj",
+      "K": 12288,
+      "worst_case_bound": 198193152.0,
+      "observed_max_abs_acc": 439182.0,
+      "observed_headroom_bits": 5.255540599277664,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.4.self_attn.q_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 350054.0,
+      "observed_headroom_bits": 5.582782033439954,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.4.self_attn.k_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 370504.0,
+      "observed_headroom_bits": 5.500870407461195,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.4.self_attn.v_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 308934.0,
+      "observed_headroom_bits": 5.7630608688026195,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.4.self_attn.o_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 407136.0,
+      "observed_headroom_bits": 5.364848731682409,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.4.mlp.gate_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 86306.0,
+      "observed_headroom_bits": 7.602826761285607,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.4.mlp.up_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 53459.0,
+      "observed_headroom_bits": 8.293854769561184,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.4.mlp.down_proj",
+      "K": 12288,
+      "worst_case_bound": 198193152.0,
+      "observed_max_abs_acc": 217833.0,
+      "observed_headroom_bits": 6.267136997908846,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.5.self_attn.q_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 219539.0,
+      "observed_headroom_bits": 6.255882275512386,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.5.self_attn.k_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 207790.0,
+      "observed_headroom_bits": 6.335233300086971,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.5.self_attn.v_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 137441.0,
+      "observed_headroom_bits": 6.931547087104322,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.5.self_attn.o_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 755570.0,
+      "observed_headroom_bits": 4.472794105084194,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.5.mlp.gate_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 111024.0,
+      "observed_headroom_bits": 7.239487948642654,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.5.mlp.up_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 101479.0,
+      "observed_headroom_bits": 7.36917831766428,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.5.mlp.down_proj",
+      "K": 12288,
+      "worst_case_bound": 198193152.0,
+      "observed_max_abs_acc": 295643.0,
+      "observed_headroom_bits": 5.826503407042882,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.6.self_attn.q_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 219554.0,
+      "observed_headroom_bits": 6.255783706755326,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.6.self_attn.k_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 168333.0,
+      "observed_headroom_bits": 6.639041495244604,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.6.self_attn.v_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 135649.0,
+      "observed_headroom_bits": 6.950481113404955,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.6.self_attn.o_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 479918.0,
+      "observed_headroom_bits": 5.127571601186437,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.6.mlp.gate_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 319423.0,
+      "observed_headroom_bits": 5.714891328057374,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.6.mlp.up_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 302097.0,
+      "observed_headroom_bits": 5.795347668232233,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.6.mlp.down_proj",
+      "K": 12288,
+      "worst_case_bound": 198193152.0,
+      "observed_max_abs_acc": 177104.0,
+      "observed_headroom_bits": 6.565762728973108,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.7.self_attn.q_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 166029.0,
+      "observed_headroom_bits": 6.6589242689182555,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.7.self_attn.k_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 116594.0,
+      "observed_headroom_bits": 7.168865977101687,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.7.self_attn.v_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 104453.0,
+      "observed_headroom_bits": 7.327505596844443,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.7.self_attn.o_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 285711.0,
+      "observed_headroom_bits": 5.8758029438218,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.7.mlp.gate_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 367566.0,
+      "observed_headroom_bits": 5.512356202624946,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.7.mlp.up_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 294824.0,
+      "observed_headroom_bits": 5.8305055544828495,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.7.mlp.down_proj",
+      "K": 12288,
+      "worst_case_bound": 198193152.0,
+      "observed_max_abs_acc": 835432.0,
+      "observed_headroom_bits": 4.3278371206821475,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.8.self_attn.q_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 175297.0,
+      "observed_headroom_bits": 6.580558219266978,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.8.self_attn.k_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 148716.0,
+      "observed_headroom_bits": 6.8177996537015675,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.8.self_attn.v_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 109901.0,
+      "observed_headroom_bits": 7.254155011992356,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.8.self_attn.o_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 272205.0,
+      "observed_headroom_bits": 5.94566595832101,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.8.mlp.gate_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 430566.0,
+      "observed_headroom_bits": 5.284125125166357,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.8.mlp.up_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 401522.0,
+      "observed_headroom_bits": 5.384880488203259,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.8.mlp.down_proj",
+      "K": 12288,
+      "worst_case_bound": 198193152.0,
+      "observed_max_abs_acc": 249260.0,
+      "observed_headroom_bits": 6.072708140654824,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.9.self_attn.q_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 161330.0,
+      "observed_headroom_bits": 6.700344786841189,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.9.self_attn.k_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 157050.0,
+      "observed_headroom_bits": 6.739135582573311,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.9.self_attn.v_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 141390.0,
+      "observed_headroom_bits": 6.890679438376129,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.9.self_attn.o_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 232005.0,
+      "observed_headroom_bits": 6.176203627979849,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.9.mlp.gate_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 227025.0,
+      "observed_headroom_bits": 6.207508349676606,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.9.mlp.up_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 246160.0,
+      "observed_headroom_bits": 6.090763176779093,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.9.mlp.down_proj",
+      "K": 12288,
+      "worst_case_bound": 198193152.0,
+      "observed_max_abs_acc": 215167.0,
+      "observed_headroom_bits": 6.284902695749674,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.10.self_attn.q_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 148823.0,
+      "observed_headroom_bits": 6.8167620191324545,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.10.self_attn.k_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 125152.0,
+      "observed_headroom_bits": 7.066678179267055,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.10.self_attn.v_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 89561.0,
+      "observed_headroom_bits": 7.549416983651436,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.10.self_attn.o_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 233388.0,
+      "observed_headroom_bits": 6.1676291409770245,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.10.mlp.gate_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 257168.0,
+      "observed_headroom_bits": 6.02764838955936,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.10.mlp.up_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 239862.0,
+      "observed_headroom_bits": 6.128154907964892,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.10.mlp.down_proj",
+      "K": 12288,
+      "worst_case_bound": 198193152.0,
+      "observed_max_abs_acc": 220749.0,
+      "observed_headroom_bits": 6.247952623129123,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.11.self_attn.q_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 157836.0,
+      "observed_headroom_bits": 6.731933225801185,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.11.self_attn.k_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 135465.0,
+      "observed_headroom_bits": 6.95243937397638,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.11.self_attn.v_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 121798.0,
+      "observed_headroom_bits": 7.105869082087183,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.11.self_attn.o_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 222480.0,
+      "observed_headroom_bits": 6.236683875765951,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.11.mlp.gate_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 293789.0,
+      "observed_headroom_bits": 5.835579145811066,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.11.mlp.up_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 324051.0,
+      "observed_headroom_bits": 5.694138639438241,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.11.mlp.down_proj",
+      "K": 12288,
+      "worst_case_bound": 198193152.0,
+      "observed_max_abs_acc": 314319.0,
+      "observed_headroom_bits": 5.738130042553848,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.12.self_attn.q_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 251404.0,
+      "observed_headroom_bits": 6.060351921412345,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.12.self_attn.k_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 169362.0,
+      "observed_headroom_bits": 6.630249314183432,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.12.self_attn.v_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 123893.0,
+      "observed_headroom_bits": 7.081264848581652,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.12.self_attn.o_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 211564.0,
+      "observed_headroom_bits": 6.309265368054804,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.12.mlp.gate_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 251736.0,
+      "observed_headroom_bits": 6.058447978879086,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.12.mlp.up_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 288230.0,
+      "observed_headroom_bits": 5.863139021422018,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.12.mlp.down_proj",
+      "K": 12288,
+      "worst_case_bound": 198193152.0,
+      "observed_max_abs_acc": 302876.0,
+      "observed_headroom_bits": 5.791632262559586,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.13.self_attn.q_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 553413.0,
+      "observed_headroom_bits": 4.922002991454051,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.13.self_attn.k_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 917636.0,
+      "observed_headroom_bits": 4.192437534380896,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.13.self_attn.v_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 861227.0,
+      "observed_headroom_bits": 4.283965975965727,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.13.self_attn.o_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 227656.0,
+      "observed_headroom_bits": 6.203504042677961,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.13.mlp.gate_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 950191.0,
+      "observed_headroom_bits": 4.142141983639584,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.13.mlp.up_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 880572.0,
+      "observed_headroom_bits": 4.251918554674001,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.13.mlp.down_proj",
+      "K": 12288,
+      "worst_case_bound": 198193152.0,
+      "observed_max_abs_acc": 205898.0,
+      "observed_headroom_bits": 6.348429709211746,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.14.self_attn.q_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 484978.0,
+      "observed_headroom_bits": 5.112440221584622,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.14.self_attn.k_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 647161.0,
+      "observed_headroom_bits": 4.696234856611612,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.14.self_attn.v_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 494147.0,
+      "observed_headroom_bits": 5.085419243624843,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.14.self_attn.o_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 265113.0,
+      "observed_headroom_bits": 5.983752110070612,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.14.mlp.gate_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 753323.0,
+      "observed_headroom_bits": 4.477090948072007,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.14.mlp.up_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 703687.0,
+      "observed_headroom_bits": 4.5754256648265414,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.14.mlp.down_proj",
+      "K": 12288,
+      "worst_case_bound": 198193152.0,
+      "observed_max_abs_acc": 332169.0,
+      "observed_headroom_bits": 5.658442086920146,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.15.self_attn.q_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 394920.0,
+      "observed_headroom_bits": 5.408799093267132,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.15.self_attn.k_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 1268459.0,
+      "observed_headroom_bits": 3.725354542296928,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.15.self_attn.v_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 1149938.0,
+      "observed_headroom_bits": 3.8668753516833965,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.15.self_attn.o_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 232136.0,
+      "observed_headroom_bits": 6.175389250213718,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.15.mlp.gate_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 996436.0,
+      "observed_headroom_bits": 4.073582380255765,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.15.mlp.up_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 1007472.0,
+      "observed_headroom_bits": 4.057691687230258,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.15.mlp.down_proj",
+      "K": 12288,
+      "worst_case_bound": 198193152.0,
+      "observed_max_abs_acc": 367887.0,
+      "observed_headroom_bits": 5.511096828776357,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.16.self_attn.q_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 422910.0,
+      "observed_headroom_bits": 5.31000885126921,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.16.self_attn.k_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 895175.0,
+      "observed_headroom_bits": 4.228189779552337,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.16.self_attn.v_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 800105.0,
+      "observed_headroom_bits": 4.390170184264322,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.16.self_attn.o_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 186081.0,
+      "observed_headroom_bits": 6.4944287705699635,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.16.mlp.gate_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 412830.0,
+      "observed_headroom_bits": 5.344811711588364,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.16.mlp.up_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 964023.0,
+      "observed_headroom_bits": 4.121291958371329,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.16.mlp.down_proj",
+      "K": 12288,
+      "worst_case_bound": 198193152.0,
+      "observed_max_abs_acc": 207821.0,
+      "observed_headroom_bits": 6.335018081787404,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.17.self_attn.q_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 225749.0,
+      "observed_headroom_bits": 6.215639928546916,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.17.self_attn.k_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 600524.0,
+      "observed_headroom_bits": 4.80413762103264,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.17.self_attn.v_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 707270.0,
+      "observed_headroom_bits": 4.568098457203799,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.17.self_attn.o_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 220846.0,
+      "observed_headroom_bits": 6.247318823284393,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.17.mlp.gate_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 287255.0,
+      "observed_headroom_bits": 5.868027520725134,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.17.mlp.up_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 1096919.0,
+      "observed_headroom_bits": 3.9349744342080113,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.17.mlp.down_proj",
+      "K": 12288,
+      "worst_case_bound": 198193152.0,
+      "observed_max_abs_acc": 523477.0,
+      "observed_headroom_bits": 5.002233374681962,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.18.self_attn.q_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 232391.0,
+      "observed_headroom_bits": 6.17380532819248,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.18.self_attn.k_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 644693.0,
+      "observed_headroom_bits": 4.701747206602645,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.18.self_attn.v_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 584653.0,
+      "observed_headroom_bits": 4.842778907210694,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.18.self_attn.o_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 361385.0,
+      "observed_headroom_bits": 5.53682290003229,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.18.mlp.gate_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 298929.0,
+      "observed_headroom_bits": 5.810556661579307,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.18.mlp.up_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 1313237.0,
+      "observed_headroom_bits": 3.675304127643973,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.18.mlp.down_proj",
+      "K": 12288,
+      "worst_case_bound": 198193152.0,
+      "observed_max_abs_acc": 189471.0,
+      "observed_headroom_bits": 6.468382475888979,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.19.self_attn.q_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 191812.0,
+      "observed_headroom_bits": 6.4506665455672145,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.19.self_attn.k_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 157736.0,
+      "observed_headroom_bits": 6.73284756236411,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.19.self_attn.v_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 136959.0,
+      "observed_headroom_bits": 6.9366154524462145,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.19.self_attn.o_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 361896.0,
+      "observed_headroom_bits": 5.53478436372744,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.19.mlp.gate_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 281643.0,
+      "observed_headroom_bits": 5.896491910512568,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.19.mlp.up_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 326583.0,
+      "observed_headroom_bits": 5.682909830971049,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.19.mlp.down_proj",
+      "K": 12288,
+      "worst_case_bound": 198193152.0,
+      "observed_max_abs_acc": 299865.0,
+      "observed_headroom_bits": 5.806046383727142,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.20.self_attn.q_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 178108.0,
+      "observed_headroom_bits": 6.557607206759144,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.20.self_attn.k_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 152803.0,
+      "observed_headroom_bits": 6.778686657303169,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.20.self_attn.v_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 129063.0,
+      "observed_headroom_bits": 7.022284059908602,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.20.self_attn.o_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 262981.0,
+      "observed_headroom_bits": 5.9954009549276,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.20.mlp.gate_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 316651.0,
+      "observed_headroom_bits": 5.727465890045285,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.20.mlp.up_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 383627.0,
+      "observed_headroom_bits": 5.4506552635092635,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.20.mlp.down_proj",
+      "K": 12288,
+      "worst_case_bound": 198193152.0,
+      "observed_max_abs_acc": 263226.0,
+      "observed_headroom_bits": 5.994057528061143,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.21.self_attn.q_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 159592.0,
+      "observed_headroom_bits": 6.7159711913563065,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.21.self_attn.k_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 130994.0,
+      "observed_headroom_bits": 7.000858792949198,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.21.self_attn.v_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 110609.0,
+      "observed_headroom_bits": 7.244890746436281,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.21.self_attn.o_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 204384.0,
+      "observed_headroom_bits": 6.35907726482655,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.21.mlp.gate_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 285706.0,
+      "observed_headroom_bits": 5.87582819149628,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.21.mlp.up_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 358387.0,
+      "observed_headroom_bits": 5.548841219015004,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.21.mlp.down_proj",
+      "K": 12288,
+      "worst_case_bound": 198193152.0,
+      "observed_max_abs_acc": 173329.0,
+      "observed_headroom_bits": 6.5968464708574865,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.22.self_attn.q_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 178375.0,
+      "observed_headroom_bits": 6.555446095862149,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.22.self_attn.k_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 129379.0,
+      "observed_headroom_bits": 7.018756058576692,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.22.self_attn.v_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 148959.0,
+      "observed_headroom_bits": 6.815444232703437,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.22.self_attn.o_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 276285.0,
+      "observed_headroom_bits": 5.924202287745216,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.22.mlp.gate_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 298059.0,
+      "observed_headroom_bits": 5.814761588894832,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.22.mlp.up_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 339344.0,
+      "observed_headroom_bits": 5.627611020753782,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.22.mlp.down_proj",
+      "K": 12288,
+      "worst_case_bound": 198193152.0,
+      "observed_max_abs_acc": 455860.0,
+      "observed_headroom_bits": 5.2017687018691365,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.23.self_attn.q_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 181664.0,
+      "observed_headroom_bits": 6.529086973725123,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.23.self_attn.k_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 158439.0,
+      "observed_headroom_bits": 6.726432024860592,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.23.self_attn.v_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 107549.0,
+      "observed_headroom_bits": 7.285365415044409,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.23.self_attn.o_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 335106.0,
+      "observed_headroom_bits": 5.645742007648821,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.23.mlp.gate_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 298805.0,
+      "observed_headroom_bits": 5.811155236154741,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.23.mlp.up_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 345467.0,
+      "observed_headroom_bits": 5.6018116187416895,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.23.mlp.down_proj",
+      "K": 12288,
+      "worst_case_bound": 198193152.0,
+      "observed_max_abs_acc": 412022.0,
+      "observed_headroom_bits": 5.347638153097604,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.24.self_attn.q_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 163975.0,
+      "observed_headroom_bits": 6.6768836505084845,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.24.self_attn.k_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 131608.0,
+      "observed_headroom_bits": 6.994112337329441,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.24.self_attn.v_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 104638.0,
+      "observed_headroom_bits": 7.3249526543245755,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.24.self_attn.o_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 357934.0,
+      "observed_headroom_bits": 5.550665934305065,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.24.mlp.gate_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 321287.0,
+      "observed_headroom_bits": 5.706496918283157,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.24.mlp.up_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 319482.0,
+      "observed_headroom_bits": 5.714624875274395,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.24.mlp.down_proj",
+      "K": 12288,
+      "worst_case_bound": 198193152.0,
+      "observed_max_abs_acc": 222891.0,
+      "observed_headroom_bits": 6.234021161623696,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.25.self_attn.q_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 182924.0,
+      "observed_headroom_bits": 6.519115153541251,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.25.self_attn.k_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 146369.0,
+      "observed_headroom_bits": 6.84074949299322,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.25.self_attn.v_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 111210.0,
+      "observed_headroom_bits": 7.237073004572325,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.25.self_attn.o_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 253414.0,
+      "observed_headroom_bits": 6.048863296377896,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.25.mlp.gate_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 359090.0,
+      "observed_headroom_bits": 5.546014048420514,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.25.mlp.up_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 425303.0,
+      "observed_headroom_bits": 5.301868494089147,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.25.mlp.down_proj",
+      "K": 12288,
+      "worst_case_bound": 198193152.0,
+      "observed_max_abs_acc": 136102.0,
+      "observed_headroom_bits": 6.945671258362122,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.26.self_attn.q_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 191218.0,
+      "observed_headroom_bits": 6.455141190066464,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.26.self_attn.k_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 175606.0,
+      "observed_headroom_bits": 6.5780173867129,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.26.self_attn.v_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 117088.0,
+      "observed_headroom_bits": 7.1627662996609125,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.26.self_attn.o_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 250586.0,
+      "observed_headroom_bits": 6.065053710643143,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.26.mlp.gate_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 397282.0,
+      "observed_headroom_bits": 5.400196096091408,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.26.mlp.up_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 374323.0,
+      "observed_headroom_bits": 5.486075829271618,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.26.mlp.down_proj",
+      "K": 12288,
+      "worst_case_bound": 198193152.0,
+      "observed_max_abs_acc": 196802.0,
+      "observed_headroom_bits": 6.413614643425566,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.27.self_attn.q_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 213360.0,
+      "observed_headroom_bits": 6.297069795561711,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.27.self_attn.k_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 140461.0,
+      "observed_headroom_bits": 6.900189914099736,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.27.self_attn.v_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 120588.0,
+      "observed_headroom_bits": 7.120273177212904,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.27.self_attn.o_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 256153.0,
+      "observed_headroom_bits": 6.033353737187546,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.27.mlp.gate_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 495239.0,
+      "observed_headroom_bits": 5.082234594510401,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.27.mlp.up_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 449195.0,
+      "observed_headroom_bits": 5.223017656407379,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.27.mlp.down_proj",
+      "K": 12288,
+      "worst_case_bound": 198193152.0,
+      "observed_max_abs_acc": 133890.0,
+      "observed_headroom_bits": 6.9693113131396265,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.28.self_attn.q_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 205715.0,
+      "observed_headroom_bits": 6.349712531716758,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.28.self_attn.k_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 141587.0,
+      "observed_headroom_bits": 6.8886707170385675,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.28.self_attn.v_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 119928.0,
+      "observed_headroom_bits": 7.128190996542956,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.28.self_attn.o_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 239355.0,
+      "observed_headroom_bits": 6.1312075820504806,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.28.mlp.gate_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 510892.0,
+      "observed_headroom_bits": 5.03734118064705,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.28.mlp.up_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 553299.0,
+      "observed_headroom_bits": 4.922300209222076,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.28.mlp.down_proj",
+      "K": 12288,
+      "worst_case_bound": 198193152.0,
+      "observed_max_abs_acc": 154576.0,
+      "observed_headroom_bits": 6.762043186693802,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.29.self_attn.q_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 192725.0,
+      "observed_headroom_bits": 6.443815797538179,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.29.self_attn.k_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 148581.0,
+      "observed_headroom_bits": 6.819109884507171,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.29.self_attn.v_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 180154.0,
+      "observed_headroom_bits": 6.54112884095864,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.29.self_attn.o_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 207596.0,
+      "observed_headroom_bits": 6.336580879727507,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.29.mlp.gate_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 563532.0,
+      "observed_headroom_bits": 4.895861989823162,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.29.mlp.up_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 510430.0,
+      "observed_headroom_bits": 5.038646401046401,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.29.mlp.down_proj",
+      "K": 12288,
+      "worst_case_bound": 198193152.0,
+      "observed_max_abs_acc": 660034.0,
+      "observed_headroom_bits": 4.66781918235273,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.30.self_attn.q_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 245152.0,
+      "observed_headroom_bits": 6.096682994091285,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.30.self_attn.k_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 150581.0,
+      "observed_headroom_bits": 6.799819780354468,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.30.self_attn.v_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 195679.0,
+      "observed_headroom_bits": 6.421870589330178,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.30.self_attn.o_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 305405.0,
+      "observed_headroom_bits": 5.7796358438601345,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.30.mlp.gate_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 769565.0,
+      "observed_headroom_bits": 4.446316339078233,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.30.mlp.up_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 466492.0,
+      "observed_headroom_bits": 5.168507185449266,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.30.mlp.down_proj",
+      "K": 12288,
+      "worst_case_bound": 198193152.0,
+      "observed_max_abs_acc": 252924.0,
+      "observed_headroom_bits": 6.0516555844965625,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.31.self_attn.q_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 242533.0,
+      "observed_headroom_bits": 6.1121784661097225,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.31.self_attn.k_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 154088.0,
+      "observed_headroom_bits": 6.766605012929145,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.31.self_attn.v_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 125604.0,
+      "observed_headroom_bits": 7.061477116363314,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.31.self_attn.o_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 304147.0,
+      "observed_headroom_bits": 5.785590751524134,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.31.mlp.gate_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 661888.0,
+      "observed_headroom_bits": 4.663772410516611,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.31.mlp.up_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 531787.0,
+      "observed_headroom_bits": 4.979511015883161,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.31.mlp.down_proj",
+      "K": 12288,
+      "worst_case_bound": 198193152.0,
+      "observed_max_abs_acc": 184378.0,
+      "observed_headroom_bits": 6.507693002032336,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.32.self_attn.q_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 293083.0,
+      "observed_headroom_bits": 5.8390502372593085,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.32.self_attn.k_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 144738.0,
+      "observed_headroom_bits": 6.8569157839679535,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.32.self_attn.v_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 152091.0,
+      "observed_headroom_bits": 6.785424741596984,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.32.self_attn.o_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 229479.0,
+      "observed_headroom_bits": 6.191997389275138,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.32.mlp.gate_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 629549.0,
+      "observed_headroom_bits": 4.736040853249036,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.32.mlp.up_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 498681.0,
+      "observed_headroom_bits": 5.07224228892864,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.32.mlp.down_proj",
+      "K": 12288,
+      "worst_case_bound": 198193152.0,
+      "observed_max_abs_acc": 179236.0,
+      "observed_headroom_bits": 6.548499090147123,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.33.self_attn.q_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 259467.0,
+      "observed_headroom_bits": 6.014808462755615,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.33.self_attn.k_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 226526.0,
+      "observed_headroom_bits": 6.210682877418248,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.33.self_attn.v_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 160333.0,
+      "observed_headroom_bits": 6.709288131658134,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.33.self_attn.o_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 282878.0,
+      "observed_headroom_bits": 5.890179545807044,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.33.mlp.gate_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 609518.0,
+      "observed_headroom_bits": 4.782690699094588,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.33.mlp.up_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 595151.0,
+      "observed_headroom_bits": 4.8171037742634715,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.33.mlp.down_proj",
+      "K": 12288,
+      "worst_case_bound": 198193152.0,
+      "observed_max_abs_acc": 168651.0,
+      "observed_headroom_bits": 6.6363186528593054,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.34.self_attn.q_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 427677.0,
+      "observed_headroom_bits": 5.293837902819762,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.34.self_attn.k_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 342476.0,
+      "observed_headroom_bits": 5.614356634991237,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.34.self_attn.v_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 160698.0,
+      "observed_headroom_bits": 6.706007551796212,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.34.self_attn.o_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 453366.0,
+      "observed_headroom_bits": 5.209683324759408,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.34.mlp.gate_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 496911.0,
+      "observed_headroom_bits": 5.077372046726489,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.34.mlp.up_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 693448.0,
+      "observed_headroom_bits": 4.596571823194333,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.34.mlp.down_proj",
+      "K": 12288,
+      "worst_case_bound": 198193152.0,
+      "observed_max_abs_acc": 335681.0,
+      "observed_headroom_bits": 5.643268644713361,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.35.self_attn.q_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 295736.0,
+      "observed_headroom_bits": 5.8260496518709575,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.35.self_attn.k_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 218296.0,
+      "observed_headroom_bits": 6.264073830566754,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.35.self_attn.v_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 247481.0,
+      "observed_headroom_bits": 6.083041756968832,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.35.self_attn.o_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 692726.0,
+      "observed_headroom_bits": 4.598074702217771,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.35.mlp.gate_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 332207.0,
+      "observed_headroom_bits": 5.658277052627475,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.35.mlp.up_proj",
+      "K": 4096,
+      "worst_case_bound": 66064384.0,
+      "observed_max_abs_acc": 304416.0,
+      "observed_headroom_bits": 5.784315337175005,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    },
+    {
+      "layer": "model.layers.35.mlp.down_proj",
+      "K": 12288,
+      "worst_case_bound": 198193152.0,
+      "observed_max_abs_acc": 99762.0,
+      "observed_headroom_bits": 7.393797232256115,
+      "prediction": "BITWISE-SAFE",
+      "bound_also_safe": false,
+      "tokens_seen": 10675
+    }
+  ]
+}

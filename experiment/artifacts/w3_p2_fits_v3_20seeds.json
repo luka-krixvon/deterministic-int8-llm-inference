@@ -1,0 +1,92 @@
+{
+  "input": "w3_p2_raw_20seeds.json",
+  "objective": "unweighted linear SSE on per-(K,seed) fractions; identical for all models; p=0 kept",
+  "fits": {
+    "M_sqrt": {
+      "c": 0.003141305420944702,
+      "sse": 0.08311182909000021
+    },
+    "M_sat_sqrt": {
+      "c": 0.004107065428834398,
+      "sse": 0.0038793894792410397
+    },
+    "M_pow": {
+      "c": 0.006685317075545203,
+      "alpha": 0.42223610631009534,
+      "sse": 0.013293176573547914
+    },
+    "M_gensat": {
+      "c": 0.0034572223427977006,
+      "alpha": 0.5183937167293793,
+      "sse": 0.0010835260344353602
+    }
+  },
+  "gensat_alpha_jackknife": {
+    "values": [
+      0.5184565365637838,
+      0.5183762905055911,
+      0.5184486756676955,
+      0.5185055148217563,
+      0.518306741352937,
+      0.5184198202649921,
+      0.5183581175510557,
+      0.5184313331513062,
+      0.518375921622245,
+      0.5184247566074396,
+      0.5183465388320052,
+      0.5183909970823526,
+      0.5183742374430081,
+      0.5183773419142559,
+      0.518343575729602,
+      0.5184106241519033,
+      0.5184161885098952,
+      0.5183803028037004,
+      0.5183456330810318,
+      0.518336850730672
+    ],
+    "min": 0.518306741352937,
+    "max": 0.5185055148217563
+  },
+  "gensat_leave_one_K_out": [
+    {
+      "left_out_K": 512,
+      "alpha": 0.5169430462807336
+    },
+    {
+      "left_out_K": 1024,
+      "alpha": 0.5163232453459354
+    },
+    {
+      "left_out_K": 2048,
+      "alpha": 0.5168835461855186
+    },
+    {
+      "left_out_K": 4096,
+      "alpha": 0.5189961716615253
+    },
+    {
+      "left_out_K": 8192,
+      "alpha": 0.5194026122568275
+    },
+    {
+      "left_out_K": 16384,
+      "alpha": 0.517232474032592
+    },
+    {
+      "left_out_K": 32768,
+      "alpha": 0.5288237647368975
+    }
+  ],
+  "gensat_K_range_sensitivity": {
+    "low_half_alpha": 0.5347534193421756,
+    "high_half_alpha": 0.5077522272370225
+  },
+  "gensat_alpha_seed_bootstrap_ci90_EXPLORATORY": [
+    0.5180712179143836,
+    0.5187018818213947
+  ],
+  "labels": {
+    "ci_status": "exploratory conditional interval: 5 seeds, fixed K grid/shape/kernel pair/input distribution; does NOT cover model misspecification or design choices",
+    "verdict_wording": "descriptive, model-conditional; no binary sqrt-compatibility criterion is applied"
+  }
+}

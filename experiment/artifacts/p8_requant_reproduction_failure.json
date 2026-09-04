@@ -1,0 +1,32 @@
+{
+  "diagnostics_run": [
+    "base_q minus round(w/s) lies in [-0.749, +0.749] with mean +0.00008; 93.58% of elements are within +/-0.5 and consistent with rounding, 6.42% are not",
+    "No global scale correction helps: sweeping c over 1 +/- 0.006 leaves the best at c = 1.000000 with the same 807,262 differences",
+    "Not reciprocal multiplication: w*(1/s) in fp32 and fp64 give 807,449 and 807,262 differences respectively, no better than w/s",
+    "Not a rounding-mode difference: floor(x+0.5) gives 827,043, ceil(x-0.5) gives 827,252, trunc gives 6,151,307",
+    "Not the divisor: round(x*127.5/127) gives 1,196,155",
+    "Clipping is not involved: among elements with |w/s| > 127 there are zero differences, and both sides span [-128, 127] there",
+    "The direction of disagreement is inconsistent within a single output channel, which rules out any single rounding rule applied to w/s: fractional part .504 has base rounding down in magnitude while .4797 has it rounding up"
+  ],
+  "recorded": "2026-08-15",
+  "result": {
+    "base_digest": "bc6258648cc6c380e4e487a0b6539a3f5c6183a84cdfd07f23c78b7d91d1183e",
+    "int8_weights_differing": "6.4155% on model.layers.0.mlp.down_proj (807,262 of 12,582,912); 6.89% on model.layers.5.self_attn.q_proj",
+    "per_channel_scales_match": "100.00%",
+    "reimplementation_digest": "de0ca36cbe2972e02a8b8471f75c2e19",
+    "reproduces_base": false
+  },
+  "route_chosen": {
+    "approach": "Run the study's own pipeline -- quant_qwen.py's oneshot call, unchanged -- and constrain only the observer's computed scale, snapping it to a power of two before the weights are quantized against it.",
+    "consequence_for_a12": "The arm definitions and predictions in A-12 and its addendum are unchanged. Only how the arms are built changes, and that is an implementation route, not a measurement decision. The requant-nearest arm is still buildable this way: snap to the nearest power of two inside the observer, and the weights are quantized against the snapped scale by the real pipeline, so no mismatch arises.",
+    "why": "Whatever llmcompressor does at the quantization step is then done identically in every arm, so 'the arms differ only in the scale constraint' holds by construction rather than by a reverse-engineering argument. The base arm is quant_qwen.py itself, already reproduced byte for byte on 2026-08-14."
+  },
+  "route_rejected_1": {
+    "approach": "Derive arms from the base checkpoint's dequantized weights (q_base * s_base) and requantize under the new scale rule.",
+    "why_rejected": "Self-consistent and needs no reverse engineering, but it is a double quantization: it measures the cost of a power-of-two constraint applied on top of base's existing quantization error, not the cost of quantizing to power-of-two scales in the first place. It would overstate the cost."
+  },
+  "status_of_p8_requant_py": "Retained in the repository as the record of the failed route, not used for any measurement. Its digest is recorded here so that no later artifact can be traced to it by accident. sha256[:16] b6ab48f6f2dc136e.",
+  "verdict": "FAILED. A reimplemented quantizer could not reproduce the base checkpoint, so the reimplementation route for P8 is abandoned in favour of constraining the real pipeline.",
+  "what_was_attempted": "p8_requant.py recomputed int8 weights from the parent's bf16 weights using the convention reverse-engineered in quantization_convention_2026-08-15.json, with the minmax rule expected to reproduce the committed base checkpoint byte for byte.",
+  "why_this_matters": "The gate existed precisely to catch this. Building pow2 arms with a quantizer that is not equivalent to the study's pipeline, and then attributing the perplexity difference to the power-of-two constraint, would be a misattribution: part of the difference would be the quantizer."
+}

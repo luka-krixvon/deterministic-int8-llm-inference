@@ -1,0 +1,33 @@
+{
+  "join_diagnostics": {
+    "weights_verified": true,
+    "quant_config_verified": true,
+    "tokenizer_verified": true,
+    "parent_revision_verified": true,
+    "runtime_verified": true,
+    "prompt_manifest_verified": true,
+    "rails_verified": true,
+    "record_counts_verified": true,
+    "record_sequence_verified": true,
+    "treatment_identity_verified": false,
+    "identity_verified": false,
+    "schema": "join-v7",
+    "undeclared_differences": [],
+    "treatment_declared": {
+      "A": {
+        "arm": "CUTLASS",
+        "kernel_class": null
+      },
+      "B": {
+        "arm": "TRITON",
+        "kernel_class": null
+      }
+    },
+    "model_paths_diagnostic": [
+      "/models/qwen3-1.7b-int8-w8a8",
+      "/models/qwen3-1.7b-int8-w8a8"
+    ],
+    "error": "identity-contract-failed (pass allow_unverified to analyze anyway)"
+  },
+  "status": "join-failed"
+}

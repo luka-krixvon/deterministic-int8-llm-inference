@@ -1,0 +1,314 @@
+{
+  "input": "w3_p2_raw_20seeds.json",
+  "objective": "unweighted linear SSE on per-(K,seed) fractions; identical for all models; p=0 kept",
+  "fits": {
+    "M_sqrt": {
+      "c": 0.003141305420944702,
+      "sse": 0.08311182909000021
+    },
+    "M_sat_sqrt": {
+      "c": 0.004107065428834398,
+      "sse": 0.0038793894792410397
+    },
+    "M_pow": {
+      "c": 0.006685553031436075,
+      "alpha": 0.4222322754486799,
+      "sse": 0.013293176397233996,
+      "alpha_bounds": [
+        0.0,
+        1.5
+      ],
+      "alpha_at_bound": false,
+      "status": "ok",
+      "diagnostics": [
+        {
+          "c0": 0.001,
+          "a0": 0.1,
+          "success": true,
+          "nit": 13,
+          "fun": 0.01329317639745676,
+          "alpha": 0.42223225573840784,
+          "at_bound": false
+        },
+        {
+          "c0": 0.001,
+          "a0": 0.5,
+          "success": true,
+          "nit": 13,
+          "fun": 0.013293176397233996,
+          "alpha": 0.4222322754486799,
+          "at_bound": false
+        },
+        {
+          "c0": 0.001,
+          "a0": 0.9,
+          "success": true,
+          "nit": 1,
+          "fun": 12.915988044915519,
+          "alpha": 0.0,
+          "at_bound": true
+        },
+        {
+          "c0": 0.001,
+          "a0": 1.4,
+          "success": true,
+          "nit": 1,
+          "fun": 12.915988044915519,
+          "alpha": 0.0,
+          "at_bound": true
+        },
+        {
+          "c0": 0.01,
+          "a0": 0.1,
+          "success": true,
+          "nit": 16,
+          "fun": 0.013293176398152085,
+          "alpha": 0.4222322175362073,
+          "at_bound": false
+        },
+        {
+          "c0": 0.01,
+          "a0": 0.5,
+          "success": true,
+          "nit": 1,
+          "fun": 12.915988044915519,
+          "alpha": 0.0,
+          "at_bound": true
+        },
+        {
+          "c0": 0.01,
+          "a0": 0.9,
+          "success": true,
+          "nit": 1,
+          "fun": 12.915988044915519,
+          "alpha": 0.0,
+          "at_bound": true
+        },
+        {
+          "c0": 0.01,
+          "a0": 1.4,
+          "success": true,
+          "nit": 1,
+          "fun": 12.915988044915519,
+          "alpha": 0.0,
+          "at_bound": true
+        }
+      ]
+    },
+    "M_gensat": {
+      "c": 0.00345734481393367,
+      "alpha": 0.5183901254211686,
+      "sse": 0.0010835259288392235,
+      "alpha_bounds": [
+        0.0,
+        1.5
+      ],
+      "alpha_at_bound": false,
+      "status": "ok",
+      "diagnostics": [
+        {
+          "c0": 0.001,
+          "a0": 0.1,
+          "success": true,
+          "nit": 8,
+          "fun": 0.0010835259288392235,
+          "alpha": 0.5183901254211686,
+          "at_bound": false
+        },
+        {
+          "c0": 0.001,
+          "a0": 0.5,
+          "success": true,
+          "nit": 11,
+          "fun": 0.0010835259292385287,
+          "alpha": 0.5183900752372981,
+          "at_bound": false
+        },
+        {
+          "c0": 0.001,
+          "a0": 0.9,
+          "success": true,
+          "nit": 1,
+          "fun": 12.915988044904044,
+          "alpha": 0.0,
+          "at_bound": true
+        },
+        {
+          "c0": 0.001,
+          "a0": 1.4,
+          "success": true,
+          "nit": 10,
+          "fun": 0.0010835259289423875,
+          "alpha": 0.5183901071302982,
+          "at_bound": false
+        },
+        {
+          "c0": 0.01,
+          "a0": 0.1,
+          "success": true,
+          "nit": 10,
+          "fun": 0.0010835259293350166,
+          "alpha": 0.5183908633306282,
+          "at_bound": false
+        },
+        {
+          "c0": 0.01,
+          "a0": 0.5,
+          "success": true,
+          "nit": 8,
+          "fun": 0.0010835259289525255,
+          "alpha": 0.5183901053951969,
+          "at_bound": false
+        },
+        {
+          "c0": 0.01,
+          "a0": 0.9,
+          "success": true,
+          "nit": 14,
+          "fun": 0.0010835259289325855,
+          "alpha": 0.5183901095464454,
+          "at_bound": false
+        },
+        {
+          "c0": 0.01,
+          "a0": 1.4,
+          "success": true,
+          "nit": 0,
+          "fun": 79.21200092334038,
+          "alpha": 1.4,
+          "at_bound": false
+        }
+      ]
+    }
+  },
+  "heldout_predictive_sse": {
+    "M_sqrt": {
+      "loso_sse": 0.0831130257280561,
+      "loko_sse": 0.19779869361124197,
+      "loso_folds": {
+        "expected": 20,
+        "completed": 20,
+        "failed": 0
+      },
+      "loko_folds": {
+        "expected": 7,
+        "completed": 7,
+        "failed": 0
+      }
+    },
+    "M_sat_sqrt": {
+      "loso_sse": 0.0038804081151590343,
+      "loko_sse": 0.004846545943140915,
+      "loso_folds": {
+        "expected": 20,
+        "completed": 20,
+        "failed": 0
+      },
+      "loko_folds": {
+        "expected": 7,
+        "completed": 7,
+        "failed": 0
+      }
+    },
+    "M_pow": {
+      "loso_sse": 0.013294826298946877,
+      "loko_sse": 0.059888821488198275,
+      "loso_folds": {
+        "expected": 20,
+        "completed": 20,
+        "failed": 0
+      },
+      "loko_folds": {
+        "expected": 7,
+        "completed": 7,
+        "failed": 0
+      }
+    },
+    "M_gensat": {
+      "loso_sse": 0.0010852331949350441,
+      "loko_sse": 0.00402668059992559,
+      "loso_folds": {
+        "expected": 20,
+        "completed": 20,
+        "failed": 0
+      },
+      "loko_folds": {
+        "expected": 7,
+        "completed": 7,
+        "failed": 0
+      }
+    }
+  },
+  "model_comparison_wording": "M_gensat attains the lowest SSE among the four pre-listed candidates (in-sample and held-out as reported); alpha~0.5 is COMPATIBLE with sqrt-shaped saturation; no functional family is excluded and no causal mechanism is identified by this fit alone",
+  "gensat_alpha_jackknife": {
+    "values": [
+      0.5184541241727995,
+      0.518378562019496,
+      0.5184457244920198,
+      0.5185039987583234,
+      0.5183061108774972,
+      0.5184200231747302,
+      0.5183557679170812,
+      0.5184298729972037,
+      0.5183764873137555,
+      0.5184220596537263,
+      0.5183491390097091,
+      0.5183884421177167,
+      0.5183740670376802,
+      0.5183743496733304,
+      0.5183450036938471,
+      0.5184076020658829,
+      0.5184128649419475,
+      0.5183765349626231,
+      0.5183448043581802,
+      0.5183381252123762
+    ],
+    "min": 0.5183061108774972,
+    "max": 0.5185039987583234
+  },
+  "gensat_leave_one_K_out": [
+    {
+      "left_out_K": 512,
+      "alpha": 0.5169432593771532
+    },
+    {
+      "left_out_K": 1024,
+      "alpha": 0.5163215259529155
+    },
+    {
+      "left_out_K": 2048,
+      "alpha": 0.5168800757552596
+    },
+    {
+      "left_out_K": 4096,
+      "alpha": 0.5189945661985133
+    },
+    {
+      "left_out_K": 8192,
+      "alpha": 0.519399499357098
+    },
+    {
+      "left_out_K": 16384,
+      "alpha": 0.517229413430131
+    },
+    {
+      "left_out_K": 32768,
+      "alpha": 0.528822175180236
+    }
+  ],
+  "gensat_K_range_sensitivity": {
+    "disjoint": true,
+    "middle_K_excluded": 4096,
+    "low_half_alpha": 0.5284095311965236,
+    "high_half_alpha": 0.4992093279441753
+  },
+  "gensat_alpha_seed_bootstrap_ci90_EXPLORATORY": [
+    0.5180718033473991,
+    0.5187018198577856
+  ],
+  "heldout_comparison_valid": true,
+  "labels": {
+    "ci_status": "primary-but-conditional conditional interval: 20 seeds, fixed K grid/shape/kernel pair/input distribution; conditional on design; does NOT cover model misspecification or design choices",
+    "verdict_wording": "descriptive, model-conditional; no binary sqrt-compatibility criterion is applied"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "recorded": "2026-08-14",
+  "purpose": "Snapshot revisions resolved in the measurement machine's Hugging Face cache, captured before that cache was considered for cleanup. Several of these were pinned nowhere else in this repository; the cache directory was their only record.",
+  "method": "Read from ~/.cache/huggingface/hub/<repo>/snapshots/<revision> and cross-checked against ~/.cache/huggingface/hub/<repo>/refs/main on <user>@<host>.",
+  "models": {
+    "Qwen/Qwen3-1.7B": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+    "Qwen/Qwen3-8B": "b968826d9c46dd6066d109eabc6255188de91218",
+    "gpt2": "607a30d783dfa663caf39e06633721c8d4cfcd7e",
+    "RedHatAI/Llama-3.2-1B-Instruct-FP8": "fb49430ca7e61099fa1ff30f12fecb290a8ebb65",
+    "RedHatAI/Llama-3.2-1B-Instruct-quantized.w8a8": "c1dce56eed4780655677bf3f93b92c84bd94d2ba"
+  },
+  "datasets": {
+    "Salesforce/wikitext": "b08601e04326c79dfdd32d625aee71d232d685c3",
+    "garage-bAInd/Open-Platypus": "37141edbdb7826378cce118c46a109b813e1f038"
+  },
+  "notes": [
+    "Qwen3-1.7B and Qwen3-8B agree with the parent_revision fields in parent_manifest.json, parent8b_manifest.json and both checkpoint_manifest_v2 files.",
+    "Salesforce/wikitext at b08601e0... is the prompt-set source, pinned in harness/make_prompts.py (split=test, gpt2 tokenizer, 320-token non-overlapping chunks, 64 prompts) which produced calib_prompts.json.",
+    "garage-bAInd/Open-Platypus at 37141edb... is the llm-compressor calibration set used by both quantization recipes. This revision was pinned nowhere in the repository before this file: checkpoint_manifest_v2 records the dataset only as 'open_platypus (llmcompressor builtin; revision unrecorded at quantization time -- honest gap)'. Recording it here does not retroactively make it a pre-registered pin; the paper's Limitations statement about the calibration-dataset revision stands unchanged.",
+    "gpt2 is the tokenizer used for prompt chunking only, not for any model under test.",
+    "The two RedHatAI entries are 12 KB metadata-only stubs from an early survey of published w8a8/FP8 checkpoints; no measurement in this study used them."
+  ]
+}

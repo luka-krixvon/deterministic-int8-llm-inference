@@ -1,0 +1,5 @@
+# CPU test environment for tests_metrics_v2.py / tests_metrics_v3.py
+# python3 -m venv .venv-test && .venv-test/bin/pip install -r requirements-test.txt
+torch>=2.4          # CPU build is sufficient
+numpy>=1.26
+scipy>=1.11

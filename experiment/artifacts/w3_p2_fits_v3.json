@@ -1,0 +1,77 @@
+{
+  "input": "w3_p2_fp8_v2.json",
+  "objective": "unweighted linear SSE on per-(K,seed) fractions; identical for all models; p=0 kept",
+  "fits": {
+    "M_sqrt": {
+      "c": 0.0031417949005170657,
+      "sse": 0.021077030954871904
+    },
+    "M_sat_sqrt": {
+      "c": 0.004108463541618237,
+      "sse": 0.0009571699956187237
+    },
+    "M_pow": {
+      "c": 0.006716056508740275,
+      "alpha": 0.4217783134099402,
+      "sse": 0.003393738560681154
+    },
+    "M_gensat": {
+      "c": 0.0034755954533991374,
+      "alpha": 0.517865280185779,
+      "sse": 0.0002964837319024298
+    }
+  },
+  "gensat_alpha_jackknife": {
+    "values": [
+      0.5180420091082648,
+      0.5176791687755606,
+      0.5180020582484349,
+      0.5182796897989206,
+      0.5173352424065087
+    ],
+    "min": 0.5173352424065087,
+    "max": 0.5182796897989206
+  },
+  "gensat_leave_one_K_out": [
+    {
+      "left_out_K": 512,
+      "alpha": 0.5163397824469689
+    },
+    {
+      "left_out_K": 1024,
+      "alpha": 0.5158503359499393
+    },
+    {
+      "left_out_K": 2048,
+      "alpha": 0.516008576331241
+    },
+    {
+      "left_out_K": 4096,
+      "alpha": 0.5186662425037403
+    },
+    {
+      "left_out_K": 8192,
+      "alpha": 0.5189283157018321
+    },
+    {
+      "left_out_K": 16384,
+      "alpha": 0.5167132982438062
+    },
+    {
+      "left_out_K": 32768,
+      "alpha": 0.5285659403824302
+    }
+  ],
+  "gensat_K_range_sensitivity": {
+    "low_half_alpha": 0.5355882663373738,
+    "high_half_alpha": 0.5064063075302
+  },
+  "gensat_alpha_seed_bootstrap_ci90_EXPLORATORY": [
+    0.5169233561912263,
+    0.518871629348975
+  ],
+  "labels": {
+    "ci_status": "exploratory conditional interval: 5 seeds, fixed K grid/shape/kernel pair/input distribution; does NOT cover model misspecification or design choices",
+    "verdict_wording": "descriptive, model-conditional; no binary sqrt-compatibility criterion is applied"
+  }
+}

@@ -1,0 +1,5928 @@
+{
+  "env": {
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "torch": "2.13.0+cu130",
+    "image_digest": "vllm/vllm-openai@sha256:0a51ea5b4ae2dc5d81890e5173f54203d2a3ae0cfffe51b8fd2afd4391bfd967"
+  },
+  "config": {
+    "M": 256,
+    "N": 2048,
+    "KS": [
+      512,
+      1024,
+      2048,
+      4096,
+      8192,
+      16384,
+      32768
+    ],
+    "seeds": 20,
+    "nested_prefix": true
+  },
+  "raw": [
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 43114,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 480724,
+        "1": 36125,
+        "2": 2027,
+        "gt2": 1211
+      },
+      "max_ulp_distance_finite": 27085,
+      "abs_over_rms": {
+        "max": 0.027596667408943176,
+        "p50": 0.0,
+        "p99": 0.003449583426117897,
+        "rmse_over_rms": 0.0008879323722794652
+      },
+      "rel_of_differing_main": {
+        "p50": 0.005434782709926367,
+        "max": 0.08849557489156723,
+        "n": 39363
+      },
+      "near_zero": {
+        "n": 4201,
+        "n_bitwise_differ": 3751,
+        "ulp_hist": {
+          "0": 450,
+          "1": 687,
+          "2": 579,
+          "gt2": 2485
+        },
+        "abs_err_max": 2.518296241760254e-06,
+        "abs_err_p99": 1.1324882507324219e-06
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 512,
+      "seed": 20260813,
+      "n_differ": 43114
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 61023,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 463037,
+        "1": 50837,
+        "2": 3569,
+        "gt2": 2659
+      },
+      "max_ulp_distance_finite": 27482,
+      "abs_over_rms": {
+        "max": 0.019549215212464333,
+        "p50": 0.0,
+        "p99": 0.004887303803116083,
+        "rmse_over_rms": 0.001124861417338252
+      },
+      "rel_of_differing_main": {
+        "p50": 0.005524862091988325,
+        "max": 0.12883435189723969,
+        "n": 57065
+      },
+      "near_zero": {
+        "n": 4186,
+        "n_bitwise_differ": 3958,
+        "ulp_hist": {
+          "0": 228,
+          "1": 485,
+          "2": 416,
+          "gt2": 3057
+        },
+        "abs_err_max": 5.587935447692871e-06,
+        "abs_err_p99": 2.5033950805664062e-06
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 1024,
+      "seed": 20260813,
+      "n_differ": 61023
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 85545,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 438576,
+        "1": 70058,
+        "2": 5877,
+        "gt2": 5520
+      },
+      "max_ulp_distance_finite": 28101,
+      "abs_over_rms": {
+        "max": 0.027611462399363518,
+        "p50": 0.0,
+        "p99": 0.0069028655998408794,
+        "rmse_over_rms": 0.0014380667125806212
+      },
+      "rel_of_differing_main": {
+        "p50": 0.005586592014878988,
+        "max": 0.22751322388648987,
+        "n": 81455
+      },
+      "near_zero": {
+        "n": 4257,
+        "n_bitwise_differ": 4090,
+        "ulp_hist": {
+          "0": 167,
+          "1": 351,
+          "2": 312,
+          "gt2": 3427
+        },
+        "abs_err_max": 1.3887882232666016e-05,
+        "abs_err_p99": 5.4836273193359375e-06
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 2048,
+      "seed": 20260813,
+      "n_differ": 85545
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 119408,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 404774,
+        "1": 95513,
+        "2": 9783,
+        "gt2": 10142
+      },
+      "max_ulp_distance_finite": 28366,
+      "abs_over_rms": {
+        "max": 0.019488047808408737,
+        "p50": 0.0,
+        "p99": 0.009744023904204369,
+        "rmse_over_rms": 0.0018267398700118065
+      },
+      "rel_of_differing_main": {
+        "p50": 0.0057142856530845165,
+        "max": 0.33128833770751953,
+        "n": 115438
+      },
+      "near_zero": {
+        "n": 4076,
+        "n_bitwise_differ": 3970,
+        "ulp_hist": {
+          "0": 106,
+          "1": 163,
+          "2": 219,
+          "gt2": 3588
+        },
+        "abs_err_max": 3.135204315185547e-05,
+        "abs_err_p99": 1.2308359146118164e-05
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 4096,
+      "seed": 20260813,
+      "n_differ": 119408
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 163961,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 360271,
+        "1": 125823,
+        "2": 15898,
+        "gt2": 18254
+      },
+      "max_ulp_distance_finite": 28467,
+      "abs_over_rms": {
+        "max": 0.02765045128762722,
+        "p50": 0.0,
+        "p99": 0.006912612821906805,
+        "rmse_over_rms": 0.0023142548743635416
+      },
+      "rel_of_differing_main": {
+        "p50": 0.0058823530562222,
+        "max": 0.5577889680862427,
+        "n": 159975
+      },
+      "near_zero": {
+        "n": 4042,
+        "n_bitwise_differ": 3986,
+        "ulp_hist": {
+          "0": 56,
+          "1": 142,
+          "2": 122,
+          "gt2": 3722
+        },
+        "abs_err_max": 6.580352783203125e-05,
+        "abs_err_p99": 2.771615982055664e-05
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 8192,
+      "seed": 20260813,
+      "n_differ": 163961
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 217016,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 307226,
+        "1": 157673,
+        "2": 24775,
+        "gt2": 30414
+      },
+      "max_ulp_distance_finite": 28846,
+      "abs_over_rms": {
+        "max": 0.019535278901457787,
+        "p50": 0.0,
+        "p99": 0.009767639450728893,
+        "rmse_over_rms": 0.00294749578461051
+      },
+      "rel_of_differing_main": {
+        "p50": 0.006097560748457909,
+        "max": 0.748251736164093,
+        "n": 212862
+      },
+      "near_zero": {
+        "n": 4200,
+        "n_bitwise_differ": 4154,
+        "ulp_hist": {
+          "0": 46,
+          "1": 82,
+          "2": 76,
+          "gt2": 3996
+        },
+        "abs_err_max": 0.00012302398681640625,
+        "abs_err_p99": 6.592273712158203e-05
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 16384,
+      "seed": 20260813,
+      "n_differ": 217016
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 276121,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 248131,
+        "1": 183440,
+        "2": 39219,
+        "gt2": 49243
+      },
+      "max_ulp_distance_finite": 29214,
+      "abs_over_rms": {
+        "max": 0.02759278379380703,
+        "p50": 0.0008622744935564697,
+        "p99": 0.013796391896903515,
+        "rmse_over_rms": 0.0038521247915923595
+      },
+      "rel_of_differing_main": {
+        "p50": 0.006451612804085016,
+        "max": 1.1710525751113892,
+        "n": 271902
+      },
+      "near_zero": {
+        "n": 4255,
+        "n_bitwise_differ": 4219,
+        "ulp_hist": {
+          "0": 36,
+          "1": 66,
+          "2": 51,
+          "gt2": 4102
+        },
+        "abs_err_max": 0.0002727508544921875,
+        "abs_err_p99": 0.00013484805822372437
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 32768,
+      "seed": 20260813,
+      "n_differ": 276121
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 42868,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 480947,
+        "1": 35936,
+        "2": 2118,
+        "gt2": 1173
+      },
+      "max_ulp_distance_finite": 27373,
+      "abs_over_rms": {
+        "max": 0.027598334476351738,
+        "p50": 0.0,
+        "p99": 0.0034497918095439672,
+        "rmse_over_rms": 0.0008832432795315981
+      },
+      "rel_of_differing_main": {
+        "p50": 0.005434782709926367,
+        "max": 0.09743589907884598,
+        "n": 39227
+      },
+      "near_zero": {
+        "n": 4114,
+        "n_bitwise_differ": 3641,
+        "ulp_hist": {
+          "0": 473,
+          "1": 716,
+          "2": 583,
+          "gt2": 2342
+        },
+        "abs_err_max": 3.159046173095703e-06,
+        "abs_err_p99": 1.1920928955078125e-06
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 512,
+      "seed": 20260814,
+      "n_differ": 42868
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 60400,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 463638,
+        "1": 50251,
+        "2": 3660,
+        "gt2": 2589
+      },
+      "max_ulp_distance_finite": 27483,
+      "abs_over_rms": {
+        "max": 0.019537854939699173,
+        "p50": 0.0,
+        "p99": 0.004884463734924793,
+        "rmse_over_rms": 0.0011347300605848432
+      },
+      "rel_of_differing_main": {
+        "p50": 0.005524862091988325,
+        "max": 0.15107913315296173,
+        "n": 56500
+      },
+      "near_zero": {
+        "n": 4150,
+        "n_bitwise_differ": 3900,
+        "ulp_hist": {
+          "0": 250,
+          "1": 442,
+          "2": 383,
+          "gt2": 3075
+        },
+        "abs_err_max": 5.4836273193359375e-06,
+        "abs_err_p99": 2.691522240638733e-06
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 1024,
+      "seed": 20260814,
+      "n_differ": 60400
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 85411,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 438710,
+        "1": 69925,
+        "2": 6043,
+        "gt2": 5464
+      },
+      "max_ulp_distance_finite": 27908,
+      "abs_over_rms": {
+        "max": 0.02763751707971096,
+        "p50": 0.0,
+        "p99": 0.00690937926992774,
+        "rmse_over_rms": 0.0014291569823399186
+      },
+      "rel_of_differing_main": {
+        "p50": 0.005586592014878988,
+        "max": 0.22018349170684814,
+        "n": 81432
+      },
+      "near_zero": {
+        "n": 4146,
+        "n_bitwise_differ": 3979,
+        "ulp_hist": {
+          "0": 167,
+          "1": 339,
+          "2": 315,
+          "gt2": 3325
+        },
+        "abs_err_max": 1.1205673217773438e-05,
+        "abs_err_p99": 5.7220458984375e-06
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 2048,
+      "seed": 20260814,
+      "n_differ": 85411
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 119963,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 404213,
+        "1": 95842,
+        "2": 9663,
+        "gt2": 10236
+      },
+      "max_ulp_distance_finite": 28256,
+      "abs_over_rms": {
+        "max": 0.019514337182044983,
+        "p50": 0.0,
+        "p99": 0.009757168591022491,
+        "rmse_over_rms": 0.0018170777475461364
+      },
+      "rel_of_differing_main": {
+        "p50": 0.0057142856530845165,
+        "max": 0.3863636255264282,
+        "n": 115741
+      },
+      "near_zero": {
+        "n": 4334,
+        "n_bitwise_differ": 4222,
+        "ulp_hist": {
+          "0": 112,
+          "1": 202,
+          "2": 211,
+          "gt2": 3809
+        },
+        "abs_err_max": 3.170967102050781e-05,
+        "abs_err_p99": 1.33514404296875e-05
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 4096,
+      "seed": 20260814,
+      "n_differ": 119963
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 163876,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 360345,
+        "1": 125813,
+        "2": 15785,
+        "gt2": 18143
+      },
+      "max_ulp_distance_finite": 28527,
+      "abs_over_rms": {
+        "max": 0.027581939473748207,
+        "p50": 0.0,
+        "p99": 0.006895484868437052,
+        "rmse_over_rms": 0.0023073400370776653
+      },
+      "rel_of_differing_main": {
+        "p50": 0.0058823530562222,
+        "max": 0.4597156345844269,
+        "n": 159741
+      },
+      "near_zero": {
+        "n": 4202,
+        "n_bitwise_differ": 4135,
+        "ulp_hist": {
+          "0": 67,
+          "1": 145,
+          "2": 144,
+          "gt2": 3846
+        },
+        "abs_err_max": 5.263090133666992e-05,
+        "abs_err_p99": 2.7179718017578125e-05
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 8192,
+      "seed": 20260814,
+      "n_differ": 163876
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 217188,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 307051,
+        "1": 157499,
+        "2": 24883,
+        "gt2": 30624
+      },
+      "max_ulp_distance_finite": 28826,
+      "abs_over_rms": {
+        "max": 0.019527604803442955,
+        "p50": 0.0,
+        "p99": 0.009763802401721478,
+        "rmse_over_rms": 0.002945725340396166
+      },
+      "rel_of_differing_main": {
+        "p50": 0.006097560748457909,
+        "max": 0.8639456033706665,
+        "n": 213006
+      },
+      "near_zero": {
+        "n": 4231,
+        "n_bitwise_differ": 4182,
+        "ulp_hist": {
+          "0": 49,
+          "1": 85,
+          "2": 99,
+          "gt2": 3998
+        },
+        "abs_err_max": 0.00011169910430908203,
+        "abs_err_p99": 6.771087646484375e-05
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 16384,
+      "seed": 20260814,
+      "n_differ": 217188
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 276485,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 247767,
+        "1": 183717,
+        "2": 39085,
+        "gt2": 49570
+      },
+      "max_ulp_distance_finite": 29098,
+      "abs_over_rms": {
+        "max": 0.03799539804458618,
+        "p50": 0.0008635317208245397,
+        "p99": 0.013816507533192635,
+        "rmse_over_rms": 0.0038645900785923004
+      },
+      "rel_of_differing_main": {
+        "p50": 0.006451612804085016,
+        "max": 1.03125,
+        "n": 272372
+      },
+      "near_zero": {
+        "n": 4149,
+        "n_bitwise_differ": 4113,
+        "ulp_hist": {
+          "0": 36,
+          "1": 52,
+          "2": 63,
+          "gt2": 3998
+        },
+        "abs_err_max": 0.0002601742744445801,
+        "abs_err_p99": 0.00013720989227294922
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 32768,
+      "seed": 20260814,
+      "n_differ": 276485
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 42892,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 480904,
+        "1": 35789,
+        "2": 2112,
+        "gt2": 1158
+      },
+      "max_ulp_distance_finite": 27149,
+      "abs_over_rms": {
+        "max": 0.027765123173594475,
+        "p50": 0.0,
+        "p99": 0.0034706403966993093,
+        "rmse_over_rms": 0.0008843191899359226
+      },
+      "rel_of_differing_main": {
+        "p50": 0.0054054055362939835,
+        "max": 0.09049773961305618,
+        "n": 39059
+      },
+      "near_zero": {
+        "n": 4325,
+        "n_bitwise_differ": 3833,
+        "ulp_hist": {
+          "0": 492,
+          "1": 737,
+          "2": 564,
+          "gt2": 2532
+        },
+        "abs_err_max": 5.781650543212891e-06,
+        "abs_err_p99": 1.1920928955078125e-06
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 512,
+      "seed": 20260815,
+      "n_differ": 42892
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 60768,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 463292,
+        "1": 50565,
+        "2": 3608,
+        "gt2": 2605
+      },
+      "max_ulp_distance_finite": 27607,
+      "abs_over_rms": {
+        "max": 0.01956963911652565,
+        "p50": 0.0,
+        "p99": 0.0048924097791314125,
+        "rmse_over_rms": 0.001128030358813703
+      },
+      "rel_of_differing_main": {
+        "p50": 0.005524862091988325,
+        "max": 0.17741934955120087,
+        "n": 56778
+      },
+      "near_zero": {
+        "n": 4218,
+        "n_bitwise_differ": 3990,
+        "ulp_hist": {
+          "0": 228,
+          "1": 450,
+          "2": 452,
+          "gt2": 3088
+        },
+        "abs_err_max": 7.271766662597656e-06,
+        "abs_err_p99": 2.6226043701171875e-06
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 1024,
+      "seed": 20260815,
+      "n_differ": 60768
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 85397,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 438738,
+        "1": 69985,
+        "2": 6044,
+        "gt2": 5350
+      },
+      "max_ulp_distance_finite": 27881,
+      "abs_over_rms": {
+        "max": 0.027654170989990234,
+        "p50": 0.0,
+        "p99": 0.006913542747497559,
+        "rmse_over_rms": 0.0014266043435782194
+      },
+      "rel_of_differing_main": {
+        "p50": 0.005586592014878988,
+        "max": 0.25,
+        "n": 81379
+      },
+      "near_zero": {
+        "n": 4171,
+        "n_bitwise_differ": 4018,
+        "ulp_hist": {
+          "0": 153,
+          "1": 345,
+          "2": 294,
+          "gt2": 3379
+        },
+        "abs_err_max": 1.1205673217773438e-05,
+        "abs_err_p99": 5.602836608886719e-06
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 2048,
+      "seed": 20260815,
+      "n_differ": 85397
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 119935,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 404251,
+        "1": 95789,
+        "2": 9775,
+        "gt2": 10306
+      },
+      "max_ulp_distance_finite": 28462,
+      "abs_over_rms": {
+        "max": 0.019554374739527702,
+        "p50": 0.0,
+        "p99": 0.009777187369763851,
+        "rmse_over_rms": 0.0018204592633992434
+      },
+      "rel_of_differing_main": {
+        "p50": 0.0057142856530845165,
+        "max": 0.38721805810928345,
+        "n": 115870
+      },
+      "near_zero": {
+        "n": 4167,
+        "n_bitwise_differ": 4065,
+        "ulp_hist": {
+          "0": 102,
+          "1": 184,
+          "2": 186,
+          "gt2": 3695
+        },
+        "abs_err_max": 3.600120544433594e-05,
+        "abs_err_p99": 1.3828277587890625e-05
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 4096,
+      "seed": 20260815,
+      "n_differ": 119935
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 163697,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 360520,
+        "1": 125625,
+        "2": 15535,
+        "gt2": 18427
+      },
+      "max_ulp_distance_finite": 28574,
+      "abs_over_rms": {
+        "max": 0.027660373598337173,
+        "p50": 0.0,
+        "p99": 0.006915093399584293,
+        "rmse_over_rms": 0.002295341342687607
+      },
+      "rel_of_differing_main": {
+        "p50": 0.0058823530562222,
+        "max": 0.4583333432674408,
+        "n": 159587
+      },
+      "near_zero": {
+        "n": 4181,
+        "n_bitwise_differ": 4110,
+        "ulp_hist": {
+          "0": 71,
+          "1": 142,
+          "2": 145,
+          "gt2": 3823
+        },
+        "abs_err_max": 5.5342912673950195e-05,
+        "abs_err_p99": 2.765655517578125e-05
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 8192,
+      "seed": 20260815,
+      "n_differ": 163697
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 216694,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 307555,
+        "1": 157105,
+        "2": 25022,
+        "gt2": 30521
+      },
+      "max_ulp_distance_finite": 29013,
+      "abs_over_rms": {
+        "max": 0.029329713433980942,
+        "p50": 0.0,
+        "p99": 0.00977657176554203,
+        "rmse_over_rms": 0.002950080670416355
+      },
+      "rel_of_differing_main": {
+        "p50": 0.006097560748457909,
+        "max": 0.7636054158210754,
+        "n": 212648
+      },
+      "near_zero": {
+        "n": 4085,
+        "n_bitwise_differ": 4046,
+        "ulp_hist": {
+          "0": 39,
+          "1": 76,
+          "2": 68,
+          "gt2": 3902
+        },
+        "abs_err_max": 0.00016260147094726562,
+        "abs_err_p99": 6.210803985595703e-05
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 16384,
+      "seed": 20260815,
+      "n_differ": 216694
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 276087,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 248176,
+        "1": 183534,
+        "2": 39238,
+        "gt2": 49166
+      },
+      "max_ulp_distance_finite": 29147,
+      "abs_over_rms": {
+        "max": 0.05528808385133743,
+        "p50": 0.0008638763101771474,
+        "p99": 0.013822020962834358,
+        "rmse_over_rms": 0.003864131635054946
+      },
+      "rel_of_differing_main": {
+        "p50": 0.006451612804085016,
+        "max": 1.4910179376602173,
+        "n": 271938
+      },
+      "near_zero": {
+        "n": 4174,
+        "n_bitwise_differ": 4149,
+        "ulp_hist": {
+          "0": 25,
+          "1": 52,
+          "2": 48,
+          "gt2": 4049
+        },
+        "abs_err_max": 0.0002455711364746094,
+        "abs_err_p99": 0.00013303756713867188
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 32768,
+      "seed": 20260815,
+      "n_differ": 276087
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 43608,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 480237,
+        "1": 36485,
+        "2": 2114,
+        "gt2": 1188
+      },
+      "max_ulp_distance_finite": 27265,
+      "abs_over_rms": {
+        "max": 0.027699708938598633,
+        "p50": 0.0,
+        "p99": 0.003462463617324829,
+        "rmse_over_rms": 0.0009043758036568761
+      },
+      "rel_of_differing_main": {
+        "p50": 0.005434782709926367,
+        "max": 0.09359605610370636,
+        "n": 39787
+      },
+      "near_zero": {
+        "n": 4264,
+        "n_bitwise_differ": 3821,
+        "ulp_hist": {
+          "0": 443,
+          "1": 712,
+          "2": 560,
+          "gt2": 2549
+        },
+        "abs_err_max": 2.562999725341797e-06,
+        "abs_err_p99": 1.1920928955078125e-06
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 512,
+      "seed": 20260816,
+      "n_differ": 43608
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 60867,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 463177,
+        "1": 50757,
+        "2": 3603,
+        "gt2": 2534
+      },
+      "max_ulp_distance_finite": 27744,
+      "abs_over_rms": {
+        "max": 0.019579723477363586,
+        "p50": 0.0,
+        "p99": 0.004894930869340897,
+        "rmse_over_rms": 0.0011303980136290193
+      },
+      "rel_of_differing_main": {
+        "p50": 0.005524862091988325,
+        "max": 0.14885495603084564,
+        "n": 56894
+      },
+      "near_zero": {
+        "n": 4217,
+        "n_bitwise_differ": 3973,
+        "ulp_hist": {
+          "0": 244,
+          "1": 451,
+          "2": 406,
+          "gt2": 3116
+        },
+        "abs_err_max": 5.245208740234375e-06,
+        "abs_err_p99": 2.5033950805664062e-06
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 1024,
+      "seed": 20260816,
+      "n_differ": 60867
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 85504,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 438615,
+        "1": 70180,
+        "2": 5826,
+        "gt2": 5514
+      },
+      "max_ulp_distance_finite": 27951,
+      "abs_over_rms": {
+        "max": 0.027674729004502296,
+        "p50": 0.0,
+        "p99": 0.006918682251125574,
+        "rmse_over_rms": 0.0014343614457175136
+      },
+      "rel_of_differing_main": {
+        "p50": 0.005586592014878988,
+        "max": 0.17985612154006958,
+        "n": 81520
+      },
+      "near_zero": {
+        "n": 4153,
+        "n_bitwise_differ": 3984,
+        "ulp_hist": {
+          "0": 169,
+          "1": 322,
+          "2": 310,
+          "gt2": 3352
+        },
+        "abs_err_max": 1.1175870895385742e-05,
+        "abs_err_p99": 5.7220458984375e-06
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 2048,
+      "seed": 20260816,
+      "n_differ": 85504
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 119773,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 404414,
+        "1": 95643,
+        "2": 9789,
+        "gt2": 10187
+      },
+      "max_ulp_distance_finite": 28340,
+      "abs_over_rms": {
+        "max": 0.019544530659914017,
+        "p50": 0.0,
+        "p99": 0.009772265329957008,
+        "rmse_over_rms": 0.0018150893738493323
+      },
+      "rel_of_differing_main": {
+        "p50": 0.0057142856530845165,
+        "max": 0.3489208519458771,
+        "n": 115619
+      },
+      "near_zero": {
+        "n": 4255,
+        "n_bitwise_differ": 4154,
+        "ulp_hist": {
+          "0": 101,
+          "1": 191,
+          "2": 197,
+          "gt2": 3766
+        },
+        "abs_err_max": 2.8014183044433594e-05,
+        "abs_err_p99": 1.2993812561035156e-05
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 4096,
+      "seed": 20260816,
+      "n_differ": 119773
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 163646,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 360567,
+        "1": 125684,
+        "2": 15625,
+        "gt2": 18189
+      },
+      "max_ulp_distance_finite": 28631,
+      "abs_over_rms": {
+        "max": 0.027632104232907295,
+        "p50": 0.0,
+        "p99": 0.006908026058226824,
+        "rmse_over_rms": 0.0023022855166345835
+      },
+      "rel_of_differing_main": {
+        "p50": 0.0058823530562222,
+        "max": 0.5195121765136719,
+        "n": 159498
+      },
+      "near_zero": {
+        "n": 4223,
+        "n_bitwise_differ": 4148,
+        "ulp_hist": {
+          "0": 75,
+          "1": 151,
+          "2": 138,
+          "gt2": 3859
+        },
+        "abs_err_max": 7.045269012451172e-05,
+        "abs_err_p99": 2.9087066650390625e-05
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 8192,
+      "seed": 20260816,
+      "n_differ": 163646
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 216934,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 307300,
+        "1": 157480,
+        "2": 25115,
+        "gt2": 30208
+      },
+      "max_ulp_distance_finite": 29030,
+      "abs_over_rms": {
+        "max": 0.019529905170202255,
+        "p50": 0.0,
+        "p99": 0.009764952585101128,
+        "rmse_over_rms": 0.002942716935649514
+      },
+      "rel_of_differing_main": {
+        "p50": 0.006097560748457909,
+        "max": 1.053009271621704,
+        "n": 212803
+      },
+      "near_zero": {
+        "n": 4185,
+        "n_bitwise_differ": 4131,
+        "ulp_hist": {
+          "0": 54,
+          "1": 79,
+          "2": 89,
+          "gt2": 3963
+        },
+        "abs_err_max": 0.00017070770263671875,
+        "abs_err_p99": 6.878376007080078e-05
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 16384,
+      "seed": 20260816,
+      "n_differ": 216934
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 275915,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 248342,
+        "1": 183352,
+        "2": 39122,
+        "gt2": 49245
+      },
+      "max_ulp_distance_finite": 29239,
+      "abs_over_rms": {
+        "max": 0.02760745771229267,
+        "p50": 0.000862733053509146,
+        "p99": 0.013803728856146336,
+        "rmse_over_rms": 0.003856698516756296
+      },
+      "rel_of_differing_main": {
+        "p50": 0.006451612804085016,
+        "max": 1.1901041269302368,
+        "n": 271719
+      },
+      "near_zero": {
+        "n": 4227,
+        "n_bitwise_differ": 4196,
+        "ulp_hist": {
+          "0": 31,
+          "1": 59,
+          "2": 55,
+          "gt2": 4082
+        },
+        "abs_err_max": 0.00029659271240234375,
+        "abs_err_p99": 0.00013500452041625977
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 32768,
+      "seed": 20260816,
+      "n_differ": 275915
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 42868,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 480957,
+        "1": 36074,
+        "2": 1975,
+        "gt2": 1156
+      },
+      "max_ulp_distance_finite": 27383,
+      "abs_over_rms": {
+        "max": 0.027533262968063354,
+        "p50": 0.0,
+        "p99": 0.0034416578710079193,
+        "rmse_over_rms": 0.0008993565570563078
+      },
+      "rel_of_differing_main": {
+        "p50": 0.005434782709926367,
+        "max": 0.11173184216022491,
+        "n": 39205
+      },
+      "near_zero": {
+        "n": 4126,
+        "n_bitwise_differ": 3663,
+        "ulp_hist": {
+          "0": 463,
+          "1": 665,
+          "2": 541,
+          "gt2": 2457
+        },
+        "abs_err_max": 2.384185791015625e-06,
+        "abs_err_p99": 1.1920928955078125e-06
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 512,
+      "seed": 20260817,
+      "n_differ": 42868
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 60836,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 463226,
+        "1": 50746,
+        "2": 3620,
+        "gt2": 2653
+      },
+      "max_ulp_distance_finite": 27546,
+      "abs_over_rms": {
+        "max": 0.019468581303954124,
+        "p50": 0.0,
+        "p99": 0.004867145325988531,
+        "rmse_over_rms": 0.001129122101701796
+      },
+      "rel_of_differing_main": {
+        "p50": 0.005524862091988325,
+        "max": 0.12949639558792114,
+        "n": 57019
+      },
+      "near_zero": {
+        "n": 4043,
+        "n_bitwise_differ": 3817,
+        "ulp_hist": {
+          "0": 226,
+          "1": 417,
+          "2": 429,
+          "gt2": 2971
+        },
+        "abs_err_max": 6.418675184249878e-06,
+        "abs_err_p99": 2.7418136596679688e-06
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 1024,
+      "seed": 20260817,
+      "n_differ": 60836
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 84785,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 439331,
+        "1": 69540,
+        "2": 5827,
+        "gt2": 5395
+      },
+      "max_ulp_distance_finite": 27906,
+      "abs_over_rms": {
+        "max": 0.02753346785902977,
+        "p50": 0.0,
+        "p99": 0.0068833669647574425,
+        "rmse_over_rms": 0.0014283768832683563
+      },
+      "rel_of_differing_main": {
+        "p50": 0.005586592014878988,
+        "max": 0.3160173296928406,
+        "n": 80762
+      },
+      "near_zero": {
+        "n": 4195,
+        "n_bitwise_differ": 4023,
+        "ulp_hist": {
+          "0": 172,
+          "1": 330,
+          "2": 326,
+          "gt2": 3367
+        },
+        "abs_err_max": 1.1444091796875e-05,
+        "abs_err_p99": 5.893409252166748e-06
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 2048,
+      "seed": 20260817,
+      "n_differ": 84785
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 120315,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 403866,
+        "1": 96275,
+        "2": 9670,
+        "gt2": 10314
+      },
+      "max_ulp_distance_finite": 28457,
+      "abs_over_rms": {
+        "max": 0.019534297287464142,
+        "p50": 0.0,
+        "p99": 0.009767148643732071,
+        "rmse_over_rms": 0.0018389547476544976
+      },
+      "rel_of_differing_main": {
+        "p50": 0.0057142856530845165,
+        "max": 0.4566473960876465,
+        "n": 116259
+      },
+      "near_zero": {
+        "n": 4163,
+        "n_bitwise_differ": 4056,
+        "ulp_hist": {
+          "0": 107,
+          "1": 192,
+          "2": 189,
+          "gt2": 3675
+        },
+        "abs_err_max": 3.540515899658203e-05,
+        "abs_err_p99": 1.33514404296875e-05
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 4096,
+      "seed": 20260817,
+      "n_differ": 120315
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 164047,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 360158,
+        "1": 125848,
+        "2": 15863,
+        "gt2": 18299
+      },
+      "max_ulp_distance_finite": 28634,
+      "abs_over_rms": {
+        "max": 0.027637269347906113,
+        "p50": 0.0,
+        "p99": 0.006909317336976528,
+        "rmse_over_rms": 0.002313262317329645
+      },
+      "rel_of_differing_main": {
+        "p50": 0.0058823530562222,
+        "max": 0.46255508065223694,
+        "n": 160010
+      },
+      "near_zero": {
+        "n": 4120,
+        "n_bitwise_differ": 4037,
+        "ulp_hist": {
+          "0": 83,
+          "1": 159,
+          "2": 132,
+          "gt2": 3746
+        },
+        "abs_err_max": 5.9604644775390625e-05,
+        "abs_err_p99": 3.0517578125e-05
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 8192,
+      "seed": 20260817,
+      "n_differ": 164047
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 218061,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 306193,
+        "1": 157851,
+        "2": 25236,
+        "gt2": 30657
+      },
+      "max_ulp_distance_finite": 28819,
+      "abs_over_rms": {
+        "max": 0.02933322638273239,
+        "p50": 0.0,
+        "p99": 0.009777741506695747,
+        "rmse_over_rms": 0.002949812915176153
+      },
+      "rel_of_differing_main": {
+        "p50": 0.006097560748457909,
+        "max": 0.9597315192222595,
+        "n": 213744
+      },
+      "near_zero": {
+        "n": 4351,
+        "n_bitwise_differ": 4317,
+        "ulp_hist": {
+          "0": 34,
+          "1": 75,
+          "2": 79,
+          "gt2": 4163
+        },
+        "abs_err_max": 0.0001169443130493164,
+        "abs_err_p99": 6.532669067382812e-05
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 16384,
+      "seed": 20260817,
+      "n_differ": 218061
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 277183,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 247086,
+        "1": 184261,
+        "2": 39083,
+        "gt2": 49646
+      },
+      "max_ulp_distance_finite": 29109,
+      "abs_over_rms": {
+        "max": 0.02765762433409691,
+        "p50": 0.0008643007604405284,
+        "p99": 0.013828812167048454,
+        "rmse_over_rms": 0.0038661553990095854
+      },
+      "rel_of_differing_main": {
+        "p50": 0.006451612804085016,
+        "max": 0.9396985173225403,
+        "n": 272990
+      },
+      "near_zero": {
+        "n": 4212,
+        "n_bitwise_differ": 4193,
+        "ulp_hist": {
+          "0": 19,
+          "1": 62,
+          "2": 62,
+          "gt2": 4069
+        },
+        "abs_err_max": 0.0004048347473144531,
+        "abs_err_p99": 0.00013637542724609375
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 32768,
+      "seed": 20260817,
+      "n_differ": 277183
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 43261,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 480552,
+        "1": 36391,
+        "2": 1961,
+        "gt2": 1207
+      },
+      "max_ulp_distance_finite": 27188,
+      "abs_over_rms": {
+        "max": 0.02763061597943306,
+        "p50": 0.0,
+        "p99": 0.0034538269974291325,
+        "rmse_over_rms": 0.0008976927492767572
+      },
+      "rel_of_differing_main": {
+        "p50": 0.005434782709926367,
+        "max": 0.1538461595773697,
+        "n": 39559
+      },
+      "near_zero": {
+        "n": 4177,
+        "n_bitwise_differ": 3702,
+        "ulp_hist": {
+          "0": 475,
+          "1": 647,
+          "2": 552,
+          "gt2": 2503
+        },
+        "abs_err_max": 4.202127456665039e-06,
+        "abs_err_p99": 1.1920928955078125e-06
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 512,
+      "seed": 20260818,
+      "n_differ": 43261
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 60835,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 463175,
+        "1": 50831,
+        "2": 3446,
+        "gt2": 2588
+      },
+      "max_ulp_distance_finite": 27756,
+      "abs_over_rms": {
+        "max": 0.01951931044459343,
+        "p50": 0.0,
+        "p99": 0.004879827611148357,
+        "rmse_over_rms": 0.0011347209801897407
+      },
+      "rel_of_differing_main": {
+        "p50": 0.005524862091988325,
+        "max": 0.13907285034656525,
+        "n": 56865
+      },
+      "near_zero": {
+        "n": 4248,
+        "n_bitwise_differ": 3970,
+        "ulp_hist": {
+          "0": 278,
+          "1": 507,
+          "2": 425,
+          "gt2": 3038
+        },
+        "abs_err_max": 6.2659382820129395e-06,
+        "abs_err_p99": 2.682209014892578e-06
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 1024,
+      "seed": 20260818,
+      "n_differ": 60835
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 85384,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 438744,
+        "1": 70019,
+        "2": 5985,
+        "gt2": 5336
+      },
+      "max_ulp_distance_finite": 27927,
+      "abs_over_rms": {
+        "max": 0.02767139859497547,
+        "p50": 0.0,
+        "p99": 0.006917849648743868,
+        "rmse_over_rms": 0.0014359371270984411
+      },
+      "rel_of_differing_main": {
+        "p50": 0.005586592014878988,
+        "max": 0.1834862381219864,
+        "n": 81340
+      },
+      "near_zero": {
+        "n": 4204,
+        "n_bitwise_differ": 4044,
+        "ulp_hist": {
+          "0": 160,
+          "1": 327,
+          "2": 309,
+          "gt2": 3408
+        },
+        "abs_err_max": 1.1444091796875e-05,
+        "abs_err_p99": 6.377696990966797e-06
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 2048,
+      "seed": 20260818,
+      "n_differ": 85384
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 119450,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 404732,
+        "1": 95415,
+        "2": 9663,
+        "gt2": 10231
+      },
+      "max_ulp_distance_finite": 28309,
+      "abs_over_rms": {
+        "max": 0.039078738540410995,
+        "p50": 0.0,
+        "p99": 0.009769684635102749,
+        "rmse_over_rms": 0.001824906445108354
+      },
+      "rel_of_differing_main": {
+        "p50": 0.0057142856530845165,
+        "max": 0.3777777850627899,
+        "n": 115309
+      },
+      "near_zero": {
+        "n": 4247,
+        "n_bitwise_differ": 4141,
+        "ulp_hist": {
+          "0": 106,
+          "1": 199,
+          "2": 219,
+          "gt2": 3723
+        },
+        "abs_err_max": 2.5082379579544067e-05,
+        "abs_err_p99": 1.290440559387207e-05
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 4096,
+      "seed": 20260818,
+      "n_differ": 119450
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 163517,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 360696,
+        "1": 125259,
+        "2": 16048,
+        "gt2": 18109
+      },
+      "max_ulp_distance_finite": 28513,
+      "abs_over_rms": {
+        "max": 0.02767033316195011,
+        "p50": 0.0,
+        "p99": 0.006917583290487528,
+        "rmse_over_rms": 0.0023048834409564734
+      },
+      "rel_of_differing_main": {
+        "p50": 0.0058823530562222,
+        "max": 0.5520833134651184,
+        "n": 159416
+      },
+      "near_zero": {
+        "n": 4176,
+        "n_bitwise_differ": 4101,
+        "ulp_hist": {
+          "0": 75,
+          "1": 135,
+          "2": 147,
+          "gt2": 3819
+        },
+        "abs_err_max": 7.200241088867188e-05,
+        "abs_err_p99": 2.956390380859375e-05
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 8192,
+      "seed": 20260818,
+      "n_differ": 163517
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 217436,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 306807,
+        "1": 158220,
+        "2": 24619,
+        "gt2": 30471
+      },
+      "max_ulp_distance_finite": 28848,
+      "abs_over_rms": {
+        "max": 0.01953897252678871,
+        "p50": 0.0,
+        "p99": 0.009769486263394356,
+        "rmse_over_rms": 0.0029521409887820482
+      },
+      "rel_of_differing_main": {
+        "p50": 0.006097560748457909,
+        "max": 0.6353591084480286,
+        "n": 213310
+      },
+      "near_zero": {
+        "n": 4171,
+        "n_bitwise_differ": 4126,
+        "ulp_hist": {
+          "0": 45,
+          "1": 72,
+          "2": 78,
+          "gt2": 3976
+        },
+        "abs_err_max": 0.00010561943054199219,
+        "abs_err_p99": 6.67572021484375e-05
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 16384,
+      "seed": 20260818,
+      "n_differ": 217436
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 276137,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 248121,
+        "1": 183088,
+        "2": 39359,
+        "gt2": 49508
+      },
+      "max_ulp_distance_finite": 29068,
+      "abs_over_rms": {
+        "max": 0.027636080980300903,
+        "p50": 0.0008636275306344032,
+        "p99": 0.013818040490150452,
+        "rmse_over_rms": 0.0038649269845336676
+      },
+      "rel_of_differing_main": {
+        "p50": 0.006451612804085016,
+        "max": 1.8602150678634644,
+        "n": 271955
+      },
+      "near_zero": {
+        "n": 4212,
+        "n_bitwise_differ": 4182,
+        "ulp_hist": {
+          "0": 30,
+          "1": 58,
+          "2": 51,
+          "gt2": 4073
+        },
+        "abs_err_max": 0.0002918243408203125,
+        "abs_err_p99": 0.000133514404296875
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 32768,
+      "seed": 20260818,
+      "n_differ": 276137
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 43055,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 480808,
+        "1": 36312,
+        "2": 2011,
+        "gt2": 1139
+      },
+      "max_ulp_distance_finite": 27085,
+      "abs_over_rms": {
+        "max": 0.027576616033911705,
+        "p50": 0.0,
+        "p99": 0.003447077004238963,
+        "rmse_over_rms": 0.0008997944532893598
+      },
+      "rel_of_differing_main": {
+        "p50": 0.005434782709926367,
+        "max": 0.07894736528396606,
+        "n": 39462
+      },
+      "near_zero": {
+        "n": 4018,
+        "n_bitwise_differ": 3593,
+        "ulp_hist": {
+          "0": 425,
+          "1": 672,
+          "2": 524,
+          "gt2": 2397
+        },
+        "abs_err_max": 1.952052116394043e-06,
+        "abs_err_p99": 1.1324882507324219e-06
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 512,
+      "seed": 20260819,
+      "n_differ": 43055
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 60535,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 463495,
+        "1": 50473,
+        "2": 3704,
+        "gt2": 2505
+      },
+      "max_ulp_distance_finite": 27695,
+      "abs_over_rms": {
+        "max": 0.01952381618320942,
+        "p50": 0.0,
+        "p99": 0.004880954045802355,
+        "rmse_over_rms": 0.0011298011522740126
+      },
+      "rel_of_differing_main": {
+        "p50": 0.005524862091988325,
+        "max": 0.14388489723205566,
+        "n": 56682
+      },
+      "near_zero": {
+        "n": 4111,
+        "n_bitwise_differ": 3853,
+        "ulp_hist": {
+          "0": 258,
+          "1": 425,
+          "2": 426,
+          "gt2": 3002
+        },
+        "abs_err_max": 5.587935447692871e-06,
+        "abs_err_p99": 2.562999725341797e-06
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 1024,
+      "seed": 20260819,
+      "n_differ": 60535
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 85271,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 438827,
+        "1": 69934,
+        "2": 5929,
+        "gt2": 5345
+      },
+      "max_ulp_distance_finite": 27948,
+      "abs_over_rms": {
+        "max": 0.027525875717401505,
+        "p50": 0.0,
+        "p99": 0.006881468929350376,
+        "rmse_over_rms": 0.001440756139345467
+      },
+      "rel_of_differing_main": {
+        "p50": 0.005586592014878988,
+        "max": 0.29441624879837036,
+        "n": 81208
+      },
+      "near_zero": {
+        "n": 4253,
+        "n_bitwise_differ": 4063,
+        "ulp_hist": {
+          "0": 190,
+          "1": 336,
+          "2": 294,
+          "gt2": 3433
+        },
+        "abs_err_max": 1.3947486877441406e-05,
+        "abs_err_p99": 5.841255187988281e-06
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 2048,
+      "seed": 20260819,
+      "n_differ": 85271
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 120059,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 404129,
+        "1": 95816,
+        "2": 9877,
+        "gt2": 10337
+      },
+      "max_ulp_distance_finite": 28167,
+      "abs_over_rms": {
+        "max": 0.01949538104236126,
+        "p50": 0.0,
+        "p99": 0.00974769052118063,
+        "rmse_over_rms": 0.0018221331993117929
+      },
+      "rel_of_differing_main": {
+        "p50": 0.0057142856530845165,
+        "max": 0.32894736528396606,
+        "n": 116030
+      },
+      "near_zero": {
+        "n": 4129,
+        "n_bitwise_differ": 4029,
+        "ulp_hist": {
+          "0": 100,
+          "1": 186,
+          "2": 200,
+          "gt2": 3643
+        },
+        "abs_err_max": 3.218650817871094e-05,
+        "abs_err_p99": 1.385807991027832e-05
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 4096,
+      "seed": 20260819,
+      "n_differ": 120059
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 163698,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 360512,
+        "1": 125809,
+        "2": 15551,
+        "gt2": 18207
+      },
+      "max_ulp_distance_finite": 28497,
+      "abs_over_rms": {
+        "max": 0.027616841718554497,
+        "p50": 0.0,
+        "p99": 0.006904210429638624,
+        "rmse_over_rms": 0.0023173517547547817
+      },
+      "rel_of_differing_main": {
+        "p50": 0.0058823530562222,
+        "max": 0.6018099784851074,
+        "n": 159567
+      },
+      "near_zero": {
+        "n": 4209,
+        "n_bitwise_differ": 4131,
+        "ulp_hist": {
+          "0": 78,
+          "1": 138,
+          "2": 146,
+          "gt2": 3847
+        },
+        "abs_err_max": 5.745887756347656e-05,
+        "abs_err_p99": 2.7686357498168945e-05
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 8192,
+      "seed": 20260819,
+      "n_differ": 163698
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 216838,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 307400,
+        "1": 157357,
+        "2": 24862,
+        "gt2": 30532
+      },
+      "max_ulp_distance_finite": 28842,
+      "abs_over_rms": {
+        "max": 0.03900253400206566,
+        "p50": 0.0,
+        "p99": 0.009750633500516415,
+        "rmse_over_rms": 0.0029430079739540815
+      },
+      "rel_of_differing_main": {
+        "p50": 0.006097560748457909,
+        "max": 0.9776297807693481,
+        "n": 212751
+      },
+      "near_zero": {
+        "n": 4137,
+        "n_bitwise_differ": 4087,
+        "ulp_hist": {
+          "0": 50,
+          "1": 74,
+          "2": 87,
+          "gt2": 3926
+        },
+        "abs_err_max": 0.00014152377843856812,
+        "abs_err_p99": 6.580352783203125e-05
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 16384,
+      "seed": 20260819,
+      "n_differ": 216838
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 276978,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 247272,
+        "1": 183835,
+        "2": 38949,
+        "gt2": 49971
+      },
+      "max_ulp_distance_finite": 29152,
+      "abs_over_rms": {
+        "max": 0.027644949033856392,
+        "p50": 0.0008639046573080122,
+        "p99": 0.013822474516928196,
+        "rmse_over_rms": 0.003868370782583952
+      },
+      "rel_of_differing_main": {
+        "p50": 0.006451612804085016,
+        "max": 1.3461538553237915,
+        "n": 272755
+      },
+      "near_zero": {
+        "n": 4261,
+        "n_bitwise_differ": 4223,
+        "ulp_hist": {
+          "0": 38,
+          "1": 65,
+          "2": 67,
+          "gt2": 4091
+        },
+        "abs_err_max": 0.0003161430358886719,
+        "abs_err_p99": 0.000141143798828125
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 32768,
+      "seed": 20260819,
+      "n_differ": 276978
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 42950,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 480873,
+        "1": 35964,
+        "2": 2149,
+        "gt2": 1127
+      },
+      "max_ulp_distance_finite": 27373,
+      "abs_over_rms": {
+        "max": 0.0276274885982275,
+        "p50": 0.0,
+        "p99": 0.0034534360747784376,
+        "rmse_over_rms": 0.0008877793443389237
+      },
+      "rel_of_differing_main": {
+        "p50": 0.005434782709926367,
+        "max": 0.08810572326183319,
+        "n": 39240
+      },
+      "near_zero": {
+        "n": 4175,
+        "n_bitwise_differ": 3710,
+        "ulp_hist": {
+          "0": 465,
+          "1": 644,
+          "2": 520,
+          "gt2": 2546
+        },
+        "abs_err_max": 2.4437904357910156e-06,
+        "abs_err_p99": 1.1920928955078125e-06
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 512,
+      "seed": 20260820,
+      "n_differ": 42950
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 60744,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 463294,
+        "1": 50598,
+        "2": 3600,
+        "gt2": 2546
+      },
+      "max_ulp_distance_finite": 27723,
+      "abs_over_rms": {
+        "max": 0.019521648064255714,
+        "p50": 0.0,
+        "p99": 0.004880412016063929,
+        "rmse_over_rms": 0.0011387744452804327
+      },
+      "rel_of_differing_main": {
+        "p50": 0.005524862091988325,
+        "max": 0.125,
+        "n": 56744
+      },
+      "near_zero": {
+        "n": 4250,
+        "n_bitwise_differ": 4000,
+        "ulp_hist": {
+          "0": 250,
+          "1": 464,
+          "2": 431,
+          "gt2": 3105
+        },
+        "abs_err_max": 6.318092346191406e-06,
+        "abs_err_p99": 2.771615982055664e-06
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 1024,
+      "seed": 20260820,
+      "n_differ": 60744
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 85683,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 438441,
+        "1": 70029,
+        "2": 6039,
+        "gt2": 5429
+      },
+      "max_ulp_distance_finite": 27917,
+      "abs_over_rms": {
+        "max": 0.027645708993077278,
+        "p50": 0.0,
+        "p99": 0.0069114272482693195,
+        "rmse_over_rms": 0.001439422951079905
+      },
+      "rel_of_differing_main": {
+        "p50": 0.00561797758564353,
+        "max": 0.2110091745853424,
+        "n": 81497
+      },
+      "near_zero": {
+        "n": 4350,
+        "n_bitwise_differ": 4186,
+        "ulp_hist": {
+          "0": 164,
+          "1": 365,
+          "2": 369,
+          "gt2": 3452
+        },
+        "abs_err_max": 1.6808509826660156e-05,
+        "abs_err_p99": 6.429851055145264e-06
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 2048,
+      "seed": 20260820,
+      "n_differ": 85683
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 119479,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 404706,
+        "1": 95426,
+        "2": 9760,
+        "gt2": 10214
+      },
+      "max_ulp_distance_finite": 28322,
+      "abs_over_rms": {
+        "max": 0.01954163983464241,
+        "p50": 0.0,
+        "p99": 0.009770819917321205,
+        "rmse_over_rms": 0.001821682439185679
+      },
+      "rel_of_differing_main": {
+        "p50": 0.0057142856530845165,
+        "max": 0.3601190447807312,
+        "n": 115400
+      },
+      "near_zero": {
+        "n": 4182,
+        "n_bitwise_differ": 4079,
+        "ulp_hist": {
+          "0": 103,
+          "1": 198,
+          "2": 186,
+          "gt2": 3695
+        },
+        "abs_err_max": 3.838539123535156e-05,
+        "abs_err_p99": 1.387670636177063e-05
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 4096,
+      "seed": 20260820,
+      "n_differ": 119479
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 163147,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 361073,
+        "1": 125306,
+        "2": 15594,
+        "gt2": 18132
+      },
+      "max_ulp_distance_finite": 28414,
+      "abs_over_rms": {
+        "max": 0.02761428989470005,
+        "p50": 0.0,
+        "p99": 0.006903572473675013,
+        "rmse_over_rms": 0.0023011756129562855
+      },
+      "rel_of_differing_main": {
+        "p50": 0.005847953259944916,
+        "max": 0.45299145579338074,
+        "n": 159032
+      },
+      "near_zero": {
+        "n": 4183,
+        "n_bitwise_differ": 4115,
+        "ulp_hist": {
+          "0": 68,
+          "1": 157,
+          "2": 156,
+          "gt2": 3802
+        },
+        "abs_err_max": 7.939338684082031e-05,
+        "abs_err_p99": 2.9325485229492188e-05
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 8192,
+      "seed": 20260820,
+      "n_differ": 163147
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 216669,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 307585,
+        "1": 157100,
+        "2": 24920,
+        "gt2": 30493
+      },
+      "max_ulp_distance_finite": 28879,
+      "abs_over_rms": {
+        "max": 0.0243923868983984,
+        "p50": 0.0,
+        "p99": 0.00975695438683033,
+        "rmse_over_rms": 0.0029368074610829353
+      },
+      "rel_of_differing_main": {
+        "p50": 0.006097560748457909,
+        "max": 0.7062937021255493,
+        "n": 212513
+      },
+      "near_zero": {
+        "n": 4190,
+        "n_bitwise_differ": 4156,
+        "ulp_hist": {
+          "0": 34,
+          "1": 89,
+          "2": 68,
+          "gt2": 3999
+        },
+        "abs_err_max": 0.00012022256851196289,
+        "abs_err_p99": 6.914138793945312e-05
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 16384,
+      "seed": 20260820,
+      "n_differ": 216669
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 276088,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 248168,
+        "1": 183564,
+        "2": 39061,
+        "gt2": 49209
+      },
+      "max_ulp_distance_finite": 29138,
+      "abs_over_rms": {
+        "max": 0.04145021736621857,
+        "p50": 0.0008635462145321071,
+        "p99": 0.013816739432513714,
+        "rmse_over_rms": 0.0038642226718366146
+      },
+      "rel_of_differing_main": {
+        "p50": 0.006451612804085016,
+        "max": 1.2930107116699219,
+        "n": 271834
+      },
+      "near_zero": {
+        "n": 4286,
+        "n_bitwise_differ": 4254,
+        "ulp_hist": {
+          "0": 32,
+          "1": 66,
+          "2": 55,
+          "gt2": 4133
+        },
+        "abs_err_max": 0.0002503395080566406,
+        "abs_err_p99": 0.00014257431030273438
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 32768,
+      "seed": 20260820,
+      "n_differ": 276088
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 42968,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 480864,
+        "1": 35944,
+        "2": 2073,
+        "gt2": 1171
+      },
+      "max_ulp_distance_finite": 27495,
+      "abs_over_rms": {
+        "max": 0.027613036334514618,
+        "p50": 0.0,
+        "p99": 0.0034516295418143272,
+        "rmse_over_rms": 0.0008891673642210662
+      },
+      "rel_of_differing_main": {
+        "p50": 0.005434782709926367,
+        "max": 0.078125,
+        "n": 39188
+      },
+      "near_zero": {
+        "n": 4236,
+        "n_bitwise_differ": 3780,
+        "ulp_hist": {
+          "0": 456,
+          "1": 668,
+          "2": 528,
+          "gt2": 2584
+        },
+        "abs_err_max": 2.7418136596679688e-06,
+        "abs_err_p99": 1.1920928955078125e-06
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 512,
+      "seed": 20260821,
+      "n_differ": 42968
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 60580,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 463486,
+        "1": 50532,
+        "2": 3588,
+        "gt2": 2579
+      },
+      "max_ulp_distance_finite": 27578,
+      "abs_over_rms": {
+        "max": 0.01952749863266945,
+        "p50": 0.0,
+        "p99": 0.004881874658167362,
+        "rmse_over_rms": 0.0011226913193240762
+      },
+      "rel_of_differing_main": {
+        "p50": 0.005524862091988325,
+        "max": 0.12727272510528564,
+        "n": 56699
+      },
+      "near_zero": {
+        "n": 4103,
+        "n_bitwise_differ": 3881,
+        "ulp_hist": {
+          "0": 222,
+          "1": 473,
+          "2": 428,
+          "gt2": 2980
+        },
+        "abs_err_max": 5.841255187988281e-06,
+        "abs_err_p99": 2.6226043701171875e-06
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 1024,
+      "seed": 20260821,
+      "n_differ": 60580
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 85464,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 438666,
+        "1": 70078,
+        "2": 5976,
+        "gt2": 5434
+      },
+      "max_ulp_distance_finite": 27797,
+      "abs_over_rms": {
+        "max": 0.027595391497015953,
+        "p50": 0.0,
+        "p99": 0.006898847874253988,
+        "rmse_over_rms": 0.0014337929897010326
+      },
+      "rel_of_differing_main": {
+        "p50": 0.005586592014878988,
+        "max": 0.2150537669658661,
+        "n": 81488
+      },
+      "near_zero": {
+        "n": 4134,
+        "n_bitwise_differ": 3976,
+        "ulp_hist": {
+          "0": 158,
+          "1": 339,
+          "2": 270,
+          "gt2": 3367
+        },
+        "abs_err_max": 1.239776611328125e-05,
+        "abs_err_p99": 5.7220458984375e-06
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 2048,
+      "seed": 20260821,
+      "n_differ": 85464
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 119242,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 404952,
+        "1": 95158,
+        "2": 9713,
+        "gt2": 10264
+      },
+      "max_ulp_distance_finite": 28298,
+      "abs_over_rms": {
+        "max": 0.0194728784263134,
+        "p50": 0.0,
+        "p99": 0.0097364392131567,
+        "rmse_over_rms": 0.0018061557784676552
+      },
+      "rel_of_differing_main": {
+        "p50": 0.0057142856530845165,
+        "max": 0.347517728805542,
+        "n": 115135
+      },
+      "near_zero": {
+        "n": 4201,
+        "n_bitwise_differ": 4107,
+        "ulp_hist": {
+          "0": 94,
+          "1": 198,
+          "2": 224,
+          "gt2": 3685
+        },
+        "abs_err_max": 2.524256706237793e-05,
+        "abs_err_p99": 1.2159347534179688e-05
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 4096,
+      "seed": 20260821,
+      "n_differ": 119242
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 163766,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 360440,
+        "1": 125466,
+        "2": 15942,
+        "gt2": 18221
+      },
+      "max_ulp_distance_finite": 28507,
+      "abs_over_rms": {
+        "max": 0.027589598670601845,
+        "p50": 0.0,
+        "p99": 0.006897399667650461,
+        "rmse_over_rms": 0.00230908440425992
+      },
+      "rel_of_differing_main": {
+        "p50": 0.0058823530562222,
+        "max": 0.625,
+        "n": 159629
+      },
+      "near_zero": {
+        "n": 4219,
+        "n_bitwise_differ": 4137,
+        "ulp_hist": {
+          "0": 82,
+          "1": 135,
+          "2": 150,
+          "gt2": 3852
+        },
+        "abs_err_max": 5.835294723510742e-05,
+        "abs_err_p99": 2.7388334274291992e-05
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 8192,
+      "seed": 20260821,
+      "n_differ": 163766
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 217750,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 306508,
+        "1": 157623,
+        "2": 24932,
+        "gt2": 31205
+      },
+      "max_ulp_distance_finite": 28868,
+      "abs_over_rms": {
+        "max": 0.01956046000123024,
+        "p50": 0.0,
+        "p99": 0.00978023000061512,
+        "rmse_over_rms": 0.0029521025717258453
+      },
+      "rel_of_differing_main": {
+        "p50": 0.006097560748457909,
+        "max": 0.7939394116401672,
+        "n": 213760
+      },
+      "near_zero": {
+        "n": 4020,
+        "n_bitwise_differ": 3990,
+        "ulp_hist": {
+          "0": 30,
+          "1": 65,
+          "2": 86,
+          "gt2": 3839
+        },
+        "abs_err_max": 0.000152587890625,
+        "abs_err_p99": 6.103515625e-05
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 16384,
+      "seed": 20260821,
+      "n_differ": 217750
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 276148,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 248115,
+        "1": 183487,
+        "2": 39012,
+        "gt2": 49600
+      },
+      "max_ulp_distance_finite": 29238,
+      "abs_over_rms": {
+        "max": 0.05530389025807381,
+        "p50": 0.0008641232852824032,
+        "p99": 0.013825972564518452,
+        "rmse_over_rms": 0.003865236649289727
+      },
+      "rel_of_differing_main": {
+        "p50": 0.006451612804085016,
+        "max": 1.1005024909973145,
+        "n": 272099
+      },
+      "near_zero": {
+        "n": 4074,
+        "n_bitwise_differ": 4049,
+        "ulp_hist": {
+          "0": 25,
+          "1": 60,
+          "2": 75,
+          "gt2": 3914
+        },
+        "abs_err_max": 0.00031375885009765625,
+        "abs_err_p99": 0.0001366138458251953
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 32768,
+      "seed": 20260821,
+      "n_differ": 276148
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 43317,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 480515,
+        "1": 36312,
+        "2": 2087,
+        "gt2": 1221
+      },
+      "max_ulp_distance_finite": 27162,
+      "abs_over_rms": {
+        "max": 0.027590924873948097,
+        "p50": 0.0,
+        "p99": 0.003448865609243512,
+        "rmse_over_rms": 0.0008997083059512079
+      },
+      "rel_of_differing_main": {
+        "p50": 0.005434782709926367,
+        "max": 0.07633587718009949,
+        "n": 39620
+      },
+      "near_zero": {
+        "n": 4153,
+        "n_bitwise_differ": 3697,
+        "ulp_hist": {
+          "0": 456,
+          "1": 602,
+          "2": 582,
+          "gt2": 2513
+        },
+        "abs_err_max": 2.562999725341797e-06,
+        "abs_err_p99": 1.1920928955078125e-06
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 512,
+      "seed": 20260822,
+      "n_differ": 43317
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 60898,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 463137,
+        "1": 50830,
+        "2": 3596,
+        "gt2": 2527
+      },
+      "max_ulp_distance_finite": 27392,
+      "abs_over_rms": {
+        "max": 0.01951664686203003,
+        "p50": 0.0,
+        "p99": 0.004879161715507507,
+        "rmse_over_rms": 0.0011355699971318245
+      },
+      "rel_of_differing_main": {
+        "p50": 0.005524862091988325,
+        "max": 0.11827956885099411,
+        "n": 56953
+      },
+      "near_zero": {
+        "n": 4198,
+        "n_bitwise_differ": 3945,
+        "ulp_hist": {
+          "0": 253,
+          "1": 476,
+          "2": 470,
+          "gt2": 2999
+        },
+        "abs_err_max": 6.079673767089844e-06,
+        "abs_err_p99": 2.562999725341797e-06
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 1024,
+      "seed": 20260822,
+      "n_differ": 60898
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 84985,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 439107,
+        "1": 69514,
+        "2": 6019,
+        "gt2": 5442
+      },
+      "max_ulp_distance_finite": 27894,
+      "abs_over_rms": {
+        "max": 0.027615133672952652,
+        "p50": 0.0,
+        "p99": 0.006903783418238163,
+        "rmse_over_rms": 0.001436050282791257
+      },
+      "rel_of_differing_main": {
+        "p50": 0.00561797758564353,
+        "max": 0.19306930899620056,
+        "n": 80975
+      },
+      "near_zero": {
+        "n": 4206,
+        "n_bitwise_differ": 4010,
+        "ulp_hist": {
+          "0": 196,
+          "1": 342,
+          "2": 316,
+          "gt2": 3352
+        },
+        "abs_err_max": 1.2814998626708984e-05,
+        "abs_err_p99": 5.9604644775390625e-06
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 2048,
+      "seed": 20260822,
+      "n_differ": 84985
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 119590,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 404591,
+        "1": 95363,
+        "2": 9815,
+        "gt2": 10267
+      },
+      "max_ulp_distance_finite": 28323,
+      "abs_over_rms": {
+        "max": 0.019510973244905472,
+        "p50": 0.0,
+        "p99": 0.009755486622452736,
+        "rmse_over_rms": 0.0018160718027502298
+      },
+      "rel_of_differing_main": {
+        "p50": 0.0057142856530845165,
+        "max": 0.33484163880348206,
+        "n": 115445
+      },
+      "near_zero": {
+        "n": 4252,
+        "n_bitwise_differ": 4145,
+        "ulp_hist": {
+          "0": 107,
+          "1": 192,
+          "2": 202,
+          "gt2": 3751
+        },
+        "abs_err_max": 2.5153160095214844e-05,
+        "abs_err_p99": 1.2159347534179688e-05
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 4096,
+      "seed": 20260822,
+      "n_differ": 119590
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 163988,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 360226,
+        "1": 125758,
+        "2": 15625,
+        "gt2": 18405
+      },
+      "max_ulp_distance_finite": 28569,
+      "abs_over_rms": {
+        "max": 0.02758934535086155,
+        "p50": 0.0,
+        "p99": 0.006897336337715387,
+        "rmse_over_rms": 0.0023100306279957294
+      },
+      "rel_of_differing_main": {
+        "p50": 0.0058823530562222,
+        "max": 0.5052083134651184,
+        "n": 159788
+      },
+      "near_zero": {
+        "n": 4274,
+        "n_bitwise_differ": 4200,
+        "ulp_hist": {
+          "0": 74,
+          "1": 139,
+          "2": 153,
+          "gt2": 3908
+        },
+        "abs_err_max": 4.982948303222656e-05,
+        "abs_err_p99": 2.956390380859375e-05
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 8192,
+      "seed": 20260822,
+      "n_differ": 163988
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 216771,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 307474,
+        "1": 157387,
+        "2": 24910,
+        "gt2": 30279
+      },
+      "max_ulp_distance_finite": 28903,
+      "abs_over_rms": {
+        "max": 0.03903524950146675,
+        "p50": 0.0,
+        "p99": 0.009758812375366688,
+        "rmse_over_rms": 0.0029455646872520447
+      },
+      "rel_of_differing_main": {
+        "p50": 0.006097560748457909,
+        "max": 0.8224138021469116,
+        "n": 212576
+      },
+      "near_zero": {
+        "n": 4238,
+        "n_bitwise_differ": 4195,
+        "ulp_hist": {
+          "0": 43,
+          "1": 92,
+          "2": 83,
+          "gt2": 4020
+        },
+        "abs_err_max": 0.0001417398452758789,
+        "abs_err_p99": 6.437301635742188e-05
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 16384,
+      "seed": 20260822,
+      "n_differ": 216771
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 276299,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 247962,
+        "1": 183637,
+        "2": 38910,
+        "gt2": 49559
+      },
+      "max_ulp_distance_finite": 29253,
+      "abs_over_rms": {
+        "max": 0.055213719606399536,
+        "p50": 0.0008627143688499928,
+        "p99": 0.013803429901599884,
+        "rmse_over_rms": 0.003863891586661339
+      },
+      "rel_of_differing_main": {
+        "p50": 0.006451612804085016,
+        "max": 1.1325231790542603,
+        "n": 272106
+      },
+      "near_zero": {
+        "n": 4220,
+        "n_bitwise_differ": 4193,
+        "ulp_hist": {
+          "0": 27,
+          "1": 44,
+          "2": 56,
+          "gt2": 4093
+        },
+        "abs_err_max": 0.0003142356872558594,
+        "abs_err_p99": 0.00014066696166992188
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 32768,
+      "seed": 20260822,
+      "n_differ": 276299
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 42743,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 481084,
+        "1": 35906,
+        "2": 2002,
+        "gt2": 1198
+      },
+      "max_ulp_distance_finite": 27220,
+      "abs_over_rms": {
+        "max": 0.027688222005963326,
+        "p50": 0.0,
+        "p99": 0.0034610277507454157,
+        "rmse_over_rms": 0.0008908553863875568
+      },
+      "rel_of_differing_main": {
+        "p50": 0.005434782709926367,
+        "max": 0.08256880939006805,
+        "n": 39106
+      },
+      "near_zero": {
+        "n": 4098,
+        "n_bitwise_differ": 3637,
+        "ulp_hist": {
+          "0": 461,
+          "1": 719,
+          "2": 514,
+          "gt2": 2404
+        },
+        "abs_err_max": 1.9073486328125e-06,
+        "abs_err_p99": 1.1920928955078125e-06
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 512,
+      "seed": 20260823,
+      "n_differ": 42743
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 60715,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 463320,
+        "1": 50637,
+        "2": 3565,
+        "gt2": 2554
+      },
+      "max_ulp_distance_finite": 27533,
+      "abs_over_rms": {
+        "max": 0.01957467384636402,
+        "p50": 0.0,
+        "p99": 0.004893668461591005,
+        "rmse_over_rms": 0.0011370438151061535
+      },
+      "rel_of_differing_main": {
+        "p50": 0.005524862091988325,
+        "max": 0.15530303120613098,
+        "n": 56756
+      },
+      "near_zero": {
+        "n": 4212,
+        "n_bitwise_differ": 3959,
+        "ulp_hist": {
+          "0": 253,
+          "1": 469,
+          "2": 401,
+          "gt2": 3089
+        },
+        "abs_err_max": 5.0067901611328125e-06,
+        "abs_err_p99": 2.5033950805664062e-06
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 1024,
+      "seed": 20260823,
+      "n_differ": 60715
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 85581,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 438544,
+        "1": 70216,
+        "2": 5896,
+        "gt2": 5418
+      },
+      "max_ulp_distance_finite": 28042,
+      "abs_over_rms": {
+        "max": 0.027687272056937218,
+        "p50": 0.0,
+        "p99": 0.006921818014234304,
+        "rmse_over_rms": 0.001437125145457685
+      },
+      "rel_of_differing_main": {
+        "p50": 0.005586592014878988,
+        "max": 0.4032258093357086,
+        "n": 81530
+      },
+      "near_zero": {
+        "n": 4214,
+        "n_bitwise_differ": 4051,
+        "ulp_hist": {
+          "0": 163,
+          "1": 329,
+          "2": 303,
+          "gt2": 3419
+        },
+        "abs_err_max": 1.430511474609375e-05,
+        "abs_err_p99": 5.841255187988281e-06
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 2048,
+      "seed": 20260823,
+      "n_differ": 85581
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 119510,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 404691,
+        "1": 95455,
+        "2": 9762,
+        "gt2": 10235
+      },
+      "max_ulp_distance_finite": 28305,
+      "abs_over_rms": {
+        "max": 0.019559867680072784,
+        "p50": 0.0,
+        "p99": 0.009779933840036392,
+        "rmse_over_rms": 0.0018145287176594138
+      },
+      "rel_of_differing_main": {
+        "p50": 0.0057142856530845165,
+        "max": 0.34299516677856445,
+        "n": 115452
+      },
+      "near_zero": {
+        "n": 4145,
+        "n_bitwise_differ": 4058,
+        "ulp_hist": {
+          "0": 87,
+          "1": 175,
+          "2": 173,
+          "gt2": 3710
+        },
+        "abs_err_max": 3.230571746826172e-05,
+        "abs_err_p99": 1.2934207916259766e-05
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 4096,
+      "seed": 20260823,
+      "n_differ": 119510
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 163321,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 360879,
+        "1": 125447,
+        "2": 15693,
+        "gt2": 18086
+      },
+      "max_ulp_distance_finite": 28458,
+      "abs_over_rms": {
+        "max": 0.02760671079158783,
+        "p50": 0.0,
+        "p99": 0.006901677697896957,
+        "rmse_over_rms": 0.0023087183944880962
+      },
+      "rel_of_differing_main": {
+        "p50": 0.0058823530562222,
+        "max": 0.4921875,
+        "n": 159226
+      },
+      "near_zero": {
+        "n": 4183,
+        "n_bitwise_differ": 4095,
+        "ulp_hist": {
+          "0": 88,
+          "1": 154,
+          "2": 143,
+          "gt2": 3798
+        },
+        "abs_err_max": 6.651878356933594e-05,
+        "abs_err_p99": 2.956390380859375e-05
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 8192,
+      "seed": 20260823,
+      "n_differ": 163321
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 217470,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 306779,
+        "1": 157757,
+        "2": 25050,
+        "gt2": 30460
+      },
+      "max_ulp_distance_finite": 28822,
+      "abs_over_rms": {
+        "max": 0.01952003315091133,
+        "p50": 0.0,
+        "p99": 0.009760016575455666,
+        "rmse_over_rms": 0.002953130519017577
+      },
+      "rel_of_differing_main": {
+        "p50": 0.006097560748457909,
+        "max": 1.105263113975525,
+        "n": 213267
+      },
+      "near_zero": {
+        "n": 4242,
+        "n_bitwise_differ": 4203,
+        "ulp_hist": {
+          "0": 39,
+          "1": 78,
+          "2": 75,
+          "gt2": 4050
+        },
+        "abs_err_max": 0.0001252889633178711,
+        "abs_err_p99": 6.771087646484375e-05
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 16384,
+      "seed": 20260823,
+      "n_differ": 217470
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 276597,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 247660,
+        "1": 183714,
+        "2": 39217,
+        "gt2": 49420
+      },
+      "max_ulp_distance_finite": 29144,
+      "abs_over_rms": {
+        "max": 0.05527260899543762,
+        "p50": 0.0008636345155537128,
+        "p99": 0.013818152248859406,
+        "rmse_over_rms": 0.0038584924768656492
+      },
+      "rel_of_differing_main": {
+        "p50": 0.006451612804085016,
+        "max": 1.1451612710952759,
+        "n": 272351
+      },
+      "near_zero": {
+        "n": 4277,
+        "n_bitwise_differ": 4246,
+        "ulp_hist": {
+          "0": 31,
+          "1": 42,
+          "2": 56,
+          "gt2": 4148
+        },
+        "abs_err_max": 0.0003018379211425781,
+        "abs_err_p99": 0.0001322031021118164
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 32768,
+      "seed": 20260823,
+      "n_differ": 276597
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 43012,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 480787,
+        "1": 36120,
+        "2": 2079,
+        "gt2": 1172
+      },
+      "max_ulp_distance_finite": 27264,
+      "abs_over_rms": {
+        "max": 0.027713535353541374,
+        "p50": 0.0,
+        "p99": 0.0034641919191926718,
+        "rmse_over_rms": 0.0009008118067868054
+      },
+      "rel_of_differing_main": {
+        "p50": 0.0054054055362939835,
+        "max": 0.12322274595499039,
+        "n": 39371
+      },
+      "near_zero": {
+        "n": 4130,
+        "n_bitwise_differ": 3641,
+        "ulp_hist": {
+          "0": 489,
+          "1": 679,
+          "2": 531,
+          "gt2": 2431
+        },
+        "abs_err_max": 2.4437904357910156e-06,
+        "abs_err_p99": 1.1920928955078125e-06
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 512,
+      "seed": 20260824,
+      "n_differ": 43012
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 60419,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 463604,
+        "1": 50397,
+        "2": 3557,
+        "gt2": 2526
+      },
+      "max_ulp_distance_finite": 27703,
+      "abs_over_rms": {
+        "max": 0.019526053220033646,
+        "p50": 0.0,
+        "p99": 0.004881513305008411,
+        "rmse_over_rms": 0.0011226212373003364
+      },
+      "rel_of_differing_main": {
+        "p50": 0.005524862091988325,
+        "max": 0.1195652186870575,
+        "n": 56480
+      },
+      "near_zero": {
+        "n": 4204,
+        "n_bitwise_differ": 3939,
+        "ulp_hist": {
+          "0": 265,
+          "1": 493,
+          "2": 476,
+          "gt2": 2970
+        },
+        "abs_err_max": 4.991888999938965e-06,
+        "abs_err_p99": 2.6226043701171875e-06
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 1024,
+      "seed": 20260824,
+      "n_differ": 60419
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 85439,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 438683,
+        "1": 70267,
+        "2": 5909,
+        "gt2": 5251
+      },
+      "max_ulp_distance_finite": 27815,
+      "abs_over_rms": {
+        "max": 0.02758108638226986,
+        "p50": 0.0,
+        "p99": 0.006895271595567465,
+        "rmse_over_rms": 0.0014265880454331636
+      },
+      "rel_of_differing_main": {
+        "p50": 0.005586592014878988,
+        "max": 0.24257425963878632,
+        "n": 81427
+      },
+      "near_zero": {
+        "n": 4178,
+        "n_bitwise_differ": 4012,
+        "ulp_hist": {
+          "0": 166,
+          "1": 339,
+          "2": 322,
+          "gt2": 3351
+        },
+        "abs_err_max": 9.298324584960938e-06,
+        "abs_err_p99": 5.424022674560547e-06
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 2048,
+      "seed": 20260824,
+      "n_differ": 85439
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 119764,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 404438,
+        "1": 95518,
+        "2": 9855,
+        "gt2": 10277
+      },
+      "max_ulp_distance_finite": 28236,
+      "abs_over_rms": {
+        "max": 0.019534986466169357,
+        "p50": 0.0,
+        "p99": 0.009767493233084679,
+        "rmse_over_rms": 0.0018214373849332333
+      },
+      "rel_of_differing_main": {
+        "p50": 0.0057142856530845165,
+        "max": 0.375,
+        "n": 115650
+      },
+      "near_zero": {
+        "n": 4200,
+        "n_bitwise_differ": 4114,
+        "ulp_hist": {
+          "0": 86,
+          "1": 224,
+          "2": 180,
+          "gt2": 3710
+        },
+        "abs_err_max": 2.485513687133789e-05,
+        "abs_err_p99": 1.3113021850585938e-05
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 4096,
+      "seed": 20260824,
+      "n_differ": 119764
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 163805,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 360416,
+        "1": 125729,
+        "2": 15698,
+        "gt2": 18348
+      },
+      "max_ulp_distance_finite": 28535,
+      "abs_over_rms": {
+        "max": 0.02763202227652073,
+        "p50": 0.0,
+        "p99": 0.006908005569130182,
+        "rmse_over_rms": 0.0023087335284799337
+      },
+      "rel_of_differing_main": {
+        "p50": 0.0058823530562222,
+        "max": 0.5891472697257996,
+        "n": 159775
+      },
+      "near_zero": {
+        "n": 4097,
+        "n_bitwise_differ": 4030,
+        "ulp_hist": {
+          "0": 67,
+          "1": 137,
+          "2": 117,
+          "gt2": 3776
+        },
+        "abs_err_max": 4.787370562553406e-05,
+        "abs_err_p99": 2.8431415557861328e-05
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 8192,
+      "seed": 20260824,
+      "n_differ": 163805
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 217336,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 306917,
+        "1": 157682,
+        "2": 24855,
+        "gt2": 30543
+      },
+      "max_ulp_distance_finite": 28999,
+      "abs_over_rms": {
+        "max": 0.019534464925527573,
+        "p50": 0.0,
+        "p99": 0.009767232462763786,
+        "rmse_over_rms": 0.002951934700831771
+      },
+      "rel_of_differing_main": {
+        "p50": 0.006097560748457909,
+        "max": 0.9873105883598328,
+        "n": 213080
+      },
+      "near_zero": {
+        "n": 4291,
+        "n_bitwise_differ": 4256,
+        "ulp_hist": {
+          "0": 35,
+          "1": 77,
+          "2": 85,
+          "gt2": 4094
+        },
+        "abs_err_max": 0.00015592575073242188,
+        "abs_err_p99": 6.29425048828125e-05
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 16384,
+      "seed": 20260824,
+      "n_differ": 217336
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 276337,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 247927,
+        "1": 183936,
+        "2": 38921,
+        "gt2": 49258
+      },
+      "max_ulp_distance_finite": 29252,
+      "abs_over_rms": {
+        "max": 0.027597257867455482,
+        "p50": 0.0008624143083579838,
+        "p99": 0.013798628933727741,
+        "rmse_over_rms": 0.0038527552969753742
+      },
+      "rel_of_differing_main": {
+        "p50": 0.006410256493836641,
+        "max": 1.2236841917037964,
+        "n": 272115
+      },
+      "near_zero": {
+        "n": 4246,
+        "n_bitwise_differ": 4222,
+        "ulp_hist": {
+          "0": 24,
+          "1": 50,
+          "2": 64,
+          "gt2": 4108
+        },
+        "abs_err_max": 0.00034618377685546875,
+        "abs_err_p99": 0.00013709068298339844
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 32768,
+      "seed": 20260824,
+      "n_differ": 276337
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 42982,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 480851,
+        "1": 35926,
+        "2": 2091,
+        "gt2": 1190
+      },
+      "max_ulp_distance_finite": 27117,
+      "abs_over_rms": {
+        "max": 0.02772042341530323,
+        "p50": 0.0,
+        "p99": 0.003465052926912904,
+        "rmse_over_rms": 0.0008943234570324421
+      },
+      "rel_of_differing_main": {
+        "p50": 0.005434782709926367,
+        "max": 0.08040200918912888,
+        "n": 39207
+      },
+      "near_zero": {
+        "n": 4230,
+        "n_bitwise_differ": 3775,
+        "ulp_hist": {
+          "0": 455,
+          "1": 696,
+          "2": 548,
+          "gt2": 2531
+        },
+        "abs_err_max": 2.115964889526367e-06,
+        "abs_err_p99": 1.1324882507324219e-06
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 512,
+      "seed": 20260825,
+      "n_differ": 42982
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 60515,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 463528,
+        "1": 50576,
+        "2": 3537,
+        "gt2": 2608
+      },
+      "max_ulp_distance_finite": 27581,
+      "abs_over_rms": {
+        "max": 0.01955856755375862,
+        "p50": 0.0,
+        "p99": 0.004889641888439655,
+        "rmse_over_rms": 0.0011150945210829377
+      },
+      "rel_of_differing_main": {
+        "p50": 0.005524862091988325,
+        "max": 0.16030533611774445,
+        "n": 56721
+      },
+      "near_zero": {
+        "n": 4039,
+        "n_bitwise_differ": 3794,
+        "ulp_hist": {
+          "0": 245,
+          "1": 427,
+          "2": 380,
+          "gt2": 2987
+        },
+        "abs_err_max": 5.7220458984375e-06,
+        "abs_err_p99": 2.562999725341797e-06
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 1024,
+      "seed": 20260825,
+      "n_differ": 60515
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 85681,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 438423,
+        "1": 70271,
+        "2": 5915,
+        "gt2": 5444
+      },
+      "max_ulp_distance_finite": 27887,
+      "abs_over_rms": {
+        "max": 0.027650605887174606,
+        "p50": 0.0,
+        "p99": 0.006912651471793652,
+        "rmse_over_rms": 0.001441412721760571
+      },
+      "rel_of_differing_main": {
+        "p50": 0.005586592014878988,
+        "max": 0.20000000298023224,
+        "n": 81630
+      },
+      "near_zero": {
+        "n": 4235,
+        "n_bitwise_differ": 4051,
+        "ulp_hist": {
+          "0": 184,
+          "1": 335,
+          "2": 315,
+          "gt2": 3401
+        },
+        "abs_err_max": 1.2159347534179688e-05,
+        "abs_err_p99": 5.617737770080566e-06
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 2048,
+      "seed": 20260825,
+      "n_differ": 85681
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 119755,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 404414,
+        "1": 95665,
+        "2": 9836,
+        "gt2": 10160
+      },
+      "max_ulp_distance_finite": 28263,
+      "abs_over_rms": {
+        "max": 0.01948966458439827,
+        "p50": 0.0,
+        "p99": 0.009744832292199135,
+        "rmse_over_rms": 0.001812134636566043
+      },
+      "rel_of_differing_main": {
+        "p50": 0.0057142856530845165,
+        "max": 0.35314685106277466,
+        "n": 115661
+      },
+      "near_zero": {
+        "n": 4213,
+        "n_bitwise_differ": 4094,
+        "ulp_hist": {
+          "0": 119,
+          "1": 203,
+          "2": 211,
+          "gt2": 3680
+        },
+        "abs_err_max": 3.24249267578125e-05,
+        "abs_err_p99": 1.329183578491211e-05
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 4096,
+      "seed": 20260825,
+      "n_differ": 119755
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 163337,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 360886,
+        "1": 125440,
+        "2": 15621,
+        "gt2": 18144
+      },
+      "max_ulp_distance_finite": 28518,
+      "abs_over_rms": {
+        "max": 0.02759978175163269,
+        "p50": 0.0,
+        "p99": 0.006899945437908173,
+        "rmse_over_rms": 0.0023074450436979532
+      },
+      "rel_of_differing_main": {
+        "p50": 0.0058823530562222,
+        "max": 0.5161290168762207,
+        "n": 159205
+      },
+      "near_zero": {
+        "n": 4197,
+        "n_bitwise_differ": 4132,
+        "ulp_hist": {
+          "0": 65,
+          "1": 140,
+          "2": 127,
+          "gt2": 3865
+        },
+        "abs_err_max": 6.417185068130493e-05,
+        "abs_err_p99": 2.9742717742919922e-05
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 8192,
+      "seed": 20260825,
+      "n_differ": 163337
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 216599,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 307641,
+        "1": 156936,
+        "2": 25028,
+        "gt2": 30573
+      },
+      "max_ulp_distance_finite": 28807,
+      "abs_over_rms": {
+        "max": 0.01951468735933304,
+        "p50": 0.0,
+        "p99": 0.00975734367966652,
+        "rmse_over_rms": 0.0029457230120897293
+      },
+      "rel_of_differing_main": {
+        "p50": 0.006097560748457909,
+        "max": 1.0328947305679321,
+        "n": 212537
+      },
+      "near_zero": {
+        "n": 4110,
+        "n_bitwise_differ": 4062,
+        "ulp_hist": {
+          "0": 48,
+          "1": 86,
+          "2": 75,
+          "gt2": 3901
+        },
+        "abs_err_max": 0.00012099742889404297,
+        "abs_err_p99": 6.639957427978516e-05
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 16384,
+      "seed": 20260825,
+      "n_differ": 216599
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 276797,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 247469,
+        "1": 184217,
+        "2": 38781,
+        "gt2": 49668
+      },
+      "max_ulp_distance_finite": 29394,
+      "abs_over_rms": {
+        "max": 0.04140551760792732,
+        "p50": 0.0008626150083728135,
+        "p99": 0.013801840133965015,
+        "rmse_over_rms": 0.0038719396106898785
+      },
+      "rel_of_differing_main": {
+        "p50": 0.006410256493836641,
+        "max": 1.562893033027649,
+        "n": 272666
+      },
+      "near_zero": {
+        "n": 4153,
+        "n_bitwise_differ": 4131,
+        "ulp_hist": {
+          "0": 22,
+          "1": 52,
+          "2": 67,
+          "gt2": 4012
+        },
+        "abs_err_max": 0.00030097365379333496,
+        "abs_err_p99": 0.00013637542724609375
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 32768,
+      "seed": 20260825,
+      "n_differ": 276797
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 43097,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 480755,
+        "1": 36187,
+        "2": 2024,
+        "gt2": 1152
+      },
+      "max_ulp_distance_finite": 27060,
+      "abs_over_rms": {
+        "max": 0.027525151148438454,
+        "p50": 0.0,
+        "p99": 0.0034406438935548067,
+        "rmse_over_rms": 0.0008950639748945832
+      },
+      "rel_of_differing_main": {
+        "p50": 0.0054054055362939835,
+        "max": 0.1071428582072258,
+        "n": 39363
+      },
+      "near_zero": {
+        "n": 4170,
+        "n_bitwise_differ": 3734,
+        "ulp_hist": {
+          "0": 436,
+          "1": 676,
+          "2": 541,
+          "gt2": 2517
+        },
+        "abs_err_max": 2.1457672119140625e-06,
+        "abs_err_p99": 1.0728836059570312e-06
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 512,
+      "seed": 20260826,
+      "n_differ": 43097
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 60627,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 463409,
+        "1": 50496,
+        "2": 3573,
+        "gt2": 2564
+      },
+      "max_ulp_distance_finite": 27572,
+      "abs_over_rms": {
+        "max": 0.019467486068606377,
+        "p50": 0.0,
+        "p99": 0.004866871517151594,
+        "rmse_over_rms": 0.0011231808457523584
+      },
+      "rel_of_differing_main": {
+        "p50": 0.005524862091988325,
+        "max": 0.1259259283542633,
+        "n": 56633
+      },
+      "near_zero": {
+        "n": 4246,
+        "n_bitwise_differ": 3994,
+        "ulp_hist": {
+          "0": 252,
+          "1": 448,
+          "2": 446,
+          "gt2": 3100
+        },
+        "abs_err_max": 4.5299530029296875e-06,
+        "abs_err_p99": 2.7008354663848877e-06
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 1024,
+      "seed": 20260826,
+      "n_differ": 60627
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 85334,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 438781,
+        "1": 69542,
+        "2": 6071,
+        "gt2": 5688
+      },
+      "max_ulp_distance_finite": 27820,
+      "abs_over_rms": {
+        "max": 0.027543874457478523,
+        "p50": 0.0,
+        "p99": 0.006885968614369631,
+        "rmse_over_rms": 0.001419649925082922
+      },
+      "rel_of_differing_main": {
+        "p50": 0.00561797758564353,
+        "max": 0.24583333730697632,
+        "n": 81301
+      },
+      "near_zero": {
+        "n": 4206,
+        "n_bitwise_differ": 4033,
+        "ulp_hist": {
+          "0": 173,
+          "1": 367,
+          "2": 278,
+          "gt2": 3388
+        },
+        "abs_err_max": 1.1883676052093506e-05,
+        "abs_err_p99": 5.7220458984375e-06
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 2048,
+      "seed": 20260826,
+      "n_differ": 85334
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 119324,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 404856,
+        "1": 95438,
+        "2": 9490,
+        "gt2": 10382
+      },
+      "max_ulp_distance_finite": 28150,
+      "abs_over_rms": {
+        "max": 0.01946179009974003,
+        "p50": 0.0,
+        "p99": 0.009730895049870014,
+        "rmse_over_rms": 0.0018217606702819467
+      },
+      "rel_of_differing_main": {
+        "p50": 0.0057142856530845165,
+        "max": 0.4383561611175537,
+        "n": 115310
+      },
+      "near_zero": {
+        "n": 4122,
+        "n_bitwise_differ": 4014,
+        "ulp_hist": {
+          "0": 108,
+          "1": 169,
+          "2": 197,
+          "gt2": 3648
+        },
+        "abs_err_max": 2.585630863904953e-05,
+        "abs_err_p99": 1.2874603271484375e-05
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 4096,
+      "seed": 20260826,
+      "n_differ": 119324
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 163526,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 360692,
+        "1": 125556,
+        "2": 15622,
+        "gt2": 18214
+      },
+      "max_ulp_distance_finite": 28524,
+      "abs_over_rms": {
+        "max": 0.027581697329878807,
+        "p50": 0.0,
+        "p99": 0.006895424332469702,
+        "rmse_over_rms": 0.002312941011041403
+      },
+      "rel_of_differing_main": {
+        "p50": 0.005847953259944916,
+        "max": 0.5329949259757996,
+        "n": 159392
+      },
+      "near_zero": {
+        "n": 4204,
+        "n_bitwise_differ": 4134,
+        "ulp_hist": {
+          "0": 70,
+          "1": 154,
+          "2": 155,
+          "gt2": 3825
+        },
+        "abs_err_max": 7.390975952148438e-05,
+        "abs_err_p99": 2.9087066650390625e-05
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 8192,
+      "seed": 20260826,
+      "n_differ": 163526
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 216963,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 307292,
+        "1": 157319,
+        "2": 25028,
+        "gt2": 30524
+      },
+      "max_ulp_distance_finite": 28872,
+      "abs_over_rms": {
+        "max": 0.02440888062119484,
+        "p50": 0.0,
+        "p99": 0.00976355280727148,
+        "rmse_over_rms": 0.002947994042187929
+      },
+      "rel_of_differing_main": {
+        "p50": 0.006097560748457909,
+        "max": 0.9856114983558655,
+        "n": 212871
+      },
+      "near_zero": {
+        "n": 4125,
+        "n_bitwise_differ": 4092,
+        "ulp_hist": {
+          "0": 33,
+          "1": 85,
+          "2": 77,
+          "gt2": 3930
+        },
+        "abs_err_max": 0.000125885009765625,
+        "abs_err_p99": 6.626546382904053e-05
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 16384,
+      "seed": 20260826,
+      "n_differ": 216963
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 276398,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 247854,
+        "1": 183565,
+        "2": 39100,
+        "gt2": 49649
+      },
+      "max_ulp_distance_finite": 29304,
+      "abs_over_rms": {
+        "max": 0.027624713256955147,
+        "p50": 0.0008632722892798483,
+        "p99": 0.013812356628477573,
+        "rmse_over_rms": 0.003870763350278139
+      },
+      "rel_of_differing_main": {
+        "p50": 0.006451612804085016,
+        "max": 1.258264422416687,
+        "n": 272314
+      },
+      "near_zero": {
+        "n": 4120,
+        "n_bitwise_differ": 4084,
+        "ulp_hist": {
+          "0": 36,
+          "1": 59,
+          "2": 47,
+          "gt2": 3978
+        },
+        "abs_err_max": 0.00035858154296875,
+        "abs_err_p99": 0.00014257431030273438
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 32768,
+      "seed": 20260826,
+      "n_differ": 276398
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 43065,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 480760,
+        "1": 36130,
+        "2": 1986,
+        "gt2": 1126
+      },
+      "max_ulp_distance_finite": 27194,
+      "abs_over_rms": {
+        "max": 0.02766493894159794,
+        "p50": 0.0,
+        "p99": 0.0034581173676997423,
+        "rmse_over_rms": 0.0008768183179199696
+      },
+      "rel_of_differing_main": {
+        "p50": 0.005434782709926367,
+        "max": 0.08658009022474289,
+        "n": 39242
+      },
+      "near_zero": {
+        "n": 4286,
+        "n_bitwise_differ": 3823,
+        "ulp_hist": {
+          "0": 463,
+          "1": 704,
+          "2": 571,
+          "gt2": 2548
+        },
+        "abs_err_max": 1.9073486328125e-06,
+        "abs_err_p99": 1.1324882507324219e-06
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 512,
+      "seed": 20260827,
+      "n_differ": 43065
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 60565,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 463483,
+        "1": 50437,
+        "2": 3571,
+        "gt2": 2630
+      },
+      "max_ulp_distance_finite": 27431,
+      "abs_over_rms": {
+        "max": 0.019557911902666092,
+        "p50": 0.0,
+        "p99": 0.004889477975666523,
+        "rmse_over_rms": 0.0011335602030158043
+      },
+      "rel_of_differing_main": {
+        "p50": 0.005524862091988325,
+        "max": 0.15037593245506287,
+        "n": 56638
+      },
+      "near_zero": {
+        "n": 4167,
+        "n_bitwise_differ": 3927,
+        "ulp_hist": {
+          "0": 240,
+          "1": 436,
+          "2": 440,
+          "gt2": 3051
+        },
+        "abs_err_max": 5.841255187988281e-06,
+        "abs_err_p99": 2.592802047729492e-06
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 1024,
+      "seed": 20260827,
+      "n_differ": 60565
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 85693,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 438423,
+        "1": 70234,
+        "2": 6030,
+        "gt2": 5410
+      },
+      "max_ulp_distance_finite": 27858,
+      "abs_over_rms": {
+        "max": 0.027668647468090057,
+        "p50": 0.0,
+        "p99": 0.006917161867022514,
+        "rmse_over_rms": 0.0014284118078649044
+      },
+      "rel_of_differing_main": {
+        "p50": 0.005586592014878988,
+        "max": 0.15979380905628204,
+        "n": 81674
+      },
+      "near_zero": {
+        "n": 4191,
+        "n_bitwise_differ": 4019,
+        "ulp_hist": {
+          "0": 172,
+          "1": 339,
+          "2": 293,
+          "gt2": 3387
+        },
+        "abs_err_max": 1.1563301086425781e-05,
+        "abs_err_p99": 5.4836273193359375e-06
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 2048,
+      "seed": 20260827,
+      "n_differ": 85693
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 119335,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 404859,
+        "1": 95109,
+        "2": 9779,
+        "gt2": 10207
+      },
+      "max_ulp_distance_finite": 28169,
+      "abs_over_rms": {
+        "max": 0.019540296867489815,
+        "p50": 0.0,
+        "p99": 0.009770148433744907,
+        "rmse_over_rms": 0.0018177099991589785
+      },
+      "rel_of_differing_main": {
+        "p50": 0.0057142856530845165,
+        "max": 0.34049078822135925,
+        "n": 115095
+      },
+      "near_zero": {
+        "n": 4334,
+        "n_bitwise_differ": 4240,
+        "ulp_hist": {
+          "0": 94,
+          "1": 207,
+          "2": 214,
+          "gt2": 3819
+        },
+        "abs_err_max": 3.260374069213867e-05,
+        "abs_err_p99": 1.3589859008789062e-05
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 4096,
+      "seed": 20260827,
+      "n_differ": 119335
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 163656,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 360573,
+        "1": 125593,
+        "2": 15633,
+        "gt2": 18341
+      },
+      "max_ulp_distance_finite": 28529,
+      "abs_over_rms": {
+        "max": 0.027621857821941376,
+        "p50": 0.0,
+        "p99": 0.006905464455485344,
+        "rmse_over_rms": 0.0023001001682132483
+      },
+      "rel_of_differing_main": {
+        "p50": 0.0058823530562222,
+        "max": 0.6561086177825928,
+        "n": 159567
+      },
+      "near_zero": {
+        "n": 4148,
+        "n_bitwise_differ": 4089,
+        "ulp_hist": {
+          "0": 59,
+          "1": 129,
+          "2": 131,
+          "gt2": 3829
+        },
+        "abs_err_max": 6.008148193359375e-05,
+        "abs_err_p99": 2.9325485229492188e-05
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 8192,
+      "seed": 20260827,
+      "n_differ": 163656
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 217159,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 307092,
+        "1": 157927,
+        "2": 24603,
+        "gt2": 30579
+      },
+      "max_ulp_distance_finite": 28797,
+      "abs_over_rms": {
+        "max": 0.019523078575730324,
+        "p50": 0.0,
+        "p99": 0.009761539287865162,
+        "rmse_over_rms": 0.0029500743839889765
+      },
+      "rel_of_differing_main": {
+        "p50": 0.0060606058686971664,
+        "max": 0.8550724387168884,
+        "n": 213109
+      },
+      "near_zero": {
+        "n": 4087,
+        "n_bitwise_differ": 4050,
+        "ulp_hist": {
+          "0": 37,
+          "1": 75,
+          "2": 81,
+          "gt2": 3894
+        },
+        "abs_err_max": 0.00012230873107910156,
+        "abs_err_p99": 6.246566772460938e-05
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 16384,
+      "seed": 20260827,
+      "n_differ": 217159
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 276911,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 247352,
+        "1": 183903,
+        "2": 39172,
+        "gt2": 49747
+      },
+      "max_ulp_distance_finite": 29163,
+      "abs_over_rms": {
+        "max": 0.028486264869570732,
+        "p50": 0.0008632201934233308,
+        "p99": 0.013811523094773293,
+        "rmse_over_rms": 0.0038627011235803366
+      },
+      "rel_of_differing_main": {
+        "p50": 0.006451612804085016,
+        "max": 1.2450494766235352,
+        "n": 272822
+      },
+      "near_zero": {
+        "n": 4114,
+        "n_bitwise_differ": 4089,
+        "ulp_hist": {
+          "0": 25,
+          "1": 58,
+          "2": 54,
+          "gt2": 3977
+        },
+        "abs_err_max": 0.0002944469451904297,
+        "abs_err_p99": 0.00014090538024902344
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 32768,
+      "seed": 20260827,
+      "n_differ": 276911
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 43196,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 480645,
+        "1": 36243,
+        "2": 2075,
+        "gt2": 1167
+      },
+      "max_ulp_distance_finite": 27034,
+      "abs_over_rms": {
+        "max": 0.027578463777899742,
+        "p50": 0.0,
+        "p99": 0.0034473079722374678,
+        "rmse_over_rms": 0.0008946261368691921
+      },
+      "rel_of_differing_main": {
+        "p50": 0.005434782709926367,
+        "max": 0.0729166641831398,
+        "n": 39485
+      },
+      "near_zero": {
+        "n": 4158,
+        "n_bitwise_differ": 3711,
+        "ulp_hist": {
+          "0": 447,
+          "1": 634,
+          "2": 573,
+          "gt2": 2504
+        },
+        "abs_err_max": 2.0265579223632812e-06,
+        "abs_err_p99": 1.1920928955078125e-06
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 512,
+      "seed": 20260828,
+      "n_differ": 43196
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 60397,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 463652,
+        "1": 50347,
+        "2": 3531,
+        "gt2": 2604
+      },
+      "max_ulp_distance_finite": 27405,
+      "abs_over_rms": {
+        "max": 0.019507430493831635,
+        "p50": 0.0,
+        "p99": 0.004876857623457909,
+        "rmse_over_rms": 0.0011180979199707508
+      },
+      "rel_of_differing_main": {
+        "p50": 0.005524862091988325,
+        "max": 0.1589404046535492,
+        "n": 56482
+      },
+      "near_zero": {
+        "n": 4154,
+        "n_bitwise_differ": 3915,
+        "ulp_hist": {
+          "0": 239,
+          "1": 455,
+          "2": 428,
+          "gt2": 3032
+        },
+        "abs_err_max": 7.510185241699219e-06,
+        "abs_err_p99": 2.5033950805664062e-06
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 1024,
+      "seed": 20260828,
+      "n_differ": 60397
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 85569,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 438532,
+        "1": 70396,
+        "2": 5825,
+        "gt2": 5389
+      },
+      "max_ulp_distance_finite": 27895,
+      "abs_over_rms": {
+        "max": 0.027583478018641472,
+        "p50": 0.0,
+        "p99": 0.006895869504660368,
+        "rmse_over_rms": 0.001440033782273531
+      },
+      "rel_of_differing_main": {
+        "p50": 0.005586592014878988,
+        "max": 0.20078739523887634,
+        "n": 81610
+      },
+      "near_zero": {
+        "n": 4146,
+        "n_bitwise_differ": 3959,
+        "ulp_hist": {
+          "0": 187,
+          "1": 356,
+          "2": 343,
+          "gt2": 3260
+        },
+        "abs_err_max": 1.5154480934143066e-05,
+        "abs_err_p99": 5.9604644775390625e-06
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 2048,
+      "seed": 20260828,
+      "n_differ": 85569
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 119593,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 404595,
+        "1": 95732,
+        "2": 9567,
+        "gt2": 10172
+      },
+      "max_ulp_distance_finite": 28215,
+      "abs_over_rms": {
+        "max": 0.019504766911268234,
+        "p50": 0.0,
+        "p99": 0.009752383455634117,
+        "rmse_over_rms": 0.0018196463352069259
+      },
+      "rel_of_differing_main": {
+        "p50": 0.0057142856530845165,
+        "max": 0.3257142901420593,
+        "n": 115471
+      },
+      "near_zero": {
+        "n": 4222,
+        "n_bitwise_differ": 4122,
+        "ulp_hist": {
+          "0": 100,
+          "1": 200,
+          "2": 205,
+          "gt2": 3717
+        },
+        "abs_err_max": 2.5987625122070312e-05,
+        "abs_err_p99": 1.3947486877441406e-05
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 4096,
+      "seed": 20260828,
+      "n_differ": 119593
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 163725,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 360485,
+        "1": 125717,
+        "2": 15556,
+        "gt2": 18255
+      },
+      "max_ulp_distance_finite": 28545,
+      "abs_over_rms": {
+        "max": 0.027601685374975204,
+        "p50": 0.0,
+        "p99": 0.006900421343743801,
+        "rmse_over_rms": 0.002316101221367717
+      },
+      "rel_of_differing_main": {
+        "p50": 0.0058823530562222,
+        "max": 0.5386598110198975,
+        "n": 159528
+      },
+      "near_zero": {
+        "n": 4275,
+        "n_bitwise_differ": 4197,
+        "ulp_hist": {
+          "0": 78,
+          "1": 136,
+          "2": 137,
+          "gt2": 3924
+        },
+        "abs_err_max": 6.008148193359375e-05,
+        "abs_err_p99": 2.9027462005615234e-05
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 8192,
+      "seed": 20260828,
+      "n_differ": 163725
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 217221,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 307028,
+        "1": 157481,
+        "2": 25106,
+        "gt2": 30551
+      },
+      "max_ulp_distance_finite": 28995,
+      "abs_over_rms": {
+        "max": 0.01956222392618656,
+        "p50": 0.0,
+        "p99": 0.00978111196309328,
+        "rmse_over_rms": 0.002942624967545271
+      },
+      "rel_of_differing_main": {
+        "p50": 0.006097560748457909,
+        "max": 0.9166666865348816,
+        "n": 213138
+      },
+      "near_zero": {
+        "n": 4122,
+        "n_bitwise_differ": 4083,
+        "ulp_hist": {
+          "0": 39,
+          "1": 82,
+          "2": 91,
+          "gt2": 3910
+        },
+        "abs_err_max": 0.00015401840209960938,
+        "abs_err_p99": 6.747245788574219e-05
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 16384,
+      "seed": 20260828,
+      "n_differ": 217221
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 276235,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 248019,
+        "1": 183383,
+        "2": 39015,
+        "gt2": 49618
+      },
+      "max_ulp_distance_finite": 29143,
+      "abs_over_rms": {
+        "max": 0.034552596509456635,
+        "p50": 0.0008638149010948837,
+        "p99": 0.013821038417518139,
+        "rmse_over_rms": 0.003867491614073515
+      },
+      "rel_of_differing_main": {
+        "p50": 0.006451612804085016,
+        "max": 1.3461538553237915,
+        "n": 272016
+      },
+      "near_zero": {
+        "n": 4253,
+        "n_bitwise_differ": 4219,
+        "ulp_hist": {
+          "0": 34,
+          "1": 60,
+          "2": 55,
+          "gt2": 4104
+        },
+        "abs_err_max": 0.00025844573974609375,
+        "abs_err_p99": 0.0001399517059326172
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 32768,
+      "seed": 20260828,
+      "n_differ": 276235
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 43063,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 480773,
+        "1": 35999,
+        "2": 2038,
+        "gt2": 1249
+      },
+      "max_ulp_distance_finite": 27175,
+      "abs_over_rms": {
+        "max": 0.027606533840298653,
+        "p50": 0.0,
+        "p99": 0.0034508167300373316,
+        "rmse_over_rms": 0.0008947061724029481
+      },
+      "rel_of_differing_main": {
+        "p50": 0.0054054055362939835,
+        "max": 0.07486630976200104,
+        "n": 39286
+      },
+      "near_zero": {
+        "n": 4229,
+        "n_bitwise_differ": 3777,
+        "ulp_hist": {
+          "0": 452,
+          "1": 706,
+          "2": 548,
+          "gt2": 2523
+        },
+        "abs_err_max": 3.2186508178710938e-06,
+        "abs_err_p99": 1.1920928955078125e-06
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 512,
+      "seed": 20260829,
+      "n_differ": 43063
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 60645,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 463393,
+        "1": 50513,
+        "2": 3670,
+        "gt2": 2507
+      },
+      "max_ulp_distance_finite": 27412,
+      "abs_over_rms": {
+        "max": 0.01955801621079445,
+        "p50": 0.0,
+        "p99": 0.004889504052698612,
+        "rmse_over_rms": 0.001127498922869563
+      },
+      "rel_of_differing_main": {
+        "p50": 0.005524862091988325,
+        "max": 0.1335877925157547,
+        "n": 56690
+      },
+      "near_zero": {
+        "n": 4205,
+        "n_bitwise_differ": 3955,
+        "ulp_hist": {
+          "0": 250,
+          "1": 490,
+          "2": 430,
+          "gt2": 3035
+        },
+        "abs_err_max": 4.887580871582031e-06,
+        "abs_err_p99": 2.7418136596679688e-06
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 1024,
+      "seed": 20260829,
+      "n_differ": 60645
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 85740,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 438389,
+        "1": 69949,
+        "2": 6119,
+        "gt2": 5547
+      },
+      "max_ulp_distance_finite": 28098,
+      "abs_over_rms": {
+        "max": 0.027649682015180588,
+        "p50": 0.0,
+        "p99": 0.006912420503795147,
+        "rmse_over_rms": 0.001433447701856494
+      },
+      "rel_of_differing_main": {
+        "p50": 0.00561797758564353,
+        "max": 0.1794871836900711,
+        "n": 81615
+      },
+      "near_zero": {
+        "n": 4284,
+        "n_bitwise_differ": 4125,
+        "ulp_hist": {
+          "0": 159,
+          "1": 359,
+          "2": 354,
+          "gt2": 3412
+        },
+        "abs_err_max": 1.3977289199829102e-05,
+        "abs_err_p99": 5.9604644775390625e-06
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 2048,
+      "seed": 20260829,
+      "n_differ": 85740
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 119760,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 404422,
+        "1": 95618,
+        "2": 9797,
+        "gt2": 10298
+      },
+      "max_ulp_distance_finite": 28483,
+      "abs_over_rms": {
+        "max": 0.01953066699206829,
+        "p50": 0.0,
+        "p99": 0.009765333496034145,
+        "rmse_over_rms": 0.0018205167725682259
+      },
+      "rel_of_differing_main": {
+        "p50": 0.0057142856530845165,
+        "max": 0.2777777910232544,
+        "n": 115713
+      },
+      "near_zero": {
+        "n": 4153,
+        "n_bitwise_differ": 4047,
+        "ulp_hist": {
+          "0": 106,
+          "1": 207,
+          "2": 192,
+          "gt2": 3648
+        },
+        "abs_err_max": 3.8504600524902344e-05,
+        "abs_err_p99": 1.3113021850585938e-05
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 4096,
+      "seed": 20260829,
+      "n_differ": 119760
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 163459,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 360762,
+        "1": 125619,
+        "2": 15670,
+        "gt2": 18030
+      },
+      "max_ulp_distance_finite": 28499,
+      "abs_over_rms": {
+        "max": 0.02760833315551281,
+        "p50": 0.0,
+        "p99": 0.0069020832888782024,
+        "rmse_over_rms": 0.0022949897684156895
+      },
+      "rel_of_differing_main": {
+        "p50": 0.0058823530562222,
+        "max": 0.5477386713027954,
+        "n": 159319
+      },
+      "near_zero": {
+        "n": 4207,
+        "n_bitwise_differ": 4140,
+        "ulp_hist": {
+          "0": 67,
+          "1": 136,
+          "2": 135,
+          "gt2": 3869
+        },
+        "abs_err_max": 5.2869319915771484e-05,
+        "abs_err_p99": 2.771615982055664e-05
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 8192,
+      "seed": 20260829,
+      "n_differ": 163459
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 216943,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 307308,
+        "1": 157350,
+        "2": 24913,
+        "gt2": 30674
+      },
+      "max_ulp_distance_finite": 28894,
+      "abs_over_rms": {
+        "max": 0.019546035677194595,
+        "p50": 0.0,
+        "p99": 0.009773017838597298,
+        "rmse_over_rms": 0.0029408528935164213
+      },
+      "rel_of_differing_main": {
+        "p50": 0.006097560748457909,
+        "max": 0.871345043182373,
+        "n": 212937
+      },
+      "near_zero": {
+        "n": 4043,
+        "n_bitwise_differ": 4006,
+        "ulp_hist": {
+          "0": 37,
+          "1": 61,
+          "2": 90,
+          "gt2": 3855
+        },
+        "abs_err_max": 0.00013875961303710938,
+        "abs_err_p99": 6.246566772460938e-05
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 16384,
+      "seed": 20260829,
+      "n_differ": 216943
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 276501,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 247761,
+        "1": 183376,
+        "2": 39195,
+        "gt2": 49840
+      },
+      "max_ulp_distance_finite": 29089,
+      "abs_over_rms": {
+        "max": 0.027614081278443336,
+        "p50": 0.0008629400399513543,
+        "p99": 0.013807040639221668,
+        "rmse_over_rms": 0.003868990810588002
+      },
+      "rel_of_differing_main": {
+        "p50": 0.006451612804085016,
+        "max": 1.1674877405166626,
+        "n": 272411
+      },
+      "near_zero": {
+        "n": 4116,
+        "n_bitwise_differ": 4090,
+        "ulp_hist": {
+          "0": 26,
+          "1": 55,
+          "2": 54,
+          "gt2": 3981
+        },
+        "abs_err_max": 0.00031173229217529297,
+        "abs_err_p99": 0.0001347064971923828
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 32768,
+      "seed": 20260829,
+      "n_differ": 276501
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 43040,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 480794,
+        "1": 36075,
+        "2": 2058,
+        "gt2": 1199
+      },
+      "max_ulp_distance_finite": 27380,
+      "abs_over_rms": {
+        "max": 0.027684923261404037,
+        "p50": 0.0,
+        "p99": 0.0034606154076755047,
+        "rmse_over_rms": 0.0008990189526230097
+      },
+      "rel_of_differing_main": {
+        "p50": 0.005434782709926367,
+        "max": 0.06716418266296387,
+        "n": 39332
+      },
+      "near_zero": {
+        "n": 4162,
+        "n_bitwise_differ": 3708,
+        "ulp_hist": {
+          "0": 454,
+          "1": 699,
+          "2": 556,
+          "gt2": 2453
+        },
+        "abs_err_max": 2.7865171432495117e-06,
+        "abs_err_p99": 1.1324882507324219e-06
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 512,
+      "seed": 20260830,
+      "n_differ": 43040
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 60264,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 463778,
+        "1": 50385,
+        "2": 3471,
+        "gt2": 2565
+      },
+      "max_ulp_distance_finite": 27604,
+      "abs_over_rms": {
+        "max": 0.01955626718699932,
+        "p50": 0.0,
+        "p99": 0.00488906679674983,
+        "rmse_over_rms": 0.0011227309005334973
+      },
+      "rel_of_differing_main": {
+        "p50": 0.005494505632668734,
+        "max": 0.14726027846336365,
+        "n": 56421
+      },
+      "near_zero": {
+        "n": 4089,
+        "n_bitwise_differ": 3843,
+        "ulp_hist": {
+          "0": 246,
+          "1": 439,
+          "2": 395,
+          "gt2": 3009
+        },
+        "abs_err_max": 1.0848045349121094e-05,
+        "abs_err_p99": 2.6226043701171875e-06
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 1024,
+      "seed": 20260830,
+      "n_differ": 60264
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 85653,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 438468,
+        "1": 70414,
+        "2": 5941,
+        "gt2": 5397
+      },
+      "max_ulp_distance_finite": 27844,
+      "abs_over_rms": {
+        "max": 0.02760258875787258,
+        "p50": 0.0,
+        "p99": 0.006900647189468145,
+        "rmse_over_rms": 0.0014428605791181326
+      },
+      "rel_of_differing_main": {
+        "p50": 0.005586592014878988,
+        "max": 0.25190839171409607,
+        "n": 81752
+      },
+      "near_zero": {
+        "n": 4068,
+        "n_bitwise_differ": 3901,
+        "ulp_hist": {
+          "0": 167,
+          "1": 322,
+          "2": 281,
+          "gt2": 3298
+        },
+        "abs_err_max": 1.138448715209961e-05,
+        "abs_err_p99": 5.7220458984375e-06
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 2048,
+      "seed": 20260830,
+      "n_differ": 85653
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 119219,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 404973,
+        "1": 95270,
+        "2": 9713,
+        "gt2": 10279
+      },
+      "max_ulp_distance_finite": 28172,
+      "abs_over_rms": {
+        "max": 0.01956181228160858,
+        "p50": 0.0,
+        "p99": 0.00978090614080429,
+        "rmse_over_rms": 0.0018102229805663228
+      },
+      "rel_of_differing_main": {
+        "p50": 0.0057142856530845165,
+        "max": 0.32824426889419556,
+        "n": 115262
+      },
+      "near_zero": {
+        "n": 4053,
+        "n_bitwise_differ": 3957,
+        "ulp_hist": {
+          "0": 96,
+          "1": 201,
+          "2": 177,
+          "gt2": 3579
+        },
+        "abs_err_max": 2.9301270842552185e-05,
+        "abs_err_p99": 1.3113021850585938e-05
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 4096,
+      "seed": 20260830,
+      "n_differ": 119219
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 163724,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 360497,
+        "1": 125682,
+        "2": 15749,
+        "gt2": 18236
+      },
+      "max_ulp_distance_finite": 28535,
+      "abs_over_rms": {
+        "max": 0.027633460238575935,
+        "p50": 0.0,
+        "p99": 0.006908365059643984,
+        "rmse_over_rms": 0.0022979218047112226
+      },
+      "rel_of_differing_main": {
+        "p50": 0.005847953259944916,
+        "max": 0.6176470518112183,
+        "n": 159667
+      },
+      "near_zero": {
+        "n": 4124,
+        "n_bitwise_differ": 4057,
+        "ulp_hist": {
+          "0": 67,
+          "1": 134,
+          "2": 106,
+          "gt2": 3817
+        },
+        "abs_err_max": 5.632638931274414e-05,
+        "abs_err_p99": 2.6702880859375e-05
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 8192,
+      "seed": 20260830,
+      "n_differ": 163724
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 217036,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 307211,
+        "1": 157381,
+        "2": 25178,
+        "gt2": 30501
+      },
+      "max_ulp_distance_finite": 28800,
+      "abs_over_rms": {
+        "max": 0.02930627204477787,
+        "p50": 0.0,
+        "p99": 0.009768757037818432,
+        "rmse_over_rms": 0.002947384025901556
+      },
+      "rel_of_differing_main": {
+        "p50": 0.006097560748457909,
+        "max": 1.1185184717178345,
+        "n": 213060
+      },
+      "near_zero": {
+        "n": 4017,
+        "n_bitwise_differ": 3976,
+        "ulp_hist": {
+          "0": 41,
+          "1": 86,
+          "2": 81,
+          "gt2": 3809
+        },
+        "abs_err_max": 0.00014285743236541748,
+        "abs_err_p99": 6.818771362304688e-05
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 16384,
+      "seed": 20260830,
+      "n_differ": 217036
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 276264,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 247992,
+        "1": 183673,
+        "2": 39102,
+        "gt2": 49328
+      },
+      "max_ulp_distance_finite": 29248,
+      "abs_over_rms": {
+        "max": 0.027643436565995216,
+        "p50": 0.0008638573926873505,
+        "p99": 0.013821718282997608,
+        "rmse_over_rms": 0.0038684746250510216
+      },
+      "rel_of_differing_main": {
+        "p50": 0.006451612804085016,
+        "max": 1.0788177251815796,
+        "n": 272103
+      },
+      "near_zero": {
+        "n": 4193,
+        "n_bitwise_differ": 4161,
+        "ulp_hist": {
+          "0": 32,
+          "1": 55,
+          "2": 57,
+          "gt2": 4049
+        },
+        "abs_err_max": 0.0003628730773925781,
+        "abs_err_p99": 0.00014221668243408203
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 32768,
+      "seed": 20260830,
+      "n_differ": 276264
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 42861,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 480983,
+        "1": 35995,
+        "2": 1982,
+        "gt2": 1166
+      },
+      "max_ulp_distance_finite": 27226,
+      "abs_over_rms": {
+        "max": 0.02757234312593937,
+        "p50": 0.0,
+        "p99": 0.003446542890742421,
+        "rmse_over_rms": 0.0008919170359149575
+      },
+      "rel_of_differing_main": {
+        "p50": 0.0054054055362939835,
+        "max": 0.07425742596387863,
+        "n": 39143
+      },
+      "near_zero": {
+        "n": 4162,
+        "n_bitwise_differ": 3718,
+        "ulp_hist": {
+          "0": 444,
+          "1": 637,
+          "2": 571,
+          "gt2": 2510
+        },
+        "abs_err_max": 2.384185791015625e-06,
+        "abs_err_p99": 1.1920928955078125e-06
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 512,
+      "seed": 20260831,
+      "n_differ": 42861
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 60665,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 463372,
+        "1": 50629,
+        "2": 3549,
+        "gt2": 2603
+      },
+      "max_ulp_distance_finite": 27546,
+      "abs_over_rms": {
+        "max": 0.019491417333483696,
+        "p50": 0.0,
+        "p99": 0.004872854333370924,
+        "rmse_over_rms": 0.0011283174389973283
+      },
+      "rel_of_differing_main": {
+        "p50": 0.005524862091988325,
+        "max": 0.1631205677986145,
+        "n": 56781
+      },
+      "near_zero": {
+        "n": 4135,
+        "n_bitwise_differ": 3884,
+        "ulp_hist": {
+          "0": 251,
+          "1": 459,
+          "2": 410,
+          "gt2": 3015
+        },
+        "abs_err_max": 4.887580871582031e-06,
+        "abs_err_p99": 2.682209014892578e-06
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 1024,
+      "seed": 20260831,
+      "n_differ": 60665
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 85289,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 438828,
+        "1": 69897,
+        "2": 5960,
+        "gt2": 5462
+      },
+      "max_ulp_distance_finite": 27797,
+      "abs_over_rms": {
+        "max": 0.027563177049160004,
+        "p50": 0.0,
+        "p99": 0.006890794262290001,
+        "rmse_over_rms": 0.001434739911928773
+      },
+      "rel_of_differing_main": {
+        "p50": 0.00561797758564353,
+        "max": 0.2461538463830948,
+        "n": 81319
+      },
+      "near_zero": {
+        "n": 4141,
+        "n_bitwise_differ": 3970,
+        "ulp_hist": {
+          "0": 171,
+          "1": 333,
+          "2": 312,
+          "gt2": 3325
+        },
+        "abs_err_max": 9.417533874511719e-06,
+        "abs_err_p99": 5.841255187988281e-06
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 2048,
+      "seed": 20260831,
+      "n_differ": 85289
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 119225,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 404965,
+        "1": 95322,
+        "2": 9737,
+        "gt2": 10128
+      },
+      "max_ulp_distance_finite": 28326,
+      "abs_over_rms": {
+        "max": 0.01951577700674534,
+        "p50": 0.0,
+        "p99": 0.00975788850337267,
+        "rmse_over_rms": 0.0018193748546764255
+      },
+      "rel_of_differing_main": {
+        "p50": 0.0057142856530845165,
+        "max": 0.3581560254096985,
+        "n": 115187
+      },
+      "near_zero": {
+        "n": 4136,
+        "n_bitwise_differ": 4038,
+        "ulp_hist": {
+          "0": 98,
+          "1": 199,
+          "2": 196,
+          "gt2": 3643
+        },
+        "abs_err_max": 2.562999725341797e-05,
+        "abs_err_p99": 1.33514404296875e-05
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 4096,
+      "seed": 20260831,
+      "n_differ": 119225
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 164039,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 360178,
+        "1": 125859,
+        "2": 15783,
+        "gt2": 18260
+      },
+      "max_ulp_distance_finite": 28507,
+      "abs_over_rms": {
+        "max": 0.027647050097584724,
+        "p50": 0.0,
+        "p99": 0.006911762524396181,
+        "rmse_over_rms": 0.002315221354365349
+      },
+      "rel_of_differing_main": {
+        "p50": 0.0058823530562222,
+        "max": 0.5423280596733093,
+        "n": 159902
+      },
+      "near_zero": {
+        "n": 4208,
+        "n_bitwise_differ": 4137,
+        "ulp_hist": {
+          "0": 71,
+          "1": 124,
+          "2": 154,
+          "gt2": 3859
+        },
+        "abs_err_max": 5.930662155151367e-05,
+        "abs_err_p99": 3.0040740966796875e-05
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 8192,
+      "seed": 20260831,
+      "n_differ": 164039
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 217798,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 306455,
+        "1": 157744,
+        "2": 25130,
+        "gt2": 30576
+      },
+      "max_ulp_distance_finite": 28741,
+      "abs_over_rms": {
+        "max": 0.01956712268292904,
+        "p50": 0.0,
+        "p99": 0.00978356134146452,
+        "rmse_over_rms": 0.002949412912130356
+      },
+      "rel_of_differing_main": {
+        "p50": 0.006097560748457909,
+        "max": 0.717391312122345,
+        "n": 213450
+      },
+      "near_zero": {
+        "n": 4383,
+        "n_bitwise_differ": 4348,
+        "ulp_hist": {
+          "0": 35,
+          "1": 79,
+          "2": 86,
+          "gt2": 4183
+        },
+        "abs_err_max": 0.00013494491577148438,
+        "abs_err_p99": 6.828457117080688e-05
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 16384,
+      "seed": 20260831,
+      "n_differ": 217798
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 276408,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 247861,
+        "1": 183360,
+        "2": 39437,
+        "gt2": 49472
+      },
+      "max_ulp_distance_finite": 29108,
+      "abs_over_rms": {
+        "max": 0.03455392271280289,
+        "p50": 0.0008638480794616044,
+        "p99": 0.01382156927138567,
+        "rmse_over_rms": 0.0038655560929328203
+      },
+      "rel_of_differing_main": {
+        "p50": 0.006451612804085016,
+        "max": 1.4952380657196045,
+        "n": 272269
+      },
+      "near_zero": {
+        "n": 4158,
+        "n_bitwise_differ": 4139,
+        "ulp_hist": {
+          "0": 19,
+          "1": 55,
+          "2": 59,
+          "gt2": 4025
+        },
+        "abs_err_max": 0.00031891465187072754,
+        "abs_err_p99": 0.00013440847396850586
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 32768,
+      "seed": 20260831,
+      "n_differ": 276408
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 42886,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 480946,
+        "1": 36139,
+        "2": 1983,
+        "gt2": 1126
+      },
+      "max_ulp_distance_finite": 27284,
+      "abs_over_rms": {
+        "max": 0.027597323060035706,
+        "p50": 0.0,
+        "p99": 0.003449665382504463,
+        "rmse_over_rms": 0.0008942447020672262
+      },
+      "rel_of_differing_main": {
+        "p50": 0.0054054055362939835,
+        "max": 0.0765957459807396,
+        "n": 39248
+      },
+      "near_zero": {
+        "n": 4094,
+        "n_bitwise_differ": 3638,
+        "ulp_hist": {
+          "0": 456,
+          "1": 647,
+          "2": 568,
+          "gt2": 2423
+        },
+        "abs_err_max": 3.0249357223510742e-06,
+        "abs_err_p99": 1.1473894119262695e-06
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 512,
+      "seed": 20260832,
+      "n_differ": 42886
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 60779,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 463246,
+        "1": 50540,
+        "2": 3585,
+        "gt2": 2671
+      },
+      "max_ulp_distance_finite": 27747,
+      "abs_over_rms": {
+        "max": 0.01952635496854782,
+        "p50": 0.0,
+        "p99": 0.004881588742136955,
+        "rmse_over_rms": 0.0011354604503139853
+      },
+      "rel_of_differing_main": {
+        "p50": 0.005524862091988325,
+        "max": 0.16363635659217834,
+        "n": 56796
+      },
+      "near_zero": {
+        "n": 4246,
+        "n_bitwise_differ": 3983,
+        "ulp_hist": {
+          "0": 263,
+          "1": 437,
+          "2": 429,
+          "gt2": 3117
+        },
+        "abs_err_max": 5.718320608139038e-06,
+        "abs_err_p99": 2.6226043701171875e-06
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 1024,
+      "seed": 20260832,
+      "n_differ": 60779
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 85469,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 438645,
+        "1": 69988,
+        "2": 5956,
+        "gt2": 5434
+      },
+      "max_ulp_distance_finite": 27800,
+      "abs_over_rms": {
+        "max": 0.027626536786556244,
+        "p50": 0.0,
+        "p99": 0.006906634196639061,
+        "rmse_over_rms": 0.001440135994926095
+      },
+      "rel_of_differing_main": {
+        "p50": 0.005586592014878988,
+        "max": 0.2186046540737152,
+        "n": 81378
+      },
+      "near_zero": {
+        "n": 4265,
+        "n_bitwise_differ": 4091,
+        "ulp_hist": {
+          "0": 174,
+          "1": 333,
+          "2": 325,
+          "gt2": 3433
+        },
+        "abs_err_max": 1.1086463928222656e-05,
+        "abs_err_p99": 5.7220458984375e-06
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 2048,
+      "seed": 20260832,
+      "n_differ": 85469
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 119917,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 404296,
+        "1": 95787,
+        "2": 9777,
+        "gt2": 10261
+      },
+      "max_ulp_distance_finite": 28040,
+      "abs_over_rms": {
+        "max": 0.019519483670592308,
+        "p50": 0.0,
+        "p99": 0.009759741835296154,
+        "rmse_over_rms": 0.0018198882462456822
+      },
+      "rel_of_differing_main": {
+        "p50": 0.0057142856530845165,
+        "max": 0.39175257086753845,
+        "n": 115825
+      },
+      "near_zero": {
+        "n": 4167,
+        "n_bitwise_differ": 4092,
+        "ulp_hist": {
+          "0": 75,
+          "1": 216,
+          "2": 184,
+          "gt2": 3692
+        },
+        "abs_err_max": 2.47955322265625e-05,
+        "abs_err_p99": 1.4066696166992188e-05
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 4096,
+      "seed": 20260832,
+      "n_differ": 119917
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 163486,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 360734,
+        "1": 125420,
+        "2": 15719,
+        "gt2": 18276
+      },
+      "max_ulp_distance_finite": 28597,
+      "abs_over_rms": {
+        "max": 0.027536574751138687,
+        "p50": 0.0,
+        "p99": 0.006884143687784672,
+        "rmse_over_rms": 0.0023047425784170628
+      },
+      "rel_of_differing_main": {
+        "p50": 0.0058823530562222,
+        "max": 0.6470588445663452,
+        "n": 159415
+      },
+      "near_zero": {
+        "n": 4139,
+        "n_bitwise_differ": 4071,
+        "ulp_hist": {
+          "0": 68,
+          "1": 125,
+          "2": 147,
+          "gt2": 3799
+        },
+        "abs_err_max": 6.35981559753418e-05,
+        "abs_err_p99": 2.956390380859375e-05
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 8192,
+      "seed": 20260832,
+      "n_differ": 163486
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 217341,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 306898,
+        "1": 157806,
+        "2": 25027,
+        "gt2": 30344
+      },
+      "max_ulp_distance_finite": 28838,
+      "abs_over_rms": {
+        "max": 0.019531788304448128,
+        "p50": 0.0,
+        "p99": 0.009765894152224064,
+        "rmse_over_rms": 0.002950281836092472
+      },
+      "rel_of_differing_main": {
+        "p50": 0.006097560748457909,
+        "max": 0.6646706461906433,
+        "n": 213177
+      },
+      "near_zero": {
+        "n": 4213,
+        "n_bitwise_differ": 4164,
+        "ulp_hist": {
+          "0": 49,
+          "1": 75,
+          "2": 81,
+          "gt2": 4008
+        },
+        "abs_err_max": 0.00011920928955078125,
+        "abs_err_p99": 6.154179573059082e-05
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 16384,
+      "seed": 20260832,
+      "n_differ": 217341
+    },
+    {
+      "n_total": 524288,
+      "n_bitwise_differ": 277109,
+      "bitwise_identical": false,
+      "nan_any": 0,
+      "inf_any": 0,
+      "finite_mismatch": 0,
+      "ulp_hist_main": {
+        "0": 247151,
+        "1": 183915,
+        "2": 39278,
+        "gt2": 49795
+      },
+      "max_ulp_distance_finite": 29103,
+      "abs_over_rms": {
+        "max": 0.02767537161707878,
+        "p50": 0.0008648553630337119,
+        "p99": 0.01383768580853939,
+        "rmse_over_rms": 0.003874656744301319
+      },
+      "rel_of_differing_main": {
+        "p50": 0.006451612804085016,
+        "max": 0.9812206625938416,
+        "n": 272988
+      },
+      "near_zero": {
+        "n": 4149,
+        "n_bitwise_differ": 4121,
+        "ulp_hist": {
+          "0": 28,
+          "1": 52,
+          "2": 50,
+          "gt2": 4019
+        },
+        "abs_err_max": 0.00021648406982421875,
+        "abs_err_p99": 0.00013332068920135498
+      },
+      "note": "numerical ULP collapses signed zero; bitwise count does not",
+      "K": 32768,
+      "seed": 20260832,
+      "n_differ": 277109
+    }
+  ],
+  "fits": {
+    "M_sqrt": {
+      "c": 0.003141305420944702,
+      "sse": 0.08311182909000021
+    },
+    "M_sat": {
+      "c": 0.004107066731200889,
+      "sse": 0.0038793891617754867
+    },
+    "M_pow": {
+      "c": 0.005081086826797566,
+      "alpha": 0.4524130497815996,
+      "sse": 0.028240415727789535,
+      "alpha_ci90": [
+        0.45201999144715893,
+        0.4527658136407807
+      ]
+    }
+  },
+  "criteria": {
+    "sqrt_compatible": false,
+    "sat_preferred": true,
+    "wording": "compatible-with only; no law confirmed from 7 grid points"
+  }
+}

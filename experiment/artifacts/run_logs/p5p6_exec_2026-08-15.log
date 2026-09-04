@@ -1,0 +1,63 @@
+===== A-10.5 EXECUTION START 2026-08-14T18:53:13Z =====
+--- machine context (before) ---
+ 18:53:13 up 16 days, 10:37,  7 users,  load average: 0.09, 0.30, 0.27
+0, 1 MiB, 0 %
+1, 1 MiB, 0 %
+<docker ps names redacted: 16 unrelated containers were running>
+/dev/sda1       154G  137G   17G  89% /
+
+########## P6 (GPU, pinned container) ##########
+p6_run.sh exit=0
+--- P6 driver log tail ---
+/models/qwen3-1.7b-int8-w8a8-pow2: 6 grid points measured
+[rank0]:[W814 18:58:42.707989526 ProcessGroupNCCL.cpp:1624] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+TP_POW2_OK
+--- throughput compare ---
+b= 1 isl=  128 prefill -0.0035382703378266512 decode 0.00162059683207783
+b= 1 isl= 2048 prefill 0.006408827534197333 decode 0.005989434406820458
+b= 4 isl=  128 prefill -0.027186809635678145 decode -0.005806190939424782
+b= 4 isl= 2048 prefill -0.005146515650175617 decode 0.0006839451518530714
+b=16 isl=  128 prefill -0.07790178650217505 decode -0.004612292641953421
+b=16 isl=  512 prefill -0.009377002629041658 decode -0.0015955416894041221
+TP_CMP_OK
+=== P6 DONE 2026-08-14T18:58:44Z ===
+
+########## P5 (CPU only, niced) ##########
+  20/196 layers, 840 rows, 247s
+  40/196 layers, 1680 rows, 483s
+  60/196 layers, 2520 rows, 716s
+  80/196 layers, 3360 rows, 966s
+  100/196 layers, 4200 rows, 1220s
+  120/196 layers, 5040 rows, 1469s
+  140/196 layers, 5880 rows, 1715s
+  160/196 layers, 6720 rows, 1957s
+  180/196 layers, 7560 rows, 2190s
+shared_operands          hit  1176 FN     0 FP     0 silence   7056 excluded     0 NA      0
+int32_no_overflow        hit   392 FN     0 FP     0 silence   7840 excluded     0 NA      0
+lossless_fp32_entry      hit   784 FN     0 FP     0 silence   7448 excluded     0 NA      0
+exact_accumulator        hit  1176 FN     0 FP     0 silence   7056 excluded     0 NA      0
+pow2_scale_identity      hit   886 FN     0 FP     0 silence    392 excluded  2642 NA   4312
+real_scale_tolerance     hit   784 FN     0 FP     0 silence   3049 excluded  4399 NA      0
+token_level_risk         hit     0 FN     0 FP     0 silence      0 excluded     0 NA   8232
+
+8232 rows over 196 layers in 2400s -> out/p5_sensitivity.json
+p5_runner exit=0
+
+--- machine context (after) ---
+ 19:38:46 up 16 days, 11:23,  7 users,  load average: 6.56, 6.90, 6.65
+0, 1 MiB, 0 %
+1, 1 MiB, 0 %
+<docker ps names redacted: 16 unrelated containers were running>
+/dev/sda1       154G  138G   17G  90% /
+===== DONE 2026-08-14T19:38:46Z =====
+total 19248
+-rw-r--r-- 1 ubuntu ubuntu 18811448 Aug 14 19:38 p5_sensitivity.json
+-rw-r--r-- 1 ubuntu ubuntu   197962 Aug 14 18:40 p5_smoke.json
+-rw-r--r-- 1 ubuntu ubuntu   198030 Aug 14 18:44 p5_smoke2.json
+-rw-r--r-- 1 root   root      25190 Aug 14 18:54 p6_acc_base.json
+-rw-r--r-- 1 root   root      25255 Aug 14 18:55 p6_acc_pow2.json
+-rw-r--r-- 1 root   root       1431 Aug 14 18:55 p6_accuracy_cost.json
+-rw-r--r-- 1 ubuntu ubuntu   385428 Aug 14 18:53 p6_eval_windows.json
+-rw-r--r-- 1 root   root       3774 Aug 14 18:58 p6_throughput_cost.json
+-rw-r--r-- 1 root   root      16930 Aug 14 18:56 p6_tp_base.json
+-rw-r--r-- 1 root   root      16962 Aug 14 18:58 p6_tp_pow2.json

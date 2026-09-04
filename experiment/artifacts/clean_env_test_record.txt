@@ -1,0 +1,76 @@
++ echo 'git_sha: 3dbd6bf'
+git_sha: 3dbd6bf
++ echo 'base_image: python:3.12-slim@sha256:229a2c5bfa27522db7815ea81f9bed70af17ccb9de9fc7ad142b1877b5830d36'
+base_image: python:3.12-slim@sha256:229a2c5bfa27522db7815ea81f9bed70af17ccb9de9fc7ad142b1877b5830d36
+++ cat .build_id
++ echo 'built_image_id: sha256:c7cc2b54939db3398da8c5ee495c971ed206a1fb68c9e9f3d12f1e89035c27b9'
+built_image_id: sha256:c7cc2b54939db3398da8c5ee495c971ed206a1fb68c9e9f3d12f1e89035c27b9
+++ uname -a
++ echo 'platform: Linux <host> 6.8.0-136-generic #136-Ubuntu SMP PREEMPT_DYNAMIC Wed Jul  1 21:53:05 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux'
+platform: Linux <host> 6.8.0-136-generic #136-Ubuntu SMP PREEMPT_DYNAMIC Wed Jul  1 21:53:05 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
++ echo 'command: docker run --rm integer-alibi-test:v6'
+command: docker run --rm integer-alibi-test:v6
++ docker run --rm integer-alibi-test:v6
+PASS non-finite case: every JSON value finite or None
+PASS non-finite case: no finite/finite pair -> main hist strictly zero
+PASS exclusive classes partition n_total
+PASS rms uses finite ref only
+PASS zero-RMS -> explicit status
+PASS zero-RMS -> abs_over_rms all None
+PASS zero-RMS -> absolute summary still present
+PASS zero-RMS output json-safe
+PASS no-finite-reference status
+PASS no-finite-reference json-safe
+PASS dtype guard raises
+PASS shape guard raises (no silent broadcast)
+PASS duplicate key invalidated, not last-write-wins
+PASS legacy records flagged identity-unverified
+PASS prompt reorder detected via sha
+PASS sha-verified join reports identity_verified
+PASS n_common_keys vs n_pairs_used vs skipped are separated
+PASS every occupied merged bin >= MIN_BIN_N (tail merged back)
+PASS total below MIN_BIN_N -> single-bin small-sample status
+PASS all-zero p flagged not-identifiable
+PASS single distinct K flagged
+PASS gensat v4 recovers alpha~0.5 within bounds, with diagnostics
+PASS alpha bounds recorded
+PASS AUC None when single-class
+PASS AP None when no positives
+PASS PAVA output is non-increasing
+
+0 failures
+PASS near-zero large abs error visible in global abs_over_rms
+PASS main-only normalized summary kept under its own name
+PASS extreme finite bf16: status ok, rms finite
+PASS extreme finite bf16: abs diff finite in fp64
+SKIP device guard (no GPU)
+PASS decreasing p: alpha=0 boundary optimum SUCCEEDS
+PASS steep p: fit succeeds within bounds
+PASS negative K flagged
+PASS p out of range flagged
+PASS count inconsistency flagged
+PASS incomplete K grid per seed flagged
+PASS mixed schema fail closed
+PASS tf_v4 envelope accepted with identity verified
+PASS single-class driver exits gracefully (DEGENERATE_DATA)
+PASS no empty meta bins after zero-group merge
+PASS all bins >= MIN_BIN_N
+SKIP driver field checks (artifacts not present)
+
+0 failures
+PASS identical envelopes: identity_verified True
+PASS manifest mismatch (requested_prompts): overall False, record_counts_verified False
+PASS manifest mismatch (prompt_list_sha256): overall False, prompt_manifest_verified False
+PASS manifest mismatch (rails_sha256): overall False, rails_verified False
+PASS manifest mismatch (checkpoint_digest): overall False, model_identity_verified False
+PASS envelope/legacy mixed: fail closed
+PASS truncated 16-hex prompt_sha: record identity NOT verified
+PASS model path differs but digest equal: still verified (path diagnostic)
+PASS 5-seed role exploratory / 20-seed role primary
+PASS conditional is separate boolean, both True
+PASS no EXPLORATORY in stable keys
+PASS single-even-prompt driver: explicit empty/degenerate status
+
+0 failures
++ echo EXIT_clean_env=0
+EXIT_clean_env=0

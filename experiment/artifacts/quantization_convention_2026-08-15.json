@@ -1,0 +1,25 @@
+{
+  "measured": "2026-08-15",
+  "purpose": "The exact quantization convention of the base checkpoint, reverse-engineered from the parent weights so that P8's requantized arms can differ from base only in the scale rule. Also settles which tier of the three-tier int8 product bound is operative, and why.",
+  "checkpoint": "qwen3-1.7b-int8-w8a8",
+  "checkpoint_digest": "bc6258648cc6c380e4e487a0b6539a3f5c6183a84cdfd07f23c78b7d91d1183e",
+  "parent": {"model": "Qwen/Qwen3-1.7B", "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e", "weight_dtype": "bfloat16"},
+  "weight_scale_rule": {
+    "formula": "scale = max(|w|, dim=1) / 127.5, cast to bfloat16",
+    "match_against_committed_checkpoint": "100.00% of per-channel scales match exactly",
+    "divisors_tested": {"127.0": "74.66% match", "127.5": "100.00% match", "128.0": "0.00% match"},
+    "note": "Tested in float32 and bfloat16; only the bfloat16 cast reproduces the stored values, which is consistent with the checkpoint storing weight_scale as bfloat16."
+  },
+  "ranges": {
+    "weight_int8": {"observed": [-128, 127], "reason": "the 127.5 divisor puts w/s in [-127.5, 127.5], so rounding reaches -128"},
+    "activation_int8": {"observed": [-127, 127], "layers_checked": 196, "layers_reaching_minus_128": 0, "source": "perlayer_capture, the operands every v1 measurement used"}
+  },
+  "product_bound": {
+    "operative": 16256,
+    "derivation": "128 * 127, from weights reaching -128 and activations never doing so",
+    "is_conservative": false,
+    "correction_to_v1_wording": "The paper describes 16256 as the tier that admits a -128 ACTIVATION, and treats it as a conservative middle choice. Both halves are wrong in detail. The -128 occurs on the WEIGHT side, because of the 127.5 divisor; activations are symmetric in [-127, 127] across all 196 layers. So 16256 is not a conservative pick between 16129 and 16384 -- it is the exact bound for this checkpoint, because the two sides' ranges are asymmetric. 16129 does not apply since weights do reach -128; 16384 is unreachable since activations never do.",
+    "consequence": "The K limit of 132,104 that follows from 16256*K < 2^31 is likewise exact for this checkpoint rather than conservative. The headline numbers in the paper do not change; the justification for the tier becomes a measurement instead of a choice."
+  },
+  "why_this_matters_for_p8": "P8's requantized arms must differ from base only in how the scale is constrained. Reproducing base byte-for-byte with the minmax rule is the test that establishes that, and it requires this convention exactly: divisor 127.5, bfloat16 scale, int8 range [-128, 127]."
+}

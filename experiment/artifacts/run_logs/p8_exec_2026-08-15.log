@@ -1,0 +1,202 @@
+===== P8 START 2026-08-14T20:23:23Z =====
+--- context (before) ---
+ 20:23:23 up 16 days, 12:07,  7 users,  load average: 0.45, 1.05, 1.09
+0, 1 MiB, 0 %
+1, 1 MiB, 0 %
+/dev/sda1       154G  139G   16G  91% /
+parent: /home/ubuntu/.cache/huggingface/hub/models--Qwen--Qwen3-1.7B/snapshots/70d244cc86ccca08cf5af4e1e306ecf908b1ad5e/
+
+########## build pow2_nearest ##########
+rule=pow2_nearest layers=196 digest=d6a3722b094b398b clipped=1555348 in 196 layers int8=[-128,127] bound=16256 pow2=True reproduces_base=False
+BUILD_pow2_nearest_OK
+/dev/sda1       154G  141G   14G  92% /
+
+########## build pow2_ceil ##########
+rule=pow2_ceil layers=196 digest=e51d6f656653ec70 clipped=2579 in 191 layers int8=[-128,127] bound=16256 pow2=True reproduces_base=False
+BUILD_pow2_ceil_OK
+/dev/sda1       154G  143G   12G  93% /
+
+########## accuracy pow2_nearest ##########
+INFO 08-14 20:24:08 [api_utils.py:273] non-default args: {'dtype': 'bfloat16', 'max_model_len': 512, 'gpu_memory_utilization': 0.85, 'disable_log_stats': True, 'enforce_eager': True, 'model': '/models/qwen3-1.7b-int8-pow2_nearest'}
+WARNING 08-14 20:24:08 [arg_utils.py:1678] The global random seed is set to 0. Since VLLM_ENABLE_V1_MULTIPROCESSING is set to False, this may affect the random state of the Python process that launched vLLM.
+INFO 08-14 20:24:23 [model.py:645] Resolved architecture: Qwen3ForCausalLM
+INFO 08-14 20:24:23 [model.py:1883] Using max model len 512
+INFO 08-14 20:24:24 [scheduler.py:242] Chunked prefill is enabled with max_num_batched_tokens=8192.
+WARNING 08-14 20:24:24 [vllm.py:1194] Enforce eager set, disabling torch.compile and CUDAGraphs. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none
+WARNING 08-14 20:24:24 [vllm.py:1247] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.
+INFO 08-14 20:24:24 [kernel.py:306] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['vllm_c', 'native'], fused_add_rms_norm=['vllm_c', 'native'])
+INFO 08-14 20:24:24 [vllm.py:1426] Cudagraph is disabled under eager mode
+INFO 08-14 20:24:24 [compilation.py:329] Enabled custom fusions: norm_quant, act_quant
+INFO 08-14 20:24:27 [core.py:121] Initializing a V1 LLM engine (v0.27.1) with config: model='/models/qwen3-1.7b-int8-pow2_nearest', speculative_config=None, tokenizer='/models/qwen3-1.7b-int8-pow2_nearest', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=512, download_dir=None, load_format=auto, tensor_parallel_size=1, pipeline_parallel_size=1, data_parallel_size=1, decode_context_parallel_size=1, dcp_comm_backend=ag_rs, disable_custom_all_reduce=False, quantization=compressed-tensors, quantization_config=None, enforce_eager=True, enable_return_routed_experts=False, kv_cache_dtype=auto, device_config=cuda, structured_outputs_config=StructuredOutputsConfig(backend='auto', disable_any_whitespace=False, disable_additional_properties=False, reasoning_parser='', reasoning_parser_plugin='', enable_in_reasoning=False), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None, kv_cache_metrics=False, kv_cache_metrics_sample=0.01, cudagraph_metrics=False, enable_layerwise_nvtx_tracing=False, enable_mfu_metrics=False, enable_mm_processor_stats=False, enable_logging_iteration_details=False, jit_monitor_mode='warn', jit_monitor_verbose=False), seed=0, served_model_name=/models/qwen3-1.7b-int8-pow2_nearest, enable_prefix_caching=True, enable_chunked_prefill=True, pooler_config=None, compilation_config={'mode': <CompilationMode.NONE: 0>, 'debug_dump_path': None, 'cache_dir': '', 'compile_cache_save_format': 'binary', 'backend': 'inductor', 'custom_ops': ['all'], 'ir_enable_torch_wrap': False, 'splitting_ops': [], 'compile_mm_encoder': False, 'cudagraph_mm_encoder': False, 'encoder_cudagraph_token_budgets': [], 'encoder_cudagraph_max_vision_items_per_batch': 0, 'encoder_cudagraph_max_frames_per_batch': None, 'compile_sizes': [], 'compile_ranges_endpoints': [8192], 'inductor_compile_config': {'enable_auto_functionalized_v2': False, 'combo_kernels': True, 'benchmark_combo_kernel': True}, 'inductor_passes': {}, 'cudagraph_mode': <CUDAGraphMode.NONE: 0>, 'cudagraph_num_of_warmups': 0, 'cudagraph_capture_sizes': [], 'cudagraph_copy_inputs': False, 'cudagraph_specialize_lora': True, 'use_inductor_graph_partition': False, 'pass_config': {'fuse_norm_quant': True, 'fuse_act_quant': True, 'fuse_attn_quant': False, 'enable_sp': False, 'fuse_gemm_comms': False, 'fuse_allreduce_rms': False, 'enable_qk_norm_rope_fusion': False, 'fuse_rope_kvcache_cat_mla': False, 'fuse_act_padding': False, 'fuse_qk_norm_rope_kvcache': False}, 'max_cudagraph_capture_size': 0, 'dynamic_shapes_config': {'type': <DynamicShapesType.BACKED: 'backed'>, 'evaluate_guards': False, 'assume_32_bit_indexing': False}, 'local_cache_dir': None, 'fast_moe_cold_start': False, 'static_all_moe_layers': []}, kernel_config=KernelConfig(ir_op_priority=IrOpPriorityConfig(rms_norm=['vllm_c', 'native'], fused_add_rms_norm=['vllm_c', 'native']), enable_flashinfer_autotune=True, enable_cutedsl_warmup=True, enable_jit_warmup=True, enable_bf16x3_router_gemm=False, moe_backend='auto', linear_backend='auto')
+INFO 08-14 20:24:27 [parallel_state.py:1640] world_size=1 rank=0 local_rank=0 distributed_init_method=tcp://172.17.0.2:58859 backend=nccl
+INFO 08-14 20:24:27 [parallel_state.py:1977] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, PCP rank 0, TP rank 0, EP rank N/A, EPLB rank N/A
+INFO 08-14 20:24:27 [gpu_worker.py:385] Using V2 Model Runner
+INFO 08-14 20:24:28 [model_runner.py:308] Loading model from scratch...
+INFO 08-14 20:24:28 [__init__.py:700] Selected CutlassInt8ScaledMMLinearKernel for CompressedTensorsW8A8Int8
+INFO 08-14 20:24:28 [cuda.py:482] Using FLASH_ATTN attention backend out of potential backends: ['FLASH_ATTN', 'FLASHINFER', 'TRITON_ATTN', 'FLEX_ATTENTION'].
+INFO 08-14 20:24:28 [flash_attn.py:789] Using FlashAttention version 2
+INFO 08-14 20:24:28 [weight_utils.py:867] Filesystem type for checkpoints: EXT4. Checkpoint size: 1.89 GiB. Available RAM: 57.23 GiB.
+INFO 08-14 20:24:28 [weight_utils.py:890] Auto-prefetch is disabled because the filesystem (EXT4) is not a recognized network FS (NFS/Lustre). If you want to force prefetching, start vLLM with --safetensors-load-strategy=prefetch.
+
+INFO 08-14 20:24:29 [default_loader.py:430] Loading weights took 0.37 seconds
+INFO 08-14 20:24:29 [model_runner.py:329] Model loading took 1.9 GiB and 1.687302 seconds
+INFO 08-14 20:24:29 [topk_topp_sampler.py:62] Using FlashInfer for top-p & top-k sampling.
+INFO 08-14 20:24:32 [gpu_worker.py:563] Available KV cache memory: 17.17 GiB
+INFO 08-14 20:24:32 [kv_cache_utils.py:2235] GPU KV cache size: 160,768 tokens
+INFO 08-14 20:24:32 [kv_cache_utils.py:2236] Maximum concurrency for 512 tokens per request: 314.00x
+INFO 08-14 20:24:32 [gpu_worker.py:789] Free memory on device (23.13/23.52 GiB) on startup. Desired GPU memory utilization is (0.85, 19.99 GiB). Actual usage is 2.37 GiB for consumed memory (weights + non-torch), 0.45 GiB for peak activation, and 0.0 GiB for CUDAGraph memory. Replace gpu_memory_utilization config with `--kv-cache-memory=18281615975` (17.03 GiB) to fit into requested memory, or `--kv-cache-memory=21654891520` (20.17 GiB) to fully utilize gpu memory. Current kv cache memory in use is 17.17 GiB.
+INFO 08-14 20:24:36 [jit_monitor.py:79] Kernel JIT monitor activated; monitored JIT compilations during inference will use mode=warn.
+INFO 08-14 20:24:36 [core.py:355] init engine (profile, create kv cache, warmup model) took 6.88 s
+INFO 08-14 20:24:37 [hf.py:540] Detected the chat template content format to be 'string'. You can set `--chat-template-content-format` to override this.
+/models/qwen3-1.7b-int8-pow2_nearest: ppl 23.278319 over 256 windows, 86365 scored tokens, windows db8ffa33e242a6b2
+[rank0]:[W814 20:24:41.166182411 ProcessGroupNCCL.cpp:1624] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+ACC_pow2_nearest_OK
+
+########## accuracy pow2_ceil ##########
+INFO 08-14 20:24:58 [api_utils.py:273] non-default args: {'dtype': 'bfloat16', 'max_model_len': 512, 'gpu_memory_utilization': 0.85, 'disable_log_stats': True, 'enforce_eager': True, 'model': '/models/qwen3-1.7b-int8-pow2_ceil'}
+WARNING 08-14 20:24:58 [arg_utils.py:1678] The global random seed is set to 0. Since VLLM_ENABLE_V1_MULTIPROCESSING is set to False, this may affect the random state of the Python process that launched vLLM.
+INFO 08-14 20:25:13 [model.py:645] Resolved architecture: Qwen3ForCausalLM
+INFO 08-14 20:25:13 [model.py:1883] Using max model len 512
+INFO 08-14 20:25:14 [scheduler.py:242] Chunked prefill is enabled with max_num_batched_tokens=8192.
+WARNING 08-14 20:25:14 [vllm.py:1194] Enforce eager set, disabling torch.compile and CUDAGraphs. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none
+WARNING 08-14 20:25:14 [vllm.py:1247] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.
+INFO 08-14 20:25:14 [kernel.py:306] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['vllm_c', 'native'], fused_add_rms_norm=['vllm_c', 'native'])
+INFO 08-14 20:25:14 [vllm.py:1426] Cudagraph is disabled under eager mode
+INFO 08-14 20:25:14 [compilation.py:329] Enabled custom fusions: norm_quant, act_quant
+INFO 08-14 20:25:17 [core.py:121] Initializing a V1 LLM engine (v0.27.1) with config: model='/models/qwen3-1.7b-int8-pow2_ceil', speculative_config=None, tokenizer='/models/qwen3-1.7b-int8-pow2_ceil', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=512, download_dir=None, load_format=auto, tensor_parallel_size=1, pipeline_parallel_size=1, data_parallel_size=1, decode_context_parallel_size=1, dcp_comm_backend=ag_rs, disable_custom_all_reduce=False, quantization=compressed-tensors, quantization_config=None, enforce_eager=True, enable_return_routed_experts=False, kv_cache_dtype=auto, device_config=cuda, structured_outputs_config=StructuredOutputsConfig(backend='auto', disable_any_whitespace=False, disable_additional_properties=False, reasoning_parser='', reasoning_parser_plugin='', enable_in_reasoning=False), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None, kv_cache_metrics=False, kv_cache_metrics_sample=0.01, cudagraph_metrics=False, enable_layerwise_nvtx_tracing=False, enable_mfu_metrics=False, enable_mm_processor_stats=False, enable_logging_iteration_details=False, jit_monitor_mode='warn', jit_monitor_verbose=False), seed=0, served_model_name=/models/qwen3-1.7b-int8-pow2_ceil, enable_prefix_caching=True, enable_chunked_prefill=True, pooler_config=None, compilation_config={'mode': <CompilationMode.NONE: 0>, 'debug_dump_path': None, 'cache_dir': '', 'compile_cache_save_format': 'binary', 'backend': 'inductor', 'custom_ops': ['all'], 'ir_enable_torch_wrap': False, 'splitting_ops': [], 'compile_mm_encoder': False, 'cudagraph_mm_encoder': False, 'encoder_cudagraph_token_budgets': [], 'encoder_cudagraph_max_vision_items_per_batch': 0, 'encoder_cudagraph_max_frames_per_batch': None, 'compile_sizes': [], 'compile_ranges_endpoints': [8192], 'inductor_compile_config': {'enable_auto_functionalized_v2': False, 'combo_kernels': True, 'benchmark_combo_kernel': True}, 'inductor_passes': {}, 'cudagraph_mode': <CUDAGraphMode.NONE: 0>, 'cudagraph_num_of_warmups': 0, 'cudagraph_capture_sizes': [], 'cudagraph_copy_inputs': False, 'cudagraph_specialize_lora': True, 'use_inductor_graph_partition': False, 'pass_config': {'fuse_norm_quant': True, 'fuse_act_quant': True, 'fuse_attn_quant': False, 'enable_sp': False, 'fuse_gemm_comms': False, 'fuse_allreduce_rms': False, 'enable_qk_norm_rope_fusion': False, 'fuse_rope_kvcache_cat_mla': False, 'fuse_act_padding': False, 'fuse_qk_norm_rope_kvcache': False}, 'max_cudagraph_capture_size': 0, 'dynamic_shapes_config': {'type': <DynamicShapesType.BACKED: 'backed'>, 'evaluate_guards': False, 'assume_32_bit_indexing': False}, 'local_cache_dir': None, 'fast_moe_cold_start': False, 'static_all_moe_layers': []}, kernel_config=KernelConfig(ir_op_priority=IrOpPriorityConfig(rms_norm=['vllm_c', 'native'], fused_add_rms_norm=['vllm_c', 'native']), enable_flashinfer_autotune=True, enable_cutedsl_warmup=True, enable_jit_warmup=True, enable_bf16x3_router_gemm=False, moe_backend='auto', linear_backend='auto')
+INFO 08-14 20:25:17 [parallel_state.py:1640] world_size=1 rank=0 local_rank=0 distributed_init_method=tcp://172.17.0.2:42185 backend=nccl
+INFO 08-14 20:25:17 [parallel_state.py:1977] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, PCP rank 0, TP rank 0, EP rank N/A, EPLB rank N/A
+INFO 08-14 20:25:17 [gpu_worker.py:385] Using V2 Model Runner
+INFO 08-14 20:25:18 [model_runner.py:308] Loading model from scratch...
+INFO 08-14 20:25:18 [__init__.py:700] Selected CutlassInt8ScaledMMLinearKernel for CompressedTensorsW8A8Int8
+INFO 08-14 20:25:18 [cuda.py:482] Using FLASH_ATTN attention backend out of potential backends: ['FLASH_ATTN', 'FLASHINFER', 'TRITON_ATTN', 'FLEX_ATTENTION'].
+INFO 08-14 20:25:18 [flash_attn.py:789] Using FlashAttention version 2
+INFO 08-14 20:25:18 [weight_utils.py:867] Filesystem type for checkpoints: EXT4. Checkpoint size: 1.89 GiB. Available RAM: 57.31 GiB.
+INFO 08-14 20:25:18 [weight_utils.py:890] Auto-prefetch is disabled because the filesystem (EXT4) is not a recognized network FS (NFS/Lustre). If you want to force prefetching, start vLLM with --safetensors-load-strategy=prefetch.
+
+INFO 08-14 20:25:19 [default_loader.py:430] Loading weights took 0.38 seconds
+INFO 08-14 20:25:19 [model_runner.py:329] Model loading took 1.9 GiB and 1.648275 seconds
+INFO 08-14 20:25:19 [topk_topp_sampler.py:62] Using FlashInfer for top-p & top-k sampling.
+INFO 08-14 20:25:22 [gpu_worker.py:563] Available KV cache memory: 17.17 GiB
+INFO 08-14 20:25:22 [kv_cache_utils.py:2235] GPU KV cache size: 160,768 tokens
+INFO 08-14 20:25:22 [kv_cache_utils.py:2236] Maximum concurrency for 512 tokens per request: 314.00x
+INFO 08-14 20:25:22 [gpu_worker.py:789] Free memory on device (23.13/23.52 GiB) on startup. Desired GPU memory utilization is (0.85, 19.99 GiB). Actual usage is 2.37 GiB for consumed memory (weights + non-torch), 0.45 GiB for peak activation, and 0.0 GiB for CUDAGraph memory. Replace gpu_memory_utilization config with `--kv-cache-memory=18281615975` (17.03 GiB) to fit into requested memory, or `--kv-cache-memory=21654891520` (20.17 GiB) to fully utilize gpu memory. Current kv cache memory in use is 17.17 GiB.
+INFO 08-14 20:25:26 [jit_monitor.py:79] Kernel JIT monitor activated; monitored JIT compilations during inference will use mode=warn.
+INFO 08-14 20:25:26 [core.py:355] init engine (profile, create kv cache, warmup model) took 6.81 s
+INFO 08-14 20:25:27 [hf.py:540] Detected the chat template content format to be 'string'. You can set `--chat-template-content-format` to override this.
+/models/qwen3-1.7b-int8-pow2_ceil: ppl 23.329814 over 256 windows, 86365 scored tokens, windows db8ffa33e242a6b2
+[rank0]:[W814 20:25:31.067796883 ProcessGroupNCCL.cpp:1624] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+ACC_pow2_ceil_OK
+
+########## throughput pow2_nearest ##########
+INFO 08-14 20:25:49 [api_utils.py:273] non-default args: {'dtype': 'bfloat16', 'max_model_len': 4096, 'gpu_memory_utilization': 0.85, 'disable_log_stats': True, 'enforce_eager': True, 'model': '/models/qwen3-1.7b-int8-pow2_nearest'}
+WARNING 08-14 20:25:49 [arg_utils.py:1678] The global random seed is set to 0. Since VLLM_ENABLE_V1_MULTIPROCESSING is set to False, this may affect the random state of the Python process that launched vLLM.
+INFO 08-14 20:26:03 [model.py:645] Resolved architecture: Qwen3ForCausalLM
+INFO 08-14 20:26:03 [model.py:1883] Using max model len 4096
+INFO 08-14 20:26:05 [scheduler.py:242] Chunked prefill is enabled with max_num_batched_tokens=8192.
+WARNING 08-14 20:26:05 [vllm.py:1194] Enforce eager set, disabling torch.compile and CUDAGraphs. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none
+WARNING 08-14 20:26:05 [vllm.py:1247] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.
+INFO 08-14 20:26:05 [kernel.py:306] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['vllm_c', 'native'], fused_add_rms_norm=['vllm_c', 'native'])
+INFO 08-14 20:26:05 [vllm.py:1426] Cudagraph is disabled under eager mode
+INFO 08-14 20:26:05 [compilation.py:329] Enabled custom fusions: norm_quant, act_quant
+INFO 08-14 20:26:07 [core.py:121] Initializing a V1 LLM engine (v0.27.1) with config: model='/models/qwen3-1.7b-int8-pow2_nearest', speculative_config=None, tokenizer='/models/qwen3-1.7b-int8-pow2_nearest', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=4096, download_dir=None, load_format=auto, tensor_parallel_size=1, pipeline_parallel_size=1, data_parallel_size=1, decode_context_parallel_size=1, dcp_comm_backend=ag_rs, disable_custom_all_reduce=False, quantization=compressed-tensors, quantization_config=None, enforce_eager=True, enable_return_routed_experts=False, kv_cache_dtype=auto, device_config=cuda, structured_outputs_config=StructuredOutputsConfig(backend='auto', disable_any_whitespace=False, disable_additional_properties=False, reasoning_parser='', reasoning_parser_plugin='', enable_in_reasoning=False), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None, kv_cache_metrics=False, kv_cache_metrics_sample=0.01, cudagraph_metrics=False, enable_layerwise_nvtx_tracing=False, enable_mfu_metrics=False, enable_mm_processor_stats=False, enable_logging_iteration_details=False, jit_monitor_mode='warn', jit_monitor_verbose=False), seed=0, served_model_name=/models/qwen3-1.7b-int8-pow2_nearest, enable_prefix_caching=True, enable_chunked_prefill=True, pooler_config=None, compilation_config={'mode': <CompilationMode.NONE: 0>, 'debug_dump_path': None, 'cache_dir': '', 'compile_cache_save_format': 'binary', 'backend': 'inductor', 'custom_ops': ['all'], 'ir_enable_torch_wrap': False, 'splitting_ops': [], 'compile_mm_encoder': False, 'cudagraph_mm_encoder': False, 'encoder_cudagraph_token_budgets': [], 'encoder_cudagraph_max_vision_items_per_batch': 0, 'encoder_cudagraph_max_frames_per_batch': None, 'compile_sizes': [], 'compile_ranges_endpoints': [8192], 'inductor_compile_config': {'enable_auto_functionalized_v2': False, 'combo_kernels': True, 'benchmark_combo_kernel': True}, 'inductor_passes': {}, 'cudagraph_mode': <CUDAGraphMode.NONE: 0>, 'cudagraph_num_of_warmups': 0, 'cudagraph_capture_sizes': [], 'cudagraph_copy_inputs': False, 'cudagraph_specialize_lora': True, 'use_inductor_graph_partition': False, 'pass_config': {'fuse_norm_quant': True, 'fuse_act_quant': True, 'fuse_attn_quant': False, 'enable_sp': False, 'fuse_gemm_comms': False, 'fuse_allreduce_rms': False, 'enable_qk_norm_rope_fusion': False, 'fuse_rope_kvcache_cat_mla': False, 'fuse_act_padding': False, 'fuse_qk_norm_rope_kvcache': False}, 'max_cudagraph_capture_size': 0, 'dynamic_shapes_config': {'type': <DynamicShapesType.BACKED: 'backed'>, 'evaluate_guards': False, 'assume_32_bit_indexing': False}, 'local_cache_dir': None, 'fast_moe_cold_start': False, 'static_all_moe_layers': []}, kernel_config=KernelConfig(ir_op_priority=IrOpPriorityConfig(rms_norm=['vllm_c', 'native'], fused_add_rms_norm=['vllm_c', 'native']), enable_flashinfer_autotune=True, enable_cutedsl_warmup=True, enable_jit_warmup=True, enable_bf16x3_router_gemm=False, moe_backend='auto', linear_backend='auto')
+INFO 08-14 20:26:08 [parallel_state.py:1640] world_size=1 rank=0 local_rank=0 distributed_init_method=tcp://172.17.0.2:37391 backend=nccl
+INFO 08-14 20:26:08 [parallel_state.py:1977] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, PCP rank 0, TP rank 0, EP rank N/A, EPLB rank N/A
+INFO 08-14 20:26:08 [gpu_worker.py:385] Using V2 Model Runner
+INFO 08-14 20:26:09 [model_runner.py:308] Loading model from scratch...
+INFO 08-14 20:26:09 [__init__.py:700] Selected CutlassInt8ScaledMMLinearKernel for CompressedTensorsW8A8Int8
+INFO 08-14 20:26:09 [cuda.py:482] Using FLASH_ATTN attention backend out of potential backends: ['FLASH_ATTN', 'FLASHINFER', 'TRITON_ATTN', 'FLEX_ATTENTION'].
+INFO 08-14 20:26:09 [flash_attn.py:789] Using FlashAttention version 2
+INFO 08-14 20:26:09 [weight_utils.py:867] Filesystem type for checkpoints: EXT4. Checkpoint size: 1.89 GiB. Available RAM: 57.34 GiB.
+INFO 08-14 20:26:09 [weight_utils.py:890] Auto-prefetch is disabled because the filesystem (EXT4) is not a recognized network FS (NFS/Lustre). If you want to force prefetching, start vLLM with --safetensors-load-strategy=prefetch.
+
+INFO 08-14 20:26:09 [default_loader.py:430] Loading weights took 0.39 seconds
+INFO 08-14 20:26:10 [model_runner.py:329] Model loading took 1.9 GiB and 1.659213 seconds
+INFO 08-14 20:26:10 [topk_topp_sampler.py:62] Using FlashInfer for top-p & top-k sampling.
+INFO 08-14 20:26:12 [gpu_worker.py:563] Available KV cache memory: 17.17 GiB
+INFO 08-14 20:26:12 [kv_cache_utils.py:2235] GPU KV cache size: 160,768 tokens
+INFO 08-14 20:26:12 [kv_cache_utils.py:2236] Maximum concurrency for 4,096 tokens per request: 39.25x
+INFO 08-14 20:26:13 [gpu_worker.py:789] Free memory on device (23.13/23.52 GiB) on startup. Desired GPU memory utilization is (0.85, 19.99 GiB). Actual usage is 2.37 GiB for consumed memory (weights + non-torch), 0.45 GiB for peak activation, and 0.0 GiB for CUDAGraph memory. Replace gpu_memory_utilization config with `--kv-cache-memory=18281615975` (17.03 GiB) to fit into requested memory, or `--kv-cache-memory=21654891520` (20.17 GiB) to fully utilize gpu memory. Current kv cache memory in use is 17.17 GiB.
+INFO 08-14 20:26:16 [jit_monitor.py:79] Kernel JIT monitor activated; monitored JIT compilations during inference will use mode=warn.
+INFO 08-14 20:26:17 [core.py:355] init engine (profile, create kv cache, warmup model) took 6.87 s
+INFO 08-14 20:26:17 [hf.py:540] Detected the chat template content format to be 'string'. You can set `--chat-template-content-format` to override this.
+/models/qwen3-1.7b-int8-pow2_nearest: 6 grid points measured
+[rank0]:[W814 20:27:21.538848751 ProcessGroupNCCL.cpp:1624] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+TP_pow2_nearest_OK
+
+########## throughput pow2_ceil ##########
+INFO 08-14 20:27:39 [api_utils.py:273] non-default args: {'dtype': 'bfloat16', 'max_model_len': 4096, 'gpu_memory_utilization': 0.85, 'disable_log_stats': True, 'enforce_eager': True, 'model': '/models/qwen3-1.7b-int8-pow2_ceil'}
+WARNING 08-14 20:27:39 [arg_utils.py:1678] The global random seed is set to 0. Since VLLM_ENABLE_V1_MULTIPROCESSING is set to False, this may affect the random state of the Python process that launched vLLM.
+INFO 08-14 20:27:54 [model.py:645] Resolved architecture: Qwen3ForCausalLM
+INFO 08-14 20:27:54 [model.py:1883] Using max model len 4096
+INFO 08-14 20:27:55 [scheduler.py:242] Chunked prefill is enabled with max_num_batched_tokens=8192.
+WARNING 08-14 20:27:55 [vllm.py:1194] Enforce eager set, disabling torch.compile and CUDAGraphs. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none
+WARNING 08-14 20:27:55 [vllm.py:1247] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.
+INFO 08-14 20:27:55 [kernel.py:306] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['vllm_c', 'native'], fused_add_rms_norm=['vllm_c', 'native'])
+INFO 08-14 20:27:55 [vllm.py:1426] Cudagraph is disabled under eager mode
+INFO 08-14 20:27:55 [compilation.py:329] Enabled custom fusions: norm_quant, act_quant
+INFO 08-14 20:27:58 [core.py:121] Initializing a V1 LLM engine (v0.27.1) with config: model='/models/qwen3-1.7b-int8-pow2_ceil', speculative_config=None, tokenizer='/models/qwen3-1.7b-int8-pow2_ceil', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=4096, download_dir=None, load_format=auto, tensor_parallel_size=1, pipeline_parallel_size=1, data_parallel_size=1, decode_context_parallel_size=1, dcp_comm_backend=ag_rs, disable_custom_all_reduce=False, quantization=compressed-tensors, quantization_config=None, enforce_eager=True, enable_return_routed_experts=False, kv_cache_dtype=auto, device_config=cuda, structured_outputs_config=StructuredOutputsConfig(backend='auto', disable_any_whitespace=False, disable_additional_properties=False, reasoning_parser='', reasoning_parser_plugin='', enable_in_reasoning=False), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None, kv_cache_metrics=False, kv_cache_metrics_sample=0.01, cudagraph_metrics=False, enable_layerwise_nvtx_tracing=False, enable_mfu_metrics=False, enable_mm_processor_stats=False, enable_logging_iteration_details=False, jit_monitor_mode='warn', jit_monitor_verbose=False), seed=0, served_model_name=/models/qwen3-1.7b-int8-pow2_ceil, enable_prefix_caching=True, enable_chunked_prefill=True, pooler_config=None, compilation_config={'mode': <CompilationMode.NONE: 0>, 'debug_dump_path': None, 'cache_dir': '', 'compile_cache_save_format': 'binary', 'backend': 'inductor', 'custom_ops': ['all'], 'ir_enable_torch_wrap': False, 'splitting_ops': [], 'compile_mm_encoder': False, 'cudagraph_mm_encoder': False, 'encoder_cudagraph_token_budgets': [], 'encoder_cudagraph_max_vision_items_per_batch': 0, 'encoder_cudagraph_max_frames_per_batch': None, 'compile_sizes': [], 'compile_ranges_endpoints': [8192], 'inductor_compile_config': {'enable_auto_functionalized_v2': False, 'combo_kernels': True, 'benchmark_combo_kernel': True}, 'inductor_passes': {}, 'cudagraph_mode': <CUDAGraphMode.NONE: 0>, 'cudagraph_num_of_warmups': 0, 'cudagraph_capture_sizes': [], 'cudagraph_copy_inputs': False, 'cudagraph_specialize_lora': True, 'use_inductor_graph_partition': False, 'pass_config': {'fuse_norm_quant': True, 'fuse_act_quant': True, 'fuse_attn_quant': False, 'enable_sp': False, 'fuse_gemm_comms': False, 'fuse_allreduce_rms': False, 'enable_qk_norm_rope_fusion': False, 'fuse_rope_kvcache_cat_mla': False, 'fuse_act_padding': False, 'fuse_qk_norm_rope_kvcache': False}, 'max_cudagraph_capture_size': 0, 'dynamic_shapes_config': {'type': <DynamicShapesType.BACKED: 'backed'>, 'evaluate_guards': False, 'assume_32_bit_indexing': False}, 'local_cache_dir': None, 'fast_moe_cold_start': False, 'static_all_moe_layers': []}, kernel_config=KernelConfig(ir_op_priority=IrOpPriorityConfig(rms_norm=['vllm_c', 'native'], fused_add_rms_norm=['vllm_c', 'native']), enable_flashinfer_autotune=True, enable_cutedsl_warmup=True, enable_jit_warmup=True, enable_bf16x3_router_gemm=False, moe_backend='auto', linear_backend='auto')
+INFO 08-14 20:27:58 [parallel_state.py:1640] world_size=1 rank=0 local_rank=0 distributed_init_method=tcp://172.17.0.2:47125 backend=nccl
+INFO 08-14 20:27:58 [parallel_state.py:1977] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, PCP rank 0, TP rank 0, EP rank N/A, EPLB rank N/A
+INFO 08-14 20:27:58 [gpu_worker.py:385] Using V2 Model Runner
+INFO 08-14 20:27:59 [model_runner.py:308] Loading model from scratch...
+INFO 08-14 20:27:59 [__init__.py:700] Selected CutlassInt8ScaledMMLinearKernel for CompressedTensorsW8A8Int8
+INFO 08-14 20:27:59 [cuda.py:482] Using FLASH_ATTN attention backend out of potential backends: ['FLASH_ATTN', 'FLASHINFER', 'TRITON_ATTN', 'FLEX_ATTENTION'].
+INFO 08-14 20:27:59 [flash_attn.py:789] Using FlashAttention version 2
+INFO 08-14 20:27:59 [weight_utils.py:867] Filesystem type for checkpoints: EXT4. Checkpoint size: 1.89 GiB. Available RAM: 57.31 GiB.
+INFO 08-14 20:27:59 [weight_utils.py:890] Auto-prefetch is disabled because the filesystem (EXT4) is not a recognized network FS (NFS/Lustre). If you want to force prefetching, start vLLM with --safetensors-load-strategy=prefetch.
+
+INFO 08-14 20:27:59 [default_loader.py:430] Loading weights took 0.38 seconds
+INFO 08-14 20:28:00 [model_runner.py:329] Model loading took 1.9 GiB and 1.671670 seconds
+INFO 08-14 20:28:00 [topk_topp_sampler.py:62] Using FlashInfer for top-p & top-k sampling.
+INFO 08-14 20:28:03 [gpu_worker.py:563] Available KV cache memory: 17.17 GiB
+INFO 08-14 20:28:03 [kv_cache_utils.py:2235] GPU KV cache size: 160,768 tokens
+INFO 08-14 20:28:03 [kv_cache_utils.py:2236] Maximum concurrency for 4,096 tokens per request: 39.25x
+INFO 08-14 20:28:03 [gpu_worker.py:789] Free memory on device (23.13/23.52 GiB) on startup. Desired GPU memory utilization is (0.85, 19.99 GiB). Actual usage is 2.37 GiB for consumed memory (weights + non-torch), 0.45 GiB for peak activation, and 0.0 GiB for CUDAGraph memory. Replace gpu_memory_utilization config with `--kv-cache-memory=18281615975` (17.03 GiB) to fit into requested memory, or `--kv-cache-memory=21654891520` (20.17 GiB) to fully utilize gpu memory. Current kv cache memory in use is 17.17 GiB.
+INFO 08-14 20:28:07 [jit_monitor.py:79] Kernel JIT monitor activated; monitored JIT compilations during inference will use mode=warn.
+INFO 08-14 20:28:07 [core.py:355] init engine (profile, create kv cache, warmup model) took 6.84 s
+INFO 08-14 20:28:08 [hf.py:540] Detected the chat template content format to be 'string'. You can set `--chat-template-content-format` to override this.
+/models/qwen3-1.7b-int8-pow2_ceil: 6 grid points measured
+[rank0]:[W814 20:29:11.338625139 ProcessGroupNCCL.cpp:1624] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+TP_pow2_ceil_OK
+
+########## compares against base ##########
+base ppl 23.203781 | pow2 ppl 23.278319 | delta +0.074538 | ci90 [-0.013964, +0.164709]
+CMP_ACC_pow2_nearest_OK
+b= 1 isl=  128 prefill -0.09557857383924058 decode -0.016204412548130907
+b= 1 isl= 2048 prefill -0.019610104555763338 decode 0.0007175001349419809
+b= 4 isl=  128 prefill 0.00334801929777418 decode 0.0030556856776281856
+b= 4 isl= 2048 prefill 0.013598690677564414 decode 0.004729867710639185
+b=16 isl=  128 prefill 0.014052693358790178 decode 0.009031151822893303
+b=16 isl=  512 prefill -0.02139785938269428 decode 0.005421974558072299
+CMP_TP_pow2_nearest_OK
+base ppl 23.203781 | pow2 ppl 23.329814 | delta +0.126033 | ci90 [+0.040650, +0.212980]
+CMP_ACC_pow2_ceil_OK
+b= 1 isl=  128 prefill 0.010260622157238391 decode 0.012454305057058333
+b= 1 isl= 2048 prefill -0.004626453643104262 decode 0.021220207093842827
+b= 4 isl=  128 prefill 0.007485679904128404 decode 0.011224811706759711
+b= 4 isl= 2048 prefill 0.012954323429886604 decode 0.00639690489531086
+b=16 isl=  128 prefill 0.01408829373016261 decode 0.0006410660974928911
+b=16 isl=  512 prefill 0.004435606690723004 decode 0.005806248718391085
+CMP_TP_pow2_ceil_OK
+
+--- context (after) ---
+ 20:29:16 up 16 days, 12:13,  7 users,  load average: 1.30, 1.90, 1.60
+0, 1 MiB, 0 %
+1, 1 MiB, 0 %
+/dev/sda1       154G  143G   12G  93% /
+===== P8 DONE 2026-08-14T20:29:16Z =====
+-rw-r--r-- 1 root   root       3774 Aug 14 18:58 p6_throughput_cost.json
+-rw-r--r-- 1 root   root      16930 Aug 14 18:56 p6_tp_base.json
+-rw-r--r-- 1 root   root      16962 Aug 14 18:58 p6_tp_pow2.json
+-rw-r--r-- 1 root   root      25191 Aug 14 20:25 p8_acc_pow2_ceil.json
+-rw-r--r-- 1 root   root      25188 Aug 14 20:24 p8_acc_pow2_nearest.json
+-rw-r--r-- 1 root   root       1442 Aug 14 20:29 p8_cost_acc_pow2_ceil.json
+-rw-r--r-- 1 root   root       1448 Aug 14 20:29 p8_cost_acc_pow2_nearest.json
+-rw-r--r-- 1 root   root       3763 Aug 14 20:29 p8_cost_tp_pow2_ceil.json
+-rw-r--r-- 1 root   root       3766 Aug 14 20:29 p8_cost_tp_pow2_nearest.json
+-rw-r--r-- 1 ubuntu ubuntu    31058 Aug 14 20:17 p8_report_minmax.json
+-rw-r--r-- 1 ubuntu ubuntu    33619 Aug 14 20:23 p8_report_pow2_ceil.json
+-rw-r--r-- 1 ubuntu ubuntu    34160 Aug 14 20:23 p8_report_pow2_nearest.json
+-rw-r--r-- 1 root   root      16936 Aug 14 20:29 p8_tp_pow2_ceil.json
+-rw-r--r-- 1 root   root      16951 Aug 14 20:27 p8_tp_pow2_nearest.json

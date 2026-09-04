@@ -1,0 +1,82 @@
+{
+  "qwen3-1.7b-fp8-dynamic": {
+    "checkpoint_digest": "69d137b187ef43fc046b7f1844b4ff9db785f7c0d7b88b77465ad96786ffbb11",
+    "digest_scope": "sha256 over concatenated bytes of sorted *.safetensors, identical to tf_v6.py checkpoint_digest()",
+    "metadata_file_sha256": {
+      "chat_template.jinja": "a55ee1b1660128b7098723e0abcd92caa0788061051c62d51cbe87d9cf1974d8",
+      "config.json": "931baf3553d21838c8bf4c33767bb3a80dc518d6038feaaedb44d9b0f18a2c05",
+      "generation_config.json": "5292414bc5c987a1498cf50e6370ecf4939f451e023c74bb3facbdce8445a153",
+      "recipe.yaml": "2c5c08e18060ae771332046fea8a03a86f46071e78cbfebbd2fe25ee33915d03",
+      "tokenizer.json": "be75606093db2094d7cd20f3c2f385c212750648bd6ea4fb2bf507a6a4c55506",
+      "tokenizer_config.json": "2e3bd3cb5055f7a903a54e7062b2fd14d21b70f4174c3ffcd9fc81ec50a25631"
+    },
+    "safetensors_shards": [
+      "model.safetensors"
+    ],
+    "shard_bytes": 2033069632
+  },
+  "qwen3-1.7b-int8-w8a8": {
+    "checkpoint_digest": "bc6258648cc6c380e4e487a0b6539a3f5c6183a84cdfd07f23c78b7d91d1183e",
+    "digest_scope": "sha256 over concatenated bytes of sorted *.safetensors, identical to tf_v6.py checkpoint_digest()",
+    "metadata_file_sha256": {
+      "chat_template.jinja": "a55ee1b1660128b7098723e0abcd92caa0788061051c62d51cbe87d9cf1974d8",
+      "config.json": "ece0f206b315314a7057aa5ecbd33407dce21cd314d1ce223bcb313e054bf303",
+      "generation_config.json": "5292414bc5c987a1498cf50e6370ecf4939f451e023c74bb3facbdce8445a153",
+      "recipe.yaml": "b536141028b76cd611832fb1a474d95b87b8bffdaec784b6fd421c79817baf11",
+      "tokenizer.json": "be75606093db2094d7cd20f3c2f385c212750648bd6ea4fb2bf507a6a4c55506",
+      "tokenizer_config.json": "2e3bd3cb5055f7a903a54e7062b2fd14d21b70f4174c3ffcd9fc81ec50a25631"
+    },
+    "safetensors_shards": [
+      "model.safetensors"
+    ],
+    "shard_bytes": 2033068648
+  },
+  "qwen3-1.7b-int8-w8a8-pow2": {
+    "checkpoint_digest": "c147608401cd8f020ee5151e4d6214870d8e617956cf14843f859ebf8ba34f72",
+    "digest_scope": "sha256 over concatenated bytes of sorted *.safetensors, identical to tf_v6.py checkpoint_digest()",
+    "metadata_file_sha256": {
+      "chat_template.jinja": "a55ee1b1660128b7098723e0abcd92caa0788061051c62d51cbe87d9cf1974d8",
+      "config.json": "ece0f206b315314a7057aa5ecbd33407dce21cd314d1ce223bcb313e054bf303",
+      "generation_config.json": "5292414bc5c987a1498cf50e6370ecf4939f451e023c74bb3facbdce8445a153",
+      "recipe.yaml": "b536141028b76cd611832fb1a474d95b87b8bffdaec784b6fd421c79817baf11",
+      "tokenizer.json": "be75606093db2094d7cd20f3c2f385c212750648bd6ea4fb2bf507a6a4c55506",
+      "tokenizer_config.json": "2e3bd3cb5055f7a903a54e7062b2fd14d21b70f4174c3ffcd9fc81ec50a25631"
+    },
+    "safetensors_shards": [
+      "model.safetensors"
+    ],
+    "shard_bytes": 2033068624
+  },
+  "qwen3-8b-int8-w8a8": {
+    "checkpoint_digest": "bac6e1a08b245759bb70638a0c07f00709e61f6761ed1fe28069202b4cad2959",
+    "digest_scope": "sha256 over concatenated bytes of sorted *.safetensors, identical to tf_v6.py checkpoint_digest()",
+    "metadata_file_sha256": {
+      "chat_template.jinja": "a55ee1b1660128b7098723e0abcd92caa0788061051c62d51cbe87d9cf1974d8",
+      "config.json": "0fd307337144f3754a677d0d9a78176680382d3cca3c4ca40041d25e05ae7405",
+      "generation_config.json": "5292414bc5c987a1498cf50e6370ecf4939f451e023c74bb3facbdce8445a153",
+      "recipe.yaml": "b536141028b76cd611832fb1a474d95b87b8bffdaec784b6fd421c79817baf11",
+      "tokenizer.json": "be75606093db2094d7cd20f3c2f385c212750648bd6ea4fb2bf507a6a4c55506",
+      "tokenizer_config.json": "2e3bd3cb5055f7a903a54e7062b2fd14d21b70f4174c3ffcd9fc81ec50a25631"
+    },
+    "safetensors_shards": [
+      "model.safetensors"
+    ],
+    "shard_bytes": 9438580672
+  },
+  "qwen3-8b-int8-w8a8-pow2": {
+    "checkpoint_digest": "c6ae749cb3e9144a44b7d53087d356e453f2cb1fb0acb14baa8f8bfbd12f1247",
+    "digest_scope": "sha256 over concatenated bytes of sorted *.safetensors, identical to tf_v6.py checkpoint_digest()",
+    "metadata_file_sha256": {
+      "chat_template.jinja": "a55ee1b1660128b7098723e0abcd92caa0788061051c62d51cbe87d9cf1974d8",
+      "config.json": "0fd307337144f3754a677d0d9a78176680382d3cca3c4ca40041d25e05ae7405",
+      "generation_config.json": "5292414bc5c987a1498cf50e6370ecf4939f451e023c74bb3facbdce8445a153",
+      "recipe.yaml": "b536141028b76cd611832fb1a474d95b87b8bffdaec784b6fd421c79817baf11",
+      "tokenizer.json": "be75606093db2094d7cd20f3c2f385c212750648bd6ea4fb2bf507a6a4c55506",
+      "tokenizer_config.json": "2e3bd3cb5055f7a903a54e7062b2fd14d21b70f4174c3ffcd9fc81ec50a25631"
+    },
+    "safetensors_shards": [
+      "model.safetensors"
+    ],
+    "shard_bytes": 9438580640
+  }
+}

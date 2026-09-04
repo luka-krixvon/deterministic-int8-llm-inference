@@ -1,0 +1,3342 @@
+{
+  "n_layers": 196,
+  "p1a_pow2_identical": 196,
+  "p1a_violations": 0,
+  "p1b_real_identical": 8,
+  "p1b_over_ulp_bound": 0,
+  "ulp_bound_rel": 0.0078125,
+  "layers": [
+    {
+      "layer": "model.layers.0.self_attn.q_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 2048,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.004310344811528921,
+        "frac_differ": 9.5367431640625e-07
+      }
+    },
+    {
+      "layer": "model.layers.0.self_attn.k_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 1024,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      }
+    },
+    {
+      "layer": "model.layers.0.self_attn.v_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 1024,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      }
+    },
+    {
+      "layer": "model.layers.0.self_attn.o_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 2048,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.007407407276332378,
+        "frac_differ": 4.76837158203125e-06
+      }
+    },
+    {
+      "layer": "model.layers.0.mlp.gate_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 6144,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.007407407276332378,
+        "frac_differ": 4.132588856009534e-06
+      }
+    },
+    {
+      "layer": "model.layers.0.mlp.up_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 6144,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.007633587811142206,
+        "frac_differ": 8.265177712019067e-06
+      }
+    },
+    {
+      "layer": "model.layers.0.mlp.down_proj",
+      "M": 512,
+      "K": 6144,
+      "N": 2048,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.007407407276332378,
+        "frac_differ": 8.58306884765625e-06
+      }
+    },
+    {
+      "layer": "model.layers.1.self_attn.q_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 2048,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.006849315017461777,
+        "frac_differ": 4.76837158203125e-06
+      }
+    },
+    {
+      "layer": "model.layers.1.self_attn.k_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 1024,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.007751937955617905,
+        "frac_differ": 9.5367431640625e-06
+      }
+    },
+    {
+      "layer": "model.layers.1.self_attn.v_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 1024,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.006756756920367479,
+        "frac_differ": 5.7220458984375e-06
+      }
+    },
+    {
+      "layer": "model.layers.1.self_attn.o_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 2048,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.004807692486792803,
+        "frac_differ": 3.814697265625e-06
+      }
+    },
+    {
+      "layer": "model.layers.1.mlp.gate_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 6144,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.007518797181546688,
+        "frac_differ": 3.496805902614142e-06
+      }
+    },
+    {
+      "layer": "model.layers.1.mlp.up_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 6144,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.0069444444961845875,
+        "frac_differ": 4.76837158203125e-06
+      }
+    },
+    {
+      "layer": "model.layers.1.mlp.down_proj",
+      "M": 512,
+      "K": 6144,
+      "N": 2048,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.007407407276332378,
+        "frac_differ": 5.7220458984375e-06
+      }
+    },
+    {
+      "layer": "model.layers.2.self_attn.q_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 2048,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.006849315017461777,
+        "frac_differ": 4.76837158203125e-06
+      }
+    },
+    {
+      "layer": "model.layers.2.self_attn.k_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 1024,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.005347593687474728,
+        "frac_differ": 1.1444091796875e-05
+      }
+    },
+    {
+      "layer": "model.layers.2.self_attn.v_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 1024,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      }
+    },
+    {
+      "layer": "model.layers.2.self_attn.o_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 2048,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.005780346691608429,
+        "frac_differ": 4.76837158203125e-06
+      }
+    },
+    {
+      "layer": "model.layers.2.mlp.gate_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 6144,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.006666666828095913,
+        "frac_differ": 4.450480446394067e-06
+      }
+    },
+    {
+      "layer": "model.layers.2.mlp.up_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 6144,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.007194244768470526,
+        "frac_differ": 4.132588856009534e-06
+      }
+    },
+    {
+      "layer": "model.layers.2.mlp.down_proj",
+      "M": 512,
+      "K": 6144,
+      "N": 2048,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.0069444444961845875,
+        "frac_differ": 7.62939453125e-06
+      }
+    },
+    {
+      "layer": "model.layers.3.self_attn.q_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 2048,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.00657894741743803,
+        "frac_differ": 3.814697265625e-06
+      }
+    },
+    {
+      "layer": "model.layers.3.self_attn.k_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 1024,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.0071428571827709675,
+        "frac_differ": 3.814697265625e-06
+      }
+    },
+    {
+      "layer": "model.layers.3.self_attn.v_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 1024,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.007194244768470526,
+        "frac_differ": 1.9073486328125e-06
+      }
+    },
+    {
+      "layer": "model.layers.3.self_attn.o_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 2048,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.007352941203862429,
+        "frac_differ": 4.76837158203125e-06
+      }
+    },
+    {
+      "layer": "model.layers.3.mlp.gate_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 6144,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.005649717524647713,
+        "frac_differ": 9.5367431640625e-07
+      }
+    },
+    {
+      "layer": "model.layers.3.mlp.up_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 6144,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.007633587811142206,
+        "frac_differ": 4.76837158203125e-06
+      }
+    },
+    {
+      "layer": "model.layers.3.mlp.down_proj",
+      "M": 512,
+      "K": 6144,
+      "N": 2048,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.0058139534667134285,
+        "frac_differ": 6.67572021484375e-06
+      }
+    },
+    {
+      "layer": "model.layers.4.self_attn.q_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 2048,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.0045045046135783195,
+        "frac_differ": 3.814697265625e-06
+      }
+    },
+    {
+      "layer": "model.layers.4.self_attn.k_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 1024,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.007751937955617905,
+        "frac_differ": 1.9073486328125e-06
+      }
+    },
+    {
+      "layer": "model.layers.4.self_attn.v_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 1024,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.006097560748457909,
+        "frac_differ": 9.5367431640625e-06
+      }
+    },
+    {
+      "layer": "model.layers.4.self_attn.o_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 2048,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.007042253389954567,
+        "frac_differ": 7.62939453125e-06
+      }
+    },
+    {
+      "layer": "model.layers.4.mlp.gate_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 6144,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.005780346691608429,
+        "frac_differ": 1.9073486328125e-06
+      }
+    },
+    {
+      "layer": "model.layers.4.mlp.up_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 6144,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.006329114083200693,
+        "frac_differ": 5.7220458984375e-06
+      }
+    },
+    {
+      "layer": "model.layers.4.mlp.down_proj",
+      "M": 512,
+      "K": 6144,
+      "N": 2048,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.006756756920367479,
+        "frac_differ": 4.76837158203125e-06
+      }
+    },
+    {
+      "layer": "model.layers.5.self_attn.q_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 2048,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.0060240961611270905,
+        "frac_differ": 7.62939453125e-06
+      }
+    },
+    {
+      "layer": "model.layers.5.self_attn.k_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 1024,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.007633587811142206,
+        "frac_differ": 5.7220458984375e-06
+      }
+    },
+    {
+      "layer": "model.layers.5.self_attn.v_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 1024,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.007462686393409967,
+        "frac_differ": 1.1444091796875e-05
+      }
+    },
+    {
+      "layer": "model.layers.5.self_attn.o_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 2048,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.007194244768470526,
+        "frac_differ": 5.7220458984375e-06
+      }
+    },
+    {
+      "layer": "model.layers.5.mlp.gate_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 6144,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.0069444444961845875,
+        "frac_differ": 3.814697265625e-06
+      }
+    },
+    {
+      "layer": "model.layers.5.mlp.up_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 6144,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.0069444444961845875,
+        "frac_differ": 3.814697265625e-06
+      }
+    },
+    {
+      "layer": "model.layers.5.mlp.down_proj",
+      "M": 512,
+      "K": 6144,
+      "N": 2048,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.005988024175167084,
+        "frac_differ": 1.9073486328125e-06
+      }
+    },
+    {
+      "layer": "model.layers.6.self_attn.q_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 2048,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.007042253389954567,
+        "frac_differ": 1.1444091796875e-05
+      }
+    },
+    {
+      "layer": "model.layers.6.self_attn.k_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 1024,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.006211180239915848,
+        "frac_differ": 5.7220458984375e-06
+      }
+    },
+    {
+      "layer": "model.layers.6.self_attn.v_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 1024,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.0069444444961845875,
+        "frac_differ": 3.814697265625e-06
+      }
+    },
+    {
+      "layer": "model.layers.6.self_attn.o_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 2048,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.006329114083200693,
+        "frac_differ": 1.9073486328125e-06
+      }
+    },
+    {
+      "layer": "model.layers.6.mlp.gate_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 6144,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.006756756920367479,
+        "frac_differ": 2.543131586207892e-06
+      }
+    },
+    {
+      "layer": "model.layers.6.mlp.up_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 6144,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.007751937955617905,
+        "frac_differ": 5.404154762800317e-06
+      }
+    },
+    {
+      "layer": "model.layers.6.mlp.down_proj",
+      "M": 512,
+      "K": 6144,
+      "N": 2048,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.005780346691608429,
+        "frac_differ": 2.86102294921875e-06
+      }
+    },
+    {
+      "layer": "model.layers.7.self_attn.q_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 2048,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.0062500000931322575,
+        "frac_differ": 9.5367431640625e-07
+      }
+    },
+    {
+      "layer": "model.layers.7.self_attn.k_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 1024,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.006329114083200693,
+        "frac_differ": 9.5367431640625e-06
+      }
+    },
+    {
+      "layer": "model.layers.7.self_attn.v_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 1024,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.004854368977248669,
+        "frac_differ": 1.9073486328125e-06
+      }
+    },
+    {
+      "layer": "model.layers.7.self_attn.o_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 2048,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.006756756920367479,
+        "frac_differ": 4.76837158203125e-06
+      }
+    },
+    {
+      "layer": "model.layers.7.mlp.gate_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 6144,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.007246376946568489,
+        "frac_differ": 3.1789145396032836e-06
+      }
+    },
+    {
+      "layer": "model.layers.7.mlp.up_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 6144,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.007407407276332378,
+        "frac_differ": 5.7220458984375e-06
+      }
+    },
+    {
+      "layer": "model.layers.7.mlp.down_proj",
+      "M": 512,
+      "K": 6144,
+      "N": 2048,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.0071428571827709675,
+        "frac_differ": 5.7220458984375e-06
+      }
+    },
+    {
+      "layer": "model.layers.8.self_attn.q_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 2048,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.0058823530562222,
+        "frac_differ": 3.814697265625e-06
+      }
+    },
+    {
+      "layer": "model.layers.8.self_attn.k_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 1024,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.005649717524647713,
+        "frac_differ": 1.9073486328125e-06
+      }
+    },
+    {
+      "layer": "model.layers.8.self_attn.v_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 1024,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.006756756920367479,
+        "frac_differ": 5.7220458984375e-06
+      }
+    },
+    {
+      "layer": "model.layers.8.self_attn.o_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 2048,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.0066225165501236916,
+        "frac_differ": 2.86102294921875e-06
+      }
+    },
+    {
+      "layer": "model.layers.8.mlp.gate_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 6144,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.007246376946568489,
+        "frac_differ": 1.9073486328125e-06
+      }
+    },
+    {
+      "layer": "model.layers.8.mlp.up_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 6144,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.007194244768470526,
+        "frac_differ": 3.814697265625e-06
+      }
+    },
+    {
+      "layer": "model.layers.8.mlp.down_proj",
+      "M": 512,
+      "K": 6144,
+      "N": 2048,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.00413223123177886,
+        "frac_differ": 9.5367431640625e-07
+      }
+    },
+    {
+      "layer": "model.layers.9.self_attn.q_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 2048,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.007042253389954567,
+        "frac_differ": 3.814697265625e-06
+      }
+    },
+    {
+      "layer": "model.layers.9.self_attn.k_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 1024,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.006849315017461777,
+        "frac_differ": 7.62939453125e-06
+      }
+    },
+    {
+      "layer": "model.layers.9.self_attn.v_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 1024,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.0069444444961845875,
+        "frac_differ": 1.33514404296875e-05
+      }
+    },
+    {
+      "layer": "model.layers.9.self_attn.o_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 2048,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.006329114083200693,
+        "frac_differ": 4.76837158203125e-06
+      }
+    },
+    {
+      "layer": "model.layers.9.mlp.gate_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 6144,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.007407407276332378,
+        "frac_differ": 3.1789145396032836e-06
+      }
+    },
+    {
+      "layer": "model.layers.9.mlp.up_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 6144,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.007407407276332378,
+        "frac_differ": 6.039937488822034e-06
+      }
+    },
+    {
+      "layer": "model.layers.9.mlp.down_proj",
+      "M": 512,
+      "K": 6144,
+      "N": 2048,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.005988024175167084,
+        "frac_differ": 4.76837158203125e-06
+      }
+    },
+    {
+      "layer": "model.layers.10.self_attn.q_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 2048,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.007407407276332378,
+        "frac_differ": 1.9073486328125e-06
+      }
+    },
+    {
+      "layer": "model.layers.10.self_attn.k_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 1024,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.007633587811142206,
+        "frac_differ": 5.7220458984375e-06
+      }
+    },
+    {
+      "layer": "model.layers.10.self_attn.v_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 1024,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.005681818351149559,
+        "frac_differ": 7.62939453125e-06
+      }
+    },
+    {
+      "layer": "model.layers.10.self_attn.o_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 2048,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.0069444444961845875,
+        "frac_differ": 3.814697265625e-06
+      }
+    },
+    {
+      "layer": "model.layers.10.mlp.gate_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 6144,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.007246376946568489,
+        "frac_differ": 3.814697265625e-06
+      }
+    },
+    {
+      "layer": "model.layers.10.mlp.up_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 6144,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.007194244768470526,
+        "frac_differ": 3.496805902614142e-06
+      }
+    },
+    {
+      "layer": "model.layers.10.mlp.down_proj",
+      "M": 512,
+      "K": 6144,
+      "N": 2048,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.005681818351149559,
+        "frac_differ": 2.86102294921875e-06
+      }
+    },
+    {
+      "layer": "model.layers.11.self_attn.q_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 2048,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.0058139534667134285,
+        "frac_differ": 2.86102294921875e-06
+      }
+    },
+    {
+      "layer": "model.layers.11.self_attn.k_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 1024,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.0069444444961845875,
+        "frac_differ": 5.7220458984375e-06
+      }
+    },
+    {
+      "layer": "model.layers.11.self_attn.v_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 1024,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.006666666828095913,
+        "frac_differ": 5.7220458984375e-06
+      }
+    },
+    {
+      "layer": "model.layers.11.self_attn.o_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 2048,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.007194244768470526,
+        "frac_differ": 4.76837158203125e-06
+      }
+    },
+    {
+      "layer": "model.layers.11.mlp.gate_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 6144,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.007751937955617905,
+        "frac_differ": 6.039937488822034e-06
+      }
+    },
+    {
+      "layer": "model.layers.11.mlp.up_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 6144,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.007751937955617905,
+        "frac_differ": 3.1789145396032836e-06
+      }
+    },
+    {
+      "layer": "model.layers.11.mlp.down_proj",
+      "M": 512,
+      "K": 6144,
+      "N": 2048,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.0057142856530845165,
+        "frac_differ": 3.814697265625e-06
+      }
+    },
+    {
+      "layer": "model.layers.12.self_attn.q_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 2048,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.007194244768470526,
+        "frac_differ": 7.62939453125e-06
+      }
+    },
+    {
+      "layer": "model.layers.12.self_attn.k_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 1024,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.007751937955617905,
+        "frac_differ": 3.814697265625e-06
+      }
+    },
+    {
+      "layer": "model.layers.12.self_attn.v_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 1024,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.004065040498971939,
+        "frac_differ": 1.9073486328125e-06
+      }
+    },
+    {
+      "layer": "model.layers.12.self_attn.o_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 2048,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.004651162773370743,
+        "frac_differ": 1.9073486328125e-06
+      }
+    },
+    {
+      "layer": "model.layers.12.mlp.gate_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 6144,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.007692307699471712,
+        "frac_differ": 3.496805902614142e-06
+      }
+    },
+    {
+      "layer": "model.layers.12.mlp.up_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 6144,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.007407407276332378,
+        "frac_differ": 5.086263172415784e-06
+      }
+    },
+    {
+      "layer": "model.layers.12.mlp.down_proj",
+      "M": 512,
+      "K": 6144,
+      "N": 2048,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.005235602147877216,
+        "frac_differ": 5.7220458984375e-06
+      }
+    },
+    {
+      "layer": "model.layers.13.self_attn.q_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 2048,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.006329114083200693,
+        "frac_differ": 4.76837158203125e-06
+      }
+    },
+    {
+      "layer": "model.layers.13.self_attn.k_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 1024,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.007092198356986046,
+        "frac_differ": 5.7220458984375e-06
+      }
+    },
+    {
+      "layer": "model.layers.13.self_attn.v_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 1024,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.0045045046135783195,
+        "frac_differ": 1.9073486328125e-06
+      }
+    },
+    {
+      "layer": "model.layers.13.self_attn.o_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 2048,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.007575757801532745,
+        "frac_differ": 3.814697265625e-06
+      }
+    },
+    {
+      "layer": "model.layers.13.mlp.gate_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 6144,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.0060240961611270905,
+        "frac_differ": 2.543131586207892e-06
+      }
+    },
+    {
+      "layer": "model.layers.13.mlp.up_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 6144,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.0062500000931322575,
+        "frac_differ": 3.814697265625e-06
+      }
+    },
+    {
+      "layer": "model.layers.13.mlp.down_proj",
+      "M": 512,
+      "K": 6144,
+      "N": 2048,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.007246376946568489,
+        "frac_differ": 4.76837158203125e-06
+      }
+    },
+    {
+      "layer": "model.layers.14.self_attn.q_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 2048,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.004385964944958687,
+        "frac_differ": 1.9073486328125e-06
+      }
+    },
+    {
+      "layer": "model.layers.14.self_attn.k_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 1024,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.007042253389954567,
+        "frac_differ": 7.62939453125e-06
+      }
+    },
+    {
+      "layer": "model.layers.14.self_attn.v_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 1024,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.00671140942722559,
+        "frac_differ": 1.1444091796875e-05
+      }
+    },
+    {
+      "layer": "model.layers.14.self_attn.o_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 2048,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.007633587811142206,
+        "frac_differ": 5.7220458984375e-06
+      }
+    },
+    {
+      "layer": "model.layers.14.mlp.gate_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 6144,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.006802720949053764,
+        "frac_differ": 4.450480446394067e-06
+      }
+    },
+    {
+      "layer": "model.layers.14.mlp.up_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 6144,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.007194244768470526,
+        "frac_differ": 1.271565793103946e-06
+      }
+    },
+    {
+      "layer": "model.layers.14.mlp.down_proj",
+      "M": 512,
+      "K": 6144,
+      "N": 2048,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.0062500000931322575,
+        "frac_differ": 3.814697265625e-06
+      }
+    },
+    {
+      "layer": "model.layers.15.self_attn.q_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 2048,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.007194244768470526,
+        "frac_differ": 6.67572021484375e-06
+      }
+    },
+    {
+      "layer": "model.layers.15.self_attn.k_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 1024,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.0058139534667134285,
+        "frac_differ": 3.814697265625e-06
+      }
+    },
+    {
+      "layer": "model.layers.15.self_attn.v_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 1024,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.007092198356986046,
+        "frac_differ": 7.62939453125e-06
+      }
+    },
+    {
+      "layer": "model.layers.15.self_attn.o_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 2048,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.007042253389954567,
+        "frac_differ": 5.7220458984375e-06
+      }
+    },
+    {
+      "layer": "model.layers.15.mlp.gate_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 6144,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.0062500000931322575,
+        "frac_differ": 4.132588856009534e-06
+      }
+    },
+    {
+      "layer": "model.layers.15.mlp.up_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 6144,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.007633587811142206,
+        "frac_differ": 4.132588856009534e-06
+      }
+    },
+    {
+      "layer": "model.layers.15.mlp.down_proj",
+      "M": 512,
+      "K": 6144,
+      "N": 2048,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.007751937955617905,
+        "frac_differ": 4.76837158203125e-06
+      }
+    },
+    {
+      "layer": "model.layers.16.self_attn.q_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 2048,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.0069444444961845875,
+        "frac_differ": 5.7220458984375e-06
+      }
+    },
+    {
+      "layer": "model.layers.16.self_attn.k_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 1024,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.005524862091988325,
+        "frac_differ": 1.9073486328125e-06
+      }
+    },
+    {
+      "layer": "model.layers.16.self_attn.v_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 1024,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.007751937955617905,
+        "frac_differ": 5.7220458984375e-06
+      }
+    },
+    {
+      "layer": "model.layers.16.self_attn.o_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 2048,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.0044247787445783615,
+        "frac_differ": 4.76837158203125e-06
+      }
+    },
+    {
+      "layer": "model.layers.16.mlp.gate_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 6144,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.007407407276332378,
+        "frac_differ": 4.76837158203125e-06
+      }
+    },
+    {
+      "layer": "model.layers.16.mlp.up_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 6144,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.007407407276332378,
+        "frac_differ": 6.993611805228284e-06
+      }
+    },
+    {
+      "layer": "model.layers.16.mlp.down_proj",
+      "M": 512,
+      "K": 6144,
+      "N": 2048,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.006756756920367479,
+        "frac_differ": 2.86102294921875e-06
+      }
+    },
+    {
+      "layer": "model.layers.17.self_attn.q_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 2048,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.0058823530562222,
+        "frac_differ": 4.76837158203125e-06
+      }
+    },
+    {
+      "layer": "model.layers.17.self_attn.k_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 1024,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      }
+    },
+    {
+      "layer": "model.layers.17.self_attn.v_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 1024,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.005681818351149559,
+        "frac_differ": 5.7220458984375e-06
+      }
+    },
+    {
+      "layer": "model.layers.17.self_attn.o_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 2048,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.0066225165501236916,
+        "frac_differ": 1.9073486328125e-06
+      }
+    },
+    {
+      "layer": "model.layers.17.mlp.gate_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 6144,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.007194244768470526,
+        "frac_differ": 2.86102294921875e-06
+      }
+    },
+    {
+      "layer": "model.layers.17.mlp.up_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 6144,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.007633587811142206,
+        "frac_differ": 4.132588856009534e-06
+      }
+    },
+    {
+      "layer": "model.layers.17.mlp.down_proj",
+      "M": 512,
+      "K": 6144,
+      "N": 2048,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.007633587811142206,
+        "frac_differ": 3.814697265625e-06
+      }
+    },
+    {
+      "layer": "model.layers.18.self_attn.q_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 2048,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.0057142856530845165,
+        "frac_differ": 5.7220458984375e-06
+      }
+    },
+    {
+      "layer": "model.layers.18.self_attn.k_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 1024,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.005649717524647713,
+        "frac_differ": 1.9073486328125e-06
+      }
+    },
+    {
+      "layer": "model.layers.18.self_attn.v_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 1024,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.007042253389954567,
+        "frac_differ": 7.62939453125e-06
+      }
+    },
+    {
+      "layer": "model.layers.18.self_attn.o_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 2048,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.007407407276332378,
+        "frac_differ": 1.9073486328125e-06
+      }
+    },
+    {
+      "layer": "model.layers.18.mlp.gate_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 6144,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.007194244768470526,
+        "frac_differ": 2.86102294921875e-06
+      }
+    },
+    {
+      "layer": "model.layers.18.mlp.up_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 6144,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.0071428571827709675,
+        "frac_differ": 4.76837158203125e-06
+      }
+    },
+    {
+      "layer": "model.layers.18.mlp.down_proj",
+      "M": 512,
+      "K": 6144,
+      "N": 2048,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      }
+    },
+    {
+      "layer": "model.layers.19.self_attn.q_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 2048,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.007246376946568489,
+        "frac_differ": 2.86102294921875e-06
+      }
+    },
+    {
+      "layer": "model.layers.19.self_attn.k_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 1024,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.007407407276332378,
+        "frac_differ": 5.7220458984375e-06
+      }
+    },
+    {
+      "layer": "model.layers.19.self_attn.v_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 1024,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.006849315017461777,
+        "frac_differ": 7.62939453125e-06
+      }
+    },
+    {
+      "layer": "model.layers.19.self_attn.o_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 2048,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.007352941203862429,
+        "frac_differ": 6.67572021484375e-06
+      }
+    },
+    {
+      "layer": "model.layers.19.mlp.gate_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 6144,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.007692307699471712,
+        "frac_differ": 3.1789145396032836e-06
+      }
+    },
+    {
+      "layer": "model.layers.19.mlp.up_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 6144,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.006756756920367479,
+        "frac_differ": 3.496805902614142e-06
+      }
+    },
+    {
+      "layer": "model.layers.19.mlp.down_proj",
+      "M": 512,
+      "K": 6144,
+      "N": 2048,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.005988024175167084,
+        "frac_differ": 2.86102294921875e-06
+      }
+    },
+    {
+      "layer": "model.layers.20.self_attn.q_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 2048,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.006666666828095913,
+        "frac_differ": 3.814697265625e-06
+      }
+    },
+    {
+      "layer": "model.layers.20.self_attn.k_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 1024,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.006329114083200693,
+        "frac_differ": 9.5367431640625e-06
+      }
+    },
+    {
+      "layer": "model.layers.20.self_attn.v_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 1024,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.0060240961611270905,
+        "frac_differ": 5.7220458984375e-06
+      }
+    },
+    {
+      "layer": "model.layers.20.self_attn.o_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 2048,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.007751937955617905,
+        "frac_differ": 8.58306884765625e-06
+      }
+    },
+    {
+      "layer": "model.layers.20.mlp.gate_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 6144,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.0062500000931322575,
+        "frac_differ": 5.086263172415784e-06
+      }
+    },
+    {
+      "layer": "model.layers.20.mlp.up_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 6144,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.007751937955617905,
+        "frac_differ": 3.814697265625e-06
+      }
+    },
+    {
+      "layer": "model.layers.20.mlp.down_proj",
+      "M": 512,
+      "K": 6144,
+      "N": 2048,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.0047846888191998005,
+        "frac_differ": 9.5367431640625e-07
+      }
+    },
+    {
+      "layer": "model.layers.21.self_attn.q_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 2048,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.007462686393409967,
+        "frac_differ": 5.7220458984375e-06
+      }
+    },
+    {
+      "layer": "model.layers.21.self_attn.k_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 1024,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.0071428571827709675,
+        "frac_differ": 1.1444091796875e-05
+      }
+    },
+    {
+      "layer": "model.layers.21.self_attn.v_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 1024,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.0069444444961845875,
+        "frac_differ": 7.62939453125e-06
+      }
+    },
+    {
+      "layer": "model.layers.21.self_attn.o_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 2048,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.006329114083200693,
+        "frac_differ": 2.86102294921875e-06
+      }
+    },
+    {
+      "layer": "model.layers.21.mlp.gate_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 6144,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.006329114083200693,
+        "frac_differ": 4.450480446394067e-06
+      }
+    },
+    {
+      "layer": "model.layers.21.mlp.up_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 6144,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.0069444444961845875,
+        "frac_differ": 4.132588856009534e-06
+      }
+    },
+    {
+      "layer": "model.layers.21.mlp.down_proj",
+      "M": 512,
+      "K": 6144,
+      "N": 2048,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.007751937955617905,
+        "frac_differ": 5.7220458984375e-06
+      }
+    },
+    {
+      "layer": "model.layers.22.self_attn.q_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 2048,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.005319148767739534,
+        "frac_differ": 5.7220458984375e-06
+      }
+    },
+    {
+      "layer": "model.layers.22.self_attn.k_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 1024,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      }
+    },
+    {
+      "layer": "model.layers.22.self_attn.v_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 1024,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.005681818351149559,
+        "frac_differ": 1.9073486328125e-06
+      }
+    },
+    {
+      "layer": "model.layers.22.self_attn.o_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 2048,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.007042253389954567,
+        "frac_differ": 6.67572021484375e-06
+      }
+    },
+    {
+      "layer": "model.layers.22.mlp.gate_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 6144,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.007751937955617905,
+        "frac_differ": 3.496805902614142e-06
+      }
+    },
+    {
+      "layer": "model.layers.22.mlp.up_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 6144,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.0069444444961845875,
+        "frac_differ": 3.814697265625e-06
+      }
+    },
+    {
+      "layer": "model.layers.22.mlp.down_proj",
+      "M": 512,
+      "K": 6144,
+      "N": 2048,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.007751937955617905,
+        "frac_differ": 4.76837158203125e-06
+      }
+    },
+    {
+      "layer": "model.layers.23.self_attn.q_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 2048,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.0071428571827709675,
+        "frac_differ": 1.9073486328125e-06
+      }
+    },
+    {
+      "layer": "model.layers.23.self_attn.k_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 1024,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.004310344811528921,
+        "frac_differ": 3.814697265625e-06
+      }
+    },
+    {
+      "layer": "model.layers.23.self_attn.v_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 1024,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.005988024175167084,
+        "frac_differ": 5.7220458984375e-06
+      }
+    },
+    {
+      "layer": "model.layers.23.self_attn.o_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 2048,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.004807692486792803,
+        "frac_differ": 1.9073486328125e-06
+      }
+    },
+    {
+      "layer": "model.layers.23.mlp.gate_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 6144,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.0071428571827709675,
+        "frac_differ": 5.086263172415784e-06
+      }
+    },
+    {
+      "layer": "model.layers.23.mlp.up_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 6144,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.007751937955617905,
+        "frac_differ": 6.67572021484375e-06
+      }
+    },
+    {
+      "layer": "model.layers.23.mlp.down_proj",
+      "M": 512,
+      "K": 6144,
+      "N": 2048,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.006097560748457909,
+        "frac_differ": 2.86102294921875e-06
+      }
+    },
+    {
+      "layer": "model.layers.24.self_attn.q_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 2048,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.006493506487458944,
+        "frac_differ": 1.9073486328125e-06
+      }
+    },
+    {
+      "layer": "model.layers.24.self_attn.k_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 1024,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.006329114083200693,
+        "frac_differ": 5.7220458984375e-06
+      }
+    },
+    {
+      "layer": "model.layers.24.self_attn.v_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 1024,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.004524887073785067,
+        "frac_differ": 1.9073486328125e-06
+      }
+    },
+    {
+      "layer": "model.layers.24.self_attn.o_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 2048,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.007042253389954567,
+        "frac_differ": 6.67572021484375e-06
+      }
+    },
+    {
+      "layer": "model.layers.24.mlp.gate_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 6144,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.00671140942722559,
+        "frac_differ": 3.496805902614142e-06
+      }
+    },
+    {
+      "layer": "model.layers.24.mlp.up_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 6144,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.006289307959377766,
+        "frac_differ": 3.1789145396032836e-06
+      }
+    },
+    {
+      "layer": "model.layers.24.mlp.down_proj",
+      "M": 512,
+      "K": 6144,
+      "N": 2048,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.0054054055362939835,
+        "frac_differ": 2.86102294921875e-06
+      }
+    },
+    {
+      "layer": "model.layers.25.self_attn.q_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 2048,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.006849315017461777,
+        "frac_differ": 2.86102294921875e-06
+      }
+    },
+    {
+      "layer": "model.layers.25.self_attn.k_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 1024,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      }
+    },
+    {
+      "layer": "model.layers.25.self_attn.v_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 1024,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.00657894741743803,
+        "frac_differ": 3.814697265625e-06
+      }
+    },
+    {
+      "layer": "model.layers.25.self_attn.o_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 2048,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.006329114083200693,
+        "frac_differ": 7.62939453125e-06
+      }
+    },
+    {
+      "layer": "model.layers.25.mlp.gate_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 6144,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.007751937955617905,
+        "frac_differ": 5.7220458984375e-06
+      }
+    },
+    {
+      "layer": "model.layers.25.mlp.up_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 6144,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.007751937955617905,
+        "frac_differ": 2.543131586207892e-06
+      }
+    },
+    {
+      "layer": "model.layers.25.mlp.down_proj",
+      "M": 512,
+      "K": 6144,
+      "N": 2048,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.005586592014878988,
+        "frac_differ": 1.9073486328125e-06
+      }
+    },
+    {
+      "layer": "model.layers.26.self_attn.q_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 2048,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.007407407276332378,
+        "frac_differ": 5.7220458984375e-06
+      }
+    },
+    {
+      "layer": "model.layers.26.self_attn.k_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 1024,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      }
+    },
+    {
+      "layer": "model.layers.26.self_attn.v_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 1024,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.006289307959377766,
+        "frac_differ": 5.7220458984375e-06
+      }
+    },
+    {
+      "layer": "model.layers.26.self_attn.o_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 2048,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.0049019609577953815,
+        "frac_differ": 1.9073486328125e-06
+      }
+    },
+    {
+      "layer": "model.layers.26.mlp.gate_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 6144,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.007407407276332378,
+        "frac_differ": 4.132588856009534e-06
+      }
+    },
+    {
+      "layer": "model.layers.26.mlp.up_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 6144,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.007751937955617905,
+        "frac_differ": 3.496805902614142e-06
+      }
+    },
+    {
+      "layer": "model.layers.26.mlp.down_proj",
+      "M": 512,
+      "K": 6144,
+      "N": 2048,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.005681818351149559,
+        "frac_differ": 2.86102294921875e-06
+      }
+    },
+    {
+      "layer": "model.layers.27.self_attn.q_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 2048,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.0060606058686971664,
+        "frac_differ": 6.67572021484375e-06
+      }
+    },
+    {
+      "layer": "model.layers.27.self_attn.k_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 1024,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.006329114083200693,
+        "frac_differ": 1.1444091796875e-05
+      }
+    },
+    {
+      "layer": "model.layers.27.self_attn.v_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 1024,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.0057142856530845165,
+        "frac_differ": 7.62939453125e-06
+      }
+    },
+    {
+      "layer": "model.layers.27.self_attn.o_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 2048,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.007518797181546688,
+        "frac_differ": 5.7220458984375e-06
+      }
+    },
+    {
+      "layer": "model.layers.27.mlp.gate_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 6144,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.007462686393409967,
+        "frac_differ": 4.450480446394067e-06
+      }
+    },
+    {
+      "layer": "model.layers.27.mlp.up_proj",
+      "M": 512,
+      "K": 2048,
+      "N": 6144,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.007751937955617905,
+        "frac_differ": 6.357829079206567e-06
+      }
+    },
+    {
+      "layer": "model.layers.27.mlp.down_proj",
+      "M": 512,
+      "K": 6144,
+      "N": 2048,
+      "p1": "BITWISE-SAFE",
+      "pow2": {
+        "identical": true,
+        "max_rel": 0.0,
+        "frac_differ": 0.0
+      },
+      "real": {
+        "identical": false,
+        "max_rel": 0.004608294926583767,
+        "frac_differ": 9.5367431640625e-07
+      }
+    }
+  ]
+}

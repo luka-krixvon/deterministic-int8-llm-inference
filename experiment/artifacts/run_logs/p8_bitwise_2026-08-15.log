@@ -1,0 +1,21 @@
+===== BITWISE START 2026-08-14T20:35:15Z =====
+
+########## qwen3-1.7b-int8-w8a8 ##########
+P1a: 196/196 identical under pow2 (0 violations of BITWISE-SAFE)
+P1b: 8/196 identical under real scales, 0 layers exceed the 2-ulp bound
+VERDICT_OK
+BW_qwen3-1.7b-int8-w8a8_OK
+
+########## qwen3-1.7b-int8-pow2_nearest ##########
+P1a: 196/196 identical under pow2 (0 violations of BITWISE-SAFE)
+P1b: 196/196 identical under real scales, 0 layers exceed the 2-ulp bound
+VERDICT_OK
+BW_qwen3-1.7b-int8-pow2_nearest_OK
+
+########## qwen3-1.7b-int8-pow2_ceil ##########
+P1a: 196/196 identical under pow2 (0 violations of BITWISE-SAFE)
+P1b: 196/196 identical under real scales, 0 layers exceed the 2-ulp bound
+VERDICT_OK
+BW_qwen3-1.7b-int8-pow2_ceil_OK
+
+===== BITWISE DONE 2026-08-14T20:36:15Z =====

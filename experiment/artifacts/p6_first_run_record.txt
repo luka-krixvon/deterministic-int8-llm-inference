@@ -1,0 +1,92 @@
+=== P6 START 2026-08-14T16:40:20Z ===
+0, NVIDIA GeForce RTX 4090, 1 MiB
+1, NVIDIA GeForce RTX 4090, 1 MiB
+--- accuracy: base ---
+Using the latest cached version of the dataset since Salesforce/wikitext couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'wikitext-2-raw-v1' at /home/ubuntu/.cache/huggingface/datasets/Salesforce___wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3 (last modified on Wed Aug 12 09:22:10 2026).
+[transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (283287 > 1024). Running this sequence through the model will result in indexing errors
+Using the latest cached version of the dataset since Salesforce/wikitext couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'wikitext-2-raw-v1' at /home/ubuntu/.cache/huggingface/datasets/Salesforce___wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3 (last modified on Wed Aug 12 09:22:10 2026).
+[transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (283287 > 1024). Running this sequence through the model will result in indexing errors
+Traceback (most recent call last):
+  File "/home/ubuntu/integer_alibi/p5/p6_accuracy.py", line 244, in <module>
+    main()
+  File "/home/ubuntu/integer_alibi/p5/p6_accuracy.py", line 207, in main
+    rows, runtime = window_nll(a.model, texts)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/integer_alibi/p5/p6_accuracy.py", line 102, in window_nll
+    from vllm import LLM, SamplingParams
+ModuleNotFoundError: No module named 'vllm'
+ACC_BASE_FAIL=1
+--- accuracy: pow2 ---
+Using the latest cached version of the dataset since Salesforce/wikitext couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'wikitext-2-raw-v1' at /home/ubuntu/.cache/huggingface/datasets/Salesforce___wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3 (last modified on Wed Aug 12 09:22:10 2026).
+[transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (283287 > 1024). Running this sequence through the model will result in indexing errors
+Using the latest cached version of the dataset since Salesforce/wikitext couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'wikitext-2-raw-v1' at /home/ubuntu/.cache/huggingface/datasets/Salesforce___wikitext/wikitext-2-raw-v1/0.0.0/b08601e04326c79dfdd32d625aee71d232d685c3 (last modified on Wed Aug 12 09:22:10 2026).
+[transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (283287 > 1024). Running this sequence through the model will result in indexing errors
+Traceback (most recent call last):
+  File "/home/ubuntu/integer_alibi/p5/p6_accuracy.py", line 244, in <module>
+    main()
+  File "/home/ubuntu/integer_alibi/p5/p6_accuracy.py", line 207, in main
+    rows, runtime = window_nll(a.model, texts)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/integer_alibi/p5/p6_accuracy.py", line 102, in window_nll
+    from vllm import LLM, SamplingParams
+ModuleNotFoundError: No module named 'vllm'
+ACC_POW2_FAIL=1
+--- accuracy: compare ---
+Traceback (most recent call last):
+  File "/home/ubuntu/integer_alibi/p5/p6_accuracy.py", line 244, in <module>
+    main()
+  File "/home/ubuntu/integer_alibi/p5/p6_accuracy.py", line 178, in main
+    base = json.load(open(a.compare[0]))
+                     ^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'out/p6_acc_base.json'
+ACC_CMP_FAIL=1
+--- throughput: base ---
+Traceback (most recent call last):
+  File "/home/ubuntu/integer_alibi/p5/p6_throughput.py", line 217, in <module>
+    main()
+  File "/home/ubuntu/integer_alibi/p5/p6_throughput.py", line 206, in main
+    "grid": measure(a.model),
+            ^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/integer_alibi/p5/p6_throughput.py", line 63, in measure
+    from vllm import LLM, SamplingParams
+ModuleNotFoundError: No module named 'vllm'
+TP_BASE_FAIL=1
+--- throughput: pow2 ---
+Traceback (most recent call last):
+  File "/home/ubuntu/integer_alibi/p5/p6_throughput.py", line 217, in <module>
+    main()
+  File "/home/ubuntu/integer_alibi/p5/p6_throughput.py", line 206, in main
+    "grid": measure(a.model),
+            ^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/integer_alibi/p5/p6_throughput.py", line 63, in measure
+    from vllm import LLM, SamplingParams
+ModuleNotFoundError: No module named 'vllm'
+TP_POW2_FAIL=1
+--- throughput: compare ---
+Traceback (most recent call last):
+  File "/home/ubuntu/integer_alibi/p5/p6_throughput.py", line 217, in <module>
+    main()
+  File "/home/ubuntu/integer_alibi/p5/p6_throughput.py", line 166, in main
+    base, pow2 = (json.load(open(p)) for p in a.compare)
+    ^^^^^^^^^^
+  File "/home/ubuntu/integer_alibi/p5/p6_throughput.py", line 166, in <genexpr>
+    base, pow2 = (json.load(open(p)) for p in a.compare)
+                            ^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'out/p6_tp_base.json'
+TP_CMP_FAIL=1
+=== P6 DONE 2026-08-14T16:40:33Z ===
+
+=== 環境勘查(失敗後,未修改任何 pin 過的程式)===
+釘住的容器 vllm/vllm-openai@sha256:0a51ea5b4ae2dc5d81890e5173f54203d2a3ae0cfffe51b8fd2afd4391bfd967:
+  vllm         0.27.1
+  torch        2.13.0+cu130
+  transformers 5.15.0
+  datasets     MISSING (ModuleNotFoundError)
+  safetensors  0.8.0
+量化用的 ~/integer_alibi/.venv:
+  llmcompressor 0.13.0 / compressed-tensors 0.18.0 / transformers 5.14.1 / torch 2.13.0+cu130
+  vllm         MISSING (ModuleNotFoundError)

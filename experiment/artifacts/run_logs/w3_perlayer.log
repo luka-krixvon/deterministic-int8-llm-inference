@@ -1,0 +1,17 @@
++ ./.venv/bin/python3 w3_perlayer.py --stage capture --checkpoint models/qwen3-1.7b-int8-w8a8 --prompts calib_prompts.json --capture-dir perlayer_capture
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Applying quantization config:   0%|          | 0/196 [00:00<?, ?it/s]Applying quantization config: 100%|██████████| 196/196 [00:00<00:00, 10740.29it/s]
+Compressing model:   0%|          | 0/196 [00:00<?, ?it/s]Compressing model:  39%|███▉      | 76/196 [00:00<00:00, 756.27it/s]Compressing model:  78%|███████▊  | 153/196 [00:00<00:00, 763.20it/s]Compressing model: 100%|██████████| 196/196 [00:00<00:00, 764.16it/s]
+Loading weights:   0%|          | 0/506 [00:00<?, ?it/s]Loading weights:  28%|██▊       | 142/506 [00:00<00:00, 1407.86it/s]Loading weights:  72%|███████▏  | 363/506 [00:00<00:00, 1868.01it/s]Loading weights: 100%|██████████| 506/506 [00:00<00:00, 1874.40it/s]
+int8 layers: 196
+Decompressing model:   0%|          | 0/196 [00:00<?, ?it/s]Decompressing model: 100%|██████████| 196/196 [00:00<00:00, 2714.43it/s]
+captured 196 layers x <= 512 tokens
+CAPTURE_OK
++ grep -q CAPTURE_OK logs/w3_perlayer.log
++ PIN=vllm/vllm-openai@sha256:0a51ea5b4ae2dc5d81890e5173f54203d2a3ae0cfffe51b8fd2afd4391bfd967
++ docker run --rm --gpus '"device=0"' --shm-size=2g -v /home/ubuntu/integer_alibi:/w -w /w -v /home/ubuntu/integer_alibi/models:/models:ro --entrypoint python3 vllm/vllm-openai@sha256:0a51ea5b4ae2dc5d81890e5173f54203d2a3ae0cfffe51b8fd2afd4391bfd967 /w/w3_perlayer.py --stage verdict --checkpoint /models/qwen3-1.7b-int8-w8a8 --capture-dir /w/perlayer_capture --p1 /w/p1_predictions_qwen3-1.7b.json --out /w/w3_perlayer_verdict.json
+P1a: 196/196 identical under pow2 (0 violations of BITWISE-SAFE)
+P1b: 8/196 identical under real scales, 0 layers exceed the 2-ulp bound
+VERDICT_OK
++ echo W3_PERLAYER_DONE
+W3_PERLAYER_DONE

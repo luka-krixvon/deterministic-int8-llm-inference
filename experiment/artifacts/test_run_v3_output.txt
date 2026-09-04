@@ -1,0 +1,30 @@
+PASS non-finite case: every JSON value finite or None
+PASS non-finite case: no finite/finite pair -> main hist strictly zero
+PASS exclusive classes partition n_total
+PASS rms uses finite ref only
+PASS zero-RMS -> explicit status
+PASS zero-RMS -> abs_over_rms all None
+PASS zero-RMS -> absolute summary still present
+PASS zero-RMS output json-safe
+PASS no-finite-reference status
+PASS no-finite-reference json-safe
+PASS dtype guard raises
+PASS shape guard raises (no silent broadcast)
+PASS duplicate key invalidated, not last-write-wins
+PASS legacy records flagged identity-unverified
+PASS prompt reorder detected via sha
+PASS sha-verified join reports identity_verified
+PASS n_common_keys vs n_pairs_used vs skipped are separated
+PASS every occupied merged bin >= MIN_BIN_N (tail merged back)
+PASS total below MIN_BIN_N -> single-bin small-sample status
+PASS all-zero p flagged not-identifiable
+PASS single distinct K flagged
+PASS gensat v4 recovers alpha~0.5 within bounds, with diagnostics
+PASS alpha bounds recorded
+PASS AUC None when single-class
+PASS AP None when no positives
+PASS PAVA output is non-increasing
+
+0 failures
+torch 2.13.0+cu130 numpy 2.4.6 scipy 1.18.0 python 3.12.3
+EXIT=0
