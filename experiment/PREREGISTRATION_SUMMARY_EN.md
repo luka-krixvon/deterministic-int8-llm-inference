@@ -4,9 +4,13 @@ The authoritative record is `preregistration.md`, which is append-only and writt
 author's working language (Traditional Chinese). This file summarizes, in English, the
 amendments the conformance paper relies on: A-10 and its sub-amendments (the sensitivity
 experiment), A-11 (the second kernel pair, closed as a negative report), and A-12 (the
-power-of-two treatment). It is a reading aid, not a substitute: where the two disagree, the
-Chinese original governs, and nothing here restates a commitment the original does not
-contain.
+power-of-two treatment). It is a reading aid, not a substitute: where the two disagree about
+what was committed, the Chinese original governs. The exceptions are the post-publication
+corrections this summary cites from `CORRECTIONS.md` (under A-10.5, A-10.6/A-10.7 and the
+later A-12 addenda). They are not in the append-only original, and they supersede two of its
+passages: A-10.5's known limitation 3 (three post-data cells, `preregistration.md` L363) and
+A-10.7 point 4's claim that the one-spacing tolerance is structurally blind
+(`preregistration.md` L309–L311).
 
 Amendment classes used throughout: **class A** means recorded *before* the measurement it
 governs began; **PIN** means plan, code, and tests were committed with their SHA-256 digests
@@ -42,7 +46,10 @@ violate the preconditions, or their false-negative rate cannot be known.
 
 **Prediction matrix, pinned by this amendment and public before execution.** For every
 fault × check pair, "should fire / should not fire / not applicable" is written in advance
-with its reason, into `artifacts/p5_prediction_matrix.json`. Every cell is falsifiable: a
+with its reason, into `artifacts/p5_prediction_matrix.json` (the pre-data version, hash-pinned
+by A-10.1 after A-10.2 added F9, is included as
+`artifacts/p5_prediction_matrix_A-10.1_pinned.json`; the file at
+`artifacts/p5_prediction_matrix.json` is the A-10.5 re-pin). Every cell is falsifiable: a
 predicted fire that stays silent is a miss, a predicted silence that fires is a false
 positive.
 
@@ -117,11 +124,13 @@ structural fact that had to be disclosed in advance: **every predicted fire came
 F6/F7 (precondition violations) and F9 (operand mismatch); not one cell predicted that any
 check would catch any of the five epilogue faults F1–F5.**
 
-The reason is arithmetic. F1 changes a scale by at most $2^{-9}$ relative, about half an
-output spacing; F2 rounds at most half a spacing per step; F4 at most one spacing; F3 and F5
+The reason is arithmetic. F1 changes a scale by at most $2^{-9}$ relative (in fact up to
+1/257; see `CORRECTIONS.md`), about half an output spacing; F2 rounds at most half a spacing per step; F4 at most one spacing; F3 and F5
 were measured below bfloat16 resolution. All four therefore land at $\leq 1$ ulp, and check
 6's tolerance *is* 1 ulp. Check 5 is a bitwise check but applies only under power-of-two
-scales, where F1/F2/F4 are no-ops.
+scales, where F1/F2/F4 are no-ops. (A-10.6 later showed this is wrong for F4: the bfloat16
+cast still rounds, so truncation differs from round-to-nearest-even and check 5 detects it;
+F1 and F2 are no-ops as stated.)
 
 **The pre-registered statement that follows:** P5 is expected to show that this suite can
 detect precondition violations and operand mismatch, **but has no demonstrated detection
@@ -151,19 +160,31 @@ tested.
 A-10.1's pin had two defects, both found on attempting to execute: no P5 runner existed, and
 the accuracy script derived evaluation windows and ran inference in one process, which did not
 match the machine's actual environment split. The first P6 run therefore failed entirely and
-is recorded (`artifacts/p6_first_run_record.txt`); it produced no result files, so A-10.1 was
-never used for any measurement and is superseded outright. **The commit carrying this
+is recorded (`artifacts/p6_first_run_record.txt`); it produced no result files, so no
+measurement ran under A-10.1's pin and A-10.5 supersedes it as the pin of record. A-10.1's
+prediction matrix (SHA-256 prefix `8f6ada4492c688b0`, included as
+`artifacts/p5_prediction_matrix_A-10.1_pinned.json`) remains the pre-data reference against
+which post-data changes to the predictions are counted. **The commit carrying this
 amendment contains plan, code, and tests only — no measurement results**, with the digests of
 nine pinned artifacts and 196 passing tests listed.
 
-## A-10.6 and A-10.7 (post-data, 2026-08-15; a smoke run overturned four predictions)
+## A-10.6 and A-10.7 (post-data, 2026-08-15; a smoke run contradicted predictions)
 
-A two-layer smoke run contradicted the stated reasoning of three cells, which were corrected.
-These are **post-data changes and therefore protocol deviations**, flagged
-`corrected_post_data` in the matrix with the original reasoning preserved verbatim. All three
-moved in the suite's favour, together flipping 1,278 of the 8,232 cells from error to
-agreement, so results are reported under both the original and the corrected matrix. The
-three cells and their original reasoning are quoted in the paper.
+A two-layer smoke run contradicted the stated reasoning of several cells. The amendments split
+F9's single row into three per-magnitude rows (the matrix grows from 63 to 77 cells) and
+record corrections, flagged `corrected_post_data` in the matrix. Each flagged cell's reason
+restates, in paraphrase rather than quotation, the prediction and reasoning it calls
+original; for one of the three, that original is a post-split draft that was never pinned
+(`CORRECTIONS.md` §2). These are **post-data changes and therefore protocol deviations**, so
+results are reported under both the pre-data and the corrected matrix.
+
+Compared cell by cell with the hash-pinned pre-data matrix, four predictions changed: F4
+against check 5, and F9's scale-ulp rung against checks 4, 5 and 6. Three favour the suite and
+one affects no score. Against the pinned matrix, 1,086 of 38,039 scored check–cell pairs, in
+886 of the 8,232 cells, would have been violations. The `corrected_post_data` flags mark a
+different set of three cells, and arXiv:2609.00363v1 reported a different comparison
+(1,278 cells); `CORRECTIONS.md` explains both and gives the command that reproduces the
+figures above.
 
 ## A-11 (class A, 2026-08-14) and its closure as a negative report
 
@@ -239,5 +260,6 @@ acceptability depends on the workload. P8 supplies the price, not a permission.
 Scope extensions to 8B and then to 14B replication, each recorded before that size was
 measured, together with in-flight notes: a disk guard that was set from a wrong assumption
 about shard layout and had to be corrected, and the 14B end-to-end run's failure and its
-handling, including the condition difference (a higher GPU memory utilization at 14B) that
-the paper discloses because it changes batch composition, which is known to affect numerics.
+handling, including a condition difference that must be disclosed because it changes batch
+composition, which is known to affect numerics: a higher GPU memory utilization at 14B (0.85
+against 0.5). arXiv:2609.00363v1 omitted this disclosure; see `CORRECTIONS.md`.

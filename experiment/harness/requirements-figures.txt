@@ -1,0 +1,3 @@
+# Figure scripts: make_readme_figures.py, build_figures_conformance.py, build_figures_conformance_corrected.py
+# build_figures_conformance.py rebuilds arXiv:2609.00363v1's figures byte-identically with matplotlib 3.10.9 (fonttools 4.63.0).
+matplotlib>=3.9

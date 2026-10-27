@@ -20,14 +20,17 @@ it, and they were written in this order.
 |---|---|---|---|
 | 1 | **Spec Sheets Are Not Kernels** — [arXiv:2608.11693](https://arxiv.org/abs/2608.11693) | *Which* kernel serves a quantized format is a property of the whole stack, not of the model or the datasheet. An ISA- and source-level audit of INT8 availability on NVIDIA Blackwell Ultra. | a separate repository — different method (documentary audit), different apparatus (no GPU measurement) |
 | 2 | **The Integer Alibi** — [arXiv:2608.13756](https://arxiv.org/abs/2608.13756) | What that choice changes *numerically*. Two kernels behind one interface agree on no generated sequence while each is bit-reproducible against itself; because INT32 accumulation is exact and order-free under a verified bound, the difference is localized to the epilogue. Ends by proposing a seven-check conformance procedure. | **this repository** |
-| 3 | **Deterministic LLM Inference Across GPU Kernels** — [arXiv:2609.00363](https://arxiv.org/abs/2609.00363) | Whether that procedure works, and whether its one strict check is deployable. Fault injection shows the one-spacing tolerance check is blind to the tested epilogue faults — four families are caught by nothing, and truncation only by the power-of-two equality check; power-of-two requantization makes the two kernels agree byte for byte at all three sizes, at perplexity point estimates from −0.28% to +0.48% (90% intervals in the paper). | **this repository** |
+| 3 | **Deterministic LLM Inference Across GPU Kernels** — [arXiv:2609.00363](https://arxiv.org/abs/2609.00363) | Whether that procedure works, and whether its one strict check is deployable. In every measured cell the one-spacing tolerance check raised no alarm on the tested epilogue variants: three deviations and one legal re-association pass every check, and truncation is caught only by the power-of-two equality check. Requantized power-of-two weight scales make the two kernels agree bitwise per layer at 1.7B and 8B and on every generated sequence at all three sizes, at perplexity point estimates from −0.28% to +0.48% (90% intervals in the paper). Corrections to v1: [`experiment/CORRECTIONS.md`](experiment/CORRECTIONS.md). | **this repository** |
 
 <p align="center"><img src="figures/conformance_overview.png" width="94%" alt="Paper 3 overview: the W8A8 pipeline with nine injected faults, what the checks catch, and the power-of-two deployment result"></p>
 
 *Paper 3 at a glance: one pipeline, nine injected fault families with ground truth known by
-construction. The precondition and operand checks catch everything they should; four of the
-five epilogue faults are caught by nothing, and truncation only under power-of-two scales —
-which, requantized properly, also turn out to be a deployable serving configuration.*
+construction. The precondition and operand checks catch everything they should; three
+epilogue deviations and one legal re-association pass every check, and truncation is caught
+only by the bitwise check, with both weight and activation scales snapped to powers of two.
+Requantizing to power-of-two weight scales alone, a deployable serving configuration, already
+makes the two kernels agree bitwise, though check (5) as specified does not apply there
+([`experiment/CORRECTIONS.md`](experiment/CORRECTIONS.md) §3).*
 
 **Why 2 and 3 share one repository, and 1 does not.** Papers 2 and 3 are one measurement
 programme under one pre-registration. The amendment log is a single append-only document
@@ -45,10 +48,17 @@ this kind, so it has its own repository.
 protocol, start at `experiment/PREREGISTRATION_SUMMARY_EN.md`, which summarizes in English the
 amendments the papers rely on, and cites `experiment/preregistration.md` as authoritative.
 
-> **Scope of this companion.** The pre-registration, the per-layer prediction lists, every
-> measurement artifact with its digest, and the analysis code are here. **The re-analysis is
+> **Scope of this companion.** The pre-registration, the per-layer prediction lists, the
+> measurement artifacts with a SHA-256 manifest (`experiment/artifacts/SHA256SUMS`), and the
+> analysis code are here. Errors found in paper 3's arXiv v1 after publication are listed in
+> [`experiment/CORRECTIONS.md`](experiment/CORRECTIONS.md). **The re-analysis is
 > CPU-only and needs no API key**; the measurements themselves ran once on one RTX 4090 — see
 > [Measurement environment](#measurement-environment).
+>
+> Verify the artifacts with `cd experiment/artifacts && sha256sum -c SHA256SUMS` (macOS:
+> `shasum -a 256 -c SHA256SUMS`). The manifest covers the files under
+> `experiment/artifacts/` only; harness files named in the pre-registration's pin tables (§0,
+> A-10.1, A-10.5, A-12.1) are identified there by SHA-256[:16].
 
 > **The question.** A serving engine usually carries several implementations of
 > the same quantized linear layer, and picks one at load time by hardware checks
@@ -123,8 +133,9 @@ quantization, prompts and both kernel arms untouched — restores **bitwise
 end-to-end agreement**: 8/8 sequences at 1.7B, 16/16 at 8B. Removing the
 suspected freedom removes the divergence. Paper 3 closes the loop: that rewrite
 degraded perplexity by +157%, but 99.8% of it was the rewrite's own weight–scale
-mismatch — *requantizing* under power-of-two scales keeps the bitwise agreement
-at three model sizes for −0.28% to +0.48% (`p8_results/`).
+mismatch — *requantizing* under power-of-two weight scales keeps the bitwise agreement
+(per layer at 1.7B and 8B, end to end at all three sizes) for −0.28% to +0.48%
+(`p8_results/`).
 
 <p align="center"><img src="figures/fig_margin.png" width="52%" alt="Cross-kernel flip rate against logit margin"></p>
 
@@ -140,9 +151,9 @@ limitations:
 - **No positive control.** Every check reported here passed. None has been run
   against a deliberately faulty kernel, so their sensitivity and false-negative
   rates are unmeasured. *This was paper 2's disclosure; paper 3 then measured it*
-  (`p5_sensitivity.json`): every epilogue fault stays within one bfloat16 spacing,
-  so the one-spacing tolerance check is blind to all of them by construction,
-  while the operand fault reaches distances up to 35,571 spacings.
+  (`p5_sensitivity.json`): in every measured cell every epilogue variant stayed
+  within one bfloat16 spacing, so the one-spacing tolerance check raised no alarm
+  on any of them, while the operand fault reaches distances up to 35,571 spacings.
 - **The INT8 sweep is weak evidence on its own.** 18 differing elements in
   total across the whole `K` range, one unreplicated pass, operands and scales
   redrawn at each `K`. A constant-rate model fits ($\chi^2 = 3.8$, 6 d.f.), but
@@ -164,11 +175,11 @@ limitations:
   engine version, two INT8 implementations plus one FP8 pair and one
   cross-engine comparison.
 
-<p align="center"><img src="figures/conformance_ulp_composition.png" width="58%" alt="Every epilogue fault stays within one bfloat16 spacing; the operand fault does not"></p>
+<p align="center"><img src="figures/conformance_ulp_composition.png" width="58%" alt="In every measured cell each epilogue variant stays within one bfloat16 spacing; the operand fault does not"></p>
 
 *Paper 3's sensitivity measurement: each epilogue fault's maximum ULP distance is exactly 0
 or 1 across all 5,880 cells — inside the interval legal implementations occupy — while the
-operand-mismatch fault reaches 68 to 35,571. A tolerance partitions the fault space at the
+operand-mismatch fault reaches 68 to 35,571 at two of its three magnitudes. A tolerance partitions the fault space at the
 wrong boundary.*
 
 <p align="center"><img src="figures/conformance_accuracy_cost.png" width="54%" alt="Perplexity cost of power-of-two scales with 90 percent intervals; only 14B excludes zero"></p>
@@ -232,7 +243,7 @@ flowchart TD
     AN --> OUT["<i>w3_p2_fits_*.json, p4_stats*_verified.json</i><br/>+ figures/, paper tables"]
     V -. captured int8 operands .-> P5["<b>paper 3 · fault injection</b><br/>p5_make_matrix.py matrix → p5_runner.py<br/>p5_inject.py faults × p5_checks.py checks"]
     P5 --> A6["<i>p5_prediction_matrix.json,<br/>p5p6_results/p5_sensitivity.json</i>"]
-    Q --> P8["<b>paper 3 · requantize</b> · p8_requant.py<br/>minmax must rebuild base byte-for-byte,<br/>then pow2 arms differ only in the scale rule"]
+    Q --> P8["<b>paper 3 · requantize</b> · p8_requant.py<br/>minmax rebuilt the 1.7B base byte-for-byte,<br/>so the 1.7B pow2 arms differ only in the scale rule<br/>(8B/14B: same pipeline, not re-gated)"]
     P8 --> P8M["bitwise + e2e drivers ·<br/>p6_windows.py → p6_accuracy.py (256 pinned windows)"]
     P8M --> A7["<i>p8_results/*, p8_report_*.json</i>"]
     class A6,A7 data; class P5,P8,P8M code;
@@ -250,11 +261,15 @@ docstring. Two files carry the semantics everything else leans on: `metrics_v3.p
 divergence vs finite-only ULP distance, and the identity/treatment contract) and
 `p5_checks.py` (the seven conformance checks as executable predicates, applicability reported
 separately from verdict). Figures regenerate from artifacts via `make_readme_figures.py`
-(papers 1–2) and `build_figures_conformance.py` (paper 3).
+(paper 2) and `build_figures_conformance_corrected.py` (paper 3, with the wording corrected
+after arXiv v1; the PNGs here are `pdftoppm -r 220 -png -singlefile` renders of its PDFs).
+`build_figures_conformance.py` is kept unchanged and rebuilds the figures of
+arXiv:2609.00363v1 byte-identically.
 
 ## Repository layout
 ```
 experiment/PREREGISTRATION_SUMMARY_EN.md  # English summary of the amendments the papers cite — start here
+experiment/CORRECTIONS.md              # errors found in paper 3's arXiv v1 after publication
 experiment/preregistration.md          # authoritative protocol, locked before backend comparison;
                                        #   amendments A-1..A-9 (paper 2), A-10..A-12 (paper 3), append-only
 experiment/harness/                    # measurement scripts (GPU) and analysis code (CPU), shared by both papers
@@ -263,15 +278,18 @@ figures/                               # figures, regenerated from artifacts by 
 ```
 
 Paper 3's artifacts are named where the paper cites them; the two that carry its headline
-results are `experiment/artifacts/p5_prediction_matrix.json` (the corrected 77-cell matrix: a 63-cell
-pre-data core, expanded and corrected in three cells by a disclosed smoke run, then re-pinned
-before the full run; the corrections keep `corrected_post_data` flags and their original
-reasoning) and `experiment/artifacts/p5p6_results/p5_sensitivity.json` (the 8,232 scored
-cells).
+results are `experiment/artifacts/p5_prediction_matrix.json` (the re-pinned 77-cell matrix:
+the 63-cell pre-data matrix with F9 split into three magnitude rows and four predictions
+changed after a disclosed smoke run) and `experiment/artifacts/p5p6_results/p5_sensitivity.json`
+(the 8,232 scored cells). The hash-pinned pre-data matrix is
+`experiment/artifacts/p5_prediction_matrix_A-10.1_pinned.json`; `experiment/CORRECTIONS.md`
+explains why the `corrected_post_data` flags mark a different set of three cells, and
+`p5_rescore.py` re-scores the cells against either matrix.
 
 ## Install
 ```bash
-pip install -r experiment/harness/requirements-test.txt   # CPU re-analysis and tests: torch (CPU is enough), numpy, scipy
+pip install -r experiment/harness/requirements-test.txt      # CPU re-analysis and tests: torch (CPU is enough), numpy, scipy
+pip install -r experiment/harness/requirements-figures.txt   # figure scripts: matplotlib
 ```
 A byte-exact environment is pinned in `requirements-closure.lock`, and
 `Dockerfile.test` builds a digest-pinned container for the test suite. GPU
@@ -279,7 +297,7 @@ measurement additionally needs the two serving images referenced by digest in
 `experiment/preregistration.md`.
 
 ## Reproduce
-Re-analysis (CPU, no GPU, no network):
+Re-analysis from the repository root (CPU, no GPU, no network):
 ```bash
 python3 experiment/harness/tests_metrics_v3.py            # analysis-semantics regression tests
 python3 experiment/harness/tests_metrics_v4.py
@@ -290,17 +308,34 @@ python3 experiment/harness/w3_p2_refit_v4.py \
 python3 experiment/harness/w4_p4_stats_v4.py \
         experiment/artifacts/tf64v6b_CUTLASS.json \
         experiment/artifacts/tf64v6b_TRITON.json /tmp/p4.json --isotonic
-python3 experiment/harness/make_readme_figures.py         # paper-2 figures above
 python3 experiment/harness/tests_p5_checks.py              # paper-3 suites: checks, injector,
-python3 experiment/harness/tests_p5_inject.py              #   accumulator, runner, windows,
-python3 experiment/harness/tests_p5_accumulator.py         #   accuracy harness, requantizer
-python3 experiment/harness/tests_p5_runner.py
-python3 experiment/harness/tests_p6_windows.py
+python3 experiment/harness/tests_p5_inject.py              #   accuracy harness
 python3 experiment/harness/tests_p6.py
-python3 experiment/harness/tests_p8_requant.py
+python3 experiment/harness/tests_p5_rescore.py             # paper-3 cells against both prediction matrices
+python3 experiment/harness/p5_rescore.py \
+        experiment/artifacts/p5p6_results/p5_sensitivity.json \
+        experiment/artifacts/p5_prediction_matrix_A-10.1_pinned.json   # 1,086 pairs in 886 cells
+python3 experiment/harness/make_readme_figures.py         # paper-2 figures; overwrites figures/fig_*.png
+python3 experiment/harness/build_figures_conformance_corrected.py \
+        experiment/artifacts /tmp/figs                     # paper-3 figures as shown here
 python3 experiment/harness/build_figures_conformance.py \
-        experiment/artifacts /tmp/figs                     # paper-3 figures, byte-reproducible
+        experiment/artifacts /tmp/figs_v1                  # arXiv v1's figures (byte-identical with matplotlib 3.10.9)
 ```
+Run from `experiment/harness`, because it opens `../artifacts/` relative to the working
+directory:
+```bash
+cd experiment/harness && python3 tests_p5_runner.py      # CPU, 39 tests
+```
+These three need the measurement machine's state, so they are not reproducible from this
+repository alone; their recorded runs are in
+`experiment/artifacts/run_logs/p5_p6_test_record_2026-08-15.log` and
+`p8_test_record_2026-08-15.log`:
+- `tests_p5_accumulator.py`: the per-layer captures and the 1.7B checkpoint (relocate with
+  `P5_CAPTURE` and `P5_MODEL`; needs `safetensors`).
+- `tests_p6_windows.py`: run from `experiment/harness`; needs `datasets`, the WikiText-2 cache
+  and the GPT-2 tokenizer, so network on first use.
+- `tests_p8_requant.py`: the Qwen3-1.7B parent weights and the base checkpoint (`P8_PARENT`,
+  `P8_BASE`); needs `compressed-tensors` and `safetensors`.
 Measurement (needs the GPU and the pinned images) is driven by the same scripts.
 The exact invocations are the shell drivers under `experiment/harness/drivers/`,
 one per stage, and their traces are under `experiment/artifacts/run_logs/`; the
@@ -338,6 +373,10 @@ specified; that deviation and three others are listed in the paper and in
   and it says nothing about sensitivity to fault families outside those nine.
 - **Task-level evaluation.** Perplexity is measured on pinned WikiText windows
   (papers 2 and 3); no downstream task-level evaluation was performed.
+- **Per-layer activation captures.** Not included, and no digest of them is recorded.
+  `w3_perlayer.py --stage capture` (driver `drivers/w3_perlayer_run.sh`) regenerates them on
+  a GPU from the rebuilt checkpoint, whose digest is recorded; whether a re-capture
+  reproduces the captures the measurement used bit for bit is not established.
 
 ## Map to the papers
 
@@ -359,31 +398,37 @@ specified; that deviation and three others are listed in the paper and in
 
 | Paper element | Where |
 |---|---|
-| Prediction matrix, two-stage pinning, corrections | `p5_make_matrix.py` → `p5_prediction_matrix.json` (`corrected_post_data` flags) |
+| Prediction matrix, two-stage pinning, corrections | `p5_make_matrix.py` → `p5_prediction_matrix.json`; pre-data pin `p5_prediction_matrix_A-10.1_pinned.json`; `p5_rescore.py`; `experiment/CORRECTIONS.md` |
 | Sensitivity measurement (8,232 cells) | `p5_runner.py` + `p5_inject.py` + `p5_checks.py` → `p5p6_results/p5_sensitivity.json` |
-| Requantization and its byte-exact gate | `p8_requant.py` → `p8_results/p8_report_minmax.json` (and the failed fp32 attempt, `p8_requant_reproduction_failure.json`) |
+| Requantization and its byte-exact gate (1.7B) | `p8_requant.py` → `p8_results/p8_report_minmax.json` (and the failed fp32 attempt, `p8_requant_reproduction_failure.json`) |
 | Per-layer bitwise agreement | `p8_results/p8_bitwise_*.json` |
-| End-to-end byte identity, three sizes | `p8_results/e2e*/…/tokens_{CUTLASS,TRITON}.json` |
+| End-to-end byte identity, three sizes | `p8_results/e2e*/…/tokens_{CUTLASS,TRITON}.json` (14B with `run_arm_mem.py` at `gpu_memory_utilization` 0.85) |
 | Perplexity cost with 90% intervals | `p6_windows.py` → `p6_accuracy.py` → `p8_results/p8_cost_acc_*.json` |
 | Probe decomposition (+157% → 99.8% mismatch) | `p5p6_results/p6_accuracy_cost.json` vs `p8_results/p8_cost_acc_pow2_nearest.json` |
-| Paper figures | `build_figures_conformance.py` (rebuilds byte-identically from artifacts) |
+| Paper figures | `build_figures_conformance_corrected.py` (as shown here); `build_figures_conformance.py` (arXiv v1's figures, byte-identical with matplotlib 3.10.9) |
 
 ## How this repository is organized around review
 The protocol was pinned before any backend comparison, and each later change is
 an append-only amendment. Analysis semantics went through several rounds of
-external adversarial review; the counterexamples those rounds produced became the
+adversarial review; the counterexamples those rounds produced became the
 regression tests in `tests_metrics_v*.py` (papers 1–2) and `tests_p5_*.py` /
 `tests_p6*.py` / `tests_p8_requant.py` (paper 3), and every correction that landed is
 recorded in the pre-registration as an append-only amendment, with its reasoning and date. Two facts
-are worth stating plainly: no headline number moved across those rounds, and the
+are worth stating plainly: no headline result moved across those rounds, and the
 corrections that did land were mostly about how a claim was worded rather than
-what the data showed. The exceptions are named in the log. The review
+what the data showed. The exceptions are named in the log. Several reporting
+errors survived those rounds and were found after publication: chiefly paper 3's
+comparison against the original prediction matrix, but also a miscount of the
+predictions changed after the smoke run, an undisclosed condition difference at
+14B, and several scope and wording errors. They are listed in
+`experiment/CORRECTIONS.md`. The review
 correspondence itself is kept privately; what the reviews changed is public.
 
 ## Citation
 
-Cite the paper whose result you are using, not the repository. See
-[`CITATION.cff`](CITATION.cff), or:
+Cite the paper whose result you are using. To cite the code or measurement artifacts
+themselves, cite this repository's archived release (metadata in
+[`CITATION.cff`](CITATION.cff)). The papers:
 
 ```bibtex
 @article{chen2026integeralibi,
