@@ -1,7 +1,7 @@
 {
   "upload_type": "software",
   "title": "deterministic-int8-llm-inference: measurement programme and reproducibility companion for two papers on cross-kernel INT8 inference numerics",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "<p>The pre-registration, measurement harness, analysis code and measurement artifacts for two papers. <em>The Integer Alibi</em> (arXiv:2608.13756) localizes cross-kernel divergence in INT8-quantized LLM inference to the epilogue, using the exactness of INT32 accumulation under a verified bound. <em>Deterministic LLM Inference Across GPU Kernels</em> (arXiv:2609.00363) measures what a tolerance-based conformance suite detects under injected faults, and the cost of serving with power-of-two weight scales. Re-analysis runs on a CPU. Errors found in arXiv:2609.00363v1 after publication are listed in experiment/CORRECTIONS.md.</p>",
   "creators": [
     {

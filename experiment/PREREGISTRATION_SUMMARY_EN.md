@@ -6,11 +6,12 @@ amendments the conformance paper relies on: A-10 and its sub-amendments (the sen
 experiment), A-11 (the second kernel pair, closed as a negative report), and A-12 (the
 power-of-two treatment). It is a reading aid, not a substitute: where the two disagree about
 what was committed, the Chinese original governs. The exceptions are the post-publication
-corrections this summary cites from `CORRECTIONS.md` (under A-10.5, A-10.6/A-10.7 and the
-later A-12 addenda). They are not in the append-only original, and they supersede two of its
-passages: A-10.5's known limitation 3 (three post-data cells, `preregistration.md` L363) and
+corrections this summary cites from `CORRECTIONS.md` (under A-10.4, A-10.5, A-10.6/A-10.7,
+A-12 and the later A-12 addenda). They are not in the append-only original, and they supersede three of
+its passages: A-10.5's known limitation 3 (three post-data cells, `preregistration.md` L363),
 A-10.7 point 4's claim that the one-spacing tolerance is structurally blind
-(`preregistration.md` L309–L311).
+(`preregistration.md` L309–L311), and A-12's statement that the ceiling rule cannot clip
+(`preregistration.md` L377, repeated at L385 and L417; `CORRECTIONS.md` section 6).
 
 Amendment classes used throughout: **class A** means recorded *before* the measurement it
 governs began; **PIN** means plan, code, and tests were committed with their SHA-256 digests
@@ -226,7 +227,11 @@ the hypothesis was uninfluenced by existing data.
 **Core hypothesis:** the $+157\%$ comes mainly from clipping rather than from the power-of-two
 constraint. The probe used the *nearest* power of two, which can make a scale *smaller*,
 pushing $w/s$ outside $[-127,127]$ and clipping. A *ceiling* rule never shrinks a scale and
-so cannot clip. Prediction: the ceiling arm's cost will be much smaller than $+157\%$; if the
+so cannot clip. [Superseded: the ceiling arm clips 2,579 weights in 191 of 196 layers,
+because a quotient of exactly +127.5 rounds to 128; before P8 ran, A-12.1 had already
+recorded that the 127.5 divisor makes even the base rule clip and that the ceiling rule
+clipped 11 weights in `layers.0.mlp.down_proj` (`preregistration.md` L452–L453). See
+`CORRECTIONS.md` section 6.] Prediction: the ceiling arm's cost will be much smaller than $+157\%$; if the
 measurement overturns this, clipping is not the main cause and the constraint itself is
 expensive — report that.
 
@@ -243,7 +248,9 @@ implementation that we do not understand, and that matters more than the accurac
 must be chased first.** Throughput is predicted unchanged, since only scale values change;
 this prediction's value is as a consistency check — a significant difference should first
 raise suspicion of the measurement, not of the mechanism. The ceiling arm's scales are on
-average larger, so coarser resolution is its cost source, unrelated to clipping; its
+average larger, so coarser resolution is its cost source, unrelated to clipping [the ceiling
+arm does clip, though far less than the requantized nearest arm added in the A-12 addendum:
+2,579 versus 1,555,348 weights; see `CORRECTIONS.md` section 6]; its
 perplexity cost is predicted positive but far below $157\%$, with **no specific value
 predicted**.
 

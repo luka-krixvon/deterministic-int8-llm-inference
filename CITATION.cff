@@ -17,7 +17,7 @@ authors:
     affiliation: Krixvon
     email: luka@krixvon.com
 license: MIT
-version: "1.0.0"
+version: "1.0.1"
 date-released: "2026-10-27"
 repository-code: "https://github.com/luka-krixvon/deterministic-int8-llm-inference"
 keywords:

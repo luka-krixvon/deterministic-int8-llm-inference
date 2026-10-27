@@ -150,3 +150,110 @@ across sizes.
 - **The ceiling arm is not shown to cost more.** Its point estimate is higher (+0.54% versus
   +0.32%), but the two 90% intervals overlap (+0.18% to +0.92% and −0.06% to +0.71%), so
   the data do not establish an ordering of the two arms.
+
+## 6. Further corrections (added in release 1.0.1)
+
+These were found after release 1.0.0, in a line-by-line check of version 1 against the code
+and the artifacts. As above, none changes a measured value in this repository.
+
+### Attribution and overlap
+
+- **The +157% was measured for paper 3, not reported by paper 2.** Version 1 said the
+  companion paper (paper 2, arXiv:2608.13756) reported +157% perplexity for its power-of-two
+  probe and declined to claim power-of-two scales deployable on that account. Paper 2 did
+  not measure an accuracy cost, and declined for that reason. The +157% was measured afterwards
+  under amendment A-10 of the pre-registration (`artifacts/p5p6_results/p6_accuracy_cost.json`)
+  and first reported in version 1; version 1's later references to "the reported +157%"
+  refer to that measurement.
+- **Not every result is new.** Version 1 said every result in it is new. The own-scale
+  agreement results at 1.7B and 8B (8/196 and 10/252 layers bitwise identical; 0/8 identical
+  sequences end to end) were re-measured for paper 3, but paper 2 had already reported the
+  same comparisons (end to end at 8B on sixteen prompts, 0/16, of which paper 3 used the
+  first eight). All other results are new, including the fault-injection measurements, the
+  +157% probe measurement, the 14B results and all results on the requantized power-of-two
+  checkpoints.
+
+### Fault-injection design and scoring
+
+- **Not every fault runs at three coverage severities.** Version 1 said each fault runs at
+  three coverage severities. F1–F5 use three coverage severities, F9 uses three
+  operand-difference magnitudes, and F6–F8 run once per layer and regime, so the 8,232 cells
+  are 196 layers × 2 scale regimes × 21 fault–severity combinations (`harness/p5_inject.py`
+  L280–L286).
+- **The all-elements severity does not change every output.** Version 1 called it the
+  severity that "corrupts every output element". It applies the variant arithmetic to every
+  evaluated output element (the first 512 captured rows by all output channels; for F5, the
+  32×32 sub-tile described next), which is not the same as changing every output value. At
+  that severity, under the checkpoint's own scales, F1 changed 17.2–30.4% of outputs, F2
+  25.1–26.4%, F3 at most 35 elements and F5 at most one; under power-of-two scales none of
+  the four changed any output.
+- **F5 was evaluated on a 32×32 sub-tile, and version 1's detection table omitted it.** F5
+  runs on a fixed 32×32 output sub-tile of each layer (the first 32 activation rows and the
+  first 32 output channels, at full K; `harness/p5_runner.py` L50–L53 and L179–L183), so its
+  severities,
+  including "all elements", refer to that sub-tile, not to the whole layer. Version 1's
+  detection table has no F5 row: 1,176 cells, observable in one, detected in none. Version 1's
+  statement that a kernel containing F5 passes every check rests on that one observable cell.
+- **Check (4) also compares with the exact reference.** Version 1 defined check (4) as "the
+  two accumulators are identical". It compares both arms' INT32 accumulators with each other
+  and with the exact reference accumulator (`harness/p5_checks.py` L193–L203); for F6 it
+  fires through the reference comparison, because the wrapped accumulator differs from the
+  exact one.
+- **F6 and F7 observability is counted against the fault-free output.** For F6 and F7 the
+  two compared arms are identical by construction, so their "obs." counts (392 each) are
+  measured against the fault-free output on the layer's captured operands, not as a
+  difference between the compared arms; the output checks' silence on these faults is
+  therefore not evidence about those checks.
+- **Unobservable faults are excluded per check–cell pair, and only for checks (5) and (6).**
+  Version 1 said a cell whose fault changed no output element is excluded from both
+  denominators. The exclusion applies per check–cell pair and only to the output-comparison
+  checks (5) and (6); checks (1)–(4) are scored in every cell, including cells where the
+  fault changed no output. The `reading_rule` field of the prediction matrices and of
+  `p5p6_results/p5_sensitivity.json` states the exclusion per cell; the scoring code
+  (`harness/p5_runner.py` L140–L145) applies it per pair, and every reported count follows
+  the code.
+- **Zero ULP distance is not bitwise equality.** Version 1 said a tolerance of zero is the
+  power-of-two check. Signed zeros have zero numerical distance but different bit patterns
+  (`harness/p5_checks.py` L79–L83, L100–L103), and the distance is computed only over pairs
+  in which both outputs are finite (L270–L278), so where check (5) applies the two coincide
+  only on finite outputs and only up to the sign of zero.
+
+### Prediction changes (section 2)
+
+- **Not every change repairs an independently checkable error.** Version 1 defended each of
+  the three cells it called corrected as repairing an arithmetic error checkable
+  independently of the outcome, and did not present the scale-ulp rung's changes at (5) and
+  (6) as corrections. Of the four changes against the pinned matrix (section 2), the defence
+  holds for F4 × (5) and the scale-ulp rung × (4). The scale-ulp rung × (6) change records as
+  a predicted miss what the smoke run had already measured (A-10.6), so it is fitted. The
+  scale-ulp rung × (5) change affects no score, and its stated reason is contradicted by the
+  data (section 2). The third cell version 1 defended, the one-int8-step rung × (6), is not a
+  change against the pinned matrix (section 2).
+
+### Requantization
+
+- **The 0.749 is an observed maximum after integer rounding, in one layer.** Version 1 said
+  the bfloat16 quantizing division moves quotients by up to 0.749. The 0.749 is the largest
+  observed distance between a stored int8 weight and the unrounded quotient w/s, over the
+  12,582,912 int8 weights of `layers.0.mlp.down_proj` in the base checkpoint
+  (`artifacts/p8_requant_reproduction_failure.json`: the diagnostic that reports 0.749 also
+  reports this layer's 6.42%, and writes the quantity as `base_q minus round(w/s)`, a slip,
+  since two integers cannot differ by 0.749). It reflects the bfloat16 division and the
+  integer rounding that follows, not the division's rounding error alone.
+- **The ceiling arm does clip.** Version 1 said the ceiling arm "cannot clip, since it never
+  shrinks a scale". The ceiling keeps every quotient within ±127.5, but a quotient of exactly
+  +127.5 rounds to 128 at the integer-rounding step, above the int8 maximum of 127.
+  `p8_results/p8_report_pow2_ceil.json` records 2,579 clipped weights in 191 of 196 layers
+  (requantized nearest arm: 1,555,348; base rule: 151,329). Before P8 ran, the pre-registration recorded
+  that the 127.5 divisor makes the base rule clip through round(127.5) = 128, and that the
+  ceiling rule clipped 11 weights in `layers.0.mlp.down_proj` (`preregistration.md`
+  L452–L453); this supersedes A-12's statement that the ceiling rule cannot clip (L377,
+  repeated at L385 and L417). The comment at `harness/p8_requant.py` L91 ("clipping is
+  impossible") is wrong for the same reason; the pinned code is not edited.
+- **The ceiling comparison does not show that clipping helps.** Version 1 said that clipping
+  a few outliers in exchange for finer resolution is mildly beneficial, opposite to the
+  pre-registered hypothesis. Both arms clip (2,579 weights for ceiling, 1,555,348 for
+  nearest), their cost ordering is not established (section 5), and changing the scale rule
+  changes both clipping and quantization resolution, so the comparison does not isolate a
+  causal effect of clipping. The point estimates do not support the pre-registered clipping
+  hypothesis.

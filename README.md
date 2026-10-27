@@ -102,8 +102,9 @@ weight scales to powers of two, and the difference should vanish. It does.
 ¹ 14B per-layer capture dequantizes to bfloat16 in-framework and exceeds the 24 GB card, so
 14B evidence is end-to-end only (disclosed in paper 3).
 ² Paper 2 additionally ran 8B end-to-end at 16 prompts with its scale-*rewriting* probe:
-0/16 real, 16/16 probe. That probe carried +157% perplexity — paper 3 shows 99.8% of it was
-the probe's weight–scale mismatch, and replaces it with requantization at the cost above.
+0/16 real, 16/16 probe. Paper 3 later measured the 1.7B probe at +157% perplexity
+(`p5p6_results/p6_accuracy_cost.json`); requantizing instead of rewriting reduced that point
+estimate to +0.32% (by 99.8%), and the requantized costs are in the row above.
 
 Teacher-forced replay on 16,384 positions: 769 single-step flips (4.7%), and the
 logit margin ranks flip risk at **ROC-AUC 0.942** (prompt-cluster CI90
@@ -131,11 +132,11 @@ apart, and no element anywhere in either model exceeds one ULP. Rewriting all
 573,440 weight scales to the nearest power of two — leaving weights, activation
 quantization, prompts and both kernel arms untouched — restores **bitwise
 end-to-end agreement**: 8/8 sequences at 1.7B, 16/16 at 8B. Removing the
-suspected freedom removes the divergence. Paper 3 closes the loop: that rewrite
-degraded perplexity by +157%, but 99.8% of it was the rewrite's own weight–scale
-mismatch — *requantizing* under power-of-two weight scales keeps the bitwise agreement
-(per layer at 1.7B and 8B, end to end at all three sizes) for −0.28% to +0.48%
-(`p8_results/`).
+suspected freedom removes the divergence. Paper 3 closes the loop: at 1.7B that
+rewrite degraded perplexity by +157% (`p5p6_results/`), and *requantizing* under
+power-of-two weight scales instead reduces that point estimate by 99.8% while keeping the
+bitwise agreement (per layer at 1.7B and 8B, end to end at all three sizes) for −0.28% to
++0.48% (`p8_results/`).
 
 <p align="center"><img src="figures/fig_margin.png" width="52%" alt="Cross-kernel flip rate against logit margin"></p>
 
@@ -165,8 +166,9 @@ limitations:
   never evaluated for accuracy, calibration or throughput. *Also since measured by
   paper 3* (`p8_results/`): requantized (not rewritten) power-of-two checkpoints give
   byte-identical generation at 1.7B, 8B and 14B, at perplexity point estimates from
-  −0.28% to +0.48%; the reported +157% was the probe's weight–scale mismatch, 99.8%
-  of it.
+  −0.28% to +0.48%; for the rewritten 1.7B probe itself paper 3 measured +157%
+  (`p5p6_results/p6_accuracy_cost.json`), and requantizing at 1.7B reduced that point
+  estimate to +0.32%, by 99.8%.
 - **2.9% stays unresolved.** Under the probe, the same arm still disagrees with
   itself across prefill-replay versus decode on 2.9% of rail tokens. That
   originates outside the controlled INT8 epilogue; the first-divergence
@@ -371,8 +373,10 @@ specified; that deviation and three others are listed in the paper and in
 - **A faulty-kernel test bench.** Fault injection covers nine constructed
   families at layer level (paper 3); it is not a corpus of real faulty kernels,
   and it says nothing about sensitivity to fault families outside those nine.
-- **Task-level evaluation.** Perplexity is measured on pinned WikiText windows
-  (papers 2 and 3); no downstream task-level evaluation was performed.
+- **Task-level evaluation.** Perplexity is measured only in paper 3, on 256 pinned
+  WikiText-2 windows that are disjoint from the prompt windows (paper 2 uses WikiText-2
+  windows only as model inputs, for generation and activation capture, and did not measure
+  an accuracy cost); no downstream task-level evaluation was performed.
 - **Per-layer activation captures.** Not included, and no digest of them is recorded.
   `w3_perlayer.py --stage capture` (driver `drivers/w3_perlayer_run.sh`) regenerates them on
   a GPU from the rebuilt checkpoint, whose digest is recorded; whether a re-capture
@@ -404,7 +408,7 @@ specified; that deviation and three others are listed in the paper and in
 | Per-layer bitwise agreement | `p8_results/p8_bitwise_*.json` |
 | End-to-end byte identity, three sizes | `p8_results/e2e*/…/tokens_{CUTLASS,TRITON}.json` (14B with `run_arm_mem.py` at `gpu_memory_utilization` 0.85) |
 | Perplexity cost with 90% intervals | `p6_windows.py` → `p6_accuracy.py` → `p8_results/p8_cost_acc_*.json` |
-| Probe decomposition (+157% → 99.8% mismatch) | `p5p6_results/p6_accuracy_cost.json` vs `p8_results/p8_cost_acc_pow2_nearest.json` |
+| Probe vs requantized cost at 1.7B (+157% → +0.32%; point estimate reduced by 99.8%) | `p5p6_results/p6_accuracy_cost.json` vs `p8_results/p8_cost_acc_pow2_nearest.json` |
 | Paper figures | `build_figures_conformance_corrected.py` (as shown here); `build_figures_conformance.py` (arXiv v1's figures, byte-identical with matplotlib 3.10.9) |
 
 ## How this repository is organized around review
@@ -420,7 +424,8 @@ what the data showed. The exceptions are named in the log. Several reporting
 errors survived those rounds and were found after publication: chiefly paper 3's
 comparison against the original prediction matrix, but also a miscount of the
 predictions changed after the smoke run, an undisclosed condition difference at
-14B, and several scope and wording errors. They are listed in
+14B, a result attributed to the wrong paper (the +157%), a false no-clipping claim for the
+ceiling arm, an omitted F5 row, and several scope and wording errors. They are listed in
 `experiment/CORRECTIONS.md`. The review
 correspondence itself is kept privately; what the reviews changed is public.
 
